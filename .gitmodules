@@ -1,0 +1,3 @@
+[submodule "maverick"]
+	path = maverick
+	url = https://github.com/canhtran/maverick

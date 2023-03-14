@@ -25,6 +25,6 @@ The free service of [Feedly](https://feedly.com/) is fine with me, you can
 1. add RSS link. For example, https://chenli2049.github.io/atom.xml
 2. search for the people you want to follow.
 
-For what's not there (say social media account), try [RSSHub](https://docs.rsshub.app/). But I have to say that you need to open your own server to get it work smoothly, because some of the URL they provided does not work all the time.
+For what's not there (say social media account), try [RSSHub](https://docs.rsshub.app/). But I have to say that you need to open your own server to get it work smoothly, because some of the URL they provided does not work all the time. I want to cut down social media anyway, so this might be a good thing.
 
-Also, [This](https://yufree.cn/cn/2018/03/24/blogdown-rss/) is fun, but I don't want to repeat what I have done for the personal website all over again.
+Also, [Building your personal RSS on GitHub](https://yufree.cn/cn/2018/03/24/blogdown-rss/) is fun, but I don't want to repeat what I have done for the personal website all over again.

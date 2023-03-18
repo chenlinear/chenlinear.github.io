@@ -1,8 +1,5 @@
 ---
-title: "李琛"
+title: "Chen Li"
 ---
 
-Name: Chen Li
-
-## Education
-## Publication
+Work in prograss :)

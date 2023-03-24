@@ -15,9 +15,7 @@ Before I start, I want to mention that a director is a lot like a science resear
 
 I believe every good piece of media has the potential to become a [genre](https://en.wikipedia.org/wiki/Film_genre). And when we talk about genres, we are actually talking about elements we see. So here is a list of elements that I see in this new genre. The table below is largely inspired by [this meme](https://www.reddit.com/r/evangelionmemes/comments/84gbva/conflict_in_evangelion/):
 
-<div align=center>
-<img src="https://external-preview.redd.it/qpK4KKsfBT6-7SW862BdcT4COOuHw41XwPQsExtektA.jpg?auto=webp&v=enabled&s=fe30c0b4bf4ccc09460acc1d2e456530cb90ad9c" width="250" />
-</div>
+![ConflictInLiterature](https://external-preview.redd.it/qpK4KKsfBT6-7SW862BdcT4COOuHw41XwPQsExtektA.jpg?auto=webp&v=enabled&s=fe30c0b4bf4ccc09460acc1d2e456530cb90ad9c)
 
 |Elements|_There Will Be Blood_|_A Brighter Summer Day_|_Evangelion_|
 |:-|:-|:-|:-|

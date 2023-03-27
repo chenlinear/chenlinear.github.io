@@ -27,7 +27,7 @@ I believe every good piece of media has the potential to become a [genre](https:
 |father-son conflict|$\checkmark$|$\checkmark$|$\checkmark$|
 |attitude towards human interraction|"I want to earn enough money I can get away from everyone"|"I'm like the world, it will never change"|[Hedgehog's dilemma](https://en.wikipedia.org/wiki/Hedgehog%27s_dilemma)|
 |the music is odd|weird, vampire music||soft songs with brutal scenes|
-|the doom is inevitable|Captalism|family background, Kuomintang|Dead Sea Scorlls|
+|the doom is inevitable|Captalism in 20th century|family background, tri-state area|Dead Sea Scorlls|
 |the doom started with the death of one of the protagonist's closest friend|his son is dead to him|Honey|Kaworu|
 |at the end the protagonist murdered someone|the degenerate godfather|his girlfriend|the entire humanity|
 

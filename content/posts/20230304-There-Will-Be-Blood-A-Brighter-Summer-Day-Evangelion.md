@@ -23,7 +23,7 @@ I believe every good piece of media has the potential to become a [genre](https:
 |man vs. man|his colleagues and counter companies|those of his schoolmates who are richer, teacher|anybody around him really|
 |man vs. society|villagers, church|school|class|
 |man vs. god|his conflict with the church|Chinese people don't actually believe in god|shito is kind of like [nature-god](https://en.wikipedia.org/wiki/List_of_Japanese_deities)|
-|man vs. author (meta)|"I'm finished"|Zhang Zhen uses his real name and real father|TV episode 25,26|
+|man vs. author (meta)|Daniel and Paul use thier real name. "I'm finished"|Zhang Zhen uses his real name and real father|TV episode 25,26|
 |father-son conflict|$\checkmark$|$\checkmark$|$\checkmark$|
 |attitude towards human interraction|"I want to earn enough money I can get away from everyone"|"I'm like the world, it will never change"|[Hedgehog's dilemma](https://en.wikipedia.org/wiki/Hedgehog%27s_dilemma)|
 |the music is odd|weird, vampire music||soft songs with brutal scenes|

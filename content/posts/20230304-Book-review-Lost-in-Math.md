@@ -14,6 +14,7 @@ Before I start, I just want to say that I am no expert in particle physics or an
 So there is this basic conflict between beauty and resources, where beauty means the standard we use to judge whether a theory is good or not, while resources means money, time, energy, etc. The latter one is something we cannot avoid, but the first one is something we can change, and I truly hope so.
 
 To be more clear, beauty means:
+
 1. Simplicity, or [Occam's razor](https://en.wikipedia.org/wiki/Occam%27s_razor).
 2. "This-has-to-be-it". The E8 Group is the largest and most complicated group of exceptional Lie Groups. And in the paper [_An Exceptionally Simple Theory of Everything_](https://arxiv.org/abs/0711.0770), Antony Garrett Lisi uses it to, well, explain everything. Sadly, this is not "it".
 3. "There-must-be-one-theory-to-rule-them-all". "There is a consistency in everything and thus it can be explained by one theory." I suppose Chaos theory is a good counterpoint.
@@ -23,7 +24,7 @@ Let's be honest here, peer pressure is also holding us back. In the book Sabine 
 
 Sabine also pointed out that the idea of Beauty is constantly changing. For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can't be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it's like onions with multiple layers. But what is the guidance then? Beauty is probably not.
 
-There are much more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her Youtube videos, for example, [What is "Nothing"?](https://www.youtube.com/watch?v=PhfqdBk8qxk).
+There are much more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her Youtube videos, for example, [_What is "Nothing"?_](https://www.youtube.com/watch?v=PhfqdBk8qxk).
 
 What's more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is wrong, after all it's their job, and criticizng it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let's just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after [decades of research](https://scholar.google.com/citations?user=NaQZcyYAAAAJ&hl=en) on physics. And there is that.
 

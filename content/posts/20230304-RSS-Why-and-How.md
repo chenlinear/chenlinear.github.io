@@ -16,14 +16,14 @@ The whole goal of RSS is to keep it simple. I don't want to check a lot of websi
 
 My requirements:
 
-1. multi-platform.
-2. browser extention or website.
-3. don't have to open a server myself.
+- multi-platform.
+- browser extention or website.
+- don't have to open a server myself.
 
 The free service of [Feedly](https://feedly.com/) is fine with me, you can
 
-1. add RSS link. For example, https://chenli2049.github.io/atom.xml
-2. search for the people you want to follow.
+- add RSS link. For example, https://chenli2049.github.io/atom.xml
+- search for the people you want to follow.
 
 For what's not there (say social media account), try [RSSHub](https://docs.rsshub.app/). But I have to say that you need to open your own server to get it work smoothly, because some of the URL they provided does not work all the time. I want to cut down social media anyway, so this might be a good thing.
 

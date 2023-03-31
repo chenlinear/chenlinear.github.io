@@ -23,7 +23,7 @@ To be more clear, beauty means:
 - "Smaller-means-simpler". From the perspective of biology to chemistry to particle physics, the structure gets simpler and simpler, so it is natural to assume that it would get even simpler when it gets even smaller. But Sabine pointed out that when you start from a different scale, ie. from the universe to life on earth, it gets more complicated.[^1]
 - etc.
 
-A perfectly beautiful example of beauty would be the equation (7.2-4) of [_Group Theory in Physics_](https://www.worldscientific.com/worldscibooks/10.1142/0097): $${(J_k)^{l}}_m = - i \varepsilon_{klm}$$, which would be even more beautiful if written as $(J_k)_{lm} = - i \varepsilon_{klm}$. If you learned about Linear Algebra or Group Theory, you will be amazed by the simplicity of this equation, that's why sometimes we can't resist the allure.
+A perfectly beautiful example of beauty would be the equation (7.2-4) of [_Group Theory in Physics_](https://www.worldscientific.com/worldscibooks/10.1142/0097): $$ {(J_k)^{l}}_m = - i \varepsilon _{klm} $$.[^2] If you learned about Linear Algebra or Group Theory, you will be amazed by the simplicity of this equation, that's why sometimes we can't resist the allure.
 
 Sabine also pointed out that the idea of Beauty is constantly changing. For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can't be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it's like onions with multiple layers. But what is the guidance then? Beauty is probably not.
 
@@ -48,11 +48,11 @@ To be more clear, here are some typical (cognitive and social) bias:
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-In the book Sabine give us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^2] See picture below.
+In the book Sabine give us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^3] See picture below.
 
-==(picture here!)==
+___(picture here!)___
 
-The picture is from this article ==(link here!)==. And by reading this article, we notice that the reasons can be reduced to something bias, something bias and something bias. 
+The picture is from this article ___(link here!)___. And by reading this article, we notice that the reasons can be reduced to something bias, something bias and something bias. 
 
 See, it helps! And nobody's feeling is hurt, I hope.
 
@@ -67,4 +67,5 @@ I think I have refound what got me into physics in the first place, though I can
 Reading this book feels like saying an official goodbye to my childhood and get into the real thing. I know there are unresolved questions, and I want to deal with them.
 
 [^1]: Fermi parodox?
-[^2]: Although nowadays it is possible that the difference between two measuments is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
+[^2]: It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.
+[^3]: Although nowadays it is possible that the difference between two measuments is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.

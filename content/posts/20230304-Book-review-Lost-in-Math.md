@@ -35,14 +35,13 @@ To be more clear, here are some typical (cognitive and social) biases:
 
 - _Aesthetic Bias_. Which is pretty much the same as "beauty".
 - _Social Desirability Bias_. "We are, for example, more likely to put forward opinions that we believe will be well received by others." (Which is kind of like peer pressure, speaking of which, I happen to know a book teaching you how to survive that: [_A PhD is not enough_](http://hep.tsinghua.edu.cn/training/courses/gauge.html/advise/A%20PhD%20is%20not%20enough.pdf).)
-- _Attentional Bias_. "Research shows we consider a statement more likely to be true the more often we hear of it."
+- _Attentional Bias_ (or _The Mere Exposure Effect_). "Research shows we consider a statement more likely to be true the more often we hear of it." "We tend to overestimate how many other people agree with us and how much they do so."
 - _Statistical Bias_. Which is a type of error in statistical analysis where the results are systematically skewed away from the true value of the population parameter that is being estimated.
 - _Confirmation Bias_. "If you search the literature for support of your argument, there it is. If you look for a mistake because your result didn’t match your expectations, there it is."
 - _In-Group Bias_. Which "makes us think researchers in our own field are more intelligent than others."
 - _Shared Information Bias_. Which "is why we keep discussing what everyone knows but fail to pay attention to information held only by a few people."
 - _Apophenia_. "We like to discover patterns in noise."
 - _Belief Bias_. "We think arguments are stronger if the conclusion seems plausible."
-- _Attentional Bias_ (or _The Mere Exposure Effect_). "We tend to overestimate how many other people agree with us and how much they do so."
 - The mother of all biases, _The Bias Blind Spot_. Which is "the insistence that we certainly are not biased."
 - _Status Quo Bias_. Which is the preference for maintaining one's current situation and opposing actions that may change the state of affairs.
 

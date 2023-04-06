@@ -31,7 +31,7 @@ Sabine also pointed out that the idea of Beauty is constantly changing. For exam
 
 The word "bias" does not sound comfortable, and I believe most of the time most of people mean well. I'm not accusing anybody, it's just that we can learn from the past. Talking about it will probably make it better, while not talking about it will definitely not make it better.
 
-To be more clear, here are some typical (cognitive and social) biases:
+To be more clear, here are some typical (cognitive and social) biases listed by the Sabine:
 
 - _Aesthetic Bias_. Which is pretty much the same as "beauty".
 - _Social Desirability Bias_. "We are, for example, more likely to put forward opinions that we believe will be well received by others." (Which is kind of like peer pressure, speaking of which, I happen to know a book teaching you how to survive that: [_A PhD is not enough_](http://hep.tsinghua.edu.cn/training/courses/gauge.html/advise/A%20PhD%20is%20not%20enough.pdf).)
@@ -51,7 +51,7 @@ In the book Sabine gives us an example of how two labs constantly give contradic
 
 ___(picture here!)___
 
-The picture is from this article ___(link here!)___. And by reading this article, I notice that the reasons can be reduced to something bias, something bias and something bias. 
+The picture is from this article ___(link here!)___. By reading this article and accroding to the biases listed above, I notice that the reasons can be reduced to ... , ... and ... 
 
 See, it helps! And nobody's feeling is hurt, I hope.
 

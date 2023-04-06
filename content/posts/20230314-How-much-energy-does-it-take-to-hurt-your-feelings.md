@@ -24,6 +24,6 @@ Yes, the energy this takes can have a plane take approximately 100 people from L
 
 Well, it's impossible to get one dollar from everyone on this plantet, but saying something so awful that you hurt a lot of people's feelings is possible. Tower of Babel has been built, and we can use it to hurt other people's feelings, like throwing a stone off the tower (a $7714.29m$ tower to be exactly, see the table above), and $10^6$ stones at a time.
 
-I know this is a weird article. And I know for sure that this is not how you use the conservation of energy, you have to consider entropy and the imagined mechnisim does not work at all. I have no idea how I got here. By the way, wrting in a nice form does make it look real, I should have used $\LaTeX$. Good night.
+OK, my professor would be so mad that I use the conservation of energy like this. And I know for sure I have to consider entropy and that the imagined mechnisim does not work. It's 1 o'clock in the evening, and I have no idea how I got here, maybe it's "sleep write", you know, like sleep walk. By the way, writing in a nice form does make it look real, I should have used $\LaTeX$. Good night.
 
 [^1]: This has nothing to do with [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory) ).

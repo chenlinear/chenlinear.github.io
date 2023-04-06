@@ -8,7 +8,7 @@ This Hugo theme features several content sections, front page, dynamic pages cre
 
 Home Page             | List Posts
 :-------------------------:|:-------------------------:
-![](images/homescreen.png)  |  ![](images/listposts.png)
+![](homescreen.png)  |  ![](listposts.png)
 
 
 ## Installation

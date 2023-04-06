@@ -47,7 +47,7 @@ To be more clear, here are some typical (cognitive and social) biases:
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-In the book Sabine give us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^3] See picture below.
+In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^3] See picture below.
 
 ___(picture here!)___
 
@@ -57,7 +57,7 @@ See, it helps! And nobody's feeling is hurt, I hope.
 
 ## §3 More
 
-There are much more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her YouTube videos, for example, [_What is "Nothing"?_](https://www.youtube.com/watch?v=PhfqdBk8qxk).
+There are many more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her YouTube videos, for example, [_What is "Nothing"?_](https://www.youtube.com/watch?v=PhfqdBk8qxk).
 
 What's more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is doubtful, after all it's their job, and criticizng it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let's just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after [decades of research](https://scholar.google.com/citations?user=NaQZcyYAAAAJ&hl=en) on physics. And there is that.
 

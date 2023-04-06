@@ -16,9 +16,9 @@ Thus in a theory, let's say General Relativity, the barrier is already there, th
 
 For example, there are inconsistency and contradictions in math already, "Russell's paradox". Or there are inconsistency and contradictions in different maths, Euclidean geometry and Riemannian geometry. All of these examples are the limits we meet when we are playing different games yet trying to play the same game.
 
-We have no idea whether the universe play the same game or not[^2] (i.e. "[Thing-in-itself](https://en.wikipedia.org/wiki/Thing-in-itself) can not be understood or reached"), or we can't let it play the same game, because we don't play the same game when facing different "aspects" of our world. If there is this game, I would be more than happy, but so far we don't have this game, and by the way we think, I don't think we will. Although that would be really neat, just like the game ChatGPT plays.
+We have no idea whether the universe plays the same game or not[^2] (i.e. "[Thing-in-itself](https://en.wikipedia.org/wiki/Thing-in-itself) can not be understood or reached"). Or, we can't let it play the same game, because we don't play the same game when facing different "aspects" of our world. If there is this ultimate game, I would be more than happy, but so far we don't have this game, and by the way we think, I don't think we will. Although that would be really neat, just like the game ChatGPT plays.
 
 So what we can really do is to excel in different games. And [whatever works](https://www.imdb.com/title/tt1178663/). And that, my friend, is how I convenced myself to use Monte Carlo models.
 
-[^1]: I'm not a big fan of [his classmate](https://en.wikipedia.org/wiki/File:Hitler_at_school_in_1901.jpg) though. He is the reason he has to move yet another time. By the way, I finished reading this book on the most hierarchical and boring meeting. But "What can be said at all can be said clearly, and whereof one cannot speak, thereof one must be silent", so I'm not gonna talk about it. I'm just kidding, the meeting is meaningful if I am a beginner I guess. :)
+[^1]: I'm not a big fan of [his classmate](https://en.wikipedia.org/wiki/File:Hitler_at_school_in_1901.jpg) though. He is the reason he has to move yet another time.
 [^2]: See [Emergence](https://en.wikipedia.org/wiki/Emergence).

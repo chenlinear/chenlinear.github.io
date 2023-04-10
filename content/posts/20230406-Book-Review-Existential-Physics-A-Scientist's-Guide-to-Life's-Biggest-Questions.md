@@ -17,7 +17,7 @@ So the basic strategy in this book is something like this:
 1. You can derive complicated theories from foundamental theory. It's just that the math is too difficult. You may refer to the example where we derive the principle of Thermodynamics and Statistical Mechanics. How the composition interacts with each other is where "emergence" begins.
 2. there's no free will, but I'm interested in the outcome of your thinking. She quoted from Ludwig Wittgenstein that "The freedom of the will consists in the fact that future actions cannot be known now."[^1] Which is from _Tractatus_, an early work of Wittgenstein, which he turned his back on in his later life. Not to say he turned his back on this specfic statement. I'm suprised she quoted from Wittgenstein, as well as she quoted from Louis C.K. in _Lost in Math_.
 
-Her ideas on these two subjects are consistent, so maybe they're more convencing? After all, I didn't do the thinking and research she's done.
+Her ideas on these two subjects are consistent, so maybe they're more convincing? After all, I didn't do the thinking and research she's done.
 
 But to me, it's an avoidance rather than anwer:
 

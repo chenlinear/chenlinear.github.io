@@ -22,17 +22,17 @@ theme = 'maverick'
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = "-150"
+    weight = "3"
   [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
-    weight = -300
+    weight = 2
   [[menu.main]]
     identifier = "CV"
     name = "CV"
     url = "/CV/"
-    weight = "-450"
+    weight = "1"
 
 [markup]
   [markup.goldmark.renderer]

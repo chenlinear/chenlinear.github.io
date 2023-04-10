@@ -27,6 +27,8 @@ A perfectly beautiful example of beauty would be the equation (7.2-4) of [_Group
 
 Sabine also pointed out that the idea of Beauty is constantly changing. For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can't be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it's like onions with multiple layers. But what is the guidance then? Beauty is probably not.
 
+And Sabine thinks that consistency is a possible guidance, but I must admit I am confused that (1) consistency is also a kind of beauty and (2) the biggest problem we have today is that we are lack of consistency in different disciplines due to emergence[^3].
+
 ## §2 Bias
 
 The word "bias" does not sound comfortable, and I believe most of the time most of people mean well. I'm not accusing anybody, it's just that we can learn from the past. Talking about it will probably make it better, while not talking about it will definitely not make it better.
@@ -47,11 +49,11 @@ To be more clear, here are some typical (cognitive and social) biases listed by 
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^3] See picture below.
+In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^4] See picture below.
 
 ___(picture here!)___
 
-The picture is from this article ___(link here!)___. By reading this article and accroding to the biases listed above, I notice that the reasons can be reduced to ... , ... and ... 
+The picture is from this article ___(link here!)___. By reading this article and accroding to the biases listed above, I notice that the reasons can be reduced to ... bias, ... bias and ... bias. 
 
 See, it helps! And nobody's feeling is hurt, I hope.
 
@@ -67,4 +69,5 @@ Reading this book feels like saying an official goodbye to my childhood and gett
 
 [^1]: Fermi parodox?
 [^2]: It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.
-[^3]: Although nowadays it is possible that the difference between two measuments is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
+[^3]: In her next book _Existential Physics: A Scientist's Guide to Life's Biggest Questions_, she claimed that it's not emergence, it's  ["the math is too difficult"](https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).
+[^4]: Although nowadays it is possible that the difference between two measuments is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.

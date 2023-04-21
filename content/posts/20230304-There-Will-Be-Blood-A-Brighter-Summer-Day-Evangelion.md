@@ -18,7 +18,7 @@ I believe every good piece of media has the potential to become a [genre](https:
 ![ConflictInLiterature](https://external-preview.redd.it/qpK4KKsfBT6-7SW862BdcT4COOuHw41XwPQsExtektA.jpg?auto=webp&v=enabled&s=fe30c0b4bf4ccc09460acc1d2e456530cb90ad9c)
 
 |Elements|_There Will Be Blood_|_A Brighter Summer Day_|_Evangelion_|
-|:-|:-|:-|:-|
+|-|-|-|-|
 |man vs. nature|the first scene where he digs|illness|shito|
 |man vs. man|his colleagues and counter companies|those of his schoolmates who are richer, teacher|anybody around him really|
 |man vs. society|villagers, church|school|class|
@@ -33,4 +33,4 @@ I believe every good piece of media has the potential to become a [genre](https:
 
 I am not systematically trained in films, and all my knowledge is from random places, so maybe there isn't such a similarity, it's just that all good stuff have these points in common. Although the 5 "vs."s may be universal, the latter ones are not universal, I guess.
 
-This article is currently unfinished, maybe these works have something in common in storyline, composition, etc. But I'll need a rewatch to remind myself. 
+This article is currently unfinished, maybe these works have something in common in storyline, composition, etc. But I'll need a rewatch to remind myself. And I will write about _The Great Gatsby_ and _No Longer Human_ someday.

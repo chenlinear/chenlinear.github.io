@@ -16,7 +16,7 @@ So let's say a tweet gets $10^{6}$ views in $3.6 \times 10^3 s$, which is from a
 Here is a table of the energy of some events:
 
 |events|$W(J)$|
-|:-|:-|
+|-|-|
 |throw a $50g$ stone from $7714.29m$ high|$3.78 \times 10^3 J$|
 |an [Airbus A330-900](https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft) powered by [Gasoline](https://en.wikipedia.org/wiki/Energy_density) flies for $8610km$ for one person|$1.01 \times 10^7 J$|
 

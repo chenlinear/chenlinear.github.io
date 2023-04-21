@@ -14,18 +14,18 @@ body {
 }
 
 .skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  //margin: 1.5rem 0;
-  background: #eee;
-  //color: white;
-  //padding: 1.5rem;
-  z-index: 100;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    //margin: 1.5rem 0;
+    background: #eee;
+    //color: white;
+    //padding: 1.5rem;
+    z-index: 100;
 }
 
 .skip-link:focus {
-  top: 0;
+    top: 0;
 }
 
 h1, h2, h3, h4, h5, strong, b {
@@ -43,7 +43,7 @@ header {
 }
 
 .link {
-	//white-space: nowrap;
+    //white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -53,8 +53,8 @@ header {
 }
 
 .time {
-	font-variant-numeric: tabular-nums;
-	white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 blockquote {

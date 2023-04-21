@@ -25,7 +25,7 @@ To be more clear, beauty means:
 
 A perfectly beautiful example of beauty would be the equation (7.2-4) of [_Group Theory in Physics_](https://www.worldscientific.com/worldscibooks/10.1142/0097): $$ {(J_k)^{l}}_m = - i \varepsilon _{klm} $$.[^2] If you learned about Linear Algebra or Group Theory, you will be amazed by the simplicity of this equation, that's why sometimes we can't resist the allure.
 
-Sabine also pointed out that the idea of Beauty is constantly changing. For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can't be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it's like onions with multiple layers. But what is the guidance then? Beauty is probably not.
+Sabine also pointed out that the idea of beauty is constantly changing. (At least I'm pretty sure her idea of beauty has changed a lot since 2006, see [_The Beauty of it All_](http://backreaction.blogspot.com/2006/11/beauty-of-it-all.html).) For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can't be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it's like onions with multiple layers. But what is the guidance then? Beauty is probably not.
 
 And Sabine thinks that consistency is a possible guidance, but I must admit I am confused that (1) consistency is also a kind of beauty and (2) the biggest problem we have today is that we are lack of consistency in different disciplines due to emergence[^3].
 

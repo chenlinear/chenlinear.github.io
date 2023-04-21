@@ -17,7 +17,7 @@ The whole goal of RSS is to keep it simple. I don't want to check a lot of websi
 My requirements:
 
 - multi-platform.
-- browser extention or website.
+- browser extension or website.
 - don't have to open a server myself.
 
 The free service of [Feedly](https://feedly.com/) is fine with me, you can

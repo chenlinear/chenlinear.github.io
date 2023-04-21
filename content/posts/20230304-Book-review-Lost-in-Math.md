@@ -9,7 +9,7 @@ math: true
 
 This is a review of [_Lost in Math: How Beauty Leads Physics Astray_](https://www.amazon.com/Lost-Math-Beauty-Physics-Astray/dp/0465094252) by [Sabine Hossenfelder](https://sabinehossenfelder.com/).
 
-Before I start, I just want to say that I am no expert in Particle Physics or any Physics really, thus I can't tell whether what she said is true or not, but what I can tell is that as I gradually learn more about the science community (or "academia"), I notice a trend that is simular to what she said in the book, which is that many of us are stuck here due to "beauty". And I want to do better, maybe her book will help.
+Before I start, I just want to say that I am no expert in Particle Physics or any Physics really, thus I can't tell whether what she said is true or not, but what I can tell is that as I gradually learn more about the science community (or "academia"), I notice a trend that is similar to what she said in the book, which is that many of us are stuck here due to "beauty". And I want to do better, maybe her book will help.
 
 ## §1 Beauty
 
@@ -53,7 +53,7 @@ In the book Sabine gives us an example of how two labs constantly give contradic
 
 ___(picture here!)___
 
-The picture is from this article ___(link here!)___. By reading this article and accroding to the biases listed above, I notice that the reasons can be reduced to ... bias, ... bias and ... bias. 
+The picture is from this article ___(link here!)___. By reading this article and according to the biases listed above, I notice that the reasons can be reduced to ... bias, ... bias and ... bias. 
 
 See, it helps! And nobody's feeling is hurt, I hope.
 
@@ -61,13 +61,13 @@ See, it helps! And nobody's feeling is hurt, I hope.
 
 There are many more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her YouTube videos, for example, [_What is "Nothing"?_](https://www.youtube.com/watch?v=PhfqdBk8qxk).
 
-What's more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is doubtful, after all it's their job, and criticizng it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let's just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after [decades of research](https://scholar.google.com/citations?user=NaQZcyYAAAAJ&hl=en) on physics. And there is that.
+What's more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is doubtful, after all it's their job, and criticizing it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let's just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after [decades of research](https://scholar.google.com/citations?user=NaQZcyYAAAAJ&hl=en) on physics. And there is that.
 
 I think I have refound what got me into physics in the first place, though I can't tell what it is exactly. I can't wait to go on yet another Odyssey with her next book: [_Existential Physics: A Scientist's Guide to Life's Biggest Questions_](https://www.amazon.com/Existential-Physics-Scientists-Biggest-Questions/dp/1984879456). I'm a big fan of Jean-Paul Sartre and Existentialism, maybe they would show up. 
 
 Reading this book feels like saying an official goodbye to my childhood and getting into the real thing. I know there are unresolved questions, and I want to deal with them.
 
-[^1]: Fermi parodox?
+[^1]: Fermi paradox?
 [^2]: It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.
 [^3]: In her next book _Existential Physics: A Scientist's Guide to Life's Biggest Questions_, she claimed that it's not emergence, it's  ["the math is too difficult"](https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).
-[^4]: Although nowadays it is possible that the difference between two measuments is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
+[^4]: Although nowadays it is possible that the difference between two measurements is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.

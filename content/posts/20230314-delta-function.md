@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-It hit me that $\delta(x)$ and $\delta_{ij}$ are the same thing, they both mean "peak". That's why they use the same symbol $\delta$.
+It hit me that $\delta(x)$ and $\delta_{ij}$ are the same thing, they both mean "peak", and $x=i-j$ or $x=\vert i-j \vert$. That's why they use the same symbol $\delta$.
 
 - $\delta(x)$:![\delta(x)](https://tikz.net/files/delta_function-001.png)
 

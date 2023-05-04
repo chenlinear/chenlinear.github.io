@@ -49,13 +49,15 @@ To be more clear, here are some typical (cognitive and social) biases listed by 
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant.[^4] See picture below.
+In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. See picture below.
 
 ___(picture here!)___
 
 The picture is from this article ___(link here!)___. By reading this article and according to the biases listed above, I notice that the reasons can be reduced to ... bias, ... bias and ... bias. 
 
 See, it helps! And nobody's feeling is hurt, I hope.
+
+And nowadays, it is possible that the difference between two measurements is a sign of new science. See [_A tale of two (or more) h's_](https://arxiv.org/abs/2212.04522). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
 
 ## §3 More
 
@@ -70,4 +72,3 @@ Reading this book feels like saying an official goodbye to my childhood and gett
 [^1]: Fermi paradox?
 [^2]: It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.
 [^3]: In her next book _Existential Physics: A Scientist's Guide to Life's Biggest Questions_, she claimed that it's not emergence, it's  ["the math is too difficult"](https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).
-[^4]: Although nowadays it is possible that the difference between two measurements is a sign of new science. see [1903.07603](https://arxiv.org/abs/1903.07603). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.

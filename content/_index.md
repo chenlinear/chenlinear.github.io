@@ -7,3 +7,5 @@ This is Chen Li (李琛)'s personal website, where I talk about Physics, Compute
 I'm working on a bachelor's degree in Physics, at Wuhan University.
 
 | [RSS](https://chenli2049.github.io/atom.xml) | [GitHub](https://github.com/ChenLi2049) |
+
+## Posts updating once in a while

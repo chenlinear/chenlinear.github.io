@@ -1,12 +1,12 @@
 ---
 author: "Chen Li"
-title: "Book review: Boojums All the Way Through"
+title: "Book review: Boojums All the Way Through: Communicating Science in a Prosaic Age"
 date: "2023-04-16"
 tags: 
 - Physics
 ---
 
-This is a review of [_Boojums All the Way Through_](http://www.cambridge.org/catalogue/catalogue.asp?isbn=0521388805) by [N. David Mermin](https://mermin.lassp.cornell.edu/). His most famous quote is ["Shut up and calculate!"](https://physicstoday.scitation.org/doi/10.1063/1.1768652) for anyone who is confused about Quantum Mechanics, which the same attitude I have when I'm trying different neural networks.
+This is a review of [_Boojums All the Way Through: Communicating Science in a Prosaic Age_](http://www.cambridge.org/catalogue/catalogue.asp?isbn=0521388805) by [N. David Mermin](https://mermin.lassp.cornell.edu/). His most famous quote is ["Shut up and calculate!"](https://physicstoday.scitation.org/doi/10.1063/1.1768652) for anyone who is confused about Quantum Mechanics, which the same attitude I have when I'm trying different neural networks.
 
 I find it funny that the 2nd article _Commencement address_ feels like a personal attack to my [_How much energy does it take to hurt your feelings?_](https://chenli2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/) article. In the article, he claimed that "10 million dollars can pile up half way to the moon" is a terrible way to visualize something or make a comparison. Sorry again for anyone who is bothered by how I use the conservation of energy.
 

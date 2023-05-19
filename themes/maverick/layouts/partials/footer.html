@@ -1,4 +1,12 @@
+<footer class="footer">
+{{ if and (not .IsSection) (not .IsHome) }}
+<script src="https://utteranc.es/client.js"
+        repo="ChenLi2049/ChenLi2049.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+{{ end }}
 
-<footer>
-<p>© {{ dateFormat "2022" now }}</p>
 </footer>

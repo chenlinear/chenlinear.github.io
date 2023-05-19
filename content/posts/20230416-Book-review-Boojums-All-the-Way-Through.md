@@ -4,6 +4,7 @@ title: "Book review: Boojums All the Way Through: Communicating Science in a Pro
 date: "2023-04-16"
 tags: 
 - Physics
+math: true
 ---
 
 This is a review of [_Boojums All the Way Through: Communicating Science in a Prosaic Age_](http://www.cambridge.org/catalogue/catalogue.asp?isbn=0521388805) by [N. David Mermin](https://mermin.lassp.cornell.edu/). His most famous quote is ["Shut up and calculate!"](https://physicstoday.scitation.org/doi/10.1063/1.1768652) for anyone who is confused about Quantum Mechanics, which the same attitude I have when I'm trying different neural networks.
@@ -17,5 +18,7 @@ And I really appreciate this joke in this article:
 >An extrapolation of its present rate of growth reveals that in the not too distant future Physical Review will fill bookshelves at a speed exceeding that of light. This is not forbidden by relativity, since no information is being conveyed.
 
 Some of the rest of the articles, which are about Quantum Mechanics, Special Relativity and Mathematical Musings, are familiar with me, because I've already learned about them on my previous courses. You can expect the surprise I have when I see the [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation).
+
+An important reminder about Special Relativity is that, people don't use rest mass and relativistic mass now. There is only one mass, and $$\begin{aligned} E_0&=mc^2 \\\ E^2&=(mc^2)^2+(pc)^2 \end{aligned}$$. See [_the concept of mass_](https://www.youtube.com/watch?v=6HlCfwEduqA).
 
 And what is interesting to me is that people use English differently, even just about 30 years ago, even in physics. All the new words merged into a GRE test to me. The equations are the same though.

@@ -57,7 +57,7 @@ The picture is from this article ___(link here!)___. By reading this article and
 
 See, it helps! And nobody's feeling is hurt, I hope.
 
-And nowadays, it is possible that the difference between two measurements is a sign of new science. See [_A tale of two (or more) h's_](https://arxiv.org/abs/2212.04522). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
+And nowadays, it is possible that the difference between two measurements is a sign of new science. See [_Constraints on the Hubble constant from Supernova Refsdal's reappearance_](https://arxiv.org/abs/2305.06367). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
 
 ## §3 More
 

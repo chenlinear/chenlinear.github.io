@@ -1,0 +1,526 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Sun, 14 May 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>LIGO O4: multi-messenger</title><link>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</link><description>&lt;p>LIGO is back on track with Observing Run 4 (O4)&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. And I got this idea:&lt;/p>
+&lt;p>Active Galactic Nucleus (AGN) is considered as a Gravitational Wave (GW) candidate that can be detected by LIGO-Virgo-Kagra&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>. And IceCube recently proposed a method to combine neutrino detection with radio detection in the observation of AGN&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>. So maybe these three messengers (GW, neutrino, radio) can work together to observe AGN. And maybe we should write a program that can synchronize these observations.&lt;/p>
+&lt;p>It&amp;rsquo;s exciting that we can make use of basically all the messengers that we know of. Except cosmic rays, but galactic cosmic rays mostly can&amp;rsquo;t reach earth anyway (because of their charge). However, their are few things we should consider:&lt;/p>
+&lt;ol>
+&lt;li>We don&amp;rsquo;t observe many GWs&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>, so we can just do it by hand.&lt;/li>
+&lt;li>A radio telescope can turn around, so it&amp;rsquo;s kind of urgent to focus on the target. But based on the way IceCube works, there&amp;rsquo;s no rush. IceCube, the basic part of which is a $1 \space \text{km}^3$ ice cube, can&amp;rsquo;t turn around. LIGO can&amp;rsquo;t turn around either.&lt;/li>
+&lt;/ol>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>See &lt;a href="https://www.ligo.org/news/index.php#ER15">their news website&lt;/a> or &lt;a href="https://www.ligo.org/news/images/ER15-newsitem.pdf">&lt;em>Gravitational wave detectors prepare for next observing run&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>See &lt;a href="https://arxiv.org/abs/2304.10567">&lt;em>Optical Emission Model for Binary Black Hole Merger Remnants Travelling through Discs of Active Galactic Nucleus&lt;/em>&lt;/a>. I later found out Virgo is delayed, see &lt;a href="https://www.virgo-gw.eu/news/virgo-postpones-entry-into-o4-observing-run/">&lt;em>Virgo postpones entry into O4 observing run&lt;/em>&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>See &lt;a href="https://arxiv.org/abs/2304.12675">&lt;em>Search for correlations of high-energy neutrinos detected in IceCube with radio-bright AGN and gamma-ray emission from blazars&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4">
+&lt;p>See &lt;a href="https://www.ligo.org/detections.php">Detection of gravitational waves&lt;/a>.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</guid><pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate></item><item><title>Book review: Love and Math: The Heart of Hidden Reality</title><link>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</link><description>&lt;p>This is a review of &lt;a href="https://www.amazon.com/Love-Math-Heart-Hidden-Reality/dp/0465050743">&lt;em>Love and Math: The Heart of Hidden Reality&lt;/em>&lt;/a> by &lt;a href="https://www.edwardfrenkel.com/">Edward Frenkel&lt;/a>.&lt;/p>
+&lt;p>This book is about love, or &lt;a href="https://en.wikipedia.org/wiki/Langlands_program">Langlands program&lt;/a>, or the generality of group theory, or &lt;a href="https://chenli2049.github.io/posts/20230304-book-review-lost-in-math/">beauty&lt;/a>. Most of the content feels like text book to me, such as Discrete Groups, Group Representation, etc.&lt;/p>
+&lt;p>Unlike physics, it&amp;rsquo;s much harder to write math popularization. I can quickly get what he is talking about because I&amp;rsquo;m learning Group Theory this semester. Without the theorems and equations I learned, I would have a much more vague idea of the content in the book. But anyway, the purpose of popularization is always get the reader to learn the real thing. I just did the latter one first.&lt;/p>
+&lt;p>Math is beautiful and touching even, but physics is not, physics is messy and realistic. I mean, I&amp;rsquo;m still interested in and constantly amazed by all kinds of connections, even tiny and trivial ones, see &lt;a href="https://chenli2049.github.io/posts/20230314-delta-function/">&lt;em>δ&lt;/em>&lt;/a>. But connections are lack in real world, because people play different games in different aspects of life, see &lt;a href="https://chenli2049.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/">&lt;em>Book review: Ludwig Wittgenstein: The Duty of Genius&lt;/em>&lt;/a>. We have talked about Quantum Gravity for a really long time, yet here we are.&lt;/p>
+&lt;p>The story in chapter 2 is heartbroken. I&amp;rsquo;m sorry that it happened to him or anybody. His experience reminds of this quote:&lt;/p>
+&lt;blockquote>
+&lt;p>You are the captain of your own ship. You have the power at any moment to CHOOSE. Make sure you&amp;rsquo;re choosing from a place of your vision and not in reaction to the circumstances that present themselves.&lt;/p>
+&lt;/blockquote>
+&lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;p>In &lt;code>windows&lt;/code>, to get the list of all the files in a folder:&lt;/p>
+&lt;ol>
+&lt;li>Create a &lt;code>txt&lt;/code> file.&lt;/li>
+&lt;li>Open it with notepad. Copy and paste the following commands:&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-propmt" data-lang="propmt">@echo off
+dir %1 /s/b &amp;gt; %~n1.txt
+&lt;/code>&lt;/pre>&lt;p>Or, if you don&amp;rsquo;t want the list of what&amp;rsquo;s in the subdirectory:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">@echo off
+dir %1 /b &amp;gt; %~n1.txt
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>Rename it &lt;code>getList.bat&lt;/code>. (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/li>
+&lt;li>Drag the target folder to this &lt;code>bat&lt;/code> file.&lt;/li>
+&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">&lt;code>Slidy&lt;/code>&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
+&lt;p>I use it for several reasons:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>Microsoft PPT&lt;/code> is just painful to use. And &lt;a href="https://marp.app/">&lt;code>Marp&lt;/code>&lt;/a> is too much for me to handle.&lt;/li>
+&lt;li>Even though I use &lt;a href="https://obsidian.md/">&lt;code>Obsidian&lt;/code>&lt;/a> most often, I have to say that its slide function is not so convenient, I want to change to other windows when giving a presentation.&lt;/li>
+&lt;li>I want it to be offline, because I don&amp;rsquo;t have access to the internet all the time. And I solved it by adding the &lt;code>KaTeX&lt;/code> package in it and adding few commands in the &lt;code>Slidy.html&lt;/code> file:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#75af00">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#75af00">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;./layouts/katex/katex.min.css&amp;#34;&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#75af00">defer&lt;/span> &lt;span style="color:#75af00">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;./layouts/katex/katex.min.js&amp;#34;&lt;/span>&lt;span style="color:#111">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#f92672">script&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#75af00">defer&lt;/span> &lt;span style="color:#75af00">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;./layouts/katex/contrib/auto-render.min.js&amp;#34;&lt;/span> &lt;span style="color:#75af00">onload&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;renderMathInElement(document.body);&amp;#34;&lt;/span>&lt;span style="color:#111">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#f92672">script&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">script&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">document&lt;/span>&lt;span style="color:#111">.&lt;/span>&lt;span style="color:#75af00">addEventListener&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#34;DOMContentLoaded&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#00a8c8">function&lt;/span>&lt;span style="color:#111">()&lt;/span> &lt;span style="color:#111">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75af00">renderMathInElement&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#111">document&lt;/span>&lt;span style="color:#111">.&lt;/span>&lt;span style="color:#75af00">body&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#111">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75af00">delimiters&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#111">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">{&lt;/span>&lt;span style="color:#75af00">left&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#d88200">&amp;#34;$$&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">right&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#d88200">&amp;#34;$$&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">display&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#00a8c8">true&lt;/span>&lt;span style="color:#111">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">{&lt;/span>&lt;span style="color:#75af00">left&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#d88200">&amp;#34;$&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">right&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#d88200">&amp;#34;$&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">display&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#00a8c8">false&lt;/span>&lt;span style="color:#111">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">script&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Starship</title><link>https://ChenLi2049.github.io/posts/20230420-starship/</link><description>&lt;p>Well, I&amp;rsquo;m not in defense of Elon, and I know he&amp;rsquo;s done plenty of controversial things. But the truth is, the mission did not &amp;ldquo;fail&amp;rdquo;. It&amp;rsquo;s kind of like this rocket is meant to explode. Usually, there are &lt;a href="https://www.csmonitor.com/Science/2012/0516/SpaceX-launch-A-step-by-step-guide">several steps for this trip&lt;/a>. This time, few engines were out, thus the first and second stages failed to separate. This is only the second or third step in the entire trip. The data collected in this mission, especially when we make the rocket intentionally took those few tumbles, will be used for future tests.&lt;/p>
+&lt;p>The biggest advantage of Starship is its cheapness, one of the reasons is that it&amp;rsquo;s made of several pieces of stainless steel. I know, crazy. If promising, it will only cost 100k dollars for one person. Compared to the 60s when we went to the moon for the first time, this is much cheaper and could be affordable to companies and even individuals.&lt;/p>
+&lt;p>So, do I want to go to the moon or Mars?&lt;/p>
+&lt;p>Yes! However, my interest is just not planetary astronomy, and there&amp;rsquo;s no observatory on the moon or Mars. (Not yet anyway.) So maybe I&amp;rsquo;ll do it later, and I hope it works by that time. By the way, all the meteorites we&amp;rsquo;re gonna deal with? It&amp;rsquo;s gonna be WWI out there. And with the cosmic rays, &lt;em>Star Wars&lt;/em>.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230420-starship/</guid><pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Book review: Boojums All the Way Through: Communicating Science in a Prosaic Age</title><link>https://ChenLi2049.github.io/posts/20230416-book-review-boojums-all-the-way-through/</link><description>&lt;p>This is a review of &lt;a href="http://www.cambridge.org/catalogue/catalogue.asp?isbn=0521388805">&lt;em>Boojums All the Way Through: Communicating Science in a Prosaic Age&lt;/em>&lt;/a> by &lt;a href="https://mermin.lassp.cornell.edu/">N. David Mermin&lt;/a>. His most famous quote is &lt;a href="https://physicstoday.scitation.org/doi/10.1063/1.1768652">&amp;ldquo;Shut up and calculate!&amp;rdquo;&lt;/a> for anyone who is confused about Quantum Mechanics, which the same attitude I have when I&amp;rsquo;m trying different neural networks.&lt;/p>
+&lt;p>I find it funny that the 2nd article &lt;em>Commencement address&lt;/em> feels like a personal attack to my &lt;a href="https://chenli2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/">&lt;em>How much energy does it take to hurt your feelings?&lt;/em>&lt;/a> article. In the article, he claimed that &amp;ldquo;10 million dollars can pile up half way to the moon&amp;rdquo; is a terrible way to visualize something or make a comparison. Sorry again for anyone who is bothered by how I use the conservation of energy.&lt;/p>
+&lt;p>The situation described in the 6th article &lt;em>What&amp;rsquo;s wrong with this library?&lt;/em> is a mixed bag. On one hand, things have gotten worse as there are now even more articles to sift through. However, on the other hand, we no longer need to subscribe to gain access. Instead, we can simply subscribe online or make use of &lt;a href="https://arxiv.org/">arXiv&lt;/a>.&lt;/p>
+&lt;p>And I really appreciate this joke in this article:&lt;/p>
+&lt;blockquote>
+&lt;p>An extrapolation of its present rate of growth reveals that in the not too distant future Physical Review will fill bookshelves at a speed exceeding that of light. This is not forbidden by relativity, since no information is being conveyed.&lt;/p>
+&lt;/blockquote>
+&lt;p>Some of the rest of the articles, which are about Quantum Mechanics, Special Relativity and Mathematical Musings, are familiar with me, because I&amp;rsquo;ve already learned about them on my previous courses. You can expect the surprise I have when I see the &lt;a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation">Stirling&amp;rsquo;s approximation&lt;/a>.&lt;/p>
+&lt;p>An important reminder about Special Relativity is that, people don&amp;rsquo;t use rest mass and relativistic mass now. There is only one mass, and $$\begin{aligned} E_0&amp;amp;=mc^2 \\ E^2&amp;amp;=(mc^2)^2+(pc)^2 \end{aligned}$$. See &lt;a href="https://www.youtube.com/watch?v=6HlCfwEduqA">&lt;em>the concept of mass&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>And what is interesting to me is that people use English differently, even just about 30 years ago, even in physics. All the new words merged into a GRE test to me. The equations are the same though.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230416-book-review-boojums-all-the-way-through/</guid><pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Book review: Existential Physics: A Scientist's Guide to Life's Biggest Questions</title><link>https://ChenLi2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</link><description>&lt;p>This is a review of &lt;a href="https://www.amazon.com/Existential-Physics-Scientists-Biggest-Questions/dp/1984879456">&lt;em>Existential Physics: A Scientist&amp;rsquo;s Guide to Life&amp;rsquo;s Biggest Questions&lt;/em>&lt;/a> by &lt;a href="https://sabinehossenfelder.com/">Sabine Hossenfelder&lt;/a>.&lt;/p>
+&lt;p>First of all, Jean-Paul Sartre and Existentialism did not show up in the book. Just so you know.&lt;/p>
+&lt;p>To be honest, I&amp;rsquo;m not quite interested in the topics she covered in the book. Well, I mean I am interested but not right away. These problems belong to the &amp;ldquo;important but not hurry&amp;rdquo; problems. What she talked about in the book, pseudoscience, is like what Jostein Gaarder talked about in the final chapters of &lt;a href="https://en.wikipedia.org/wiki/Sophie%27s_World">&lt;em>Sophie&amp;rsquo;s World&lt;/em>&lt;/a>, which is about pseudo-philosophy. And to be honest, what is really fascinating to me in &lt;em>Lost in Math&lt;/em> is the level of detail, and that there&amp;rsquo;s clearly tons of research done. Although I&amp;rsquo;m pretty sure she did tons of research on this one too.&lt;/p>
+&lt;p>So the basic strategy in this book is something like this:&lt;/p>
+&lt;ol>
+&lt;li>You can derive complicated theories from fundamental theory. It&amp;rsquo;s just that the math is too difficult. You may refer to the example where we derive the principle of Thermodynamics and Statistical Mechanics. How the composition interacts with each other is where &amp;ldquo;emergence&amp;rdquo; begins.&lt;/li>
+&lt;li>there&amp;rsquo;s no free will, but I&amp;rsquo;m interested in the outcome of your thinking. She quoted from Ludwig Wittgenstein that &amp;ldquo;The freedom of the will consists in the fact that future actions cannot be known now.&amp;rdquo;&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> Which is from &lt;em>Tractatus&lt;/em>, an early work of Wittgenstein, which he turned his back on in his later life. Not to say he turned his back on this specific statement. I&amp;rsquo;m surprised she quoted from Wittgenstein, as well as she quoted from Louis C.K. in &lt;em>Lost in Math&lt;/em>.&lt;/li>
+&lt;/ol>
+&lt;p>Her ideas on these two subjects are consistent, so maybe they&amp;rsquo;re more convincing? After all, I didn&amp;rsquo;t do the thinking and research she&amp;rsquo;s done.&lt;/p>
+&lt;p>But to me, it&amp;rsquo;s an avoidance rather than answer:&lt;/p>
+&lt;ol>
+&lt;li>We still have to think about the theory of complicated things, which is why we have emergence in the first place.&lt;/li>
+&lt;li>We still have to think, which is why we don&amp;rsquo;t want to believe in free will in the first place.&lt;/li>
+&lt;/ol>
+&lt;p>An interesting detail I noticed is &lt;a href="https://en.wikipedia.org/wiki/Rabbit%E2%80%93duck_illusion">the rabbit-duck picture&lt;/a>, see the picture below. Sabine uses it to explain &lt;em>duel&lt;/em> theories, which means that two theories are the same thing. And Wittgenstein use it to explain the idea of &amp;ldquo;seeing&amp;rdquo;, which means seeing the concept as a whole. And in &lt;em>How I Met Your Mother&lt;/em> S05E15 &lt;em>Rabbit or Duck&lt;/em>, it is used to fight about which one is better (in fur, flavor, etc), rabbit or duck, which is so true and ridiculous at the same time.&lt;/p>
+&lt;p>&lt;img
+src="https://winterparkmag.com/wp-content/uploads/2019/07/duck-rabbit.jpg"
+alt="rabbit-duck-illusion"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;p>Also, reading this book feels like my childhood again, maybe writing some equations would be a good idea to get my interest. I&amp;rsquo;m more practical now I guess, which is kind of sad really. But the epilogue is beautiful, I&amp;rsquo;m glad Sabine is doing something she likes. Teaching and educating are a necessary part of the job, no matter how irritating and tiring that could be sometimes.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>For more information, see &lt;a href="https://acjol.org/index.php/NJP/article/view/697">&lt;em>Human Action and the Question of Responsibility in Ludwig Wittgenstein&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</guid><pubDate>Thu, 06 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Statistics 101</title><link>https://ChenLi2049.github.io/posts/20230404-statistics-101/</link><description>&lt;p>Before do the math, here&amp;rsquo;s things you should consider to avoid &lt;a href="https://chenli2049.github.io/posts/20230304-book-review-lost-in-math/">bias&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>The magnitude of axis. $\log$? 2 quantities use separate axises? Dramatic?&lt;/li>
+&lt;li>Duration of time. &amp;ldquo;Every Olympic is the best Olympic in the last 3 years.&amp;rdquo;&lt;/li>
+&lt;li>Demography. Age, wealth, gender, race, etc. Does it cover all the target demography?&lt;/li>
+&lt;li>From what media or institution. Different media have different biases themselves. (Although this statement is also a kind of bias.) For a more detailed research, see &lt;a href="https://arxiv.org/abs/2109.00024">&lt;em>Machine-Learning media bias&lt;/em>&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>Here&amp;rsquo;s some examples of bad (or maybe good in some sense?) axis:&lt;/p>
+&lt;p>&lt;img
+src="https://pbs.twimg.com/media/FO6qE1cXoAEt3e8?format=jpg&amp;amp;name=900x900"
+alt="Oscar2022punches"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;p>&lt;img
+src="https://pbs.twimg.com/media/Fs8yKKzWYAAG53w?format=jpg&amp;amp;name=orig"
+alt="Wisconsin"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;p>Also, Simpson&amp;rsquo;s paradox is interesting, see &lt;a href="https://yufree.cn/cn/2021/08/27/simpson-paradox/">&lt;em>辛普森悖论&lt;/em>&lt;/a>.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230404-statistics-101/</guid><pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Conda 101</title><link>https://ChenLi2049.github.io/posts/20230327-conda-101/</link><description>&lt;p>This article is a quick guidance to use &lt;code>Anaconda&lt;/code> &amp;amp; &lt;code>Miniconda&lt;/code> on &lt;code>Windows&lt;/code>. I wrote it so that I can check the command myself. Sorry about other platforms such as &lt;code>Linux&lt;/code>, &lt;code>WSL on Windows&lt;/code> or &lt;code>MacOS&lt;/code>, but the §2 should be useful too.&lt;/p>
+&lt;h2 id="1-anaconda">§1 Anaconda&lt;/h2>
+&lt;p>Go the the official website &lt;a href="https://www.anaconda.com/">&lt;code>Anaconda&lt;/code>&lt;/a> and download the default &lt;code>exe&lt;/code> file. Open and install it. Get familiar with &lt;code>Jupyter Notebook&lt;/code>. Feel free to check out some other articles and mess around, knowing that you can always delete the old environment and start from scratch, you&amp;rsquo;ll be fine. And that, is the most important message from this article.&lt;/p>
+&lt;h2 id="2-miniconda">§2 Miniconda&lt;/h2>
+&lt;p>Go the the official website &lt;a href="https://docs.conda.io/en/latest/miniconda.html">&lt;code>Miniconda&lt;/code>&lt;/a> and download the default &lt;code>exe&lt;/code> file. Open and install it.&lt;/p>
+&lt;p>If you want to install new packages, such as &lt;a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">&lt;code>TensorFlow&lt;/code>&lt;/a>, it&amp;rsquo;s necessary to create a new environment so that these environments don&amp;rsquo;t conflict, the official documents are always useful, and some commonly used commands after you opened the &lt;code>Anaconda Prompt (miniconda3)&lt;/code> are:&lt;/p>
+&lt;ul>
+&lt;li>See the environments created：&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda info -e
+# or
+conda info --envs
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Create a new environment, such as &lt;code>envName&lt;/code> (the name can be something you prefer):&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda create -n envName#remember to change the name!
+# or
+conda create --name envName
+# with python=3.8
+conda create -n envName python=3.8
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Activate a certain environment, such as &lt;code>envName&lt;/code>：&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">activate envName
+# or
+conda activate envName
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Deactivate the current environment:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda deactivate
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Delete a certain environment, such as &lt;code>envName&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda remove -n envName --all
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Install packages, such as &lt;code>numpy&lt;/code>, I prefer install using &lt;code>pip&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">pip install numpy
+# or
+pip install numpy -i https://mirrors.aliyun.com/pypi/simple/
+# 临时从镜像阿里云下载
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>See the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate envName
+conda list
+# or
+pip list
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Export the list of the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda list --export &amp;gt; envName-requirements.txt
+&lt;/code>&lt;/pre>&lt;h3 id="21-install-jupyter-notebook-in-miniconda">§2.1 Install Jupyter Notebook in Miniconda&lt;/h3>
+&lt;ol>
+&lt;li>Since the &lt;code>base&lt;/code> environment of &lt;code>Miniconda&lt;/code> is kind of empty, you can install &lt;code>Jupyter Notebook&lt;/code> on a new environment.&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda create -n jupyter
+activate jupyter
+conda install jupyter notebook
+&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;li>Open &lt;code>Jupyter Notebook&lt;/code>:&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">activate jupyter
+jupyter notebook
+&lt;/code>&lt;/pre>&lt;p>And there should be a &lt;code>Jupyter Notebook (jupyter)&lt;/code> application in the &lt;code>start menu&lt;/code> of &lt;code>Windows&lt;/code>, you can just click it.&lt;/p>
+&lt;ol start="3">
+&lt;li>If you want to change to other environments such as &lt;code>envName&lt;/code> when using &lt;code>Jupyter Notebook&lt;/code>:&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate jupyter
+conda install nb_conda_kernels
+conda activate envName
+conda install ipykernel
+python -m ipykernel install --user --name=envName
+&lt;/code>&lt;/pre></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230327-conda-101/</guid><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Robin</title><link>https://ChenLi2049.github.io/posts/20230321-robin/</link><description>&lt;p>Besides writing code, having ChatGPT pretend to be Robin from &lt;a href="https://en.wikipedia.org/wiki/How_I_Met_Your_Mother">&lt;em>How I Met Your Mother&lt;/em>&lt;/a> and engaging in a conversation with her is so funny. She is constantly making things up and I am trying my best to make the story work. And when it does, it&amp;rsquo;s amazing!&lt;/p>
+&lt;p>It&amp;rsquo;s even more fun to ask ChatGPT to be Jamie Lannister, since there is (part of) a whole novel and countless online discussions. We fought about whether Joffrey is his bastard for more that half an hour. There is even a duel.&lt;/p>
+&lt;p>Can&amp;rsquo;t wait to try this on GPT-4. Maybe I should build my own LLM and put in the scripts of &lt;em>How I Met Your Mother&lt;/em>.&lt;/p>
+&lt;p>But one of my favorite Sci-Fi writers of all time, Ted Chiang, shut my idea down. In the article &lt;a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web">&lt;em>ChatGPT Is a Blurry JPEG of the Web&lt;/em>&lt;/a>,&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> he claimed that LLMs are not going to create something genuinely new that is not blurry or too general. I am getting the feeling that we just create a robot that produces something trash-ish, which could be useful when you&amp;rsquo;re stuck in a bug or just wanna have some fun or want to read something as fast as possible&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> or want to &lt;a href="https://english.elpais.com/science-tech/2023-04-02/one-of-the-worlds-most-cited-scientists-rafael-luque-suspended-without-pay-for-13-years.html">write papers as fast as possible&lt;/a>, but is useless when you are considering the next step of your project or want to talk to Robin herself. In the movie &lt;a href="https://www.imdb.com/title/tt1798709/">&lt;em>Her&lt;/em>&lt;/a>, ChatGPT is Theodore rather than Samantha.&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/p>
+&lt;p>Also, according to Giulio Tononi, consciousness is a loop, while Transformer is a one way direction. In other words, it can&amp;rsquo;t reflect on or debug itself. But maybe, just maybe, will AGI have OCD or other mental problems? Overfitting maybe?&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Publishing on &lt;em>The New Yorker&lt;/em> is so old-fashioned.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>I did &lt;em>not&lt;/em> ask ChatGPT to summarize Ted Chiang&amp;rsquo;s article for me. My conscious is clean. :)&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>I like how the movie portrayed the idea of &lt;a href="https://en.wikipedia.org/wiki/Anima_and_animus">Anima&lt;/a> by the way.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230321-robin/</guid><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate></item><item><title>ar5iv</title><link>https://ChenLi2049.github.io/posts/20230318-ar5iv/</link><description>&lt;p>Reading papers on &lt;a href="https://ar5iv.labs.arxiv.org/">ar5iv&lt;/a> or &lt;a href="https://www.arxiv-vanity.com/">arXiv Vanity&lt;/a>, or reading in the HTML format to be precise, is so convenient. I enjoy the flexibility and copying equations the most.&lt;/p>
+&lt;p>This reminds me of an article: &lt;a href="https://yihui.org/en/2012/03/a-really-fast-statistics-journal/">&lt;em>Ideas on A Really Fast Statistics Journal&lt;/em>&lt;/a>. If we use Markdown instead of a pdf file as the format in papers, ar5iv wouldn&amp;rsquo;t even have to exist, and things would be much easier for me. But this might be the best solution we have, because safety over speed I suppose.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230318-ar5iv/</guid><pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate></item><item><title>How much energy does it take to hurt your feelings?</title><link>https://ChenLi2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</link><description>&lt;p>This article is about the work we do to get our feelings hurt&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, the dimension of which is $[M^1 L^2 T^{-2}]$. And by &amp;ldquo;we&amp;rdquo; and &amp;ldquo;our&amp;rdquo;, I mean humanity, or the internet to be exact. This article is not about how our feelings get hurt &lt;em>at&lt;/em> work, the dimension of which is $[Salary]$.&lt;/p>
+&lt;p>It&amp;rsquo;s (probably not) natural to write down the following equations: $$W_{FH}=N w_{FH}=N p_{FH} t_{FH} \tag{1}$$, where $N$ is the number of people we consider, $w_{FH}$ is the energy the brain takes to get a certain feeling, in this case, anger. $p_{FH}$ is the efficiency of our brain, $t_{FH}$ is the time we take to get over the feeling. According to &lt;a href="https://www.scientificamerican.com/article/thinking-hard-calories/">&lt;em>Does Thinking Really Hard Burn More Calories?&lt;/em>&lt;/a>, $p_{FH}$ would be $12.6 \space \text{W}$. Let&amp;rsquo;s say we take an average of $300s$ to deal with this. And we can define the efficiency as: $$P_{FH}=\frac{W_{FH}}{t} \tag{2}$$, where $t$ is the time it takes for a certain tweet to be read.&lt;/p>
+&lt;p>So let&amp;rsquo;s say a tweet gets $10^{6}$ views in $3.6 \times 10^3 \space \text{s}$, which is from a celebrity or influencer, obviously. Put in the numbers, $w_{PH}=3.78 \times 10^3 \space \text{J}$, $W_{FH}=3.78 \times 10^9 \space \text{J}$, $P_{FH}=1.03 \times 10^6 \space \text{W}$.&lt;/p>
+&lt;p>Here is a table of the energy of some events:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>events&lt;/th>
+&lt;th>$W(J)$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>throwing a $50 \space \text{g}$ stone from $7714.29 \space \text{m}$ high.&lt;/td>
+&lt;td>$3.78 \times 10^3 \space \text{J}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>an &lt;a href="https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft">Airbus A330-900&lt;/a> powered by &lt;a href="https://en.wikipedia.org/wiki/Energy_density">Gasoline&lt;/a> flying for $8610 \space \text{km}$ for one person.&lt;/td>
+&lt;td>$1.01 \times 10^7 \space \text{J}$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Yes, the energy this takes can have a plane take approximately 100 people from LA to London back and forth twice, which is a fun group trip.&lt;/p>
+&lt;p>Well, it&amp;rsquo;s impossible to get one dollar from everyone on this planet, but saying something so awful that you hurt a lot of people&amp;rsquo;s feelings is possible. Tower of Babel has been built, and we can use it to hurt other people&amp;rsquo;s feelings, like throwing a stone off the tower (a $7714.29 \space \text{m}$ tower to be precise, see the table above), and $10^6$ stones at a time. And the language problem for Tower of Babel has been solved a long time ago.&lt;/p>
+&lt;p>OK, my professor would be so mad that I use the conservation of energy like this. And I know for sure I have to consider entropy and that the imagined mechanism does not work. It&amp;rsquo;s 1 o&amp;rsquo;clock in the evening, and I have no idea how I got here, maybe it&amp;rsquo;s &amp;ldquo;sleep write&amp;rdquo;, you know, like sleep walk. By the way, writing in a nice form does make it look real, I should have used $\LaTeX$. Good night.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>This has nothing to do with &lt;a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">information entropy&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</guid><pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate></item><item><title>δ</title><link>https://ChenLi2049.github.io/posts/20230314-delta-function/</link><description>&lt;p>It hit me that $\delta(x)$ and $\delta_{ij}$ are the same thing, they both mean &amp;ldquo;peak&amp;rdquo;, and $x=i-j$ or $x=\vert i-j \vert$. That&amp;rsquo;s why they use the same symbol $\delta$.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>$\delta(x)$:&lt;img
+src="https://tikz.net/files/delta_function-001.png"
+alt="\delta(x)"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\delta_{ij}= \begin{cases} 1 &amp;amp;\text{if } i=j \\ 0 &amp;amp;\text{if } i \not = j \end{cases}$&lt;/p>
+&lt;/li>
+&lt;/ul></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230314-delta-function/</guid><pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Book review: Ludwig Wittgenstein: The Duty of Genius</title><link>https://ChenLi2049.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</link><description>&lt;p>His life is just &lt;a href="https://twitter.com/i/status/1512981441306669057">legendary&lt;/a>! His life is so legendary that I won&amp;rsquo;t use the word &amp;ldquo;legendary&amp;rdquo; to describe anybody anymore.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> His life is like the combination of two journeys, one of which is the struggle of going beyond his family and society and make a living on his own in academia, and yes, since he works in academia he moves around a lot, the other one is the struggle of human mind in the bigger picture.&lt;/p>
+&lt;p>But since I have also read &lt;a href="https://en.wikipedia.org/wiki/Philosophical_Investigations">&lt;em>Philosophical Investigations&lt;/em>&lt;/a> and some reviews, let&amp;rsquo;s talk about how his ideas can be applied to physics. Or what I think about how &amp;ldquo;language is a game&amp;rdquo;.&lt;/p>
+&lt;p>What Kant said about how math gives us the concept of time is not true, because the math we do in a theory is actually existing at the same time, which is already there given the axioms. So what really matters is the axioms (or some supplement method we then added) in a theory, which defines how far we can go really. I agree with him on that &amp;ldquo;Math is a technique&amp;rdquo;, see Chap.15.&lt;/p>
+&lt;p>Thus in a theory, let&amp;rsquo;s say General Relativity, the barrier is already there, thus it can&amp;rsquo;t be combined with Quantum Physics (which is non-local, both for time and particles in infinite deep potential well). Because language does not work that way, language is a game, and we play different games by different rules, thus we can believe multiple contradictory things at the same time, which is something Kant called &amp;ldquo;Antinomy&amp;rdquo;. Also, it&amp;rsquo;s unbelievably hard to get the &amp;ldquo;overview&amp;rdquo;, it&amp;rsquo;s one thing to get the overview from simple cases or games, it&amp;rsquo;s another thing to get it from complicated theories.&lt;/p>
+&lt;p>For example, there are inconsistency and contradictions in math already, &amp;ldquo;Gödel&amp;rsquo;s incompleteness theorems&amp;rdquo;. Or there are inconsistency and contradictions in different math, Euclidean geometry and Riemannian geometry. All of these examples are the limits we meet when we are playing different games yet trying to play the same game.&lt;/p>
+&lt;p>We have no idea whether the universe plays the same game or not&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> (i.e. &amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/Thing-in-itself">Thing-in-itself&lt;/a> can not be understood or reached&amp;rdquo;). Or, we can&amp;rsquo;t let the universe play the same game, because we don&amp;rsquo;t play the same game when facing different &amp;ldquo;aspects&amp;rdquo; of our world. If there is such a game, I would be more than happy, but so far we don&amp;rsquo;t have this game, and by the way we think, I don&amp;rsquo;t think we will. Although that would be really neat, just like the game ChatGPT plays.&lt;/p>
+&lt;p>So what we can really do is to excel in different games. And &lt;a href="https://www.imdb.com/title/tt1178663/">whatever works&lt;/a>. And that, my friend, is how I convinced myself to use Monte Carlo models.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>I&amp;rsquo;m not a big fan of &lt;a href="https://en.wikipedia.org/wiki/File:Hitler_at_school_in_1901.jpg">his classmate&lt;/a> though. He is the reason he has to move yet another time.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>See &lt;a href="https://en.wikipedia.org/wiki/Emergence">Emergence&lt;/a>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</guid><pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Book review: The Invisible Universe: Why There's More to Reality than Meets the Eye</title><link>https://ChenLi2049.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</link><description>&lt;p>This is a review of &lt;a href="https://www.amazon.com/Invisible-Universe-Theres-Reality-Meets/dp/0861541243">&lt;em>The Invisible Universe: Why There&amp;rsquo;s More to Reality than Meets the Eye&lt;/em>&lt;/a> by &lt;a href="https://people.ast.cam.ac.uk/~bothwell/">Matt Bothwell&lt;/a>.&lt;/p>
+&lt;h2 id="1-astronomy-101">§1 Astronomy 101&lt;/h2>
+&lt;p>The first 6 chapters are Astronomy 101 to me. I have read about them in textbooks, but when these clues forming a linear process, it&amp;rsquo;s something else. (I will come back to this &amp;ldquo;linear process&amp;rdquo; later.) Here&amp;rsquo;s something I found interesting in these chapters.&lt;/p>
+&lt;ul>
+&lt;li>The restrictions of human eyes: (1) wavelength: $380&amp;ndash;700 \space \text{nm}$. (2) $220 \space \text{frames/s}$ or maybe higher, see &lt;a href="https://sites.google.com/site/myvracelog/fps-human-eye-can-see-how-many-frames-per-second">&lt;em>FPS : Human eye can see how many frames per second?&lt;/em>&lt;/a>.&lt;/li>
+&lt;li>The piano metaphor, that the full spectrum of light of different wavelength is like the full notes on a piano with only one note that human can hear/see, is beautiful. I have an analogue of that metaphor myself, consider a guitar, this time the wavelength can go to infinity, since $f_n=nv/2L$&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. But does the frequency of light reach infinity? Theoretically there is no such limit, but in practice we haven&amp;rsquo;t observe it. It wouldn&amp;rsquo;t travel to earth or it would just pass through us. Well, according to GZK limit, there is a limit for protons, but I don&amp;rsquo;t know about photons.&lt;/li>
+&lt;li>&lt;a href="https://joshworth.com/a-tediously-accurate-map-of-the-solar-system/">&lt;em>A Tediously Accurate Map of the Solar System&lt;/em>&lt;/a> feels like the rolling credit for a movie which is about how human can never leave the Solar System.&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Cosmic_Background_Explorer">Cosmic Background Explorer&lt;/a> is legendary! I am shocked that Ron Howard did not make a movie about it.&lt;/li>
+&lt;li>I have always known the cover of &lt;a href="https://en.wikipedia.org/wiki/Unknown_Pleasures">&lt;em>Unknown Pleasures&lt;/em>&lt;/a> by Joy Division is a pulsar, but I didn&amp;rsquo;t know it&amp;rsquo;s &lt;a href="https://en.wikipedia.org/wiki/PSR_B1919%2B21">CP1919 (Cambridge Pulsar)&lt;/a>. See the picture below. The fact that this pulsar was discovered in the UK is probably why they chose it as the cover. See, I told you the origin of Rock&amp;rsquo;n&amp;rsquo;Roll is not America. :D&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img
+src="https://upload.wikimedia.org/wikipedia/en/5/5a/UnknownPleasuresVinyl.jpg"
+alt="UnknownPleasuresVinyl"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;h2 id="2-dark-matter">§2 Dark Matter&lt;/h2>
+&lt;p>Thanks to the effort that the author put to make a linear process out of history, chapter 7 is amazing. It totally worth the effort mentioned in the final chapter. And it&amp;rsquo;s probably the best detective novel I have ever read, since murder is kind of boring compared to all these twists and turns:&lt;/p>
+&lt;ol>
+&lt;li>The speculation of Dark Matter is historical. We calculated there&amp;rsquo;s a planet Neptune because Uranus moves a little odd according to Newton&amp;rsquo;s law.&lt;/li>
+&lt;li>And these evidences suggests that there are a lot more material that we can&amp;rsquo;t observe in the universe: (1) speedy galaxy clusters, (2) fast-rotating galaxies, (3) gravitational lensing.&lt;/li>
+&lt;li>However, could it be that we understand Gravity wrong? Since Mercury precession used to be wrongly explained until General Relativity. And we proposed two possible theory: (1) MOND (Modified Newtonian Dynamics fudge factor), (2) TeVeS (tensor-vector-scalar gravity theory).&lt;/li>
+&lt;li>&amp;ldquo;The Bullet Cluster, &amp;hellip; , turns out to be the perfect arena for pitting dark matter and MOND against each other.&amp;rdquo; Long story short, Dark Matter stays.&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>So what is Dark Matter?&lt;/li>
+&lt;li>It could be MACHO (MAssive Compact Halo Object), which was later ruled out.&lt;/li>
+&lt;li>It could be WIMP (Weakly Interacting Massive Particle), which has to be (1) non-baryonic in the Standard Model, (2) weakly interacting, meaning that only Gravity and Weak Nuclear Force are possible.&lt;/li>
+&lt;li>The author didn&amp;rsquo;t point it out, but I think I probably got the murderer: neutrino.&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> See &lt;a href="https://en.wikipedia.org/wiki/Sterile_neutrino">Sterile neutrino&lt;/a>. I later found out that &lt;a href="https://arxiv.org/abs/2210.07664">&lt;em>Interpreting Reactor Antineutrino Anomalies with STEREO data&lt;/em>&lt;/a> rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so I am suspicious.&lt;/li>
+&lt;/ol>
+&lt;p>Anyway, the murderer is still out there, you kids should watch out.&lt;/p>
+&lt;h2 id="3-more">§3 More&lt;/h2>
+&lt;p>In chapter 8, the author talked about LIGO mission, which is another detective novel. The fact that a observatory has a secret supervision team that inserts false signal is a triumph of humanity, unironically. It&amp;rsquo;s kind of like after the failure of Hitomi, a more organized team for XRISM is created. See &lt;a href="https://arxiv.org/abs/2106.01611">&lt;em>Detailed Design of the Science Operations for the XRISM mission&lt;/em>&lt;/a>. I wouldn&amp;rsquo;t say these are the best solutions, but I am glad that we&amp;rsquo;re trying. I know the detector itself has all kinds of flaws, but team management is actually the biggest engineering challenge.&lt;/p>
+&lt;p>In chapter 9, the author said that the final destination of our universe is a battle between ice (the Big Chill) and fire (the Big Crunch). I am curious if this is a &lt;em>A Song of Ice and Fire&lt;/em> reference. Also, Dark Energy has nothing to do with Dark Matter. Dark Energy is basically just $\Lambda$ constant.&lt;/p>
+&lt;p>And in the final chapter, &lt;em>Conclusion: The complete picture: visible and invisible&lt;/em>, what the author is trying to say is that we should be multi-messenger astronomer these days. Yeah, I guess with the help of ChatGPT, I can probably handle all those literatures. And I am always a little sad that the Nobel-Prize-winning LIGO detection is not multi-messenger.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>See &lt;a href="https://newt.phys.unsw.edu.au/jw/strings.html">&lt;em>Strings, standing waves and harmonics&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>The author quote that &amp;ldquo;The &amp;lsquo;duck test&amp;rsquo; says that if something looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.&amp;rdquo; Duck is somehow good for metaphor, I don&amp;rsquo;t know why. I later wrote about the Duck-Rabbit picture in &lt;a href="https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/">&lt;em>Book review: Existential Physics: A Scientist&amp;rsquo;s Guide to Life&amp;rsquo;s Biggest Questions&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>I will never forget the moment this came to my head. It was on a train, and I was listening to &lt;em>Ti Amo&lt;/em> by Laura Branigan. After I read &lt;a href="https://chenli2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/">&lt;em>Love and Math: The Heart of Hidden Reality&lt;/em>&lt;/a> by Edward Frenkel, I found out that he also had this kind of &amp;ldquo;Eureka&amp;rdquo; moment on a train. No matter it&amp;rsquo;s true or not.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</guid><pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Book review: Lost in Math: How Beauty Leads Physics Astray</title><link>https://ChenLi2049.github.io/posts/20230304-book-review-lost-in-math/</link><description>&lt;p>This is a review of &lt;a href="https://www.amazon.com/Lost-Math-Beauty-Physics-Astray/dp/0465094252">&lt;em>Lost in Math: How Beauty Leads Physics Astray&lt;/em>&lt;/a> by &lt;a href="https://sabinehossenfelder.com/">Sabine Hossenfelder&lt;/a>.&lt;/p>
+&lt;p>Before I start, I just want to say that I am no expert in Particle Physics or any Physics really, thus I can&amp;rsquo;t tell whether what she said is true or not, but what I can tell is that as I gradually learn more about the science community (or &amp;ldquo;academia&amp;rdquo;), I notice a trend that is similar to what she said in the book, which is that many of us are stuck here due to &amp;ldquo;beauty&amp;rdquo;. And I want to do better, maybe her book will help.&lt;/p>
+&lt;h2 id="1-beauty">§1 Beauty&lt;/h2>
+&lt;p>So there is this basic conflict between beauty and resources, where beauty means the standard we use to judge whether a theory is good or not, while resources means money, time, energy, etc. The latter one is something we cannot avoid, but the first one is something we can change, and I truly hope so.&lt;/p>
+&lt;p>To be more clear, beauty means:&lt;/p>
+&lt;ul>
+&lt;li>Simplicity, or &lt;a href="https://en.wikipedia.org/wiki/Occam%27s_razor">Occam&amp;rsquo;s razor&lt;/a>.&lt;/li>
+&lt;li>&amp;ldquo;This-has-to-be-it&amp;rdquo;. The E8 Group is the largest and most complicated group of exceptional Lie Groups. And in the paper &lt;a href="https://arxiv.org/abs/0711.0770">&lt;em>An Exceptionally Simple Theory of Everything&lt;/em>&lt;/a>, Antony Garrett Lisi uses it to, well, explain everything. Alas, this is not &amp;ldquo;it&amp;rdquo;.&lt;/li>
+&lt;li>&amp;ldquo;There-must-be-one-theory-to-rule-them-all&amp;rdquo;. &amp;ldquo;There is a consistency in everything and thus it can be explained by one theory.&amp;rdquo; I suppose Chaos theory is a good counterpoint.&lt;/li>
+&lt;li>&amp;ldquo;Smaller-means-simpler&amp;rdquo;. From the perspective of biology to chemistry to particle physics, the structure gets simpler and simpler, so it is natural to assume that it would get even simpler when it gets even smaller. But Sabine pointed out that when you start from a different scale, ie. from the universe to life on earth, it gets more complicated.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>etc.&lt;/li>
+&lt;/ul>
+&lt;p>A perfectly beautiful example of beauty would be the equation (7.2-4) of &lt;a href="https://www.worldscientific.com/worldscibooks/10.1142/0097">&lt;em>Group Theory in Physics&lt;/em>&lt;/a>: $$ {(J_k)^{l}}_m = - i \varepsilon _{klm} $$.&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> If you learned about Linear Algebra or Group Theory, you will be amazed by the simplicity of this equation, that&amp;rsquo;s why sometimes we can&amp;rsquo;t resist the allure.&lt;/p>
+&lt;p>Sabine also pointed out that the idea of beauty is constantly changing. (At least I&amp;rsquo;m pretty sure her idea of beauty has changed a lot since 2006, see &lt;a href="http://backreaction.blogspot.com/2006/11/beauty-of-it-all.html">&lt;em>The Beauty of it All&lt;/em>&lt;/a>.) For example, we used to consider an elliptical orbit as ugly. (To be honest, I suppose most people still do.) Thus it can&amp;rsquo;t be used as a guidance. I agree with Feynman that we should look for the truth no matter whether there is an ultimate truth or it&amp;rsquo;s like onions with multiple layers. But what is the guidance then? Beauty is probably not.&lt;/p>
+&lt;p>And Sabine thinks that consistency is a possible guidance, but I must admit I am confused that (1) consistency is also a kind of beauty and (2) the biggest problem we have today is that we are lack of consistency in different disciplines due to emergence&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>.&lt;/p>
+&lt;h2 id="2-bias">§2 Bias&lt;/h2>
+&lt;p>The word &amp;ldquo;bias&amp;rdquo; does not sound comfortable, and I believe most of the time most of people mean well. I&amp;rsquo;m not accusing anybody, it&amp;rsquo;s just that we can learn from the past. Talking about it will probably make it better, while not talking about it will definitely not make it better.&lt;/p>
+&lt;p>To be more clear, here are some typical (cognitive and social) biases listed by Sabine:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Aesthetic Bias&lt;/em>. Which is pretty much the same as &amp;ldquo;beauty&amp;rdquo;.&lt;/li>
+&lt;li>&lt;em>Social Desirability Bias&lt;/em>. &amp;ldquo;We are, for example, more likely to put forward opinions that we believe will be well received by others.&amp;rdquo; (Which is kind of like peer pressure, speaking of which, I happen to know a book teaching you how to survive that: &lt;a href="http://hep.tsinghua.edu.cn/training/courses/gauge.html/advise/A%20PhD%20is%20not%20enough.pdf">&lt;em>A PhD is not enough&lt;/em>&lt;/a>.)&lt;/li>
+&lt;li>&lt;em>Attentional Bias&lt;/em> (or &lt;em>The Mere Exposure Effect&lt;/em>). &amp;ldquo;Research shows we consider a statement more likely to be true the more often we hear of it.&amp;rdquo; &amp;ldquo;We tend to overestimate how many other people agree with us and how much they do so.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>Statistical Bias&lt;/em>. Which is a type of error in statistical analysis where the results are systematically skewed away from the true value of the population parameter that is being estimated.&lt;/li>
+&lt;li>&lt;em>Confirmation Bias&lt;/em>. &amp;ldquo;If you search the literature for support of your argument, there it is. If you look for a mistake because your result didn’t match your expectations, there it is.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>In-Group Bias&lt;/em>. Which &amp;ldquo;makes us think researchers in our own field are more intelligent than others.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>Shared Information Bias&lt;/em>. Which &amp;ldquo;is why we keep discussing what everyone knows but fail to pay attention to information held only by a few people.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>Apophenia&lt;/em>. &amp;ldquo;We like to discover patterns in noise.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>Belief Bias&lt;/em>. &amp;ldquo;We think arguments are stronger if the conclusion seems plausible.&amp;rdquo;&lt;/li>
+&lt;li>The mother of all biases, &lt;em>The Bias Blind Spot&lt;/em>. Which is &amp;ldquo;the insistence that we certainly are not biased.&amp;rdquo;&lt;/li>
+&lt;li>&lt;em>Status Quo Bias&lt;/em>. Which is the preference for maintaining one&amp;rsquo;s current situation and opposing actions that may change the state of affairs.&lt;/li>
+&lt;/ul>
+&lt;p>Boy oh boy, there&amp;rsquo;s a lot! And I hope by attentional bias, you&amp;rsquo;ve learned something. :D&lt;/p>
+&lt;p>In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. See picture below.&lt;/p>
+&lt;p>&lt;em>&lt;strong>(picture here!)&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>The picture is from this article &lt;em>&lt;strong>(link here!)&lt;/strong>&lt;/em>. By reading this article and according to the biases listed above, I notice that the reasons can be reduced to &amp;hellip; bias, &amp;hellip; bias and &amp;hellip; bias.&lt;/p>
+&lt;p>See, it helps! And nobody&amp;rsquo;s feeling is hurt, I hope.&lt;/p>
+&lt;p>And nowadays, it is possible that the difference between two measurements is a sign of new science. See &lt;a href="https://arxiv.org/abs/2305.06367">&lt;em>Constraints on the Hubble constant from Supernova Refsdal&amp;rsquo;s reappearance&lt;/em>&lt;/a>. Notice the magnitude of $H_0$ in that paper is &lt;em>not&lt;/em> the same in the picture above.&lt;/p>
+&lt;h2 id="3-more">§3 More&lt;/h2>
+&lt;p>There are many more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her YouTube videos, for example, &lt;a href="https://www.youtube.com/watch?v=PhfqdBk8qxk">&lt;em>What is &amp;ldquo;Nothing&amp;rdquo;?&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>What&amp;rsquo;s more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is doubtful, after all it&amp;rsquo;s their job, and criticizing it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let&amp;rsquo;s just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after &lt;a href="https://scholar.google.com/citations?user=NaQZcyYAAAAJ&amp;amp;hl=en">decades of research&lt;/a> on physics. And there is that.&lt;/p>
+&lt;p>I think I have refound what got me into physics in the first place, though I can&amp;rsquo;t tell what it is exactly. I can&amp;rsquo;t wait to go on yet another Odyssey with her next book: &lt;a href="https://www.amazon.com/Existential-Physics-Scientists-Biggest-Questions/dp/1984879456">&lt;em>Existential Physics: A Scientist&amp;rsquo;s Guide to Life&amp;rsquo;s Biggest Questions&lt;/em>&lt;/a>. I&amp;rsquo;m a big fan of Jean-Paul Sartre and Existentialism, maybe they would show up.&lt;/p>
+&lt;p>Reading this book feels like saying an official goodbye to my childhood and getting into the real thing. I know there are unresolved questions, and I want to deal with them.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Fermi paradox?&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>In her next book &lt;em>Existential Physics: A Scientist&amp;rsquo;s Guide to Life&amp;rsquo;s Biggest Questions&lt;/em>, she claimed that it&amp;rsquo;s not emergence, it&amp;rsquo;s &lt;a href="https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/">&amp;ldquo;the math is too difficult&amp;rdquo;&lt;/a>.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-book-review-lost-in-math/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>RSS: Why and How?</title><link>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</link><description>&lt;p>RSS, personal website and the word &amp;ldquo;neat&amp;rdquo; shared a lot in common, one of which is that they died out at the beginning of this century but have become more useful ever since.&lt;/p>
+&lt;h2 id="1-why">§1 Why?&lt;/h2>
+&lt;p>The whole goal of RSS is to keep it simple. I don&amp;rsquo;t want to check a lot of websites over and over again. Something should be read and then forgotten, unless it&amp;rsquo;s important, in which case I will mark it down.&lt;/p>
+&lt;h2 id="2-how">§2 How?&lt;/h2>
+&lt;p>My requirements:&lt;/p>
+&lt;ul>
+&lt;li>multi-platform.&lt;/li>
+&lt;li>browser extension or website.&lt;/li>
+&lt;li>don&amp;rsquo;t have to open a server myself.&lt;/li>
+&lt;/ul>
+&lt;p>The free service of &lt;a href="https://feedly.com/">&lt;code>Feedly&lt;/code>&lt;/a> is fine with me, you can&lt;/p>
+&lt;ul>
+&lt;li>add RSS link. For example, &lt;a href="https://chenli2049.github.io/atom.xml">https://chenli2049.github.io/atom.xml&lt;/a>&lt;/li>
+&lt;li>search for the people you want to follow.&lt;/li>
+&lt;/ul>
+&lt;p>For what&amp;rsquo;s not there (say social media account), try &lt;a href="https://docs.rsshub.app/">RSSHub&lt;/a>. But I have to say that you need to open your own server to get it work smoothly, because some of the URLs they provided do not work all the time. I want to cut down social media anyway, so this might be a good thing.&lt;/p>
+&lt;p>Also, &lt;a href="https://yufree.cn/cn/2018/03/24/blogdown-rss/">Building your personal RSS on GitHub&lt;/a> is fun, but I don&amp;rsquo;t want to repeat what I have done for the personal website all over again.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>There Will Be Blood, A Brighter Summer Day, Evangelion</title><link>https://ChenLi2049.github.io/posts/20230304-there-will-be-blood-a-brighter-summer-day-evangelion/</link><description>&lt;p>&lt;em>&lt;strong>Spoiler Alert!&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>This article is a comparison between &lt;a href="https://www.imdb.com/title/tt0469494/">&lt;em>There Will Be Blood&lt;/em>&lt;/a>, &lt;a href="https://www.imdb.com/title/tt0101985/">&lt;em>A Brighter Summer Day&lt;/em>&lt;/a> and &lt;em>Evangelion&lt;/em> (Only &lt;a href="https://www.imdb.com/title/tt0112159/">&lt;em>TV&lt;/em>&lt;/a> and &lt;a href="https://www.imdb.com/title/tt0169858/">&lt;em>Old film&lt;/em>&lt;/a> this time). We should talk about why good things are good instead of why bad things are bad, because what really matters is &lt;a href="https://www.imdb.com/title/tt0060196/">the good, not the bad, or the ugly&lt;/a>. And most of the time it&amp;rsquo;s not even bad or ugly, it&amp;rsquo;s just &lt;a href="https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films">boring&lt;/a>. This three films/anime are the best work I have watched and I want to know why I like them. Although these works come from different culture, they have a lot in common.&lt;/p>
+&lt;p>Before I start, I want to mention that a director is a lot like a science researcher. You can see consistency in their work, and directing films is like publishing papers, winning awards publishing on &lt;em>Nature&lt;/em>. But I&amp;rsquo;ll talk about &lt;a href="https://en.wikipedia.org/wiki/Auteur">that&lt;/a> in another article. For this reason, I will not talk about the &lt;a href="https://en.wikipedia.org/wiki/Rebuild_of_Evangelion">&lt;em>Rebuild of Evangelion&lt;/em>&lt;/a> for now, although I have to say that I have rather complicated feelings about it.&lt;/p>
+&lt;p>I believe every good piece of media has the potential to become a &lt;a href="https://en.wikipedia.org/wiki/Film_genre">genre&lt;/a>. And when we talk about genres, we are actually talking about elements we see. So here is a list of elements that I see in this new genre. The table below is largely inspired by &lt;a href="https://www.reddit.com/r/evangelionmemes/comments/84gbva/conflict_in_evangelion/">this meme&lt;/a>:&lt;/p>
+&lt;p>&lt;img
+src="https://external-preview.redd.it/qpK4KKsfBT6-7SW862BdcT4COOuHw41XwPQsExtektA.jpg?auto=webp&amp;amp;v=enabled&amp;amp;s=fe30c0b4bf4ccc09460acc1d2e456530cb90ad9c"
+alt="ConflictInLiterature"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Elements&lt;/th>
+&lt;th>&lt;em>There Will Be Blood&lt;/em>&lt;/th>
+&lt;th>&lt;em>A Brighter Summer Day&lt;/em>&lt;/th>
+&lt;th>&lt;em>Evangelion&lt;/em>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>man vs. nature&lt;/td>
+&lt;td>the first scene where he digs&lt;/td>
+&lt;td>illness&lt;/td>
+&lt;td>shito&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>man vs. man&lt;/td>
+&lt;td>his colleagues and counter companies&lt;/td>
+&lt;td>those of his schoolmates who are richer, teacher&lt;/td>
+&lt;td>anybody around him really&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>man vs. society&lt;/td>
+&lt;td>villagers, church&lt;/td>
+&lt;td>school&lt;/td>
+&lt;td>class&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>man vs. god&lt;/td>
+&lt;td>his conflict with the church&lt;/td>
+&lt;td>Chinese people don&amp;rsquo;t actually believe in god&lt;/td>
+&lt;td>shito is kind of like &lt;a href="https://en.wikipedia.org/wiki/List_of_Japanese_deities">nature-god&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>man vs. author (meta)&lt;/td>
+&lt;td>Daniel and Paul use their real name. &amp;ldquo;I&amp;rsquo;m finished&amp;rdquo;&lt;/td>
+&lt;td>Zhang Zhen uses his real name and real father&lt;/td>
+&lt;td>TV episode 25,26&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>father-son conflict&lt;/td>
+&lt;td>$\checkmark$&lt;/td>
+&lt;td>$\checkmark$&lt;/td>
+&lt;td>$\checkmark$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>attitude towards human interraction&lt;/td>
+&lt;td>&amp;ldquo;I want to earn enough money I can get away from everyone&amp;rdquo;&lt;/td>
+&lt;td>&amp;ldquo;I&amp;rsquo;m like the world, it will never change&amp;rdquo;&lt;/td>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Hedgehog%27s_dilemma">Hedgehog&amp;rsquo;s dilemma&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>the music is odd&lt;/td>
+&lt;td>weird, vampire music&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>soft songs with brutal scenes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>the doom is inevitable&lt;/td>
+&lt;td>Captalism in early 20th century&lt;/td>
+&lt;td>family background, tri-state area&lt;/td>
+&lt;td>Dead Sea Scorlls&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>the doom started with the death of one of the protagonist&amp;rsquo;s closest friends&lt;/td>
+&lt;td>his son is dead to him&lt;/td>
+&lt;td>Honey&lt;/td>
+&lt;td>Kaworu&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>at the end the protagonist murdered someone&lt;/td>
+&lt;td>the degenerate godfather&lt;/td>
+&lt;td>his girlfriend&lt;/td>
+&lt;td>the entire humanity&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>I am not systematically trained in films, and all my knowledge is from random places, so maybe there isn&amp;rsquo;t such a similarity, it&amp;rsquo;s just that all good stuff have these points in common. Although the 5 &amp;ldquo;vs.&amp;ldquo;s may be universal, the latter ones are not universal, I guess.&lt;/p>
+&lt;p>This article is currently unfinished, maybe these works have something in common in storyline, composition, etc. But I&amp;rsquo;ll need a rewatch to remind myself. And I will write about &lt;em>The Great Gatsby&lt;/em> and &lt;em>No Longer Human&lt;/em> someday.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-there-will-be-blood-a-brighter-summer-day-evangelion/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>寒武纪MLU370-X4安装在本地服务器的ubuntu上</title><link>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</link><description>&lt;p>&lt;strong>还未经测试!&lt;/strong>&lt;/p>
+&lt;p>显卡：&lt;a href="https://www.cambricon.com/index.php?m=content&amp;amp;c=index&amp;amp;a=lists&amp;amp;catid=371">寒武纪MLU370-X4&lt;/a>。&lt;/p>
+&lt;p>显卡坞的解决方式恐怕不行，因为如果重新更换设备需要重新从&lt;code>ubuntu&lt;/code>开始装起，不如在另一台机器上构建一个本地服务器。除此之外的问题还有：笔记本自带的核显会打架吗？硬盘容量不够了。:(&lt;/p>
+&lt;p>视频介绍（除3.几乎完全是这个&lt;a href="https://zhuanlan.zhihu.com/p/591827529">知乎专栏&lt;/a>的内容）：&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV1Be4y1o7Jx/">寒武纪 MLU370 加速卡简介及安装&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV11G411G7ne/">寒武纪基础软件平台安装&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://space.bilibili.com/503203932/channel/seriesdetail?sid=2724298">MLU370开发实战&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>文档（在熟悉视频介绍之后再查看）：&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://developer.cambricon.com/index/document/index/classid/3.html">文档中心&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.cambricon.com/docs/product_docs/mlu370_x4/1.0.0/index.html">MLU370-X4 智能加速卡产品手册 1.0.0 文档&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>我设想的本地服务器的构建流程：&lt;/p>
+&lt;ol>
+&lt;li>安装&lt;code>ubuntu&lt;/code>，版本号见视频介绍：16.04或18.04?&lt;/li>
+&lt;li>按照视频介绍安装&lt;code>torch.mlu&lt;/code>组件等等（和&lt;a href="https://zh.d2l.ai/">&lt;em>Dive into Deep Learning&lt;/em>&lt;/a>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>这本书不同的地方在于，寒武纪在使用&lt;code>pytorch&lt;/code>时导入&lt;code>torch&lt;/code>和&lt;code>torch.mlu&lt;/code>即可，不需安装&lt;code>torchvision&lt;/code>即&lt;code>pytorch&lt;/code>的GPU版本，此处mlu和gpu是两个相对的概念，指调用的底层架构不同）&lt;/li>
+&lt;li>安装&lt;code>JupyterNotebook&lt;/code>。&lt;/li>
+&lt;li>尝试寒武纪开发的工具&lt;a href="https://www.cambricon.com/docs/sdk_1.10.0/magicmind_1.1.0/user_guide/index.html">&lt;code>MagicMind&lt;/code>&lt;/a>和&lt;code>YOLOv5&lt;/code>。见&lt;a href="https://gitee.com/cambricon">Cambricon(gitee.com)&lt;/a>。&lt;/li>
+&lt;/ol>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>另一本很推荐的书是《智能计算系统》&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Hello World</title><link>https://ChenLi2049.github.io/posts/20230303-hello-world/</link><description>&lt;p>Hello World!&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230303-hello-world/</guid><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate></item></channel></rss>

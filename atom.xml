@@ -23,7 +23,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Bold**and**Italic
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Bold***and***Italic
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But to tell you the truth, I haven&amp;rsquo;t seen &lt;em>any&lt;/em>one write like this.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But to tell you the truth, I haven&amp;rsquo;t seen &lt;strong>any&lt;/strong>one write like this.&lt;/p>
 &lt;h3 id="14-only-use---for-unordered-lists">§1.4 Only use &lt;code>-&lt;/code> for Unordered Lists&lt;/h3>
 &lt;p>As I said, there are a lot of Markdown accent, but &lt;code>-&lt;/code> is universal. Also, this is in agreement with §1.2, so that you can only use the &lt;code>-&lt;/code>/&lt;code>_&lt;/code> key on the keyboard.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">-&lt;/span> unordered lists

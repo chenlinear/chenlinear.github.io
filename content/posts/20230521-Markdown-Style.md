@@ -53,7 +53,7 @@ Bold**and**Italic
 Bold***and***Italic
 ```
 
-But to tell you the truth, I haven't seen *any*one write like this.
+But to tell you the truth, I haven't seen **any**one write like this.
 
 ### §1.4 Only use `-` for Unordered Lists
 

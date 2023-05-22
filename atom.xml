@@ -31,7 +31,7 @@
 &lt;/blockquote>
 &lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;p>In Windows, to get the list of all the files in a folder:&lt;/p>
 &lt;ol>
-&lt;li>Create a txt file.&lt;/li>
+&lt;li>Create a .txt file.&lt;/li>
 &lt;li>Open it with notepad. Copy and paste the following commands:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code class="language-propmt" data-lang="propmt">@echo off
@@ -41,7 +41,7 @@ dir %1 /s/b &amp;gt; %~n1.txt
 dir %1 /b &amp;gt; %~n1.txt
 &lt;/code>&lt;/pre>&lt;ol start="3">
 &lt;li>Rename it getList.bat (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/li>
-&lt;li>Drag the target folder to this bat file.&lt;/li>
+&lt;li>Drag the target folder to this .bat file.&lt;/li>
 &lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">Slidy&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
 &lt;p>I use it for several reasons:&lt;/p>
 &lt;ol>

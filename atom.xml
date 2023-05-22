@@ -12,7 +12,7 @@
 &lt;p>See &lt;a href="https://www.ligo.org/news/index.php#ER15">their news website&lt;/a> or &lt;a href="https://www.ligo.org/news/images/ER15-newsitem.pdf">&lt;em>Gravitational wave detectors prepare for next observing run&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
-&lt;p>See &lt;a href="https://arxiv.org/abs/2304.10567">&lt;em>Optical Emission Model for Binary Black Hole Merger Remnants Travelling through Discs of Active Galactic Nucleus&lt;/em>&lt;/a>. I later found out Virgo is delayed, see &lt;a href="https://www.virgo-gw.eu/news/virgo-postpones-entry-into-o4-observing-run/">&lt;em>Virgo postpones entry into O4 observing run&lt;/em>&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>See &lt;a href="https://arxiv.org/abs/2304.10567">&lt;em>Optical Emission Model for Binary Black Hole Merger Remnants Travelling through Discs of Active Galactic Nucleus&lt;/em>&lt;/a>. I later found out Virgo is delayed, see &lt;a href="https://www.virgo-gw.eu/news/virgo-postpones-entry-into-o4-observing-run/">&lt;em>Virgo postpones entry into O4 observing run&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:3">
 &lt;p>See &lt;a href="https://arxiv.org/abs/2304.12675">&lt;em>Search for correlations of high-energy neutrinos detected in IceCube with radio-bright AGN and gamma-ray emission from blazars&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
@@ -29,9 +29,9 @@
 &lt;blockquote>
 &lt;p>You are the captain of your own ship. You have the power at any moment to CHOOSE. Make sure you&amp;rsquo;re choosing from a place of your vision and not in reaction to the circumstances that present themselves.&lt;/p>
 &lt;/blockquote>
-&lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;p>In &lt;code>windows&lt;/code>, to get the list of all the files in a folder:&lt;/p>
+&lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;p>In Windows, to get the list of all the files in a folder:&lt;/p>
 &lt;ol>
-&lt;li>Create a &lt;code>txt&lt;/code> file.&lt;/li>
+&lt;li>Create a txt file.&lt;/li>
 &lt;li>Open it with notepad. Copy and paste the following commands:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code class="language-propmt" data-lang="propmt">@echo off
@@ -40,14 +40,14 @@ dir %1 /s/b &amp;gt; %~n1.txt
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">@echo off
 dir %1 /b &amp;gt; %~n1.txt
 &lt;/code>&lt;/pre>&lt;ol start="3">
-&lt;li>Rename it &lt;code>getList.bat&lt;/code>. (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/li>
-&lt;li>Drag the target folder to this &lt;code>bat&lt;/code> file.&lt;/li>
-&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">&lt;code>Slidy&lt;/code>&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
+&lt;li>Rename it getList.bat (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/li>
+&lt;li>Drag the target folder to this bat file.&lt;/li>
+&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">Slidy&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
 &lt;p>I use it for several reasons:&lt;/p>
 &lt;ol>
-&lt;li>&lt;code>Microsoft PPT&lt;/code> is just painful to use. And &lt;a href="https://marp.app/">&lt;code>Marp&lt;/code>&lt;/a> is too much for me to handle.&lt;/li>
-&lt;li>Even though I use &lt;a href="https://obsidian.md/">&lt;code>Obsidian&lt;/code>&lt;/a> most often, I have to say that its slide function is not so convenient, I want to change to other windows when giving a presentation.&lt;/li>
-&lt;li>I want it to be offline, because I don&amp;rsquo;t have access to the internet all the time. And I solved it by adding the &lt;code>KaTeX&lt;/code> package in it and adding few commands in the &lt;code>Slidy.html&lt;/code> file:&lt;/li>
+&lt;li>Microsoft PPT is just painful to use. And &lt;a href="https://marp.app/">Marp&lt;/a> is too much for me to handle.&lt;/li>
+&lt;li>Even though I use &lt;a href="https://obsidian.md/">Obsidian&lt;/a> most often, I have to say that its slide function is not so convenient, I want to change to other windows when giving a presentation.&lt;/li>
+&lt;li>I want it to be offline, because I don&amp;rsquo;t have access to the internet all the time. And I solved it by adding the KaTeX package in it and adding few commands in the Slidy.html file:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#75af00">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#75af00">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;./layouts/katex/katex.min.css&amp;#34;&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#75af00">defer&lt;/span> &lt;span style="color:#75af00">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#d88200">&amp;#34;./layouts/katex/katex.min.js&amp;#34;&lt;/span>&lt;span style="color:#111">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#f92672">script&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
@@ -129,12 +129,12 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;p>Also, Simpson&amp;rsquo;s paradox is interesting, see &lt;a href="https://yufree.cn/cn/2021/08/27/simpson-paradox/">&lt;em>辛普森悖论&lt;/em>&lt;/a>.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230404-statistics-101/</guid><pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Conda 101</title><link>https://ChenLi2049.github.io/posts/20230327-conda-101/</link><description>&lt;p>This article is a quick guidance to use &lt;code>Anaconda&lt;/code> &amp;amp; &lt;code>Miniconda&lt;/code> on &lt;code>Windows&lt;/code>. I wrote it so that I can check the command myself. Sorry about other platforms such as &lt;code>Linux&lt;/code>, &lt;code>WSL on Windows&lt;/code> or &lt;code>MacOS&lt;/code>, but the §2 should be useful too.&lt;/p>
+&lt;p>Also, Simpson&amp;rsquo;s paradox is interesting, see &lt;a href="https://yufree.cn/cn/2021/08/27/simpson-paradox/">&lt;em>辛普森悖论&lt;/em>&lt;/a>.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230404-statistics-101/</guid><pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate></item><item><title>Conda 101</title><link>https://ChenLi2049.github.io/posts/20230327-conda-101/</link><description>&lt;p>This article is a quick guidance to use Anaconda &amp;amp; Miniconda on Windows. I wrote it so that I can check the command myself. Sorry about other platforms such as Linux, WSL on Windows or MacOS, but the §2 should be useful too.&lt;/p>
 &lt;h2 id="1-anaconda">§1 Anaconda&lt;/h2>
-&lt;p>Go the the official website &lt;a href="https://www.anaconda.com/">&lt;code>Anaconda&lt;/code>&lt;/a> and download the default &lt;code>exe&lt;/code> file. Open and install it. Get familiar with &lt;code>Jupyter Notebook&lt;/code>. Feel free to check out some other articles and mess around, knowing that you can always delete the old environment and start from scratch, you&amp;rsquo;ll be fine. And that, is the most important message from this article.&lt;/p>
+&lt;p>Go the the official website &lt;a href="https://www.anaconda.com/">Anaconda&lt;/a> and download the default exe file. Open and install it. Get familiar with Jupyter Notebook. Feel free to check out some other articles and mess around, knowing that you can always delete the old environment and start from scratch, you&amp;rsquo;ll be fine. And that, is the most important message from this article.&lt;/p>
 &lt;h2 id="2-miniconda">§2 Miniconda&lt;/h2>
-&lt;p>Go the the official website &lt;a href="https://docs.conda.io/en/latest/miniconda.html">&lt;code>Miniconda&lt;/code>&lt;/a> and download the default &lt;code>exe&lt;/code> file. Open and install it.&lt;/p>
-&lt;p>If you want to install new packages, such as &lt;a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">&lt;code>TensorFlow&lt;/code>&lt;/a>, it&amp;rsquo;s necessary to create a new environment so that these environments don&amp;rsquo;t conflict, the official documents are always useful, and some commonly used commands after you opened the &lt;code>Anaconda Prompt (miniconda3)&lt;/code> are:&lt;/p>
+&lt;p>Go the the official website &lt;a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda&lt;/a> and download the default exe file. Open and install it.&lt;/p>
+&lt;p>If you want to install new packages, such as &lt;a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">TensorFlow&lt;/a>, it&amp;rsquo;s necessary to create a new environment so that these environments don&amp;rsquo;t conflict, the official documents are always useful, and some commonly used commands after you opened the Anaconda Prompt (miniconda3) are:&lt;/p>
 &lt;ul>
 &lt;li>See the environments created：&lt;/li>
 &lt;/ul>
@@ -164,7 +164,7 @@ conda activate envName
 &lt;/ul>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda remove -n envName --all
 &lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Install packages, such as &lt;code>numpy&lt;/code>, I prefer install using &lt;code>pip&lt;/code>:&lt;/li>
+&lt;li>Install packages, such as numpy, I prefer install using &lt;code>pip&lt;/code>:&lt;/li>
 &lt;/ul>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">pip install numpy
 # or
@@ -183,19 +183,19 @@ pip list
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda list --export &amp;gt; envName-requirements.txt
 &lt;/code>&lt;/pre>&lt;h3 id="21-install-jupyter-notebook-in-miniconda">§2.1 Install Jupyter Notebook in Miniconda&lt;/h3>
 &lt;ol>
-&lt;li>Since the &lt;code>base&lt;/code> environment of &lt;code>Miniconda&lt;/code> is kind of empty, you can install &lt;code>Jupyter Notebook&lt;/code> on a new environment.&lt;/li>
+&lt;li>Since the &lt;code>base&lt;/code> environment of Miniconda is kind of empty, you can install Jupyter Notebook on a new environment.&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda create -n jupyter
 activate jupyter
 conda install jupyter notebook
 &lt;/code>&lt;/pre>&lt;ol start="2">
-&lt;li>Open &lt;code>Jupyter Notebook&lt;/code>:&lt;/li>
+&lt;li>Open Jupyter Notebook:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">activate jupyter
 jupyter notebook
-&lt;/code>&lt;/pre>&lt;p>And there should be a &lt;code>Jupyter Notebook (jupyter)&lt;/code> application in the &lt;code>start menu&lt;/code> of &lt;code>Windows&lt;/code>, you can just click it.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>And there should be a Jupyter Notebook (jupyter) application in the start menu of Windows, you can just click it.&lt;/p>
 &lt;ol start="3">
-&lt;li>If you want to change to other environments such as &lt;code>envName&lt;/code> when using &lt;code>Jupyter Notebook&lt;/code>:&lt;/li>
+&lt;li>If you want to change to other environments such as &lt;code>envName&lt;/code> when using Jupyter Notebook:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate jupyter
 conda install nb_conda_kernels
@@ -294,6 +294,7 @@ class="full-width"
 &lt;li>&lt;a href="https://joshworth.com/a-tediously-accurate-map-of-the-solar-system/">&lt;em>A Tediously Accurate Map of the Solar System&lt;/em>&lt;/a> feels like the rolling credit for a movie which is about how human can never leave the Solar System.&lt;/li>
 &lt;li>&lt;a href="https://en.wikipedia.org/wiki/Cosmic_Background_Explorer">Cosmic Background Explorer&lt;/a> is legendary! I am shocked that Ron Howard did not make a movie about it.&lt;/li>
 &lt;li>I have always known the cover of &lt;a href="https://en.wikipedia.org/wiki/Unknown_Pleasures">&lt;em>Unknown Pleasures&lt;/em>&lt;/a> by Joy Division is a pulsar, but I didn&amp;rsquo;t know it&amp;rsquo;s &lt;a href="https://en.wikipedia.org/wiki/PSR_B1919%2B21">CP1919 (Cambridge Pulsar)&lt;/a>. See the picture below. The fact that this pulsar was discovered in the UK is probably why they chose it as the cover. See, I told you the origin of Rock&amp;rsquo;n&amp;rsquo;Roll is not America. :D&lt;/li>
+&lt;li>The person who &lt;a href="broadcasthttps://en.wikipedia.org/wiki/Fred_Hoyle#Rejection_of_the_Big_Bang">coined the term &amp;ldquo;the Big Bang&amp;rdquo; on BBC radio&lt;/a> (as a rejection of the Big Bang), Fred Hoyle, is also the person who came up with the idea of &lt;a href="https://en.wikipedia.org/wiki/Triple-alpha_process">Triple-alpha process&lt;/a>, which is the formation of carbon in stars. And carbon is what makes life on earth.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img
 src="https://upload.wikimedia.org/wikipedia/en/5/5a/UnknownPleasuresVinyl.jpg"
@@ -398,7 +399,7 @@ class="full-width"
 &lt;li>browser extension or website.&lt;/li>
 &lt;li>don&amp;rsquo;t have to open a server myself.&lt;/li>
 &lt;/ul>
-&lt;p>The free service of &lt;a href="https://feedly.com/">&lt;code>Feedly&lt;/code>&lt;/a> is fine with me, you can&lt;/p>
+&lt;p>The free service of &lt;a href="https://feedly.com/">Feedly&lt;/a> is fine with me, you can&lt;/p>
 &lt;ul>
 &lt;li>add RSS link. For example, &lt;a href="https://chenli2049.github.io/atom.xml">https://chenli2049.github.io/atom.xml&lt;/a>&lt;/li>
 &lt;li>search for the people you want to follow.&lt;/li>
@@ -495,14 +496,14 @@ class="full-width"
 &lt;/tbody>
 &lt;/table>
 &lt;p>I am not systematically trained in films, and all my knowledge is from random places, so maybe there isn&amp;rsquo;t such a similarity, it&amp;rsquo;s just that all good stuff have these points in common. Although the 5 &amp;ldquo;vs.&amp;ldquo;s may be universal, the latter ones are not universal, I guess.&lt;/p>
-&lt;p>This article is currently unfinished, maybe these works have something in common in storyline, composition, etc. But I&amp;rsquo;ll need a rewatch to remind myself. And I will write about &lt;em>The Great Gatsby&lt;/em> and &lt;em>No Longer Human&lt;/em> someday.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-there-will-be-blood-a-brighter-summer-day-evangelion/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>寒武纪MLU370-X4安装在本地服务器的ubuntu上</title><link>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</link><description>&lt;p>&lt;strong>还未经测试!&lt;/strong>&lt;/p>
-&lt;p>显卡：&lt;a href="https://www.cambricon.com/index.php?m=content&amp;amp;c=index&amp;amp;a=lists&amp;amp;catid=371">寒武纪MLU370-X4&lt;/a>。&lt;/p>
-&lt;p>显卡坞的解决方式恐怕不行，因为如果重新更换设备需要重新从&lt;code>ubuntu&lt;/code>开始装起，不如在另一台机器上构建一个本地服务器。除此之外的问题还有：笔记本自带的核显会打架吗？硬盘容量不够了。:(&lt;/p>
+&lt;p>This article is currently unfinished, maybe these works have something in common in storyline, composition, etc. But I&amp;rsquo;ll need a rewatch to remind myself. And I will write about &lt;em>The Great Gatsby&lt;/em> and &lt;em>No Longer Human&lt;/em> someday.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230304-there-will-be-blood-a-brighter-summer-day-evangelion/</guid><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate></item><item><title>寒武纪 MLU370-X4 安装在本地服务器的 ubuntu 上</title><link>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</link><description>&lt;p>&lt;strong>还未经测试!&lt;/strong>&lt;/p>
+&lt;p>显卡：&lt;a href="https://www.cambricon.com/index.php?m=content&amp;amp;c=index&amp;amp;a=lists&amp;amp;catid=371">寒武纪 MLU370-X4&lt;/a>。&lt;/p>
+&lt;p>显卡坞的解决方式恐怕不行，因为如果重新更换设备需要重新从 ubuntu 开始装起，不如在另一台机器上构建一个本地服务器。除此之外的问题还有：笔记本自带的核显会打架吗？硬盘容量不够了。:(&lt;/p>
 &lt;p>视频介绍（除3.几乎完全是这个&lt;a href="https://zhuanlan.zhihu.com/p/591827529">知乎专栏&lt;/a>的内容）：&lt;/p>
 &lt;ol>
 &lt;li>&lt;a href="https://www.bilibili.com/video/BV1Be4y1o7Jx/">寒武纪 MLU370 加速卡简介及安装&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.bilibili.com/video/BV11G411G7ne/">寒武纪基础软件平台安装&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://space.bilibili.com/503203932/channel/seriesdetail?sid=2724298">MLU370开发实战&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://space.bilibili.com/503203932/channel/seriesdetail?sid=2724298">MLU370 开发实战&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>文档（在熟悉视频介绍之后再查看）：&lt;/p>
 &lt;ol>
@@ -511,10 +512,10 @@ class="full-width"
 &lt;/ol>
 &lt;p>我设想的本地服务器的构建流程：&lt;/p>
 &lt;ol>
-&lt;li>安装&lt;code>ubuntu&lt;/code>，版本号见视频介绍：16.04或18.04?&lt;/li>
-&lt;li>按照视频介绍安装&lt;code>torch.mlu&lt;/code>组件等等（和&lt;a href="https://zh.d2l.ai/">&lt;em>Dive into Deep Learning&lt;/em>&lt;/a>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>这本书不同的地方在于，寒武纪在使用&lt;code>pytorch&lt;/code>时导入&lt;code>torch&lt;/code>和&lt;code>torch.mlu&lt;/code>即可，不需安装&lt;code>torchvision&lt;/code>即&lt;code>pytorch&lt;/code>的GPU版本，此处mlu和gpu是两个相对的概念，指调用的底层架构不同）&lt;/li>
-&lt;li>安装&lt;code>JupyterNotebook&lt;/code>。&lt;/li>
-&lt;li>尝试寒武纪开发的工具&lt;a href="https://www.cambricon.com/docs/sdk_1.10.0/magicmind_1.1.0/user_guide/index.html">&lt;code>MagicMind&lt;/code>&lt;/a>和&lt;code>YOLOv5&lt;/code>。见&lt;a href="https://gitee.com/cambricon">Cambricon(gitee.com)&lt;/a>。&lt;/li>
+&lt;li>安装 ubuntu，版本号见视频介绍：16.04或18.04?&lt;/li>
+&lt;li>按照视频介绍安装 &lt;code>torch.mlu&lt;/code> 组件等等（和&lt;a href="https://zh.d2l.ai/">&lt;em>Dive into Deep Learning&lt;/em>&lt;/a>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>这本书不同的地方在于，寒武纪在使用 pytorch 时导入 &lt;code>torch&lt;/code> 和 &lt;code>torch.mlu&lt;/code> 即可，不需安装 &lt;code>torchvision&lt;/code> 即 pytorch 的 GPU 版本，此处 mlu 和 gpu 是两个相对的概念，指调用的底层架构不同）&lt;/li>
+&lt;li>安装 JupyterNotebook。&lt;/li>
+&lt;li>尝试寒武纪开发的工具 &lt;a href="https://www.cambricon.com/docs/sdk_1.10.0/magicmind_1.1.0/user_guide/index.html">MagicMind&lt;/a>和 YOLOv5。见 &lt;a href="https://gitee.com/cambricon">Cambricon(gitee.com)&lt;/a>。&lt;/li>
 &lt;/ol>
 &lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>

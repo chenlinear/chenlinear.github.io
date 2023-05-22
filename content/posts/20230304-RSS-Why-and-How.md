@@ -20,7 +20,7 @@ My requirements:
 - browser extension or website.
 - don't have to open a server myself.
 
-The free service of [`Feedly`](https://feedly.com/) is fine with me, you can
+The free service of [Feedly](https://feedly.com/) is fine with me, you can
 
 - add RSS link. For example, https://chenli2049.github.io/atom.xml
 - search for the people you want to follow.

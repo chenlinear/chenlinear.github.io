@@ -457,7 +457,7 @@ class="full-width"
 &lt;p>In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle.&lt;/p>
 &lt;p>Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by &lt;a href="https://people.ast.cam.ac.uk/~bothwell/">Dr. Matt Bothwell&lt;/a>, in the summer of 2022. I asked for his permission before using the picture.&lt;/p>
 &lt;p>&lt;img
-src="static/images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_fig1.jpg"
+src="./static/images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_Fig1.jpg"
 alt="H_0"
 loading="lazy"
 decoding="async"

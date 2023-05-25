@@ -17,8 +17,8 @@ Here is a table of the energy of some events:
 
 |events|$W(\text{J})$|
 |-|-|
-|throwing a $50 \space \text{g}$ stone from $7714.29 \space \text{m}$ high.|$3.78 \times 10^3 \space \text{J}$|
-|an [Airbus A330-900](https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft) powered by [Gasoline](https://en.wikipedia.org/wiki/Energy_density) flying for $8610 \space \text{km}$ for one person.|$1.01 \times 10^7 \space \text{J}$|
+|throwing a $50 \space \text{g}$ stone from $7714.29 \space \text{m}$ high.|$3.78 \times 10^3$|
+|an [Airbus A330-900](https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft) powered by [Gasoline](https://en.wikipedia.org/wiki/Energy_density) flying for $8610 \space \text{km}$ for one person.|$1.01 \times 10^7$|
 
 Yes, the energy this takes can have a plane take approximately 100 people from LA to London back and forth twice, which is a fun group trip. 
 

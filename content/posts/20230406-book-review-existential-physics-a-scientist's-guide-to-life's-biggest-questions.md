@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "Book review: Existential Physics: A Scientist's Guide to Life's Biggest Questions"
+title: "Book Review: Existential Physics: A Scientist's Guide to Life's Biggest Questions"
 date: "2023-04-06"
 tags: 
 - Physics

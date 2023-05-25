@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "Book review: Ludwig Wittgenstein: The Duty of Genius"
+title: "Book Review: Ludwig Wittgenstein: The Duty of Genius"
 date: "2023-03-12"
 tags: 
 - Physics

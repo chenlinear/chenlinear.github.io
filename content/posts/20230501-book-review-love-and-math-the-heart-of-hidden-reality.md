@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "Book review: Love and Math: The Heart of Hidden Reality"
+title: "Book Review: Love and Math: The Heart of Hidden Reality"
 date: "2023-05-01"
 tags: 
 - Physics

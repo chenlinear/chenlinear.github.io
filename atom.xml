@@ -56,7 +56,12 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>equations at the center of next line: $$ \begin{cases} x+y+z=10 \\\ x+2y+3z=20 \\\ x+4y+5z=30 \end{cases} \tag{1}$$, where $x$ is ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>or inline equations: $F = m \ddot{x}$.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-使用中文时">§2 使用中文时&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="18-two-pictures-alignment">§1.8 Two Pictures Alignment&lt;/h3>
+&lt;p>Use table (compared with inserting html &lt;code>&amp;lt;&amp;gt;&lt;/code> and all that, this is easier to read):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>|![name](link)|![name](link)|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|-|-|
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for &lt;a href="https://github.com/gnab/remark">remark&lt;/a> and &lt;a href="https://github.com/ChenLi2049/Slidy">Slidy&lt;/a>.&lt;/p>
+&lt;h2 id="2-使用中文时">§2 使用中文时&lt;/h2>
 &lt;h3 id="21-空格">§2.1 空格&lt;/h3>
 &lt;p>&lt;a href="https://yihui.org/cn/2017/04/space">&lt;em>中英文混排中的空格&lt;/em>&lt;/a>和&lt;a href="https://yihui.org/cn/2017/05/pangu/">&lt;em>盘古之白&lt;/em>&lt;/a>说在英文单词两边各空一空格。我的建议是在表示代码时也是如此，例如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>我们可以 &lt;span style="color:#d88200">`from scipy import interpolate`&lt;/span> 来解决这个 interpolation 问题。
@@ -448,11 +453,28 @@ class="full-width"
 &lt;li>&lt;em>Status Quo Bias&lt;/em>. Which is the preference for maintaining one&amp;rsquo;s current situation and opposing actions that may change the state of affairs.&lt;/li>
 &lt;/ul>
 &lt;p>Boy oh boy, there&amp;rsquo;s a lot! And I hope by attentional bias, you&amp;rsquo;ve learned something. :D&lt;/p>
-&lt;p>In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. See picture below.&lt;/p>
-&lt;p>&lt;em>&lt;strong>(picture here!)&lt;/strong>&lt;/em>&lt;/p>
-&lt;p>The picture is from this article &lt;em>&lt;strong>(link here!)&lt;/strong>&lt;/em>. By reading this article and according to the biases listed above, I notice that the reasons can be reduced to &amp;hellip; bias, &amp;hellip; bias and &amp;hellip; bias.&lt;/p>
-&lt;p>See, it helps! And nobody&amp;rsquo;s feeling is hurt, I hope.&lt;/p>
-&lt;p>And nowadays, it is possible that the difference between two measurements is a sign of new science. See &lt;a href="https://arxiv.org/abs/2305.06367">&lt;em>Constraints on the Hubble constant from Supernova Refsdal&amp;rsquo;s reappearance&lt;/em>&lt;/a>. Notice the magnitude of $H_0$ in that paper is &lt;em>not&lt;/em> the same in the picture above.&lt;/p>
+&lt;h3 id="21-difference-in-two-measurements">§2.1 Difference in two measurements&lt;/h3>
+&lt;p>In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle.&lt;/p>
+&lt;p>Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by &lt;a href="https://people.ast.cam.ac.uk/~bothwell/">Dr. Matt Bothwell&lt;/a>, in the summer of 2022. I asked for his permission before using the picture.&lt;/p>
+&lt;p>&lt;img
+src="images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_fig1.jpg"
+alt="H_0"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;p>Although&lt;/p>
+&lt;ol>
+&lt;li>The connection of the first &lt;font color=red>red&lt;/font> dot and the first &lt;font color=blue>blue&lt;/font> dot is suspicious.&lt;/li>
+&lt;li>This division for about 17 years is probably a lack of communication.&lt;/li>
+&lt;li>The big jump in about 1987 shows a bit of sign of &lt;em>Social Desirability Bias&lt;/em>.&lt;/li>
+&lt;/ol>
+&lt;p>,technically I wouldn&amp;rsquo;t called it the result of bias, because:&lt;/p>
+&lt;ol>
+&lt;li>It could be and is mostly likely the result of different measurements in equipment, operations, calculations, etc.&lt;/li>
+&lt;li>This is still an open question. It is possible that the difference between two measurements is a sign of new science. See Fig. 5 of &lt;a href="https://arxiv.org/abs/2305.06367">&lt;em>Constraints on the Hubble constant from Supernova Refsdal&amp;rsquo;s reappearance&lt;/em>&lt;/a>. Notice the magnitude of $H_0$ in that paper is &lt;em>not&lt;/em> the same as the picture above.&lt;/li>
+&lt;/ol>
 &lt;h2 id="3-more">§3 More&lt;/h2>
 &lt;p>There are many more solid points like these in the book, and it always blows my mind or makes me laugh so hard, just like her YouTube videos, for example, &lt;a href="https://www.youtube.com/watch?v=PhfqdBk8qxk">&lt;em>What is &amp;ldquo;Nothing&amp;rdquo;?&lt;/em>&lt;/a>.&lt;/p>
 &lt;p>What&amp;rsquo;s more, I truly appreciate her honesty and bravery. It takes a lot of guts to say what thousands of people are doing is doubtful, after all it&amp;rsquo;s their job, and criticizing it will definitely get negative feedbacks, some of which will be personal and hurtful. But I think this Satre-Camus thing is something we should avoid. She means well and criticism is good for your work anyway, so let&amp;rsquo;s just focus on the work rather than fighting. That being said, she knows clearly that she is almost exclusively going to face a witch hunt after writing this book, but this is her true feelings after &lt;a href="https://scholar.google.com/citations?user=NaQZcyYAAAAJ&amp;amp;hl=en">decades of research&lt;/a> on physics. And there is that.&lt;/p>

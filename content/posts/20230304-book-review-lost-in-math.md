@@ -63,7 +63,7 @@ Although
 2. This division for about 17 years is probably a lack of communication.
 3. The big jump in about 1987 shows a bit of sign of _Social Desirability Bias_.
 
-,technically I wouldn't called it the result of bias, because:
+, technically I wouldn't called it the result of bias, because:
 
 1. It could be and is mostly likely the result of different measurements in equipment, operations, calculations, etc.
 2. This is still an open question. It is possible that the difference between two measurements is a sign of new science. See Fig. 5 of [_Constraints on the Hubble constant from Supernova Refsdal's reappearance_](https://arxiv.org/abs/2305.06367). Notice the magnitude of $H_0$ in that paper is _not_ the same as the picture above.

@@ -55,7 +55,7 @@ In the book Sabine gives us an example of how two labs constantly give contradic
 
 Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by [Dr. Matt Bothwell](https://people.ast.cam.ac.uk/~bothwell/), in the summer of 2022. I asked for his permission before using the picture.
 
-![H_0](images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_fig1.jpg)
+![H_0](static/images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_fig1.jpg)
 
 Although
 

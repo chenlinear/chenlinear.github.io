@@ -49,15 +49,24 @@ To be more clear, here are some typical (cognitive and social) biases listed by 
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. See picture below.
+### §2.1 Difference in two measurements
 
-___(picture here!)___
+In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. 
 
-The picture is from this article ___(link here!)___. By reading this article and according to the biases listed above, I notice that the reasons can be reduced to ... bias, ... bias and ... bias. 
+Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by [Dr. Matt Bothwell](https://people.ast.cam.ac.uk/~bothwell/), in the summer of 2022. I asked for his permission before using the picture.
 
-See, it helps! And nobody's feeling is hurt, I hope.
+![H_0](images/20230309-Book-review-The-Invisible-Universe-Why-Theres-More-to-Reality-than-Meets-the-Eye_fig1.jpg)
 
-And nowadays, it is possible that the difference between two measurements is a sign of new science. See [_Constraints on the Hubble constant from Supernova Refsdal's reappearance_](https://arxiv.org/abs/2305.06367). Notice the magnitude of $H_0$ in that paper is _not_ the same in the picture above.
+Although
+
+1. The connection of the first <font color=red>red</font> dot and the first <font color=blue>blue</font> dot is suspicious.
+2. This division for about 17 years is probably a lack of communication.
+3. The big jump in about 1987 shows a bit of sign of _Social Desirability Bias_.
+
+,technically I wouldn't called it the result of bias, because:
+
+1. It could be and is mostly likely the result of different measurements in equipment, operations, calculations, etc.
+2. This is still an open question. It is possible that the difference between two measurements is a sign of new science. See Fig. 5 of [_Constraints on the Hubble constant from Supernova Refsdal's reappearance_](https://arxiv.org/abs/2305.06367). Notice the magnitude of $H_0$ in that paper is _not_ the same as the picture above.
 
 ## §3 More
 

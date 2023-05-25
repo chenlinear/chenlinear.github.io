@@ -115,6 +115,17 @@ equations at the center of next line: $$ \begin{cases} x+y+z=10 \\\ x+2y+3z=20 \
 or inline equations: $F = m \ddot{x}$.
 ```
 
+### §1.8 Two Pictures Alignment
+
+Use table (compared with inserting html `<>` and all that, this is easier to read):
+
+```Markdown
+|![name](link)|![name](link)|
+|-|-|
+```
+
+Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for [remark](https://github.com/gnab/remark) and [Slidy](https://github.com/ChenLi2049/Slidy).
+
 ## §2 使用中文时
 
 ### §2.1 空格

@@ -7,9 +7,6 @@ tags:
 math: true
 ---
 
-- [ ] 删掉I，换成被动语句。
-- [ ] 删一些the。
-
 This is a review of [_The Invisible Universe: Why There's More to Reality than Meets the Eye_](https://www.amazon.com/Invisible-Universe-Theres-Reality-Meets/dp/0861541243) by [Matt Bothwell](https://people.ast.cam.ac.uk/~bothwell/).
 
 ## §1 Astronomy 101

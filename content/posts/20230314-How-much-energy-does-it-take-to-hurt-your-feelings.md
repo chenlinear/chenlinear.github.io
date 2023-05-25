@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "How much energy does it take to hurt your feelings?"
+title: "How Much Energy Does It Take to Hurt Your Feelings?"
 date: "2023-03-14"
 tags: 
 - Physics

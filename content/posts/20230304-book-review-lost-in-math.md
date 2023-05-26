@@ -53,7 +53,7 @@ Boy oh boy, there's a lot! And I hope by attentional bias, you've learned someth
 
 In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. 
 
-Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by [Dr. Matt Bothwell](https://people.ast.cam.ac.uk/~bothwell/), in the summer of 2022. I asked for his permission before using the picture.
+Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below, presented with [Dr. Matt Bothwell](https://people.ast.cam.ac.uk/~bothwell/)'s permission, is used in a course taught by him, in the summer of 2022.
 
 ![H_0](20230304-book-review-lost-in-math-H_0.jpg)
 

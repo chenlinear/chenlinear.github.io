@@ -33,7 +33,7 @@ Thanks to the effort that the author put to make a linear process out of history
 5. So what is Dark Matter?
 6. It could be MACHO (MAssive Compact Halo Object), which was later ruled out.
 7. It could be WIMP (Weakly Interacting Massive Particle), which has to be (1) non-baryonic in the Standard Model, (2) weakly interacting, meaning that only Gravity and Weak Nuclear Force are possible.
-8. The author didn't point it out, but the murderer is probably neutrino.[^3] See [Sterile neutrino](https://en.wikipedia.org/wiki/Sterile_neutrino). I later found out that [_Interpreting Reactor Antineutrino Anomalies with STEREO data_](https://arxiv.org/abs/2210.07664) rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so it's kind of suspicious.
+8. The author didn't point it out, but the murderer is probably neutrino.[^3] See [Sterile neutrino](https://en.wikipedia.org/wiki/Sterile_neutrino). I later found out that [_Interpreting Reactor Antineutrino Anomalies with STEREO data_](https://arxiv.org/abs/2210.07664) rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so it's kind of suspicious.[^4]
 
 Anyway, the murderer is still out there, you kids should watch out.
 
@@ -48,3 +48,4 @@ And in the final chapter, _Conclusion: The complete picture: visible and invisib
 [^1]: See [_Strings, standing waves and harmonics_](https://newt.phys.unsw.edu.au/jw/strings.html). 
 [^2]: The author quote that "The 'duck test' says that if something looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck." Duck is somehow good for metaphor, I don't know why. I later wrote about the Duck-Rabbit picture in  [_Book review: Existential Physics: A Scientist's Guide to Life's Biggest Questions_](https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).
 [^3]: The moment this came to my head is memorable. It was on a train, and I was listening to _Ti Amo_ by Laura Branigan. After reading [_Love and Math: The Heart of Hidden Reality_](https://chenli2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/) by Edward Frenkel, I found out that he also had this kind of "Eureka" moment on a train. His idea is true, while mine still needs to be tested by experiment.
+[^4]:  I later got in touch with the author, and it is recommended to read this review article [_Sterile Neutrino Dark Matter_](https://arxiv.org/abs/1807.07938). Thanks for his help!

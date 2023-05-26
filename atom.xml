@@ -401,7 +401,7 @@ class="full-width"
 &lt;li>So what is Dark Matter?&lt;/li>
 &lt;li>It could be MACHO (MAssive Compact Halo Object), which was later ruled out.&lt;/li>
 &lt;li>It could be WIMP (Weakly Interacting Massive Particle), which has to be (1) non-baryonic in the Standard Model, (2) weakly interacting, meaning that only Gravity and Weak Nuclear Force are possible.&lt;/li>
-&lt;li>The author didn&amp;rsquo;t point it out, but the murderer is probably neutrino.&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> See &lt;a href="https://en.wikipedia.org/wiki/Sterile_neutrino">Sterile neutrino&lt;/a>. I later found out that &lt;a href="https://arxiv.org/abs/2210.07664">&lt;em>Interpreting Reactor Antineutrino Anomalies with STEREO data&lt;/em>&lt;/a> rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so it&amp;rsquo;s kind of suspicious.&lt;/li>
+&lt;li>The author didn&amp;rsquo;t point it out, but the murderer is probably neutrino.&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> See &lt;a href="https://en.wikipedia.org/wiki/Sterile_neutrino">Sterile neutrino&lt;/a>. I later found out that &lt;a href="https://arxiv.org/abs/2210.07664">&lt;em>Interpreting Reactor Antineutrino Anomalies with STEREO data&lt;/em>&lt;/a> rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so it&amp;rsquo;s kind of suspicious.&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/li>
 &lt;/ol>
 &lt;p>Anyway, the murderer is still out there, you kids should watch out.&lt;/p>
 &lt;h2 id="3-more">§3 More&lt;/h2>
@@ -419,6 +419,9 @@ class="full-width"
 &lt;/li>
 &lt;li id="fn:3">
 &lt;p>The moment this came to my head is memorable. It was on a train, and I was listening to &lt;em>Ti Amo&lt;/em> by Laura Branigan. After reading &lt;a href="https://chenli2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/">&lt;em>Love and Math: The Heart of Hidden Reality&lt;/em>&lt;/a> by Edward Frenkel, I found out that he also had this kind of &amp;ldquo;Eureka&amp;rdquo; moment on a train. His idea is true, while mine still needs to be tested by experiment.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4">
+&lt;p>I later got in touch with the author, and it is recommended to read this review article &lt;a href="https://arxiv.org/abs/1807.07938">&lt;em>Sterile Neutrino Dark Matter&lt;/em>&lt;/a>. Thanks for his help!&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</guid><pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Book Review: Lost in Math: How Beauty Leads Physics Astray</title><link>https://ChenLi2049.github.io/posts/20230304-book-review-lost-in-math/</link><description>&lt;p>This is a review of &lt;a href="https://www.amazon.com/Lost-Math-Beauty-Physics-Astray/dp/0465094252">&lt;em>Lost in Math: How Beauty Leads Physics Astray&lt;/em>&lt;/a> by &lt;a href="https://sabinehossenfelder.com/">Sabine Hossenfelder&lt;/a>.&lt;/p>
@@ -455,7 +458,7 @@ class="full-width"
 &lt;p>Boy oh boy, there&amp;rsquo;s a lot! And I hope by attentional bias, you&amp;rsquo;ve learned something. :D&lt;/p>
 &lt;h3 id="21-difference-in-two-measurements">§2.1 Difference in two measurements&lt;/h3>
 &lt;p>In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle.&lt;/p>
-&lt;p>Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below is used in a course taught by &lt;a href="https://people.ast.cam.ac.uk/~bothwell/">Dr. Matt Bothwell&lt;/a>, in the summer of 2022. I asked for his permission before using the picture.&lt;/p>
+&lt;p>Well, in astronomy, sadly, there is also this kind of stuff, it happened when measuring the $H_0$ constant. The picture below, presented with &lt;a href="https://people.ast.cam.ac.uk/~bothwell/">Dr. Matt Bothwell&lt;/a>&amp;rsquo;s permission, is used in a course taught by him, in the summer of 2022.&lt;/p>
 &lt;p>&lt;img
 src="20230304-book-review-lost-in-math-H_0.jpg"
 alt="H_0"

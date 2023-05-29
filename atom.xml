@@ -223,73 +223,81 @@ class="full-width"
 &lt;p>Go the the official website &lt;a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda&lt;/a> and download the default exe file. Open and install it.&lt;/p>
 &lt;p>If you want to install new packages, such as &lt;a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">TensorFlow&lt;/a>, it&amp;rsquo;s necessary to create a new environment so that these environments don&amp;rsquo;t conflict, the official documents are always useful, and some commonly used commands after you opened the Anaconda Prompt (miniconda3) are:&lt;/p>
 &lt;ul>
-&lt;li>See the environments created：&lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>See the environments created:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda info -e
 # or
 conda info --envs
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Create a new environment, such as &lt;code>envName&lt;/code> (the name can be something you prefer):&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Create a new environment, such as &lt;code>envName&lt;/code> (the name can be something you prefer):&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda create -n envName#remember to change the name!
 # or
 conda create --name envName
 # with python=3.8
 conda create -n envName python=3.8
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Activate a certain environment, such as &lt;code>envName&lt;/code>：&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Activate a certain environment, such as &lt;code>envName&lt;/code>：&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">activate envName
 # or
 conda activate envName
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Deactivate the current environment:&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Deactivate the current environment:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda deactivate
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Delete a certain environment, such as &lt;code>envName&lt;/code>:&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Delete a certain environment, such as &lt;code>envName&lt;/code>:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda remove -n envName --all
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Install packages, such as numpy, I prefer install using &lt;code>pip&lt;/code>:&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Install packages, such as numpy, I prefer install using &lt;code>pip&lt;/code>:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">pip install numpy
 # or
 pip install numpy -i https://mirrors.aliyun.com/pypi/simple/
 # 临时从镜像阿里云下载
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>See the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>See the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate envName
 conda list
 # or
 pip list
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Export the list of the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/li>
-&lt;/ul>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Export the list of the packages installed in the &lt;code>envName&lt;/code> environment:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda list --export &amp;gt; envName-requirements.txt
-&lt;/code>&lt;/pre>&lt;h3 id="21-install-jupyter-notebook-in-miniconda">§2.1 Install Jupyter Notebook in Miniconda&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;h3 id="21-install-jupyter-notebook-in-miniconda">§2.1 Install Jupyter Notebook in Miniconda&lt;/h3>
 &lt;ol>
-&lt;li>Since the &lt;code>base&lt;/code> environment of Miniconda is kind of empty, you can install Jupyter Notebook on a new environment.&lt;/li>
-&lt;/ol>
+&lt;li>
+&lt;p>Since the &lt;code>base&lt;/code> environment of Miniconda is kind of empty, you can install Jupyter Notebook on a new environment.&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda create -n jupyter
 activate jupyter
 conda install jupyter notebook
-&lt;/code>&lt;/pre>&lt;ol start="2">
-&lt;li>Open Jupyter Notebook:&lt;/li>
-&lt;/ol>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Open Jupyter Notebook:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">activate jupyter
 jupyter notebook
 &lt;/code>&lt;/pre>&lt;p>And there should be a Jupyter Notebook (jupyter) application in the start menu of Windows, you can just click it.&lt;/p>
-&lt;ol start="3">
-&lt;li>If you want to change to other environments such as &lt;code>envName&lt;/code> when using Jupyter Notebook:&lt;/li>
-&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>If you want to change to other environments such as &lt;code>envName&lt;/code> when using Jupyter Notebook:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate jupyter
 conda install nb_conda_kernels
 conda activate envName
 conda install ipykernel
 python -m ipykernel install --user --name=envName
-&lt;/code>&lt;/pre></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230327-conda-101/</guid><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Robin</title><link>https://ChenLi2049.github.io/posts/20230321-robin/</link><description>&lt;p>Besides writing code, having ChatGPT pretend to be Robin from &lt;a href="https://en.wikipedia.org/wiki/How_I_Met_Your_Mother">&lt;em>How I Met Your Mother&lt;/em>&lt;/a> and engaging in a conversation with her is so funny. She is constantly making things up and I am trying my best to make the story work. And when it does, it&amp;rsquo;s amazing!&lt;/p>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>To delete the environment &lt;code>envName&lt;/code> in Jupyter Notebook:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate jupyter
+jupyter kernelspec uninstall envName
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230327-conda-101/</guid><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate></item><item><title>Robin</title><link>https://ChenLi2049.github.io/posts/20230321-robin/</link><description>&lt;p>Besides writing code, having ChatGPT pretend to be Robin from &lt;a href="https://en.wikipedia.org/wiki/How_I_Met_Your_Mother">&lt;em>How I Met Your Mother&lt;/em>&lt;/a> and engaging in a conversation with her is so funny. She is constantly making things up and I am trying my best to make the story work. And when it does, it&amp;rsquo;s amazing!&lt;/p>
 &lt;p>It&amp;rsquo;s even more fun to ask ChatGPT to be Jamie Lannister, since there is (part of) a whole novel and countless online discussions. We fought about whether Joffrey is his bastard for more that half an hour. There is even a duel.&lt;/p>
 &lt;p>Can&amp;rsquo;t wait to try this on GPT-4. Maybe I should build my own LLM and put in the scripts of &lt;em>How I Met Your Mother&lt;/em>.&lt;/p>
 &lt;p>But one of my favorite Sci-Fi writers of all time, Ted Chiang, shut my idea down. In the article &lt;a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web">&lt;em>ChatGPT Is a Blurry JPEG of the Web&lt;/em>&lt;/a>,&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> he claimed that LLMs are not going to create something genuinely new that is not blurry or too general. I am getting the feeling that we just create a robot that produces something trash-ish, which could be useful when you&amp;rsquo;re stuck in a bug or just wanna have some fun or want to read something as fast as possible&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> or want to &lt;a href="https://english.elpais.com/science-tech/2023-04-02/one-of-the-worlds-most-cited-scientists-rafael-luque-suspended-without-pay-for-13-years.html">write papers as fast as possible&lt;/a>, but is useless when you are considering the next step of your project or want to talk to Robin herself. In the movie &lt;a href="https://www.imdb.com/title/tt1798709/">&lt;em>Her&lt;/em>&lt;/a>, ChatGPT is Theodore rather than Samantha.&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/p>

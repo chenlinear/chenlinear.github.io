@@ -116,20 +116,51 @@
 &lt;blockquote>
 &lt;p>You are the captain of your own ship. You have the power at any moment to CHOOSE. Make sure you&amp;rsquo;re choosing from a place of your vision and not in reaction to the circumstances that present themselves.&lt;/p>
 &lt;/blockquote>
-&lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;p>In Windows, to get the list of all the files in a folder:&lt;/p>
+&lt;p>And when you did choose, work harder.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid><pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><description>&lt;h2 id="1-path">§1 path&lt;/h2>
+&lt;p>In Windows, to get the list of all the files in a folder:&lt;/p>
 &lt;ol>
-&lt;li>Create a .txt file.&lt;/li>
-&lt;li>Open it with notepad. Copy and paste the following commands:&lt;/li>
-&lt;/ol>
+&lt;li>
+&lt;p>Create a .txt file.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open it with notepad. Copy and paste the following commands:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-propmt" data-lang="propmt">@echo off
 dir %1 /s/b &amp;gt; %~n1.txt
 &lt;/code>&lt;/pre>&lt;p>Or, if you don&amp;rsquo;t want the list of what&amp;rsquo;s in the subdirectory:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">@echo off
 dir %1 /b &amp;gt; %~n1.txt
-&lt;/code>&lt;/pre>&lt;ol start="3">
-&lt;li>Rename it getList.bat (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/li>
-&lt;li>Drag the target folder to this .bat file.&lt;/li>
-&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">Slidy&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Rename it getList.bat (&amp;ldquo;getList&amp;rdquo; could be anything.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Drag the target folder to this .bat file.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2-path--size">§2 path &amp;amp; size&lt;/h2>
+&lt;p>Only the code in step 2. is different:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-propmt" data-lang="propmt">@echo off
+( for /r %1 %%i in (*) do @echo %%~fi ^(%%~zi bytes^)) &amp;gt; %~n1.txt
+&lt;/code>&lt;/pre>&lt;p>And, to convert bit to GB, use this python code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#111">re&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># open original.txt, create new.txt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">with&lt;/span> &lt;span style="color:#111">open&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;original.txt&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#d88200">&amp;#39;r&amp;#39;&lt;/span>&lt;span style="color:#111">)&lt;/span> &lt;span style="color:#00a8c8">as&lt;/span> &lt;span style="color:#111">f1&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#111">open&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;new.txt&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#d88200">&amp;#39;w&amp;#39;&lt;/span>&lt;span style="color:#111">)&lt;/span> &lt;span style="color:#00a8c8">as&lt;/span> &lt;span style="color:#111">f2&lt;/span>&lt;span style="color:#111">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00a8c8">for&lt;/span> &lt;span style="color:#111">line&lt;/span> &lt;span style="color:#f92672">in&lt;/span> &lt;span style="color:#111">f1&lt;/span>&lt;span style="color:#111">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># use regular expressions to match file size information&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">match&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#111">re&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">search&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">r&lt;/span>&lt;span style="color:#d88200">&amp;#39;(\d+)\sbytes&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#111">line&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00a8c8">if&lt;/span> &lt;span style="color:#111">match&lt;/span>&lt;span style="color:#111">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># get the file size information&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">size_bytes&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#111">int&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#111">match&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">group&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#111">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># convert bit to GB&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">size_gb&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#111">size_bytes&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span>&lt;span style="color:#f92672">**&lt;/span>&lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># write to new.txt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">new_line&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#111">re&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">sub&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">r&lt;/span>&lt;span style="color:#d88200">&amp;#39;(\d+)\sbytes&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#d88200">f&lt;/span>&lt;span style="color:#d88200">&amp;#39;&lt;/span>&lt;span style="color:#d88200">{&lt;/span>&lt;span style="color:#111">size_gb&lt;/span>&lt;span style="color:#d88200">:&lt;/span>&lt;span style="color:#d88200">.2f&lt;/span>&lt;span style="color:#d88200">}&lt;/span>&lt;span style="color:#d88200"> GB&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#111">line&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">f2&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">write&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#111">new_line&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00a8c8">else&lt;/span>&lt;span style="color:#111">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># if file size information is not matched, write the original line&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">f2&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">write&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#111">line&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate></item><item><title>New Repository: Slidy</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><description>&lt;p>I just created a new repository for slide, which is called &lt;a href="https://github.com/ChenLi2049/Slidy">Slidy&lt;/a>. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.&lt;/p>
 &lt;p>I use it for several reasons:&lt;/p>
 &lt;ol>
 &lt;li>Microsoft PPT is just painful to use. And &lt;a href="https://marp.app/">Marp&lt;/a> is too much for me to handle.&lt;/li>
@@ -293,7 +324,7 @@ conda install ipykernel
 python -m ipykernel install --user --name=envName
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
-&lt;p>To delete the environment &lt;code>envName&lt;/code> in Jupyter Notebook:&lt;/p>
+&lt;p>Delete the &lt;code>envName&lt;/code> environment in Jupyter Notebook:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-prompt" data-lang="prompt">conda activate jupyter
 jupyter kernelspec uninstall envName
 &lt;/code>&lt;/pre>&lt;/li>

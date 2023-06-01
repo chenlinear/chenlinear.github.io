@@ -40,6 +40,12 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Still first paragraph
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">2.&lt;/span> Second paragraph
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To do list too:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">- [ ]&lt;/span> hurry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00a8c8">- [ ]&lt;/span> up,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">- [ ]&lt;/span> now!
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="16-quote-and-code-block-in-list">§1.6 Quote and Code Block in List&lt;/h3>
 &lt;p>Again, four spaces. But in Obsidian, these are shown correct in reading mode, shown werid in editing mode. See &lt;a href="https://forum.obsidian.md/t/code-blocks-nested-in-lists-render-in-editor-as-if-at-top-level/870/10">&lt;em>Code blocks nested in lists render in editor as if at top-level&lt;/em>&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Markdown" data-lang="Markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">-&lt;/span> Quote:

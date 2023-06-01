@@ -85,6 +85,16 @@ Or:
 2. Second paragraph
 ```
 
+To do list too:
+
+```Markdown
+- [ ] hurry
+ 
+	- [ ] up,
+
+- [ ] now!
+```
+
 ### §1.6 Quote and Code Block in List
 
 Again, four spaces. But in Obsidian, these are shown correct in reading mode, shown werid in editing mode. See [_Code blocks nested in lists render in editor as if at top-level_](https://forum.obsidian.md/t/code-blocks-nested-in-lists-render-in-editor-as-if-at-top-level/870/10).

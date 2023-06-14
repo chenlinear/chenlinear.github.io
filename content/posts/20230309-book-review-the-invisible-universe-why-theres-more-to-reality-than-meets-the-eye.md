@@ -13,7 +13,7 @@ This is a review of [_The Invisible Universe: Why There's More to Reality than M
 
 The first 6 chapters are Astronomy 101 to me. I have read about them in several textbooks, but when these clues forming a linear process, it's something else. (I will come back to this "linear process" later in §2.) Here's something interesting to me in these chapters.
 
-- The restrictions of human eyes: (1) wavelength: $380--700 \space \text{nm}$. (2) $220 \space \text{frames/s}$ or maybe higher, see [_FPS : Human eye can see how many frames per second?_](https://sites.google.com/site/myvracelog/fps-human-eye-can-see-how-many-frames-per-second).
+- The restrictions of human eyes: (1) wavelength: $380--700 \space \mathrm{nm}$. (2) $220 \space \mathrm{frames/s}$ or maybe higher, see [_FPS : Human eye can see how many frames per second?_](https://sites.google.com/site/myvracelog/fps-human-eye-can-see-how-many-frames-per-second).
 - The piano metaphor, that the full spectrum of light of different wavelength is like the full notes on a piano with only one note that human can hear/see, is beautiful. I have an analogue of that metaphor myself, consider a guitar, this time the wavelength can go to infinity, since $f_n=nv/2L$[^1]. But does the frequency of light reach infinity? Theoretically there is no such limit, but in practice we haven't observe it. It wouldn't travel to earth or it would just pass through us. Well, according to GZK limit, there is a limit for protons, but I don't know about photons.
 - [_A Tediously Accurate Map of the Solar System_](https://joshworth.com/a-tediously-accurate-map-of-the-solar-system/) feels like the rolling credit for a movie which is about how human can never leave the Solar System.
 - [Cosmic Background Explorer](https://en.wikipedia.org/wiki/Cosmic_Background_Explorer) is legendary! It's shocking that Ron Howard did not make a movie about it.
@@ -29,13 +29,18 @@ Thanks to the effort that the author put to make a linear process out of history
 1. The speculation of Dark Matter is historical. We calculated there's a planet Neptune because Uranus moves a little odd according to Newton's law.
 2. And these evidences suggests that there are a lot more material that we can't observe in the universe: (1) speedy galaxy clusters, (2) fast-rotating galaxies, (3) gravitational lensing.
 3. However, could it be that we understand Gravity wrong? Since Mercury precession used to be wrongly explained until General Relativity. And we proposed two possible theory: (1) MOND (Modified Newtonian Dynamics fudge factor), (2) TeVeS (tensor-vector-scalar gravity theory).
-4. "The Bullet Cluster, ... , turns out to be the perfect arena for pitting dark matter and MOND against each other." Long story short, Dark Matter stays.[^2] 
+4. "The [Bullet Cluster](https://en.wikipedia.org/wiki/Bullet_Cluster), ... , turns out to be the perfect arena for pitting dark matter and MOND against each other." Due to a difference in cross section, which means that dark matter has a small cross section and stars, gas have a big cross section, Dark Matter stays.[^2] 
+    ![Bullet_cluster](https://upload.wikimedia.org/wikipedia/commons/e/ea/Bullet_cluster.jpg)
 5. So what is Dark Matter?
 6. It could be MACHO (MAssive Compact Halo Object), which was later ruled out.
 7. It could be WIMP (Weakly Interacting Massive Particle), which has to be (1) non-baryonic in the Standard Model, (2) weakly interacting, meaning that only Gravity and Weak Nuclear Force are possible.
 8. The author didn't point it out, but the murderer is probably neutrino.[^3] See [Sterile neutrino](https://en.wikipedia.org/wiki/Sterile_neutrino). I later found out that [_Interpreting Reactor Antineutrino Anomalies with STEREO data_](https://arxiv.org/abs/2210.07664) rejects this hypothesis. But the results from LSND and MiniBooNe are odd, so it's kind of suspicious.[^4]
 
 Anyway, the murderer is still out there, you kids should watch out.
+
+Cosmic Microwave Background (CMB) is also an evidence of Dark Matter, see [Microwave background observations](https://en.wikipedia.org/wiki/Cosmic_microwave_background#Microwave_background_observations). You can calculate the percentage of Dark Matter from the power spectrum of CMB:
+
+![Power spectrum of temperature fluctuations in the Cosmic Microwave Background](https://cdn.sci.esa.int/documents/34222/35279/1567216755608-Planck_power_spectrum_625.jpg)
 
 ## §3 More
 

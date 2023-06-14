@@ -11,4 +11,4 @@ It hit me that $\delta(x)$ and $\delta_{ij}$ are the same thing, they both mean 
 
 - $\delta(x)$:![\delta(x)](https://tikz.net/files/delta_function-001.png)
 
-- $\delta_{ij}= \begin{cases} 1 &\text{if } i=j \\\ 0 &\text{if } i \not = j \end{cases}$
+- $\delta_{ij}= \begin{cases} 1 &\mathrm{if } i=j \\\ 0 &\mathrm{if } i \not = j \end{cases}$

@@ -62,6 +62,7 @@ theme = 'maverick'
 [outputFormats.RSS]
   mediatype = "application/rss"
   baseName = "atom"
+  limit = 3
 
 [outputFormats.JSON]
   mediatype = "application/json"

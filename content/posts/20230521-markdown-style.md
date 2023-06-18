@@ -124,9 +124,9 @@ By the way, when you write verbatim text that contains three backticks (ie. code
 Different Markdown accent handle equations differently, see [_混乱的 Markdown 世界_](https://yihui.org/cn/2017/08/markdown-flavors/). And for Obsidian:
 
 ```Markdown
-equations at the center of next line: $$ \begin{cases} x+y+z=10 \\\ x+2y+3z=20 \\\ x+4y+5z=30 \end{cases} \tag{1}$$, where $x$ is ...
+1. display equations: $$\begin{aligned} E_0&=mc^2 \\\ E^2&=(mc^2)^2+(pc)^2 \end{aligned} \tag{1}$$where $c = 3 \times 10^8 \space \mathrm{m/s}$
 
-or inline equations: $F = m \ddot{x}$.
+2. or inline equations: $\vec{F} = m \ddot{\vec{x}}$.
 ```
 
 ### §2.8 Two Pictures Alignment
@@ -138,7 +138,7 @@ Use table (compared with inserting html `<>` and all that, this is easier to rea
 |-|-|
 ```
 
-Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for [remark](https://github.com/gnab/remark) and [Slidy](https://github.com/ChenLi2049/Slidy).
+Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for [remark](https://github.com/gnab/remark) and [Slidy](https://github.com/ChenLi2049/Slidy). But you can solve it by putting it in a table.
 
 ## §3 使用中文时
 

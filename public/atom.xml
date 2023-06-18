@@ -1,0 +1,171 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Chen Li</title>
+    <description>Chen Li&#39;s personal blog</description>
+    <link>https://ChenLi2049.github.io</link>
+    
+    <language>en</language>
+    <copyright>Copyright 2023, Calvin Tran</copyright>
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    
+    <item>
+      <title>Markdown Style</title>
+      <link>https://ChenLi2049.github.io/posts/20230521-markdown-style/</link>
+      <description>&lt;p&gt;If you don&amp;rsquo;t know what it is, I recommend you should just play with it and don&amp;rsquo;t care about the style.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; is the text editor that I&amp;rsquo;m using. I like &lt;a href=&#34;https://help.obsidian.md/Plugins/Workspaces&#34;&gt;workspaces&lt;/a&gt; and &lt;a href=&#34;https://help.obsidian.md/Getting+started/Link+notes&#34;&gt;double link&lt;/a&gt; feature.&lt;/p&gt;
+&lt;h2 id=&#34;1-general&#34;&gt;§1 General&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;&lt;em&gt;Markdown Guide&lt;/em&gt;&lt;/a&gt; is good as a quick introduction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The thing about Markdown style is that every text editor has its own accent. I suggest using the universal ones, not the ones that a certain text editor created. Also, the best way to read this article is to copy and paste what&amp;rsquo;s in the code block, and see if it fits your text editor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-this-and-that&#34;&gt;§2 This and That&lt;/h2&gt;
+&lt;h3 id=&#34;21-use-blank-lines&#34;&gt;§2.1 Use Blank Lines!&lt;/h3&gt;
+&lt;p&gt;Wrong:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use blank lines!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use blank lines!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Correct:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use blank lines!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use blank lines!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See &lt;a href=&#34;https://yihui.org/en/2021/06/markdown-breath/&#34;&gt;&lt;em&gt;Let Your Markdown Breathe! - Remember to insert blank lines between different Markdown elements&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;22-only-use-_-for-bold-and-italic&#34;&gt;§2.2 Only Use &lt;code&gt;_&lt;/code&gt; for Bold and Italic&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold &lt;span style=&#34;font-style:italic&#34;&gt;_and_&lt;/span&gt; Italic
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold &lt;span style=&#34;font-weight:bold&#34;&gt;__and__&lt;/span&gt; Italic
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold &lt;span style=&#34;font-weight:bold&#34;&gt;___and___&lt;/span&gt; Italic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;23-in-the-middle-of-a-sentence-use--for-bold-and-italic&#34;&gt;§2.3 In the Middle of a Sentence, use &lt;code&gt;*&lt;/code&gt; for Bold and Italic&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold*and*Italic
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold**and**Italic
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bold***and***Italic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But to tell you the truth, I haven&amp;rsquo;t seen &lt;strong&gt;any&lt;/strong&gt;one write like this.&lt;/p&gt;
+&lt;h3 id=&#34;24-only-use---for-unordered-lists&#34;&gt;§2.4 Only use &lt;code&gt;-&lt;/code&gt; for Unordered Lists&lt;/h3&gt;
+&lt;p&gt;As I said, there are a lot of Markdown accent, but &lt;code&gt;-&lt;/code&gt; is universal. Also, this is in agreement with §3.2, so that you can only use the &lt;code&gt;-&lt;/code&gt;/&lt;code&gt;_&lt;/code&gt; key on the keyboard.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;-&lt;/span&gt; unordered lists
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;25-four-spaces-in-lists&#34;&gt;§2.5 Four Spaces in Lists&lt;/h3&gt;
+&lt;p&gt;This is a fun coincidence with Python.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;-&lt;/span&gt; First paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Still first paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;-&lt;/span&gt; Second paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;1.&lt;/span&gt; First paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Still first paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;2.&lt;/span&gt; Second paragraph
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To do list too:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;- [ ]&lt;/span&gt; hurry
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#00a8c8&#34;&gt;- [ ]&lt;/span&gt; up,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;- [ ]&lt;/span&gt; now!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;26-quote-and-code-block-in-list&#34;&gt;§2.6 Quote and Code Block in List&lt;/h3&gt;
+&lt;p&gt;Again, four spaces. But in Obsidian, these are shown correct in reading mode, shown werid in editing mode. See &lt;a href=&#34;https://forum.obsidian.md/t/code-blocks-nested-in-lists-render-in-editor-as-if-at-top-level/870/10&#34;&gt;&lt;em&gt;Code blocks nested in lists render in editor as if at top-level&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;-&lt;/span&gt; Quote:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;gt;This is the quote.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a8c8&#34;&gt;-&lt;/span&gt; Code Block:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ```python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    x = x + 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By the way, when you write verbatim text that contains three backticks (ie. code block in code block), you have to use four backticks to wrap the text. See &lt;a href=&#34;https://yihui.org/en/2018/11/hard-markdown/&#34;&gt;&lt;em&gt;The Two Surprisingly Hard Things about the Otherwise Simple Markdown - Writing three backticks verbatim, and understanding nested lists&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;27-equations&#34;&gt;§2.7 Equations&lt;/h3&gt;
+&lt;p&gt;Different Markdown accent handle equations differently, see &lt;a href=&#34;https://yihui.org/cn/2017/08/markdown-flavors/&#34;&gt;&lt;em&gt;混乱的 Markdown 世界&lt;/em&gt;&lt;/a&gt;. And for Obsidian:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;equations at the center of next line: $$ \begin{cases} x+y+z=10 \\\ x+2y+3z=20 \\\ x+4y+5z=30 \end{cases} \tag{1}$$, where $x$ is ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;or inline equations: $F = m \ddot{x}$.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;28-two-pictures-alignment&#34;&gt;§2.8 Two Pictures Alignment&lt;/h3&gt;
+&lt;p&gt;Use table (compared with inserting html &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; and all that, this is easier to read):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|![name](link)|![name](link)|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|-|-|
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for &lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; and &lt;a href=&#34;https://github.com/ChenLi2049/Slidy&#34;&gt;Slidy&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;3-使用中文时&#34;&gt;§3 使用中文时&lt;/h2&gt;
+&lt;h3 id=&#34;31-空格&#34;&gt;§3.1 空格&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://yihui.org/cn/2017/04/space&#34;&gt;&lt;em&gt;中英文混排中的空格&lt;/em&gt;&lt;/a&gt;和&lt;a href=&#34;https://yihui.org/cn/2017/05/pangu/&#34;&gt;&lt;em&gt;盘古之白&lt;/em&gt;&lt;/a&gt;说在英文单词两边各空一空格。我的建议是在表示代码时也是如此，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我们可以 &lt;span style=&#34;color:#d88200&#34;&gt;`from scipy import interpolate`&lt;/span&gt; 来解决这个 interpolation 问题。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;32-引用诗词&#34;&gt;§3.2 引用诗词&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://yihui.org/cn/2018/07/quote-poem/&#34;&gt;&lt;em&gt;如何在 Markdown 中引用诗词或歌词&lt;/em&gt;&lt;/a&gt;的引用方式在 Obsidian 可能不是最好的解决方法，可以直接每行右边没有空格，见 &lt;a href=&#34;https://www.markdownguide.org/basic-syntax/#blockquotes-with-multiple-paragraphs&#34;&gt;&lt;em&gt;Blockquotes with Multiple Paragraphs&lt;/em&gt;&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;缺月昏昏漏未央，一灯明灭照秋床。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;病身最觉风露早，归梦不知山水长。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;坐感岁时歌慷慨，起看天地色凄凉。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;鸣蝉更乱行人耳，正抱疏桐叶半黄。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是在我的个人网站中应该每行右边两个空格：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;缺月昏昏漏未央，一灯明灭照秋床。  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;病身最觉风露早，归梦不知山水长。  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;坐感岁时歌慷慨，起看天地色凄凉。  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;鸣蝉更乱行人耳，正抱疏桐叶半黄。  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;才能显示正确：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺月昏昏漏未央，一灯明灭照秋床。&lt;br&gt;
+病身最觉风露早，归梦不知山水长。&lt;br&gt;
+坐感岁时歌慷慨，起看天地色凄凉。&lt;br&gt;
+鸣蝉更乱行人耳，正抱疏桐叶半黄。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      <author>Chen Li</author>
+      <guid>https://ChenLi2049.github.io/posts/20230521-markdown-style/</guid>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+    </item>
+    
+    <item>
+      <title>New Repository: PEP-8-ZH</title>
+      <link>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</link>
+      <description>&lt;p&gt;I created a repository called &lt;a href=&#34;https://github.com/ChenLi2049/PEP-8-ZH&#34;&gt;PEP-8-ZH&lt;/a&gt;. Basically, I translated &lt;a href=&#34;https://peps.python.org/pep-0008/&#34;&gt;&lt;em&gt;PEP 8&lt;/em&gt;&lt;/a&gt; with the help of ChatGPT, and with a little modification myself. The prompt that I use is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;将下文翻译为中文
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And I did not translate the comments, because you should try to write comments in English.&lt;/p&gt;
+&lt;p&gt;If you want to learn about Python style, I recommend &lt;a href=&#34;https://google.github.io/styleguide/&#34;&gt;&lt;em&gt;Google Style Guides&lt;/em&gt;&lt;/a&gt; (中文版见 &lt;a href=&#34;https://zh-google-styleguide.readthedocs.io/en/latest/&#34;&gt;&lt;em&gt;Google 开源项目风格指南&lt;/em&gt;&lt;/a&gt;) as the guide. Which is more up to date. I&amp;rsquo;ll write about Python style soon.&lt;/p&gt;
+</description>
+      <author>Chen Li</author>
+      <guid>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</guid>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+    </item>
+    
+    <item>
+      <title>LIGO O4: multi-messenger</title>
+      <link>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</link>
+      <description>&lt;p&gt;LIGO is back on track with Observing Run 4 (O4)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. And I got this idea:&lt;/p&gt;
+&lt;p&gt;Active Galactic Nucleus (AGN) is considered as a Gravitational Wave (GW) candidate that can be detected by LIGO-Virgo-Kagra&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. And IceCube recently proposed a method to combine neutrino detection with radio detection in the observation of AGN&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. So maybe these three messengers (GW, neutrino, radio) can work together to observe AGN. And maybe we should write a program that can synchronize these observations.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s exciting that we can make use of basically all the messengers that we know of. Except cosmic rays, but galactic cosmic rays mostly can&amp;rsquo;t reach earth anyway (because of their charge). However, their are few things we should consider:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We don&amp;rsquo;t observe many GWs&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, so we can just do it by hand.&lt;/li&gt;
+&lt;li&gt;A radio telescope can turn around, so it&amp;rsquo;s kind of urgent to focus on the target. But based on the way IceCube works, there&amp;rsquo;s no rush. IceCube, the basic part of which is a $1 \space \mathrm{km}^3$ ice cube, can&amp;rsquo;t turn around. LIGO can&amp;rsquo;t turn around either.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://www.ligo.org/news/index.php#ER15&#34;&gt;their news website&lt;/a&gt; or &lt;a href=&#34;https://www.ligo.org/news/images/ER15-newsitem.pdf&#34;&gt;&lt;em&gt;Gravitational wave detectors prepare for next observing run&lt;/em&gt;&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://arxiv.org/abs/2304.10567&#34;&gt;&lt;em&gt;Optical Emission Model for Binary Black Hole Merger Remnants Travelling through Discs of Active Galactic Nucleus&lt;/em&gt;&lt;/a&gt;. I later found out Virgo is delayed, see &lt;a href=&#34;https://www.virgo-gw.eu/news/virgo-postpones-entry-into-o4-observing-run/&#34;&gt;&lt;em&gt;Virgo postpones entry into O4 observing run&lt;/em&gt;&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://arxiv.org/abs/2304.12675&#34;&gt;&lt;em&gt;Search for correlations of high-energy neutrinos detected in IceCube with radio-bright AGN and gamma-ray emission from blazars&lt;/em&gt;&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;https://www.ligo.org/detections.php&#34;&gt;Detection of gravitational waves&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      <author>Chen Li</author>
+      <guid>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</guid>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+    </item>
+    
+  </channel>
+</rss>

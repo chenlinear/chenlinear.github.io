@@ -1,12 +1,16 @@
 ---
 author: "Chen Li"
-title: "New Repository: Slidy"
+title: "New Repository: DrSlidelove"
 date: "2023-04-23"
 tags: 
 - CS
 ---
 
-I just created a new repository for slide, which is called [Slidy](https://github.com/ChenLi2049/Slidy). Well, technically I didn't create it, I just moved stuff around.
+Update 20230617: I'm so sorry that there's already a [Slidy](https://www.w3.org/Talks/Tools/Slidy2/). When I used that name for this repository, there's no such a repository named Slidy and I thought it would be ok. To avoid any confusion, the name is changed from Slidy to [DrSlidelove](https://github.com/ChenLi2049/DrSlidelove). Again, my apologies.
+
+---
+
+I just created a new repository for slide, which is called Slidy. Well, technically I didn't create it, I just moved stuff around.
 
 I use it for several reasons:
 

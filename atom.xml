@@ -1,4 +1,48 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Bon Iver</title><link>https://ChenLi2049.github.io/posts/20230612-bon-iver/</link><description>&lt;p>In this article, I want to explain why &lt;a href="https://boniver.org/">Bon Iver&lt;/a>&amp;rsquo;s first album &lt;em>For Emma, Forever Ago&lt;/em> is great in the perspective of physics. They&amp;rsquo;re not necessarily true but I just think this is fun.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Contamination of LLM</title><link>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</link><description>&lt;p>This is the dark side of &lt;em>the Force&lt;/em>.&lt;/p>
+&lt;p>In &lt;a href="https://chenli2049.github.io/posts/20230321-robin/">one my previous posts&lt;/a>, I talked about Ted Chiang&amp;rsquo;s idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Train LLM with LLM-produced material will produce terrible results.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> This is $\text{Ted Chiang&amp;rsquo;s idea}^n$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>And the contamination can be divided into two parts in general:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Unintentional:&lt;/p>
+&lt;ol>
+&lt;li>Code. This is what I&amp;rsquo;m most worried about.&lt;/li>
+&lt;li>Will modify an article with ChatGPT make it worse?&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Intentional:&lt;/p>
+&lt;ol>
+&lt;li>Fully-automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.&lt;/li>
+&lt;li>Fully-automated Reddit or other discussion board robots, including posts and replies.&lt;/li>
+&lt;li>Fully-automated Twitter robots, though I would say blue check is still definitely not a good idea.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>We are taking some measures, but they are probably not enough:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>The co-founder of Wikipedia, Jimmy Wales, recently talked about regulation for the use of ChatGPT in Wikipedia in &lt;a href="https://www.youtube.com/watch?v=diJp4zoQPqo">this podcast episode with Lex Fridman&lt;/a>. I really like the part where he said that you, the person, should always be the last barrier.&lt;/p>
+&lt;p>Yes, for Wikipedia, you should do the fact check, and for code, you should run it on your computer. (The latter one is what Stack Overflow has been debating about I think.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Try not to use ChatGPT to write articles. I personally would not use ChatGPT to write my posts. Modifying academic papers with ChatGPT is ok I guess, but if you write academic papers by ChatGPT, &lt;a href="https://english.elpais.com/science-tech/2023-04-02/one-of-the-worlds-most-cited-scientists-rafael-luque-suspended-without-pay-for-13-years.html">there will be consequences&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>See &lt;a href="https://arxiv.org/abs/2305.17493">&lt;em>The Curse of Recursion: Training on Generated Data Makes Models Forget&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</guid><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Bon Iver</title><link>https://ChenLi2049.github.io/posts/20230612-bon-iver/</link><description>&lt;p>In this article, I want to explain why &lt;a href="https://boniver.org/">Bon Iver&lt;/a>&amp;rsquo;s first album &lt;em>For Emma, Forever Ago&lt;/em> is great in the perspective of physics. They&amp;rsquo;re not necessarily true but I just think this is fun.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>He uses different voice when saying. It&amp;rsquo;s nothing like the way he talk or how he used to sing. You can say that his voice opened a new vision for us. Can you imagine seeing infrared with your own eyes for the first time?&lt;/p>
@@ -37,18 +81,4 @@
 &amp;#34;zoom&amp;#34;: &amp;#34;80&amp;#34;
 }
 &lt;/code>&lt;/pre>&lt;/li>
-&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230602-immersive-translate/</guid><pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate></item><item><title>RARBG shuts down</title><link>https://ChenLi2049.github.io/posts/20230531-rarbg-shuts-down/</link><description>&lt;p>RARBG shuts down, and here&amp;rsquo;s their announcement:&lt;/p>
-&lt;blockquote>
-&lt;p>Hello guys,&lt;br>
-We would like to inform you that we have decided to shut down our site.&lt;br>
-The past 2 years have been very difficult for us - some of the people in our team died due to covid complications,&lt;br>
-others still suffer the side effects of it - not being able to work at all.&lt;br>
-Some are also fighting the war in Europe - ON BOTH SIDES.&lt;br>
-Also, the power price increase in data centers in Europe hit us pretty hard.&lt;br>
-Inflation makes our daily expenses impossible to bare.&lt;br>
-Therefore we can no longer run this site without massive expenses that we can no longer cover out of pocket.&lt;br>
-After an unanimous vote we&amp;rsquo;ve decided that we can no longer do it.&lt;br>
-We are sorry :(&lt;br>
-Bye&lt;/p>
-&lt;/blockquote>
-&lt;p>I&amp;rsquo;m not sad that it&amp;rsquo;s shut down. After all, you know what they say, &amp;ldquo;piracy is the oldest profession in the world&amp;rdquo;. Although it might shrink with the development of streaming service, such as Netflix and HBO. What I&amp;rsquo;m sad about is that we are experiencing the aftermath of Covid 19, and I didn&amp;rsquo;t know a piracy website has to take that too. :(&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230531-rarbg-shuts-down/</guid><pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate></item></channel></rss>
+&lt;/ol></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230602-immersive-translate/</guid><pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate></item></channel></rss>

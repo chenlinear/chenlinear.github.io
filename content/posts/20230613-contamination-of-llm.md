@@ -9,7 +9,7 @@ math: true
 
 This is the dark side of _the Force_.
 
-In [one my previous posts](https://chenli2049.github.io/posts/20230321-robin/), I talked about Ted Chiang's idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
+In [one of my previous posts](https://chenli2049.github.io/posts/20230321-robin/), I talked about Ted Chiang's idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
 
 1. Train LLM with LLM-produced material will produce terrible results.[^1] This is $\text{Ted Chiang's idea}^n$
 
@@ -20,9 +20,9 @@ In [one my previous posts](https://chenli2049.github.io/posts/20230321-robin/), 
         2. Will modify an article with ChatGPT make it worse?
     
     2. Intentional: 
-        1. Fully-automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.
-        2. Fully-automated Reddit or other discussion board robots, including posts and replies.
-        3. Fully-automated Twitter robots, though I would say blue check is still definitely not a good idea.
+        1. Automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.
+        2. Automated Reddit or other discussion board robots, including posts and replies.
+        3. Automated Twitter robots, though I would say blue check is still definitely not a good idea.
 
 We are taking some measures, but they are probably not enough:
 

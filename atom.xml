@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Contamination of LLM</title><link>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</link><description>&lt;p>This is the dark side of &lt;em>the Force&lt;/em>.&lt;/p>
-&lt;p>In &lt;a href="https://chenli2049.github.io/posts/20230321-robin/">one my previous posts&lt;/a>, I talked about Ted Chiang&amp;rsquo;s idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.&lt;/p>
+&lt;p>In &lt;a href="https://chenli2049.github.io/posts/20230321-robin/">one of my previous posts&lt;/a>, I talked about Ted Chiang&amp;rsquo;s idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Train LLM with LLM-produced material will produce terrible results.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> This is $\text{Ted Chiang&amp;rsquo;s idea}^n$&lt;/p>
@@ -17,9 +17,9 @@
 &lt;li>
 &lt;p>Intentional:&lt;/p>
 &lt;ol>
-&lt;li>Fully-automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.&lt;/li>
-&lt;li>Fully-automated Reddit or other discussion board robots, including posts and replies.&lt;/li>
-&lt;li>Fully-automated Twitter robots, though I would say blue check is still definitely not a good idea.&lt;/li>
+&lt;li>Automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.&lt;/li>
+&lt;li>Automated Reddit or other discussion board robots, including posts and replies.&lt;/li>
+&lt;li>Automated Twitter robots, though I would say blue check is still definitely not a good idea.&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
@@ -48,7 +48,7 @@
 &lt;p>He uses different voice when saying. It&amp;rsquo;s nothing like the way he talk or how he used to sing. You can say that his voice opened a new vision for us. Can you imagine seeing infrared with your own eyes for the first time?&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>First we break the voice down with Fourier transformation:$$x(\omega) = \int_{-\infty}^{\infty} x(t) e^{-i \omega t} \space \text{d}t,$$and than if we use inverse Fourier transformation, we will get the original sound $$x(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} x(\omega) e^{i \omega t} \space \text{d} \omega.$$But if you add a random number on $x(\omega)$ and use inverse Fourier transform to put it back, we will get: $$x^{\prime}(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} (x(\omega)+ \text{random}) e^{i \omega t} \space \text{d} \omega$$or just pick out few frequencies and emphasize them, that&amp;rsquo;s probably how these songs sound like.&lt;/p>
+&lt;p>First we break the voice down with Fourier transformation:$$x(\omega) = \int_{-\infty}^{\infty} x(t) e^{-i \omega t} \space \text{d}t,$$then if we use inverse Fourier transformation, we will get the original sound $$x(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} x(\omega) e^{i \omega t} \space \text{d} \omega.$$But if you add a random number on $x(\omega)$ and use inverse Fourier transform to put it back, we will get: $$x^{\prime}(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} (x(\omega)+ \text{random}) e^{i \omega t} \space \text{d} \omega$$or just pick out few frequencies and emphasize them, that&amp;rsquo;s probably how these songs sound like.&lt;/p>
 &lt;p>In this way, you can say that his music is the build-up and relief or tension.&lt;/p>
 &lt;/li>
 &lt;li>

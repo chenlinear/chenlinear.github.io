@@ -13,7 +13,7 @@ But I'd like to say [TinyTeX](https://github.com/rstudio/tinytex) (~500 MB) or [
 
 ## §1 General
 
-- About the name: $\LaTeX$ (`$LaTeX$`) is great, LaTeX or latex is acceptable, lAtEx is brutal.
+- About the name: $\LaTeX$ (`$\LaTeX$`) is great, LaTeX or latex is acceptable, lAtEx is brutal.
 
 - You should never start from scratch. Finding a template and modifying the template is so much easier. Starting from scratch is [mission impossible](https://www.imdb.com/title/tt0117060/).
 

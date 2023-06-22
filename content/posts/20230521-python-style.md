@@ -4,7 +4,6 @@ title: "Python Style"
 date: "2023-05-21"
 tags: 
 - CS
-math: true
 ---
 
 If you don't know what it is, I recommend you should just play with it and don't care about the style.

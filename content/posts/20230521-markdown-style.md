@@ -138,7 +138,7 @@ Use table (compared with inserting html `<>` and all that, this is easier to rea
 |-|-|
 ```
 
-Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for [remark](https://github.com/gnab/remark) and [Slidy](https://github.com/ChenLi2049/Slidy). But you can solve it by putting it in a table.
+Most text editors show the picture with modified proper size. But for some text editors, when the picture is too big, you should reduce pixel size of the picture before showing it in the table. This is the case for [remark](https://github.com/gnab/remark) and [DrSlidelove](https://github.com/ChenLi2049/DrSlidelove). But you can solve it by putting it in a table.
 
 ## §3 使用中文时
 

@@ -4,7 +4,6 @@ title: "Contamination of LLM"
 date: "2023-06-13"
 tags: 
 - CS
-math: true
 ---
 
 This is the dark side of _the Force_.

@@ -189,3 +189,11 @@ rank~\(1\)
 ### §2.3 Table
 
 [LaTeX table generator](https://www.tablesgenerator.com/) can generate tables.
+
+### §2.4 Code
+
+To quote a package, for example, $\texttt{GraphNeT}$:
+
+```LaTeX
+\texttt{NumPy}
+```

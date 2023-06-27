@@ -29,7 +29,7 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-The Positional Encoding is $$\begin{aligned} \text{PE}_{(i, 2j)}=\sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\\ \text{PE}_{(i, 2j + 1)}=\cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$
+The Positional Encoding is $$\begin{aligned} PE_{(i, 2j)} &= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(i, 2j + 1)} &= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$
 
 The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
 

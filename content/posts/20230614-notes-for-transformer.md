@@ -13,7 +13,7 @@ This is my notes from [_Attention Is All You Need_](https://arxiv.org/abs/1706.0
 
 $$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^\top}{\sqrt{d_{k}}})V \tag{1}$$where for a vector $\vec{z_i}$, $$\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}} \tag{2}$$
 
-From input $X$, to get $Q$ (Query), $K$ (Key), $V$ (Value), $$\begin{aligned} Q &= XW^Q \\\ K &= XW^K \\\ V &= XW^V \end{aligned} \tag{3}$$where $W^Q$, $W^K$, $W^V$ are training parameters.
+For input $X$, to get $Q$ (Query), $K$ (Key), $V$ (Value), $$\begin{aligned} Q &= XW^Q \\\ K &= XW^K \\\ V &= XW^V \end{aligned} \tag{3}$$where $W^Q$, $W^K$, $W^V$ are training parameters.
 
 ![self-attention](http://jalammar.github.io/images/t/self-attention-matrix-calculation.png)
 

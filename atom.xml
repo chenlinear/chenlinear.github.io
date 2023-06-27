@@ -30,7 +30,7 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;p>The Positional Encoding is $$\begin{aligned} \text{PE}&lt;em>{(i, 2j)}=\sin(\frac{i}{ 10000^{2j/{d&lt;/em>{model}}}}) \\ \text{PE}&lt;em>{(i, 2j + 1)}=\cos(\frac{i}{10000^{2j/{d&lt;/em>{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
+&lt;p>The Positional Encoding is $$\begin{aligned} PE_{(i, 2j)} &amp;amp;= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\ PE_{(i, 2j + 1)} &amp;amp;= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
 &lt;p>The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:&lt;/p>
 &lt;p>&lt;img
 src="http://jalammar.github.io/images/t/transformer_positional_encoding_example.png"

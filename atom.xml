@@ -20,7 +20,7 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;p>This is the Figure 2 in &lt;em>Attention Is All You Need&lt;/em>.&lt;/p>
+&lt;p>This is the explanation for Figure 2 in &lt;em>Attention Is All You Need&lt;/em>.&lt;/p>
 &lt;p>Attention is Encoder-Decoder structure:&lt;/p>
 &lt;p>&lt;img
 src="http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png"
@@ -30,7 +30,7 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;p>The Positional Encoding is $$\begin{aligned} \text{PE}&lt;em>{(i, 2j)}=\sin(\frac{i}{ 10000^{2j/{d&lt;/em>{model}}}}) \ \text{PE}&lt;em>{(i, 2j + 1)}=\cos(\frac{i}{10000^{2j/{d&lt;/em>{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
+&lt;p>The Positional Encoding is $$\begin{aligned} \text{PE}&lt;em>{(i, 2j)}=\sin(\frac{i}{ 10000^{2j/{d&lt;/em>{model}}}}) \\ \text{PE}&lt;em>{(i, 2j + 1)}=\cos(\frac{i}{10000^{2j/{d&lt;/em>{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
 &lt;p>The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:&lt;/p>
 &lt;p>&lt;img
 src="http://jalammar.github.io/images/t/transformer_positional_encoding_example.png"
@@ -57,14 +57,14 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;h3 id="31-add--norm">§3.1 Add &amp;amp; Norm:&lt;/h3>
+&lt;h3 id="31-add--norm">§3.1 Add &amp;amp; Norm&lt;/h3>
 &lt;ul>
 &lt;li>Add is similar to learning residual functions proposed by &lt;a href="https://arxiv.org/abs/1512.03385">ResNet&lt;/a>. By introducing &amp;ldquo;shortcut&amp;rdquo; or &amp;ldquo;identity mapping&amp;rdquo;, the transformed input is added together with input by using a $1 \times 1$ convolutional layer.&lt;/li>
 &lt;li>Norm is normalization layer.&lt;/li>
 &lt;/ul>
-&lt;h3 id="32-feed-forward">§3.2 Feed Forward:&lt;/h3>
+&lt;h3 id="32-feed-forward">§3.2 Feed Forward&lt;/h3>
 &lt;ul>
-&lt;li>Composed of two fully connected layers.&lt;/li>
+&lt;li>Composed of two Fully Connected Layers.&lt;/li>
 &lt;li>The $1^\text{st}$ layer is ReLU activation function$$\text{ReLU}(x)=\max{(0,x)} \tag{7}$$&lt;/li>
 &lt;li>The $2^\text{nd}$ layer is $$\text{FFN}(X)=(\max{(0,XW_1+b_1)})W_2+b_2 \tag{8}$$&lt;/li>
 &lt;li>The output of Feed Forward will have the same dimension with input $X$.&lt;/li>

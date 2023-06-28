@@ -192,16 +192,15 @@ class="full-width"
 &lt;pre tabindex="0">&lt;code>├── data
 │   ├── processed
 │   └── raw
-├── models
-│ ├── models.py
-│ └── loss.py
 ├── src
 │   ├── __init__.py
 │ ├── config.json
-│ ├── utils.py
-│   └── make_dataset.py
+│ ├── loss.py
+│ ├── models.py
+│ └── utils.py
 ├── LICENSE
 ├── predict.py
+├── prepare_dataset.py
 ├── README.md
 ├── requirements.txt
 └── train.py

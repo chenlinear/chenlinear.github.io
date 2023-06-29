@@ -1,4 +1,900 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Wed, 14 Jun 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Notes for Transformer</title><link>https://ChenLi2049.github.io/posts/20230614-notes-for-transformer/</link><description>&lt;p>This is my notes from &lt;a href="https://arxiv.org/abs/1706.03762">&lt;em>Attention Is All You Need&lt;/em>&lt;/a> and &lt;a href="http://nlp.seas.harvard.edu/annotated-transformer/">&lt;em>The Annotated Transformer&lt;/em>&lt;/a> and &lt;a href="http://jalammar.github.io/illustrated-transformer/">&lt;em>The Illustrated Transformer&lt;/em>&lt;/a>. This is an outline, I&amp;rsquo;m trying to keep it as simple as possible.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Group Theory Calculations</title><link>https://ChenLi2049.github.io/posts/20230615-group-theory-calculations/</link><description>&lt;p>In this article I will summarize some simple examples as a quick introduction to Group Theory.&lt;/p>
+&lt;h2 id="1-finite-group">§1 Finite Group&lt;/h2>
+&lt;p>If you wanna know about the full finite group, see &lt;a href="https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups">Classification of finite simple groups&lt;/a>. The &lt;strong>FULL&lt;/strong> list is one of the greatest human achievements.&lt;/p>
+&lt;p>I think the best way to learn finite group is to start from various examples.&lt;/p>
+&lt;p>Here&amp;rsquo;s some general rules:&lt;/p>
+&lt;ul>
+&lt;li>Some rules to calculate permutations:
+&lt;ul>
+&lt;li>$(12)=(21)$, $(123)=(231)=(312)$&lt;/li>
+&lt;li>$(12)(23)=(123)$&lt;/li>
+&lt;li>$(12)^{-1}=(21)=(12)$, $(123)^{-1}=(321)$, $((12)(34))^{-1}=(43)(21)$. The structure of the permutation is the same, the numbers in the permutation goes backwards.&lt;/li>
+&lt;li>$(12)(12)=e$&lt;/li>
+&lt;li>To calculate $((12)(34))(123)((12)(34))^{-1}$, first exchange $1$ and $2$ for $(123)$, than exchange $3$ and $4$ for $(123)$. $(123)\xrightarrow{\text{exchange 1 and 2}}(213)\xrightarrow{\text{exchange 3 and 4}}(214)$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>For a $S_n$ group, permutations with the same structure form a conjugate class.&lt;/li>
+&lt;li>The number of elements in a conjugate class is a factor of the order of the group.&lt;/li>
+&lt;li>The order of the subgroup is a factor of the order of the group.&lt;/li>
+&lt;li>An invariant subgroup must consist of several complete conjugate classes.&lt;/li>
+&lt;/ul>
+&lt;h3 id="11-c2">§1.1 C2&lt;/h3>
+&lt;p>In the notation of permutation, $$C_2 = \lbrace e, (12) \rbrace \tag{1.1.1}$$It has $2$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (12) \rbrace \end{aligned} \tag{1.1.2}$$thus only has $2$ trivial invariant subgroups: $$\begin{aligned} H_1 &amp;amp;= \lbrace e\rbrace \\ H_2&amp;amp;=\lbrace e, (12) \rbrace (C_2 \space \text{itself}) \end{aligned} \tag{1.1.3}$$thus has $2$ quotient groups, which are trivial: $$\begin{aligned} C_2 / H_1 &amp;amp;= \lbrace H_1, (12)H_1 \rbrace \cong C_2 \\ C_2 / H_2 &amp;amp;= \lbrace H_2\rbrace \end{aligned} \tag{1.1.4}$$&lt;/p>
+&lt;p>In the character table, the first row is always all $1$, and the first column is always the dimension $n_{\mu}$ of the irreducible representation (irr. rep.) of the group, which satisfies $$n_G = \sum n_{\mu}^2 \tag{1.1.5}$$where $n_G$ is the order of original group, in this case $C_2$. So the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the $1^{\text{st}}$ row and the $2^{\text{nd}}$ row satisfy (the coefficient ahead is $\sqrt{\frac{\text{the number of elements in the conjugate class}}{n_G}}$ that each row have the same value):$$\begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 &amp;amp; \sqrt{\frac{1}{2}}\cdot1 \end{pmatrix} \begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 \\ \sqrt{\frac{1}{2}}\cdot x \end{pmatrix} = 0 \tag{1.1.6}$$so $x=-1$, thus complete the character table:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="12-c3">§1.2 C3&lt;/h3>
+&lt;p>$$C_3 = \lbrace e, (123), (321) \rbrace \tag{1.2.1}$$It has $3$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (123) \rbrace \\ \zeta_3&amp;amp;=\lbrace (321) \rbrace \end{aligned} \tag{1.2.2}$$thus only has $2$ trivial invariant subgroups: $$\begin{aligned} H_1 &amp;amp;= \lbrace e\rbrace \\ H_2&amp;amp;=\lbrace e, (123), (321) \rbrace (C_3 \space \text{itself}) \end{aligned} \tag{1.2.3}$$thus has $2$ quotient groups, which are trivial: $$\begin{aligned} C_3 / H_1 &amp;amp;= \lbrace H_1, (123)H_1, (321)H_1 \rbrace \cong C_3 \\ C_3 / H_2 &amp;amp;= \lbrace H_2\rbrace \end{aligned} \tag{1.2.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5), the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;td style="text-align:right">$w$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="13-s3">§1.3 S3&lt;/h3>
+&lt;p>$$S_3 = \lbrace e, (12), (13), (23), (123), (321) \rbrace \tag{1.3.1}$$It has $3$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (12), (13), (23) \rbrace \\ \zeta_3&amp;amp;=\lbrace (123), (321) \rbrace \end{aligned} \tag{1.3.2}$$thus only has $1$ nontrivial invariant subgroup, composed of $\zeta_1$ and $\zeta_3$: $$H_1 = \lbrace e, (123), (321) \rbrace \tag{1.3.3}$$thus has $1$ quotient group: $$S_3 / H_1 = \lbrace H_1, (12)H_1 \rbrace \cong C_2 \tag{1.3.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5), the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;td style="text-align:right">$w$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Because $H_1$ is composed of $\zeta_1$ and $\zeta_3$, and $S_3 / H_1 \cong C_2$, the column of $\zeta_1$ and $\zeta_3$ is the same as the column of $\zeta_1$ in the character table of $C_2$, when having the same dimension of irr. rep.; the column of $\zeta_2$ is the same as the column of $\zeta_2$ in the character table of $C_2$, when having the same dimension of irr. rep. Thus the character table is :&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;td style="text-align:right">$w$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="14-s4">§1.4 S4&lt;/h3>
+&lt;p>$$\begin{aligned}S_4 = \lbrace &amp;amp;e, \\ &amp;amp;(12), (13), (14), (23), (24), (34), \\ &amp;amp;(12)(34), (13)(24), (14)(23), \\ &amp;amp;(123), (124), (132), (134), (142), (143), (234), (243), \\ &amp;amp;(1234), (1243), (1324), (1342), (1423), (1432) \rbrace \end{aligned}\tag{1.4.1}$$It has $5$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (12), (13), (14), (23), (24), (34) \rbrace \\ \zeta_3&amp;amp;=\lbrace (12)(34), (13)(24), (14)(23) \rbrace \\ \zeta_4&amp;amp;=\lbrace (123), (124), (132), (134), (142), (143), (234), (243) \rbrace \\ \zeta_5&amp;amp;=\lbrace (1234), (1243), (1324), (1342), (1423), (1432) \rbrace
+\end{aligned} \tag{1.4.2}$$thus has $2$ nontrivial invariant subgroups: $$\begin{aligned} H_1 = \lbrace &amp;amp;e, (12)(34), (13)(24), (14)(23) \rbrace \cong V_4\\ H_2=\lbrace &amp;amp;e, \\ &amp;amp;(123), (321), (124), (421), (234), (432), \\ &amp;amp;(12)(34), (13)(24), (14)(23) \rbrace \cong A_4 \end{aligned} \tag{1.4.3}$$thus has $2$ quotient groups: $$\begin{aligned} S_4 / V_4 &amp;amp;= \lbrace V_4, (12)V_4, (13)V_4, (23)V_4, (123)V_4, (321)V_4 \rbrace \cong S_3 \\ S_4 / A_4 &amp;amp;\cong C_2 \end{aligned} \tag{1.4.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5) and quotient group, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;th style="text-align:right">$\zeta_5$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;th style="text-align:right">$\zeta_5$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;th style="text-align:right">$\zeta_5$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="15-d2">§1.5 D2&lt;/h3>
+&lt;p>$$D_2 = \lbrace e, (13), (24), (13)(24) \rbrace \tag{1.5.1}$$It has $4$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (13) \rbrace \\ \zeta_3&amp;amp;=\lbrace (24) \rbrace \\ \zeta_4&amp;amp;=\lbrace (13)(24) \rbrace\end{aligned} \tag{1.5.2}$$thus has $3$ nontrivial invariant subgroups: $$\begin{aligned} H_1 &amp;amp;= \lbrace e, (13)\rbrace \\ H_2&amp;amp;=\lbrace e, (24) \rbrace \\ H_3&amp;amp;=\lbrace e, (13)(24) \rbrace \end{aligned} \tag{1.5.3}$$thus has $3$ quotient groups: $$\begin{aligned} D_2 / H_1 &amp;amp;= \lbrace H_1, (13)H_1 \rbrace \cong C_2 \\ D_2 / H_2 &amp;amp;= \lbrace H_2, (24)H_2 \rbrace \cong C_2 \\ D_2 / H_3 &amp;amp;= \lbrace H_3, (13)(24)H_3 \rbrace \cong C_2\end{aligned} \tag{1.5.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5) and quotient groups, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="16-d3">§1.6 D3&lt;/h3>
+&lt;p>$D_3 \cong S_3$, see §1.3.&lt;/p>
+&lt;h3 id="17-d4">§1.7 D4&lt;/h3>
+&lt;p>$$\begin{aligned}D_4 = \lbrace &amp;amp;e, \\ &amp;amp;(13), (24), \\ &amp;amp;(12)(34), (14)(23), \\ &amp;amp;(1234), (13)(24), (4321) \rbrace \end{aligned}\tag{1.7.1}$$where $(13)(24)=(1234)^2$, $(4321)=(1234)^3$. It has $5$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (13)(24) \rbrace \\ \zeta_3&amp;amp;=\lbrace (13), (24) \rbrace \\ \zeta_4&amp;amp;=\lbrace (12)(34), (14)(23) \rbrace \\ \zeta_5&amp;amp;=\lbrace (1234), (4321) \rbrace \end{aligned} \tag{1.7.2}$$thus has $4$ nontrivial invariant subgroups: $$\begin{aligned} H_1 &amp;amp;= \lbrace e, (13)(24)\rbrace \\ H_2&amp;amp;=\lbrace e, (13), (24), (13)(24) \rbrace \\ H_3&amp;amp;=\lbrace e, (12)(34), (14)(23), (13)(24) \rbrace \\ H_4&amp;amp;=\lbrace e, (1234), (4321), (13)(24) \rbrace \end{aligned} \tag{1.7.3}$$thus has $4$ quotient groups: $$\begin{aligned} D_4 / H_1 &amp;amp;= \lbrace H_1, (13)H_1, (12)(34)H_1, (1234)H_1 \rbrace \cong D_2 \\ D_4 / H_2 &amp;amp;= \lbrace H_2, (12)(34)H_2\rbrace \cong C_2 \\ D_4 / H_3 &amp;amp;= \lbrace H_3, (13)H_3\rbrace \cong C_2 \\ D_4 / H_4 &amp;amp;= \lbrace H_4, (13)H_4\rbrace \cong C_2 \end{aligned} \tag{1.7.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5) and quotient groups, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;th style="text-align:right">$\zeta_5$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;td style="text-align:right">$w$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;th style="text-align:right">$\zeta_5$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$-2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="18-d5">§1.8 D5&lt;/h3>
+&lt;p>$$\begin{aligned} D_5 = \lbrace &amp;amp;e, \\ &amp;amp;(12345), (13524), (42531), (54321), \\ &amp;amp;(25)(34), (13)(45), (15)(24), (12)(35), (14)(23) \rbrace \end{aligned} \tag{1.8.1}$$where $(13524)=(12345)^2$, $(42531)=(12345)^3$, $(54321)=(12345)^4$. It has $4$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (25)(34), (13)(45), (15)(24), (12)(35), (14)(23) \rbrace \\ \zeta_3&amp;amp;=\lbrace (12345), (54321) \rbrace \\ \zeta_4&amp;amp;=\lbrace (13524), (42531) \rbrace \end{aligned} \tag{1.8.2}$$thus has $1$ nontrivial invariant subgroup: $$ H_1 = \lbrace e, (12345), (13524), (42531), (54321)\rbrace \cong C_5\tag{1.8.3}$$thus has $1$ quotient group: $$D_5 / C_5 = \lbrace C_5, (25)(34)C_5 \rbrace \cong C_2\tag{1.8.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5) and quotient groups, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$r$&lt;/td>
+&lt;td style="text-align:right">$s$&lt;/td>
+&lt;td style="text-align:right">$t$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$2\cos(\frac{2 \pi}{5})$&lt;/td>
+&lt;td style="text-align:right">$2\cos(\frac{4 \pi}{5})$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$2$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$2\cos(\frac{4 \pi}{5})$&lt;/td>
+&lt;td style="text-align:right">$2\cos(\frac{2 \pi}{5})$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>By the way, $2\cos(\frac{2 \pi}{5}) \approx 0.618$, is the Golden Ratio.&lt;/p>
+&lt;h3 id="19-a4">§1.9 A4&lt;/h3>
+&lt;p>$$\begin{aligned}A_4 = \lbrace &amp;amp;e, \\ &amp;amp;(123), (321), (124), (421), (134), (431), (234), (432), \\ &amp;amp;(12)(34), (13)(24), (14)(23) \rbrace \end{aligned} \tag{1.9.1}$$It has $4$ conjugate classes: $$\begin{aligned} \zeta_1&amp;amp;=\lbrace e \rbrace \\ \zeta_2&amp;amp;=\lbrace (12)(34), (13)(24), (14)(23) \rbrace \\ \zeta_3&amp;amp;=\lbrace (123), (421), (134), (432) \rbrace \\ \zeta_4&amp;amp;=\lbrace (321), (124), (431), (234) \rbrace \end{aligned} \tag{1.9.2}$$thus has $1$ nontrivial invariant subgroup: $$H_1 = \lbrace e, (12)(34), (13)(24), (14)(23)\rbrace \cong V_4\tag{1.9.3}$$thus has $1$ quotient group: $$A_4 / V_4 = \lbrace V_4, (123)V_4, (321)V_4 \rbrace \cong C_3 \tag{1.9.4}$$&lt;/p>
+&lt;p>According to Eq. (1.1.5) and quotient groups, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">$x$&lt;/td>
+&lt;td style="text-align:right">$y$&lt;/td>
+&lt;td style="text-align:right">$z$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>According to orthonormality, the character table is:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Conjugate Class:&lt;/th>
+&lt;th style="text-align:right">$\zeta_1$&lt;/th>
+&lt;th style="text-align:right">$\zeta_2$&lt;/th>
+&lt;th style="text-align:right">$\zeta_3$&lt;/th>
+&lt;th style="text-align:right">$\zeta_4$&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$1$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{4 \pi}{3}}$&lt;/td>
+&lt;td style="text-align:right">$e^{i \frac{2 \pi}{3}}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td style="text-align:right">$3$&lt;/td>
+&lt;td style="text-align:right">$-1$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;td style="text-align:right">$0$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="2-use-normal-yang-tableaux-to-construct-the-irr-rep-matrices-of-s3">§2 Use normal Yang Tableaux to Construct the Irr. Rep. Matrices of S3&lt;/h2>
+&lt;p>Drawing the Yang Tableaux with html is so simple and elegant:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">table&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">tr&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>1&lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>2&lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">tr&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">tr&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>3&lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">td&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">tr&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#111">&amp;lt;/&lt;/span>&lt;span style="color:#f92672">table&lt;/span>&lt;span style="color:#111">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>normal Yang tableaux $\Theta_1$:&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>2&lt;/td>
+&lt;td>3&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;p>According to &lt;a href="https://en.wikipedia.org/wiki/Hook_length_formula">Hook length formula&lt;/a>, the irr. rep. is one-dimensional.&lt;/p>
+&lt;p>We have$$\begin{aligned} s_1 &amp;amp;= e+(12)+(23)+(13)+(123)+(321) \\ a_1 &amp;amp;= e \\ e_1 &amp;amp;= e+(12)+(23)+(13)+(123)+(321) \end{aligned} \tag{2.1}$$Define $$\ket{\nu} = \ket{e}+\ket{(12)}+\ket{(23)}+\ket{(13)}+\ket{(123)}+\ket{(321)} \tag{2.2}$$Thus we have $$p\ket{\nu}=\ket{\nu}\tag{2.3}$$where $p=e, (12), (23), (13), (123), (321)$. So $$p=1 \tag{2.4}$$&lt;/p>
+&lt;ol start="2">
+&lt;li>normal Yang tableaux $\Theta_2$:&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;p>According to &lt;a href="https://en.wikipedia.org/wiki/Hook_length_formula">Hook length formula&lt;/a>, the irr. rep. is one-dimensional.&lt;/p>
+&lt;p>We have$$\begin{aligned} s_2 &amp;amp;= e \\ a_2 &amp;amp;= e-(12)-(23)-(13)+(123)+(321) \\ e_2 &amp;amp;= e-(12)-(23)-(13)+(123)+(321) \end{aligned} \tag{2.5}$$Define $$\ket{\nu} = \ket{e}-\ket{(12)}-\ket{(23)}-\ket{(13)}+\ket{(123)}+\ket{(321)} \tag{2.6}$$Thus when $p$ is an odd permutation, $$p\ket{\nu}=(12)\ket{\nu}=(23)\ket{\nu}=(13)\ket{\nu}=-\ket{\nu} \tag{2.7}$$when $p$ is a even permutation, $$p\ket{\nu}=e\ket{\nu}=(123)\ket{\nu}=(321)\ket{\nu}=\ket{\nu} \tag{2.8}$$So $$p=(-1)^p \tag{2.9}$$&lt;/p>
+&lt;ol start="3">
+&lt;li>normal Yang tableaux $\Theta_3$:&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;p>According to &lt;a href="https://en.wikipedia.org/wiki/Hook_length_formula">Hook length formula&lt;/a>, the irr. rep. is two-dimensional.&lt;/p>
+&lt;p>We have$$\begin{aligned} s_2 &amp;amp;= e+(12) \\ a_2 &amp;amp;= e-(13) \\ e_2 &amp;amp;= e+(12)-(13)-(12)(13) \\ &amp;amp;=e+(12)-(13)-(321) \end{aligned} \tag{2.10}$$
+Define $$\ket{\nu_1} = \ket{e}+\ket{(12)}-\ket{(13)}-\ket{(321)} \tag{2.11}$$Thus$$\begin{aligned} e\ket{\nu_1}&amp;amp;=\ket{\nu_1} \\ (12)\ket{\nu_1}&amp;amp;=\ket{(12)}+\ket{e}-\ket{(321)}-\ket{(13)}&amp;amp;=\ket{\nu_1}\\ (23)\ket{\nu_1}&amp;amp;=\ket{(23)}+\ket{(321)}-\ket{(123)}-\ket{(12)}&amp;amp;=\ket{\nu_2}\\ (13)\ket{\nu_1}&amp;amp;=\ket{(13)}+\ket{(123)}-\ket{e}-\ket{(23)}&amp;amp;=-\ket{\nu_1}-\ket{\nu_2}\\ (123)\ket{\nu_1}&amp;amp;=\ket{(123)}+\ket{(13)}-\ket{(23)}-\ket{e}&amp;amp;=-\ket{\nu_1}-\ket{\nu_2}\\ (321)\ket{\nu_1}&amp;amp;=\ket{(321)}+\ket{(23)}-\ket{(12)}-\ket{(123)}&amp;amp;=\ket{\nu_2}\\ e\ket{\nu_2}&amp;amp;=\ket{\nu_2}\\ (12)\ket{\nu_2}&amp;amp;=\ket{(123)}+\ket{(13)}-\ket{(23)}-\ket{e}&amp;amp;=-\ket{\nu_1}-\ket{\nu_2}\\ (23)\ket{\nu_2}&amp;amp;=\ket{e}+\ket{(12)}-\ket{(13)}-\ket{(321)}&amp;amp;=\ket{\nu_1}\\ (13)\ket{\nu_2}&amp;amp;=\ket{(321)}+\ket{(23)}-\ket{(12)}-\ket{(123)}&amp;amp;=\ket{\nu_2}\\ (123)\ket{\nu_2}&amp;amp;=\ket{(12)}+\ket{e}-\ket{(321)}-\ket{(13)}&amp;amp;=\ket{\nu_1}\\ (321)\ket{\nu_2}&amp;amp;=\ket{(13)}+\ket{(123)}-\ket{e}-\ket{(23)}&amp;amp;=-\ket{\nu_1}-\ket{\nu_2} \end{aligned} \tag{2.12}$$So $$\begin{aligned} D(e) &amp;amp;= \begin{pmatrix} 1 &amp;amp; 0 \\ 0 &amp;amp; 1 \end{pmatrix} \\ D(12) &amp;amp;= \begin{pmatrix} 1 &amp;amp; -1 \\ 0 &amp;amp; -1 \end{pmatrix}, D(23) = \begin{pmatrix} 0 &amp;amp; 1 \\ 1 &amp;amp; 0 \end{pmatrix}, D(13) = \begin{pmatrix} -1 &amp;amp; 0 \\ -1 &amp;amp; 1 \end{pmatrix} \\ D(123) &amp;amp;= \begin{pmatrix} -1 &amp;amp; 1 \\ -1 &amp;amp; 0 \end{pmatrix}, D(321) = \begin{pmatrix} 0 &amp;amp; -1 \\ 1 &amp;amp; -1 \end{pmatrix} \\ \end{aligned} \tag{2.13}$$&lt;/p>
+&lt;h2 id="3-irr-rep-of-so3-lie-algebra">§3 Irr. Rep. of SO(3) Lie Algebra&lt;/h2>
+&lt;h3 id="31-j12">§3.1 j=1/2&lt;/h3>
+&lt;p>When $j = \frac{1}{2}$, $\frac{3}{2}$, $\frac{5}{2}$, …, it&amp;rsquo;s a double-valued representation. Let&amp;rsquo;s take $j=\frac{1}{2}$ for example.&lt;/p>
+&lt;p>Define $$\ket{\frac{1}{2},\frac{1}{2}}=\begin{pmatrix} 1 \\ 0 \end{pmatrix}, \ket{\frac{1}{2},\frac{1}{2}}=\begin{pmatrix} 0 \\ 1 \end{pmatrix} \tag{3.1.1}$$According to $$\begin{aligned} J_3 \ket{j,m} &amp;amp;= m \ket{j,m} \\ J_{\pm} \ket{j,m} &amp;amp;= \sqrt{j(j+1)-m(m \pm 1)} \ket{j,m \pm 1}\end{aligned} \tag{3.1.2}$$we have $$J_3=\begin{pmatrix} \frac{1}{2} &amp;amp; 0 \\ 0 &amp;amp; -\frac{1}{2} \end{pmatrix}, J_+=\begin{pmatrix} 0 &amp;amp; 1 \\ 0 &amp;amp; 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 &amp;amp; 0 \\ 1 &amp;amp; 0 \end{pmatrix} \tag{3.1.3}$$According to $$J_{\pm}=J_1 \pm i J_2 \tag{3.1.4}$$we have $$J_1=\begin{pmatrix} 0 &amp;amp; \frac{1}{2} \\ \frac{1}{2} &amp;amp; 0 \end{pmatrix}, J_2=\begin{pmatrix} 0 &amp;amp; -\frac{i}{2} \\ \frac{i}{2} &amp;amp; 0 \end{pmatrix}, J_3=\begin{pmatrix} \frac{1}{2} &amp;amp; 0 \\ 0 &amp;amp; -\frac{1}{2} \end{pmatrix} \tag{3.1.5}$$According to $$J_k=\frac{\sigma_k}{2}, k=1,2,3 \tag{3.1.6}$$we have $$\sigma_3=\begin{pmatrix} 0 &amp;amp; 1 \\ 1 &amp;amp; 0 \end{pmatrix}, \sigma_2=\begin{pmatrix} 0 &amp;amp; -i \\ i &amp;amp; 0 \end{pmatrix}, \sigma_3=\begin{pmatrix} 1 &amp;amp; 0 \\ 0 &amp;amp; 1 \end{pmatrix} \tag{3.1.7}$$So $$\begin{aligned} d^{\frac{1}{2}}(\beta) &amp;amp;=e^{-i \beta J_2} \\ &amp;amp;= e^{-\frac{i \beta \sigma_2}{2}} \\ &amp;amp;=E+(-\frac{i \beta}{2})\sigma_2+\frac{1}{2!}(-\frac{i \beta}{2})^{2}\sigma_2^2+\frac{1}{3!}(-\frac{i \beta}{2})^{3}\sigma_2^3+ \cdots \\ &amp;amp;=E\cos{\frac{\beta}{2}}-i \sigma_2 \sin{\frac{\beta}{2}} \\ &amp;amp;= \begin{pmatrix} \cos{\frac{\beta}{2}} &amp;amp; -\sin{\frac{\beta}{2}} \\ \sin{\frac{\beta}{2}} &amp;amp; \cos{\frac{\beta}{2}} \end{pmatrix}\end{aligned} \tag{3.1.8}$$So $$D^{\frac{1}{2}}(\alpha, \beta, \gamma)=\begin{pmatrix} e^{-\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} &amp;amp; -e^{-\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{\frac{i\gamma}{2}} \\ e^{\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} &amp;amp; e^{\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{\frac{i\gamma}{2}}\end{pmatrix} \tag{3.1.9}$$So $$\begin{aligned} D[R_n(2n \pi)] &amp;amp;= D[R] e^{in \pi \sigma_2} D[R]^{-1} \\ &amp;amp;= D[R] (-E)^n D[R]^{-1} \\ &amp;amp;=(-1)^n E \end{aligned} \tag{3.1.10}$$Thus it&amp;rsquo;s a double-valued representation.&lt;/p>
+&lt;h3 id="32-j1">§3.2 j=1&lt;/h3>
+&lt;p>When $j = 0$, $1$, $2$, …, it&amp;rsquo;s a irreducible representation. Let&amp;rsquo;s take $j=1$ for example.&lt;/p>
+&lt;p>$$J_3=\begin{pmatrix} 1 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; -1 \end{pmatrix}, J_+=\begin{pmatrix} 0 &amp;amp; \sqrt{2} &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; \sqrt{2} \\ 0 &amp;amp; 0 &amp;amp; 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 &amp;amp; 0 &amp;amp; 0 \\ \sqrt{2} &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; \sqrt{2} &amp;amp; 0 \end{pmatrix} \tag{3.2.1}$$And$$e^{-i \beta J_2} = e^{\beta K} =E+\sin{\beta} K+(1-\cos{\beta})K^2 \tag{3.2.2}$$&lt;/p>
+&lt;p>The rest is left as an exercise for the reader.&lt;/p>
+&lt;p>Eventually, $$d^1(\beta)= \begin{pmatrix} \frac{1+\cos{\beta}}{2} &amp;amp; -\frac{\sin{\beta}}{\sqrt{2}} &amp;amp; \frac{1-\cos{\beta}}{2} \\ \frac{\sin{\beta}}{\sqrt{2}} &amp;amp; \cos{\beta} &amp;amp; -\frac{\sin{\beta}}{\sqrt{2}} \\ \frac{1-\cos{\beta}}{2} &amp;amp; \frac{\sin{\beta}}{\sqrt{2}} &amp;amp; \frac{1+\cos{\beta}}{2} \end{pmatrix} \tag{3.2.3}$$&lt;/p>
+&lt;h2 id="4-decomposing-the-direct-product-of-irr-rep-of-su2-into-the-direct-sum-of-irr-rep">§4 Decomposing the Direct Product of Irr. Rep. of SU(2) into the Direct Sum of Irr. Rep.&lt;/h2>
+&lt;p>Here&amp;rsquo;s an example of $j_1 = \frac{1}{2}$, $j_2=1$. You can check &lt;a href="https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients">Table of Clebsch–Gordan coefficients&lt;/a> to make sure it&amp;rsquo;s right.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$$\ket{\frac{3}{2}, \frac{3}{2}}=\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1} \tag{4.1}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$$J_-\ket{\frac{3}{2}, \frac{3}{2}}=\sqrt{\frac{3}{2}(\frac{3}{2}+1)-\frac{3}{2}(\frac{3}{2}-1)}\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{3}\ket{\frac{3}{2}, \frac{1}{2}} \tag{4.2}$$
+$$\begin{aligned}J_-(\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1})&amp;amp;=(J_-\ket{\frac{1}{2}, \frac{1}{2}})\otimes\ket{1, 1}+\ket{\frac{1}{2}, \frac{1}{2}} \otimes J_-(\ket{1, 1}) \\ &amp;amp;=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{2}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \end{aligned} \tag{4.3}$$
+So $$\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{4.4}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Similarly, $$\ket{\frac{3}{2}, -\frac{1}{2}}=\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}+\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{4.5}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Similarly, $$\ket{\frac{3}{2}, -\frac{3}{2}}=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, -1} \tag{4.6}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Because $\ket{\frac{3}{2}, \frac{1}{2}}$ and $\ket{\frac{1}{2}, \frac{1}{2}}$ are orthogonal, and by normalization, we have $$\ket{\frac{1}{2}, \frac{1}{2}} = \sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}-\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{4.7}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Similarly, $$\ket{\frac{1}{2}, -\frac{1}{2}} = \sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}-\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{4.8}$$&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Thus complete the Clebsch–Gordan coefficients for $j_1 = \frac{1}{2}$, $j_2=1$.&lt;/p>
+&lt;h2 id="5-box-weight-diagram-of-su3-irr-rep">§5 Box-Weight Diagram of SU(3) Irr. Rep.&lt;/h2>
+&lt;h3 id="51-box-weight-diagram">§5.1 Box-Weight Diagram&lt;/h3>
+&lt;p>We have $$\begin{cases} \vec{\alpha^1} = (\frac{1}{2},\frac{\sqrt{3}}{2}) \\ \vec{\alpha^2} = (\frac{1}{2},-\frac{\sqrt{3}}{2}) \end{cases} \tag{5.1.1}$$and according to the definition of Cartan matrix $$A_{ij} = \frac{2 \vec{\alpha^i} \cdot \vec{\alpha^j}}{|\vec{\alpha^j}|^2} \tag{5.1.2}$$we have:$$A = \begin{pmatrix} 2 &amp;amp; -1 \\ -1 &amp;amp; 2 \end{pmatrix} \tag{5.1.3}$$&lt;/p>
+&lt;p>When drawing the box-weight diagram, there are some rules to follow:&lt;/p>
+&lt;ul>
+&lt;li>When minus the number on the left of $\boxed{x \space y}$, the $x$,
+&lt;ol>
+&lt;li>minus the $1^{\text{st}}$ row of eq. (5.1.3);&lt;/li>
+&lt;li>draw a line down-right from $x$ to the $x&amp;rsquo;$ in the next box;&lt;/li>
+&lt;li>until it&amp;rsquo;s $-x$.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>When minus the number on the right of $\boxed{x \space y}$, the $y$,
+&lt;ol>
+&lt;li>minus the $2^{\text{nd}}$ row of eq. (5.1.3);&lt;/li>
+&lt;li>draw a line down-left from $y$ to the $y&amp;rsquo;$ in the next box;&lt;/li>
+&lt;li>until it&amp;rsquo;s $-y$.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>If you start from $\boxed{a \space b}$ on the top, the final result should be $\boxed{-b \space -a}$ in the bottom.&lt;/li>
+&lt;/ul>
+&lt;p>For example, when the highest weight is $3$ and $0$, or $\boxed{3 \space 0}$, the box-weight diagram should look like this:&lt;/p>
+&lt;p>&lt;img
+src="20230615-group-theory-calculations-highest-weight-3-and-0.jpg"
+alt="20230615-group-theory-calculations-highest-weight-3-and-0"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
+&lt;h3 id="52-all-possible-roots">§5.2 All Possible Roots&lt;/h3>
+&lt;p>According to $$\frac{2 \vec{\alpha^j} \cdot \vec{\mu^k}}{|\vec{\alpha^j}|^2}=\delta_{jk} \tag{5.2.1}$$we have $$\begin{cases} \vec{\mu^1}=(\frac{1}{2}, \frac{\sqrt{3}}{6}) \\ \vec{\mu^2}=(\frac{1}{2}, -\frac{\sqrt{3}}{6}) \end{cases} \tag{5.2.2}$$&lt;/p>
+&lt;p>Starting from $3 \vec{\mu^1}$, from box-weight diagram, we have $$\begin{aligned} &amp;amp;3 \vec{\mu^1}-\vec{\alpha^1}, \\ &amp;amp;3 \vec{\mu^1}-\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-2\vec{\alpha^1}, \\ &amp;amp;3 \vec{\mu^1}-2\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}, \\ &amp;amp;3 \vec{\mu^1}-2\vec{\alpha^1}-2\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}-\vec{\alpha^2}, \\ &amp;amp; 3 \vec{\mu^1}-3\vec{\alpha^1}-2\vec{\alpha^2}, \\ &amp;amp;3 \vec{\mu^1}-3\vec{\alpha^1}-3\vec{\alpha^2} \end{aligned} \tag{5.2.3}$$
+(Or you can do it more easily by using the fact that the figure below is symmetric with respect to $H_2$ axis.)&lt;/p>
+&lt;p>Drawing on the $H_1 - H_2$ plane, we have:&lt;/p>
+&lt;p>&lt;img
+src="20230615-group-theory-calculations-highest-weight-3-and-0-H_1-H_2.png"
+alt="20230615-group-theory-calculations-highest-weight-3-and-0-H_1-H_2"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230615-group-theory-calculations/</guid><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Notes for Transformer</title><link>https://ChenLi2049.github.io/posts/20230614-notes-for-transformer/</link><description>&lt;p>This is my notes from &lt;a href="https://arxiv.org/abs/1706.03762">&lt;em>Attention Is All You Need&lt;/em>&lt;/a> and &lt;a href="http://nlp.seas.harvard.edu/annotated-transformer/">&lt;em>The Annotated Transformer&lt;/em>&lt;/a> and &lt;a href="http://jalammar.github.io/illustrated-transformer/">&lt;em>The Illustrated Transformer&lt;/em>&lt;/a>. This is an outline, I&amp;rsquo;m trying to keep it as simple as possible.&lt;/p>
 &lt;h2 id="1-self-attention">§1 Self-Attention&lt;/h2>
 &lt;p>$$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^\top}{\sqrt{d_{k}}})V \tag{1}$$where for a vector $\vec{z_i}$, $$\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}} \tag{2}$$&lt;/p>
 &lt;p>For input $X$, to get $Q$ (Query), $K$ (Key), $V$ (Value), $$\begin{aligned} Q &amp;amp;= XW^Q \\ K &amp;amp;= XW^K \\ V &amp;amp;= XW^V \end{aligned} \tag{3}$$where $W^Q$, $W^K$, $W^V$ are training parameters.&lt;/p>
@@ -258,48 +1154,4 @@ class="full-width"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Epoch &lt;span style="color:#f92672">[&lt;/span>8/10&lt;span style="color:#f92672">]&lt;/span>, Loss: 2.2769
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Epoch &lt;span style="color:#f92672">[&lt;/span>10/10&lt;span style="color:#f92672">]&lt;/span>, Loss: 2.2734
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>torch.Size&lt;span style="color:#f92672">([&lt;/span>64, 10&lt;span style="color:#f92672">])&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start with torch&amp;rsquo;s example &lt;a href="https://github.com/pytorch/examples/blob/main/mnist">mnist&lt;/a> is a great idea.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230614-torch-nn/</guid><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Contamination of LLM</title><link>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</link><description>&lt;p>This is the dark side of &lt;em>the Force&lt;/em>.&lt;/p>
-&lt;p>In &lt;a href="https://chenli2049.github.io/posts/20230321-robin/">one of my previous posts&lt;/a>, I talked about Ted Chiang&amp;rsquo;s idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Train LLM with LLM-produced material will produce terrible results.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> This is $\text{Ted Chiang&amp;rsquo;s idea}^n$&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>And the contamination can be divided into two parts in general:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Unintentional:&lt;/p>
-&lt;ol>
-&lt;li>Code. This is what I&amp;rsquo;m most worried about.&lt;/li>
-&lt;li>Will modify an article with ChatGPT make it worse?&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>Intentional:&lt;/p>
-&lt;ol>
-&lt;li>Automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.&lt;/li>
-&lt;li>Automated Reddit or other discussion board robots, including posts and replies.&lt;/li>
-&lt;li>Automated Twitter robots, though I would say blue check is still definitely not a good idea.&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;/ol>
-&lt;p>We are taking some measures, but they are probably not enough:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>The co-founder of Wikipedia, Jimmy Wales, recently talked about regulation for the use of ChatGPT in Wikipedia in &lt;a href="https://www.youtube.com/watch?v=diJp4zoQPqo">this podcast episode with Lex Fridman&lt;/a>. I really like the part where he said that you, the person, should always be the last barrier.&lt;/p>
-&lt;p>Yes, for Wikipedia, you should do the fact check, and for code, you should run it on your computer. (The latter one is what Stack Overflow has been debating about I think.)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Try not to use ChatGPT to write articles. I personally would not use ChatGPT to write my posts. Modifying academic papers with ChatGPT is ok I guess, but if you write academic papers by ChatGPT, &lt;a href="https://english.elpais.com/science-tech/2023-04-02/one-of-the-worlds-most-cited-scientists-rafael-luque-suspended-without-pay-for-13-years.html">there will be consequences&lt;/a>.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>See &lt;a href="https://arxiv.org/abs/2305.17493">&lt;em>The Curse of Recursion: Training on Generated Data Makes Models Forget&lt;/em>&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</guid><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start with torch&amp;rsquo;s example &lt;a href="https://github.com/pytorch/examples/blob/main/mnist">mnist&lt;/a> is a great idea.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230614-torch-nn/</guid><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate></item></channel></rss>

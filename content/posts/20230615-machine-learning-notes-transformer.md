@@ -1,13 +1,22 @@
 ---
 author: "Chen Li"
-title: "Notes for Transformer"
-date: "2023-06-14"
+title: "Machine Learning Notes: Transformer"
+date: "2023-06-15"
 tags: 
 - CS
 math: true
 ---
 
-This is my notes from [_Attention Is All You Need_](https://arxiv.org/abs/1706.03762) and [_The Annotated Transformer_](http://nlp.seas.harvard.edu/annotated-transformer/) and [_The Illustrated Transformer_](http://jalammar.github.io/illustrated-transformer/). This is an outline, I'm trying to keep it as simple as possible.
+This is my notes from [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762) and [_The Annotated Transformer_](http://nlp.seas.harvard.edu/annotated-transformer/) and [_The Illustrated Transformer_](http://jalammar.github.io/illustrated-transformer/). This is an outline, I'm trying to keep it as simple as possible. You can import these layers and blocks from `torch.nn`, see [_Transformer Layers_ — PyTorch 2.0 documentation](https://pytorch.org/docs/stable/nn.html#transformer-layers). And I will focus more on structure rather than code itself, because building this model on `torch.nn` is much simpler, see [_Language Modeling with nn.Transformer and torchtext_ — PyTorch Tutorials 2.0.1+cu117 documentation](https://pytorch.org/tutorials/beginner/transformer_tutorial.html).
+
+>In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output ... the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.
+
+Recurrent neural networks (RNN), long short-term memory networks(LSTM) and gated RNNs have these shortages:
+
+1. They handle sequence word-by-word, which is hard to be parallelized.
+2. They are easy to forget a long sequence or mix previous content up with following content.
+
+Attention mechanism has been used before, but Transformer is a purely attention architecture, that's why "Attention is __All__ You Need".
 
 ## §1 Self-Attention
 

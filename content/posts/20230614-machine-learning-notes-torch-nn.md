@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "torch.nn"
+title: "Machine Learning Notes: torch.nn"
 date: "2023-06-14"
 tags: 
 - CS
@@ -287,4 +287,4 @@ Epoch [10/10], Loss: 2.2734
 torch.Size([64, 10])
 ```
 
-Start with torch's example [mnist](https://github.com/pytorch/examples/blob/main/mnist) is a great idea.
+Start with torch's example [mnist](https://github.com/pytorch/examples/blob/main/mnist) (or [_What is torch.nn really?_](https://pytorch.org/tutorials/beginner/nn_tutorial.html)) is a great idea.

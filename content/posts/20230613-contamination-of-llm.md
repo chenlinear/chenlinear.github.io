@@ -9,9 +9,9 @@ math: true
 
 This is the dark side of _the Force_.
 
-In [one of my previous posts](https://chenli2049.github.io/posts/20230321-robin/), I talked about Ted Chiang's idea on LLMs. At the time his idea only seem plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
+In [one of my previous posts](https://chenli2049.github.io/posts/20230321-robin/), I talked about Ted Chiang's idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
 
-1. Train LLM with LLM-produced material will produce terrible results.[^1] This is $\text{Ted Chiang's idea}^n$
+1. Training LLM with LLM-produced material will produce terrible results.[^1] This is $\text{Ted Chiang's idea}^n$.
 
 2. And the contamination can be divided into two parts in general:
     

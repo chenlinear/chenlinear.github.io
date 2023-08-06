@@ -37,7 +37,7 @@ Only the code in step 2. is different:
 ( for /r %1 %%i in (*) do @echo %%~fi ^(%%~zi bytes^)) > %~n1.txt
 ```
 
-And, to convert bit to GB, use this python code:
+And, to convert bytes to GB, use this python code:
 
 ```python
 import re

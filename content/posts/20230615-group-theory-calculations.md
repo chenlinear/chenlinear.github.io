@@ -39,7 +39,7 @@ In the character table, the first row is always all $1$, and the first column is
 |1|$1$|$1$|
 |2|$1$|$x$|
 
-According to orthonormality, the $1^{\text{st}}$ row and the $2^{\text{nd}}$ row satisfy (the coefficient ahead is $\sqrt{\frac{\text{the number of elements in the conjugate class}}{n_G}}$ that each row have the same value):$$\begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 & \sqrt{\frac{1}{2}}\cdot1 \end{pmatrix} \begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 \\\ \sqrt{\frac{1}{2}}\cdot x \end{pmatrix} = 0 \tag{1.1.6}$$so $x=-1$, thus complete the character table:
+According to orthonormality, the $1^{\text{st}}$ row and the $2^{\text{nd}}$ row satisfy (the coefficient ahead is $\sqrt{\frac{\text{the number of elements in the conjugate class}}{n_G}}$ that each column has the same value):$$\begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 & \sqrt{\frac{1}{2}}\cdot1 \end{pmatrix} \begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 \\\ \sqrt{\frac{1}{2}}\cdot x \end{pmatrix} = 0 \tag{1.1.6}$$so $x=-1$, thus complete the character table:
 
 |Conjugate Class:|$\zeta_1$|$\zeta_2$|
 |-|-:|-:|

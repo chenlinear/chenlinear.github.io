@@ -42,7 +42,7 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>According to orthonormality, the $1^{\text{st}}$ row and the $2^{\text{nd}}$ row satisfy (the coefficient ahead is $\sqrt{\frac{\text{the number of elements in the conjugate class}}{n_G}}$ that each row have the same value):$$\begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 &amp;amp; \sqrt{\frac{1}{2}}\cdot1 \end{pmatrix} \begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 \\ \sqrt{\frac{1}{2}}\cdot x \end{pmatrix} = 0 \tag{1.1.6}$$so $x=-1$, thus complete the character table:&lt;/p>
+&lt;p>According to orthonormality, the $1^{\text{st}}$ row and the $2^{\text{nd}}$ row satisfy (the coefficient ahead is $\sqrt{\frac{\text{the number of elements in the conjugate class}}{n_G}}$ that each column has the same value):$$\begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 &amp;amp; \sqrt{\frac{1}{2}}\cdot1 \end{pmatrix} \begin{pmatrix} \sqrt{\frac{1}{2}}\cdot1 \\ \sqrt{\frac{1}{2}}\cdot x \end{pmatrix} = 0 \tag{1.1.6}$$so $x=-1$, thus complete the character table:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -894,7 +894,16 @@ loading="lazy"
 decoding="async"
 class="full-width"
 />
-&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230615-group-theory-calculations/</guid><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Notes for Transformer</title><link>https://ChenLi2049.github.io/posts/20230614-notes-for-transformer/</link><description>&lt;p>This is my notes from &lt;a href="https://arxiv.org/abs/1706.03762">&lt;em>Attention Is All You Need&lt;/em>&lt;/a> and &lt;a href="http://nlp.seas.harvard.edu/annotated-transformer/">&lt;em>The Annotated Transformer&lt;/em>&lt;/a> and &lt;a href="http://jalammar.github.io/illustrated-transformer/">&lt;em>The Illustrated Transformer&lt;/em>&lt;/a>. This is an outline, I&amp;rsquo;m trying to keep it as simple as possible.&lt;/p>
+&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230615-group-theory-calculations/</guid><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Machine Learning Notes: Transformer</title><link>https://ChenLi2049.github.io/posts/20230615-machine-learning-notes-transformer/</link><description>&lt;p>This is my notes from &lt;a href="https://arxiv.org/abs/1706.03762">[1706.03762] &lt;em>Attention Is All You Need&lt;/em>&lt;/a> and &lt;a href="http://nlp.seas.harvard.edu/annotated-transformer/">&lt;em>The Annotated Transformer&lt;/em>&lt;/a> and &lt;a href="http://jalammar.github.io/illustrated-transformer/">&lt;em>The Illustrated Transformer&lt;/em>&lt;/a>. This is an outline, I&amp;rsquo;m trying to keep it as simple as possible. You can import these layers and blocks from &lt;code>torch.nn&lt;/code>, see &lt;a href="https://pytorch.org/docs/stable/nn.html#transformer-layers">&lt;em>Transformer Layers&lt;/em> — PyTorch 2.0 documentation&lt;/a>. And I will focus more on structure rather than code itself, because building this model on &lt;code>torch.nn&lt;/code> is much simpler, see &lt;a href="https://pytorch.org/tutorials/beginner/transformer_tutorial.html">&lt;em>Language Modeling with nn.Transformer and torchtext&lt;/em> — PyTorch Tutorials 2.0.1+cu117 documentation&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output &amp;hellip; the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.&lt;/p>
+&lt;/blockquote>
+&lt;p>Recurrent neural networks (RNN), long short-term memory networks(LSTM) and gated RNNs have these shortages:&lt;/p>
+&lt;ol>
+&lt;li>They handle sequence word-by-word, which is hard to be parallelized.&lt;/li>
+&lt;li>They are easy to forget a long sequence or mix previous content up with following content.&lt;/li>
+&lt;/ol>
+&lt;p>Attention mechanism has been used before, but Transformer is a purely attention architecture, that&amp;rsquo;s why &amp;ldquo;Attention is &lt;strong>All&lt;/strong> You Need&amp;rdquo;.&lt;/p>
 &lt;h2 id="1-self-attention">§1 Self-Attention&lt;/h2>
 &lt;p>$$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^\top}{\sqrt{d_{k}}})V \tag{1}$$where for a vector $\vec{z_i}$, $$\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}} \tag{2}$$&lt;/p>
 &lt;p>For input $X$, to get $Q$ (Query), $K$ (Key), $V$ (Value), $$\begin{aligned} Q &amp;amp;= XW^Q \\ K &amp;amp;= XW^K \\ V &amp;amp;= XW^V \end{aligned} \tag{3}$$where $W^Q$, $W^K$, $W^V$ are training parameters.&lt;/p>
@@ -964,7 +973,7 @@ class="full-width"
 &lt;li>The $1^\text{st}$ layer is ReLU activation function$$\text{ReLU}(x)=\max{(0,x)} \tag{7}$$&lt;/li>
 &lt;li>The $2^\text{nd}$ layer is $$\text{FFN}(X)=(\max{(0,XW_1+b_1)})W_2+b_2 \tag{8}$$&lt;/li>
 &lt;li>The output of Feed Forward will have the same dimension with input $X$.&lt;/li>
-&lt;/ul></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230614-notes-for-transformer/</guid><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate></item><item><title>torch.nn</title><link>https://ChenLi2049.github.io/posts/20230614-torch-nn/</link><description>&lt;p>This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see &lt;a href="https://pytorch.org/docs/stable/nn.html">torch.nn&lt;/a> and &lt;a href="https://d2l.ai/">&lt;em>Dive into Deep Learning&lt;/em>&lt;/a>.&lt;/p>
+&lt;/ul></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230615-machine-learning-notes-transformer/</guid><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate></item><item><title>Machine Learning Notes: torch.nn</title><link>https://ChenLi2049.github.io/posts/20230614-machine-learning-notes-torch-nn/</link><description>&lt;p>This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see &lt;a href="https://pytorch.org/docs/stable/nn.html">torch.nn&lt;/a> and &lt;a href="https://d2l.ai/">&lt;em>Dive into Deep Learning&lt;/em>&lt;/a>.&lt;/p>
 &lt;p>In the following code, first &lt;code>import&lt;/code> the required packages:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#111">torch&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#111">torch.nn&lt;/span> &lt;span style="color:#00a8c8">as&lt;/span> &lt;span style="color:#111">nn&lt;/span>
@@ -1154,4 +1163,4 @@ class="full-width"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Epoch &lt;span style="color:#f92672">[&lt;/span>8/10&lt;span style="color:#f92672">]&lt;/span>, Loss: 2.2769
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Epoch &lt;span style="color:#f92672">[&lt;/span>10/10&lt;span style="color:#f92672">]&lt;/span>, Loss: 2.2734
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>torch.Size&lt;span style="color:#f92672">([&lt;/span>64, 10&lt;span style="color:#f92672">])&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start with torch&amp;rsquo;s example &lt;a href="https://github.com/pytorch/examples/blob/main/mnist">mnist&lt;/a> is a great idea.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230614-torch-nn/</guid><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start with torch&amp;rsquo;s example &lt;a href="https://github.com/pytorch/examples/blob/main/mnist">mnist&lt;/a> (or &lt;a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html">&lt;em>What is torch.nn really?&lt;/em>&lt;/a>) is a great idea.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230614-machine-learning-notes-torch-nn/</guid><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate></item></channel></rss>

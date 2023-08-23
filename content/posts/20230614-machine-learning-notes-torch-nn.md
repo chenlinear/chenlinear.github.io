@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: torch.nn"
 date: "2023-06-14"
 tags: 
-- CS
+- Programming
 math: true
 ---
 
@@ -181,9 +181,9 @@ torch.Size([5, 3, 20])
 
 ## nn.Sequential
 
-Compared with `nn.Modul`, `nn.Sequential` can add the layers more easily and don't have to define forward propagation. This is more useful when building a simple neural network.
+Compared with `nn.Module`, `nn.Sequential` can add the layers more easily and don't have to define forward propagation. This is more useful when building a simple neural network.
 
-For example, to construct a model with a linear layer, a ReLU layer and a linear layer:
+For example, to construct a model with a 2d convolution layer, a ReLU layer and a 2d convolution layer:
 
 ```python
 model = nn.Sequential(

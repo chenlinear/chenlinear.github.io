@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "LaTeX Style"
 date: "2023-05-21"
 tags: 
-- CS
+- Programming
 math: true
 ---
 

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "RSS: Why and How?"
 date: "2023-03-04"
 tags: 
-- CS
+- Programming
 ---
 
 RSS, personal website and the word "neat" shared a lot in common, one of which is that they died out at the beginning of this century but have become more useful ever since.

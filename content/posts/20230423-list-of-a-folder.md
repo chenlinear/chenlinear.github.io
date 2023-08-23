@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "List of a Folder"
 date: "2023-04-23"
 tags: 
-- CS
+- Programming
 ---
 
 ## §1 path

@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "RARBG shuts down"
+title: "RARBG Shuts Down"
 date: "2023-05-31"
 tags: 
 - films

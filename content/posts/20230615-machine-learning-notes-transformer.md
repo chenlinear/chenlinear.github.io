@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: Transformer"
 date: "2023-06-15"
 tags: 
-- CS
+- Programming
 math: true
 ---
 
@@ -11,7 +11,7 @@ This is my notes from [[1706.03762] _Attention Is All You Need_](https://arxiv.o
 
 >In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output ... the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.
 
-Recurrent neural networks (RNN), long short-term memory networks(LSTM) and gated RNNs have these shortages:
+Recurrent neural networks (RNN), long short-term memory networks (LSTM) and gated RNNs have these shortages:
 
 1. They handle sequence word-by-word, which is hard to be parallelized.
 2. They are easy to forget a long sequence or mix previous content up with following content.
@@ -38,7 +38,7 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-The Positional Encoding is $$\begin{aligned} PE_{(i, 2j)} &= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(i, 2j + 1)} &= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$
+The Positional Embedding is $$\begin{aligned} PE_{(i, 2j)} &= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(i, 2j + 1)} &= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$
 
 The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
 

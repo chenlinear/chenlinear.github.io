@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Markdown Style"
 date: "2023-05-21"
 tags: 
-- CS
+- Programming
 ---
 
 If you don't know what it is, I recommend you should just play with it and don't care about the style.
@@ -61,7 +61,7 @@ But to tell you the truth, I haven't seen **any**one write like this.
 
 ### §2.4 Only use `-` for Unordered Lists
 
-As I said, there are a lot of Markdown accent, but `-` is universal. Also, this is in agreement with §3.2, so that you can only use the `-`/`_` key on the keyboard.
+As I said, there are a lot of Markdown accent, but `-` is universal. Also, this is in agreement with §2.2, so that you can only use the `-`/`_` key on the keyboard.
 
 ```Markdown
 - unordered lists

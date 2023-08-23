@@ -1,33 +1,113 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS on Chen Li</title><link>https://ChenLi2049.github.io/tags/cs/</link><description>Recent content in CS on Chen Li</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ChenLi2049.github.io/tags/cs/atom.xml" rel="self" type="application/rss+xml"/><item><title>Machine Learning Notes: Transformer</title><link>https://ChenLi2049.github.io/posts/20230615-machine-learning-notes-transformer/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230615-machine-learning-notes-transformer/</guid><description>This is my notes from [1706.03762] Attention Is All You Need and The Annotated Transformer and The Illustrated Transformer. This is an outline, I&amp;rsquo;m trying to keep it as simple as possible. You can import these layers and blocks from torch.nn, see Transformer Layers — PyTorch 2.0 documentation. And I will focus more on structure rather than code itself, because building this model on torch.nn is much simpler, see Language Modeling with nn.</description></item><item><title>Machine Learning Notes: torch.nn</title><link>https://ChenLi2049.github.io/posts/20230614-machine-learning-notes-torch-nn/</link><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230614-machine-learning-notes-torch-nn/</guid><description>This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see torch.nn and Dive into Deep Learning.
-In the following code, first import the required packages:
-import torch import torch.nn as nn import torch.nn.functional as F nn.Module Construct a block of layers. It could be the entire model or just a block of the entire model or loss function, etc.</description></item><item><title>Contamination of LLM</title><link>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230613-contamination-of-llm/</guid><description>This is the dark side of the Force.
-In one of my previous posts, I talked about Ted Chiang&amp;rsquo;s idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
-Training LLM with LLM-produced material will produce terrible results.1 This is $\text{Ted Chiang&amp;rsquo;s idea}^n$.
-And the contamination can be divided into two parts in general:</description></item><item><title>immersive-translate</title><link>https://ChenLi2049.github.io/posts/20230602-immersive-translate/</link><pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230602-immersive-translate/</guid><description>immersive-translate is a great translating extension, which has a nice format, can open .epub file and translate .epub file directly.
-There&amp;rsquo;s a bug, when translating Feedly, the translated content in the side bar would convert with the original content. According to 高级自定义配置, I used:
-[ { &amp;#34;matches&amp;#34;: &amp;#34;feedly.com&amp;#34;, &amp;#34;excludeSelectors&amp;#34;: [ &amp;#34;nav&amp;#34;, &amp;#34;footer&amp;#34; ] } ] Learning a little html is really useful.
-For the translation box, I used purple quotation-style.</description></item><item><title>LaTeX Style</title><link>https://ChenLi2049.github.io/posts/20230521-latex-style/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230521-latex-style/</guid><description>If you don&amp;rsquo;t know what it is, I recommend you should just play with it and don&amp;rsquo;t care about the style.
-But I&amp;rsquo;d like to say TinyTeX (~500 MB) or Overleaf (0 MB) are better choices than TeX Live (~5 GB). I normally write in Markdown first, and then use Overleaf. If you&amp;rsquo;re using JupyterLab, jupyterlab-latex is basically the local version of Overleaf.
-§1 General About the name: $\LaTeX$ ($\LaTeX$) is great, LaTeX or latex is acceptable, lAtEx is brutal.</description></item><item><title>Markdown Style</title><link>https://ChenLi2049.github.io/posts/20230521-markdown-style/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230521-markdown-style/</guid><description>If you don&amp;rsquo;t know what it is, I recommend you should just play with it and don&amp;rsquo;t care about the style.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS on Chen Li</title>
+    <link>https://ChenLi2049.github.io/tags/cs/</link>
+    <description>Recent content in CS on Chen Li</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ChenLi2049.github.io/tags/cs/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown Style</title>
+      <link>https://ChenLi2049.github.io/posts/20230521-markdown-style/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230521-markdown-style/</guid>
+      <description>If you don&amp;rsquo;t know what it is, I recommend you should just play with it and don&amp;rsquo;t care about the style.
 Obsidian is the text editor that I&amp;rsquo;m using. I like workspaces and double link feature.
 §1 General Markdown Guide is good as a quick introduction.
-The thing about Markdown style is that every text editor has its own accent. I suggest using the universal ones, not the ones that a certain text editor created.</description></item><item><title>Python Style</title><link>https://ChenLi2049.github.io/posts/20230521-python-style/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230521-python-style/</guid><description>If you don&amp;rsquo;t know what it is, I recommend you should just play with it and don&amp;rsquo;t care about the style.
-But I&amp;rsquo;d like to say Anaconda is a better choice than just Python itself. You can manage different packages in different environments with Anaconda.
-This article is about what I find interesting in PEP 8 – Style Guide for Python Code1, PEP 257 – Docstring Conventions, Style guide — numpydoc v1.</description></item><item><title>New Repository: PEP-8-ZH</title><link>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</link><pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</guid><description>I created a repository called PEP-8-ZH. Basically, I translated PEP 8 with the help of ChatGPT, and with a little modification myself. The prompt that I use is:
+The thing about Markdown style is that every text editor has its own accent. I suggest using the universal ones, not the ones that a certain text editor created.</description>
+    </item>
+    
+    <item>
+      <title>New Repository: PEP-8-ZH</title>
+      <link>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230520-new-repository-pep-8-zh/</guid>
+      <description>I created a repository called PEP-8-ZH. Basically, I translated PEP 8 with the help of ChatGPT, and with a little modification myself. The prompt that I use is:
 将下文翻译为中文 And I did not translate the comments, because you should try to write comments in English.
-If you want to learn about Python style, I recommend Google Style Guides (中文版见 Google 开源项目风格指南) as the guide. Which is more up to date. I&amp;rsquo;ll write about Python style soon.</description></item><item><title>List of a Folder</title><link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid><description>§1 path In Windows, to get the list of all the files in a folder:
+If you want to learn about Python style, I recommend Google Style Guides (中文版见 Google 开源项目风格指南) as the guide. Which is more up to date. I&amp;rsquo;ll write about Python style soon.</description>
+    </item>
+    
+    <item>
+      <title>List of a Folder</title>
+      <link>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230423-list-of-a-folder/</guid>
+      <description>§1 path In Windows, to get the list of all the files in a folder:
 Create a .txt file.
 Open it with notepad. Copy and paste the following commands:
 @echo off dir %1 /s/b &amp;gt; %~n1.txt Or, if you don&amp;rsquo;t want the list of what&amp;rsquo;s in the subdirectory:
 @echo off dir %1 /b &amp;gt; %~n1.txt Rename it getList.bat (&amp;ldquo;getList&amp;rdquo; could be anything.)
-Drag the target folder to this .bat file.</description></item><item><title>New Repository: DrSlidelove</title><link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</guid><description>Update 20230617: I&amp;rsquo;m so sorry that there&amp;rsquo;s already a Slidy. When I used that name for this repository, there&amp;rsquo;s no such a repository named Slidy and I thought it would be ok. To avoid any confusion, the name is changed from Slidy to DrSlidelove. Again, my apologies.
-I just created a new repository for slide, which is called Slidy. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.</description></item><item><title>Conda 101</title><link>https://ChenLi2049.github.io/posts/20230327-conda-101/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230327-conda-101/</guid><description>This article is a quick guidance to use Anaconda &amp;amp; Miniconda on Windows. I wrote it so that I can check the command myself. Sorry about other platforms such as Linux, WSL on Windows or MacOS, but the §2 should be useful too.
-§1 Anaconda Go the the official website Anaconda and download the default exe file. Open and install it. Get familiar with Jupyter Notebook. Feel free to check out some other articles and mess around, knowing that you can always delete the old environment and start from scratch, you&amp;rsquo;ll be fine.</description></item><item><title>Robin</title><link>https://ChenLi2049.github.io/posts/20230321-robin/</link><pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230321-robin/</guid><description>Besides writing code, having ChatGPT pretend to be Robin from How I Met Your Mother and engaging in a conversation with her is so funny. She is constantly making things up and I am trying my best to make the story work. And when it does, it&amp;rsquo;s amazing!
-It&amp;rsquo;s even more fun to ask ChatGPT to be Jamie Lannister, since there is (part of) a whole novel and countless online discussions.</description></item><item><title>RSS: Why and How?</title><link>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</guid><description>RSS, personal website and the word &amp;ldquo;neat&amp;rdquo; shared a lot in common, one of which is that they died out at the beginning of this century but have become more useful ever since.
-§1 Why? The whole goal of RSS is to keep it simple. I don&amp;rsquo;t want to check a lot of websites over and over again. Something should be read and then forgotten, unless it&amp;rsquo;s important, in which case I will mark it down.</description></item><item><title>寒武纪 MLU370-X4 安装在本地服务器的 ubuntu 上</title><link>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</guid><description>还未经测试!
+Drag the target folder to this .bat file.</description>
+    </item>
+    
+    <item>
+      <title>New Repository: Slidy</title>
+      <link>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230423-new-repository-slidy/</guid>
+      <description>I just created a new repository for slide, which is called Slidy. Well, technically I didn&amp;rsquo;t create it, I just moved stuff around.
+I use it for several reasons:
+Microsoft PPT is just painful to use. And Marp is too much for me to handle. Even though I use Obsidian most often, I have to say that its slide function is not so convenient, I want to change to other windows when giving a presentation.</description>
+    </item>
+    
+    <item>
+      <title>Conda 101</title>
+      <link>https://ChenLi2049.github.io/posts/20230327-conda-101/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230327-conda-101/</guid>
+      <description>This article is a quick guidance to use Anaconda &amp;amp; Miniconda on Windows. I wrote it so that I can check the command myself. Sorry about other platforms such as Linux, WSL on Windows or MacOS, but the §2 should be useful too.
+§1 Anaconda Go the the official website Anaconda and download the default exe file. Open and install it. Get familiar with Jupyter Notebook. Feel free to check out some other articles and mess around, knowing that you can always delete the old environment and start from scratch, you&amp;rsquo;ll be fine.</description>
+    </item>
+    
+    <item>
+      <title>Robin</title>
+      <link>https://ChenLi2049.github.io/posts/20230321-robin/</link>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230321-robin/</guid>
+      <description>Besides writing code, having ChatGPT pretend to be Robin from How I Met Your Mother and engaging in a conversation with her is so funny. She is constantly making things up and I am trying my best to make the story work. And when it does, it&amp;rsquo;s amazing!
+It&amp;rsquo;s even more fun to ask ChatGPT to be Jamie Lannister, since there is (part of) a whole novel and countless online discussions.</description>
+    </item>
+    
+    <item>
+      <title>RSS: Why and How?</title>
+      <link>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</link>
+      <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230304-rss-why-and-how/</guid>
+      <description>RSS, personal website and the word &amp;ldquo;neat&amp;rdquo; shared a lot in common, one of which is that they died out at the beginning of this century but have become more useful ever since.
+§1 Why? The whole goal of RSS is to keep it simple. I don&amp;rsquo;t want to check a lot of websites over and over again. Something should be read and then forgotten, unless it&amp;rsquo;s important, in which case I will mark it down.</description>
+    </item>
+    
+    <item>
+      <title>寒武纪 MLU370-X4 安装在本地服务器的 ubuntu 上</title>
+      <link>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</link>
+      <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230304-gpu-dock/</guid>
+      <description>还未经测试!
 显卡：寒武纪 MLU370-X4。
 显卡坞的解决方式恐怕不行，因为如果重新更换设备需要重新从 ubuntu 开始装起，不如在另一台机器上构建一个本地服务器。除此之外的问题还有：笔记本自带的核显会打架吗？硬盘容量不够了。:(
 视频介绍（除3.几乎完全是这个知乎专栏的内容）：
 寒武纪 MLU370 加速卡简介及安装 寒武纪基础软件平台安装 MLU370 开发实战 文档（在熟悉视频介绍之后再查看）：
 文档中心 MLU370-X4 智能加速卡产品手册 1.0.0 文档 我设想的本地服务器的构建流程：
-安装 ubuntu，版本号见视频介绍：16.04或18.04? 按照视频介绍安装 torch.mlu 组件等等（和 Dive into Deep Learning1 这本书不同的地方在于，寒武纪在使用 pytorch 时导入 torch 和 torch.mlu 即可，不需安装 torchvision 即 pytorch 的 GPU 版本，此处 mlu 和 gpu 是两个相对的概念，指调用的底层架构不同） 安装 JupyterNotebook。 尝试寒武纪开发的工具 MagicMind 和 YOLOv5。见 Cambricon(gitee.com)。 另一本很推荐的书是《智能计算系统》&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>Hello World</title><link>https://ChenLi2049.github.io/posts/20230303-hello-world/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>https://ChenLi2049.github.io/posts/20230303-hello-world/</guid><description>Hello World!</description></item></channel></rss>
+安装 ubuntu，版本号见视频介绍：16.04或18.04? 按照视频介绍安装 torch.mlu 组件等等（和 Dive into Deep Learning1 这本书不同的地方在于，寒武纪在使用 pytorch 时导入 torch 和 torch.mlu 即可，不需安装 torchvision 即 pytorch 的 GPU 版本，此处 mlu 和 gpu 是两个相对的概念，指调用的底层架构不同） 安装 JupyterNotebook。 尝试寒武纪开发的工具 MagicMind 和 YOLOv5。见 Cambricon(gitee.com)。 另一本很推荐的书是《智能计算系统》&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://ChenLi2049.github.io/posts/20230303-hello-world/</link>
+      <pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ChenLi2049.github.io/posts/20230303-hello-world/</guid>
+      <description>Hello World!</description>
+    </item>
+    
+  </channel>
+</rss>

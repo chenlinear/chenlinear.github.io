@@ -898,7 +898,7 @@ class="full-width"
 &lt;blockquote>
 &lt;p>In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output &amp;hellip; the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.&lt;/p>
 &lt;/blockquote>
-&lt;p>Recurrent neural networks (RNN), long short-term memory networks(LSTM) and gated RNNs have these shortages:&lt;/p>
+&lt;p>Recurrent neural networks (RNN), long short-term memory networks (LSTM) and gated RNNs have these shortages:&lt;/p>
 &lt;ol>
 &lt;li>They handle sequence word-by-word, which is hard to be parallelized.&lt;/li>
 &lt;li>They are easy to forget a long sequence or mix previous content up with following content.&lt;/li>
@@ -935,7 +935,7 @@ decoding="async"
 class="full-width"
 />
 &lt;/p>
-&lt;p>The Positional Encoding is $$\begin{aligned} PE_{(i, 2j)} &amp;amp;= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\ PE_{(i, 2j + 1)} &amp;amp;= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
+&lt;p>The Positional Embedding is $$\begin{aligned} PE_{(i, 2j)} &amp;amp;= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\ PE_{(i, 2j + 1)} &amp;amp;= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$&lt;/p>
 &lt;p>The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:&lt;/p>
 &lt;p>&lt;img
 src="http://jalammar.github.io/images/t/transformer_positional_encoding_example.png"
@@ -1079,8 +1079,8 @@ class="full-width"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will get:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>torch.Size&lt;span style="color:#f92672">([&lt;/span>5, 3, 20&lt;span style="color:#f92672">])&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nnsequential">nn.Sequential&lt;/h2>
-&lt;p>Compared with &lt;code>nn.Modul&lt;/code>, &lt;code>nn.Sequential&lt;/code> can add the layers more easily and don&amp;rsquo;t have to define forward propagation. This is more useful when building a simple neural network.&lt;/p>
-&lt;p>For example, to construct a model with a linear layer, a ReLU layer and a linear layer:&lt;/p>
+&lt;p>Compared with &lt;code>nn.Module&lt;/code>, &lt;code>nn.Sequential&lt;/code> can add the layers more easily and don&amp;rsquo;t have to define forward propagation. This is more useful when building a simple neural network.&lt;/p>
+&lt;p>For example, to construct a model with a 2d convolution layer, a ReLU layer and a 2d convolution layer:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#111">model&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#111">nn&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">Sequential&lt;/span>&lt;span style="color:#111">(&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">nn&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">Conv2d&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#111">),&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#111">nn&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">ReLU&lt;/span>&lt;span style="color:#111">(),&lt;/span>

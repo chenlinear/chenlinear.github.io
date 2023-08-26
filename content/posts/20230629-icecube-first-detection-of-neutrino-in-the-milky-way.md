@@ -48,15 +48,18 @@ Muons from the Southern Hemisphere (above IceCube can penetrate several kms deep
 ## §3.2 Template
 
 1. _diffuse_ emission from the entire galaxy.
-    - Interactions between cosmic rays (high-energy protons and heavier nuclei) from the Milky Way and galactic gas/dust produce $\pi$. An accelerated hadron will interact with other hadron or $\gamma$-ray:
+- Interactions between cosmic rays (high-energy protons and heavier nuclei) from the Milky Way and galactic gas/dust produce $\pi$. An accelerated hadron will interact with other hadron or $\gamma$-ray:
         $$N+N',\gamma \rightarrow X+ \begin{cases} \pi^+ \rightarrow \mu^+ \nu_{\mu} \rightarrow e^+ \nu_{\mu} \nu_{\mu} \nu_e \left( + \text{c.c.} \right) \\\ \pi^0 \rightarrow \gamma \gamma \end{cases} \tag{1}$$
         We expect both types to be produced together. 
-    - Template: a background-only model for the expected flux of neutrinos over the entire Galactic plane, based on $\gamma$-ray observation. $3$ template in total:
-        - One made from extrapolating Fermi-LAT $\gamma$-ray observations of the Milky Way (called $\pi^0$. power law, $E^{-2.7}$). More evenly distributed along the Galactic plane.
-        - Two alternative maps identified as KRA-gamma (called $\text{KRA}_{\gamma}^5$, $\text{KRA}_{\gamma}^{50}$. harder neutrino spectrum, roughly a $E^{-2.5}$ power law, include a spectral cutoff at the highest energies, $5$ and $50 \space \text{PeV}$ respectively). More concentrated from the Galactic Center.
+- Template: a background-only model for the expected flux of neutrinos over the entire Galactic plane, based on $\gamma$-ray observation. $3$ template in total:
+
+    One made from extrapolating Fermi-LAT $\gamma$-ray observations of the Milky Way (called $\pi^0$. power law, $E^{-2.7}$). More evenly distributed along the Galactic plane.
+
+    Two alternative maps identified as KRA-gamma ($\text{KRA}^5_{\gamma}$, $\text{KRA}_{\gamma}^{50}$. Harder neutrino spectrum, roughly a $E^{-2.5}$ power law, include a spectral cutoff at the highest energies, $5$ and $50 \space \text{PeV}$ respectively). More concentrated from the Galactic Center.
 
 2. _Individual_ sources in our galaxy.
-    - Stacking: stack the signals from all the possible sources, such as supernova remnants (SNR), pulsar wind nebula (PWN), unidentified (UNID) Galactic source.
+
+    Stacking: stack the signals from all the possible sources, such as supernova remnants (SNR), pulsar wind nebula (PWN), unidentified (UNID) Galactic source.
 
 ## §4 Open Questions
 

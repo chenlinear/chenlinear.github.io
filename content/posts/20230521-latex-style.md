@@ -67,10 +67,10 @@ Always use `\( \)` for number. For example: There are $24$ elements in total.
 There are \(24\) elements in total.
 ```
 
-And for series number, for example: This is the $n^{\text{th}}$ element.
+And for series number, for example: This is the $n^{\textrm{th}}$ element.
 
 ```LaTeX
-This is the \(n^{\text{th}}\) element.
+This is the \(n^{\textrm{th}}\) element.
 ```
 
 #### §2.1.3 Unit

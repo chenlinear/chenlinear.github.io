@@ -25,7 +25,7 @@ from torchinfo import summary
 
 ## §1 Embedding
 
-$$\mathbf{z}_{0} =\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_{p}^{1} \mathbf{E} ; \mathbf{x}_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}_{p}^{N} \mathbf{E}\right]+\mathbf{E}_{\text {pos}}, \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}_{\text {pos }} \in \mathbb{R}^{(N+1) \times D} \tag{1}$$
+This section is based on Eq. 1.
 
 ### §1.1 Patch Embedding
 
@@ -155,7 +155,7 @@ Patch and position embedding shape: torch.Size([1, 197, 768])
 
 ## §2 Multi-Head Self Attention (MSA)
 
-$$\mathbf{z}_{\ell}^{\prime}=\operatorname{MSA}\left(\operatorname{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, \ell=1 \ldots L\tag{2}$$
+This section is based on Eq. 2.
 
 ![](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/08-vit-paper-equation-2-appendix-A.png)
 
@@ -218,7 +218,7 @@ Note that input and output have the same shape, which is common for different ki
 
 ## §3 Multilayer Perception (MLP)
 
-$$\mathbf{z}_{\ell}=\operatorname{MLP}\left(\operatorname{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, \ell=1 \ldots L \tag{3}$$
+This section is based on Eq. 3.
 
 ![](https://github.com/mrdbourke/pytorch-deep-learning/raw/main/images/08-vit-paper-equation-3-annotated.png)
 
@@ -377,7 +377,7 @@ Using `torch.nn` will be slightly different, they have $\mathrm{3}$ advantages i
 
 ## §5 ViT
 
-$$\mathbf{y} =\operatorname{LN}\left(\mathbf{z}_{L}^{0}\right) \tag{4}$$is the final `torch.nn.LayerNorm()` and `torch.nn.Linear`.
+Eq. 4 is the final `torch.nn.LayerNorm()` and `torch.nn.Linear`.
 
 ```python
 # 1. Create a ViT class that inherits from nn.Module

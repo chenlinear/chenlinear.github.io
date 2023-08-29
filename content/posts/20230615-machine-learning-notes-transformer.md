@@ -38,7 +38,7 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-The Positional Embedding is $$\begin{aligned} PE_{(i, 2j)} &= \sin(\frac{i}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(i, 2j + 1)} &= \cos(\frac{i}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$
+For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,dim]$, where $dim$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
 
 The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
 
@@ -50,7 +50,7 @@ And for Decoder:
 - For Multi-Head Attention, The input of Decoder is $X$ and $C$.
 - For Masked Multi-Head Attention, The input of Decoder is masked $X$ and $C$.
 
-This model will predict the $i^{\text{th}}$ word based on $0^{\text{th}}$ to ${i-1}^{\text{th}}$ word.
+This model will predict the $i^{\text{th}}$ word based on $0^{\text{th}}$ to ${(i-1)}^{\text{th}}$ word.
 
 ## §3 Transformer
 

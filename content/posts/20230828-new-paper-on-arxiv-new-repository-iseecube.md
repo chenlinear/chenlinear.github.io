@@ -21,6 +21,6 @@ The arXiv link is [2308.13285v1](https://arxiv.org/abs/2308.13285v1) and the Rep
 - Train the model with VMF Loss. So that the distribution of azimuthal and zenithal error is in better shape.
 - Try different kinds of Embedding. In NLP, a random Embedding `nn.Embedding` will get nice results too. Because the structure is big enough.
 - Learn the relationship between Graph and [Sparse Matrix](https://en.wikipedia.org/wiki/Sparse_matrix), see [_Matrices and graphs_ - by Tivadar Danka - The Palindrome](https://thepalindrome.org/p/matrices-and-graphs). Learn GNN and [`GraphNeT`](https://github.com/graphnet-team/graphnet).
-- Learn [why Transformer is CNN](https://arxiv.org/abs/1911.03584), [GNN](https://towardsdatascience.com/transformers-are-graph-neural-networks-bca9f75412aa), [RNN](https://arxiv.org/abs/2006.16236).
+- Learn [why Transformers are CNNs](https://arxiv.org/abs/1911.03584), [GNNs](https://towardsdatascience.com/transformers-are-graph-neural-networks-bca9f75412aa), [RNNs](https://arxiv.org/abs/2006.16236).
 - Clean the dataset. Why there are events with pulses nearly $11000$?
 - model $\rightarrow$ simulated data $\rightarrow$ reconstruction, and then, real data $\rightarrow$ reconstruction. This workflow probably can be improved by using self-supervised learning directly on real data and then fine-tuning it on simulated data with labels. So that the model is closer to real data than simulated data. This is just an idea, which probably can be tested on the public dataset.

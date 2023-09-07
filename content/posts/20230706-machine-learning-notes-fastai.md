@@ -29,7 +29,7 @@ See [_The best vision models for fine-tuning_ | Kaggle](https://www.kaggle.com/c
 ## Two Categories
 
 Sometimes predicting two categories at the same time has these two advantages:
-- Parallel computing, which saves more time and computing sources
+- Parallel computing, which saves more time and computing sources.
 - The categories might help each other. For example, predicting the fish and the boat may produce better results than only predicting the fish.
 
 ## `Learners`
@@ -41,7 +41,7 @@ learn = Learners(...)
 
 See [fastai - _Pytorch to fastai details_](https://docs.fast.ai/examples/migrating_pytorch_verbose.html). Here's some useful tricks:
 
-- To find the best learning rate:
+- To find the best learning rate, see [[1506.01186] _Cyclical Learning Rates for Training Neural Networks_](https://arxiv.org/abs/1506.01186):
 
     ```python
     learn.lr_find(suggest_funcs=(slide, valley))

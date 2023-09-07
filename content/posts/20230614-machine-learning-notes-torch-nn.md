@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see [torch.nn](https://pytorch.org/docs/stable/nn.html) and [_Dive into Deep Learning_](https://d2l.ai/).
+This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see [torch.nn](https://pytorch.org/docs/stable/nn.html) and [_Dive into Deep Learning_](https://d2l.ai/). Basically, after CNN, parts of the picture is highlighted and the number of channels (RGB $\rightarrow$ many more) can be different (see [CNN Explainer](https://poloclub.github.io/cnn-explainer/)).
 
 In the following code, first `import` the required packages:
 

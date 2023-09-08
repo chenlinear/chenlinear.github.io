@@ -22,7 +22,7 @@ Here's some general rules:
     - $(12)(23)=(123)$
     - $(12)^{-1}=(21)=(12)$, $(123)^{-1}=(321)$, $((12)(34))^{-1}=(43)(21)$, $((123)(45))^{-1}=(54)(321)$. The structure of the permutation is the same, the numbers in the permutation goes backwards.
     - $(12)(12)=e$
-    - To calculate $((12)(34))(123)((12)(34))^{-1}$, first exchange $1$ and $2$ for $(123)$, than exchange $3$ and $4$ for $(123)$. $(123)\xrightarrow{\text{exchange 1 and 2}}(213)\xrightarrow{\text{exchange 3 and 4}}(214)$
+    - To calculate $((12)(34))(123)((12)(34))^{-1}$, first exchange $1$ and $2$ for $(123)$, than exchange $3$ and $4$. $(123)\xrightarrow{\text{exchange 1 and 2}}(213)\xrightarrow{\text{exchange 3 and 4}}(214)$
 - For a $S_n$ group, permutations with the same structure form a conjugate class.
 - The number of elements in a conjugate class is a factor of the order of the group.
 - The order of the subgroup is a factor of the order of the group.

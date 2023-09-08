@@ -9,7 +9,7 @@ math: true
 
 The arXiv link is [2308.13285v1](https://arxiv.org/abs/2308.13285v1) and the Repository is [ISeeCube](https://github.com/ChenLi2049/ISeeCube). Here's what I learned and what to do next.
 
-## What I learned
+## What I Learned
 
 - Test the code by `print()` everything.
 - Input and output are the most important thing. Test these while reading the code.

@@ -7,6 +7,8 @@ tags:
 math: true
 ---
 
+(There are a lot of pictures in this post so it might take a while to load.)
+
 Original paper is [[2010.11929] _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_](https://arxiv.org/abs/2010.11929). Here's some notes from [_08. PyTorch Paper Replicating_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/08_pytorch_paper_replicating/#43-creating-image-patches-with-torchnnconv2d).
 
 The relation between this structure and the equations:
@@ -500,7 +502,7 @@ See [Section 10. Using a pretrained ViT from `torchvision.models` on the same 
 
 For more information on Transfer Learning, see [06. PyTorch Transfer Learning](https://www.learnpytorch.io/06_pytorch_transfer_learning/). Freeze part of the model and train the rest of the model is fun. I will get to this some day, but since in physics we are dealing with quite different dataset than Natural Language Processing (NLP) or Computer Vision (CV), it's probably not gonna be really helpful. Except classification for Galaxies or Gravitational Wave, which are close to traditional CV classification missions.
 
-## 8 CNN or Transformer
+## §8 CNN or Transformer
 
 The comparison of CNN and Transformer in [Section 10.6 Save feature extractor ViT model and check file size](https://www.learnpytorch.io/08_pytorch_paper_replicating/#106-save-feature-extractor-vit-model-and-check-file-size) is interesting.
 

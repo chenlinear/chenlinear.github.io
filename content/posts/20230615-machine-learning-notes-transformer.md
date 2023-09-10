@@ -16,7 +16,7 @@ Recurrent neural networks (RNN), long short-term memory networks (LSTM) and gate
 1. They handle sequence word-by-word, which is hard to be parallelized.
 2. They are easy to forget a long sequence or mix previous content up with following content.
 
-Attention mechanism has been used before, but Transformer is a purely attention architecture, that's why "Attention is __All__ You Need".
+Attention mechanism has been used before, but Transformer is a pure attention architecture, that's why "Attention is __All__ You Need".
 
 ## §1 Self-Attention
 
@@ -28,7 +28,7 @@ For input $X$, to get $Q$ (Query), $K$ (Key), $V$ (Value), $$\begin{aligned} Q &
 
 ## §2 Multi-Head Attention
 
-For the same input $X$, define different $W^Q_i$, $W^K_i$, $W^V_i$, we will get different $$\text{head} = \text{Attention} (QW^Q_i, KW^K_i, VW^V_i) \tag{4}$$$i =1, \cdots, h$. And concat them together, multiply with training parameter $W^0$, we will get $$\text{MultiHead} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^0 \tag{5}$$see this picture:
+For the same input $X$, define different $W^Q_i$, $W^K_i$, $W^V_i$, we will get different $$\text{head}_i = \text{Attention} (QW^Q_i, KW^K_i, VW^V_i) \tag{4}$$$i =1, \cdots, h$. And concat them together, multiply with training parameter $W^0$, we will get $$\text{MultiHead} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^0 \tag{5}$$see this picture:
 
 ![multi-head](http://jalammar.github.io/images/t/transformer_attention_heads_weight_matrix_o.png)
 

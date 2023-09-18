@@ -8,7 +8,7 @@ tags:
 
 __mojonization__: _n._ the migration and translation from Python to Mojo, the superset of Python. (Yeah I made up this word, as far as I know. [_Cross Mojonization_](http://darkbluejacket.blogspot.com/2015/09/the-glory-of-cross-mojonization.html) is a totally different thing.)
 
-This article summarizes this process and is my notes / cheat sheet. Note that Mojo is relatively new and some rules might changing rapidly, thus this article can be outdated easily. So please always check the [official documents](https://docs.modular.com/).
+This article summarizes this process and is my notes / cheat sheet. Note that Mojo is relatively new and some rules might be changing rapidly, thus this article can be outdated easily. So please always check the [official documents](https://docs.modular.com/).
 
 The following content is based on what happened in a `.ipynb` file, to run a `.mojo` or `.🔥` file, see [_Build and run Mojo source files_](https://docs.modular.com/mojo/manual/get-started/hello-world.html#build-and-run-mojo-source-files).
 
@@ -37,7 +37,7 @@ Always do these declaration at the beginning of code, because:
 
 ### §1.2 `fn`
 
-`fn` is similar to `def` in Python. And Mojo supports `def` too. Types are required for arguments and return values for an `fn` function.
+`fn` is similar to `def` in Python. And Mojo supports `def` too. Types are required for arguments and return values for a `fn` function.
 
 #### §1.2.1 Immutable Arguments: `borrowed`
 
@@ -205,6 +205,6 @@ will get:
 
 ## §2 Other Documents
 
-[_Mojo programming manual_](https://docs.modular.com/mojo/programming-manual.html) explains why Mojo is designed in this way. I will look it up when facing bugs. I learned C++ years ago and I haven't really learned Rust. I'm not familiar about Lifetime, Pointer, etc.
+[_Mojo programming manual_](https://docs.modular.com/mojo/programming-manual.html) explains why Mojo is designed in this way. I will look it up when facing bugs. I learned C++ years ago and I haven't really learned Rust. I'm not familiar with Lifetime, Pointer, etc.
 
 [_Modular AI Engine_](https://docs.modular.com/engine/) is about Modular AI Engine, which is not publicly available yet.

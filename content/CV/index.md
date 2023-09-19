@@ -100,7 +100,7 @@ ___WORKING EXPERIENCE___
     <div style="text-align: left; padding-left: 50px;"><strong>Class President</strong></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;">Cambridge University</div>
+    <div style="text-align: left; padding-left: 50px;">University of Cambridge</div>
     <div style="text-align: right;">August 2022</div>
 </div>
 <div style="display: flex; justify-content: space-between;">

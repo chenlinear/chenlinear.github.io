@@ -3,7 +3,7 @@ title: Chen Li
 math: true
 ---
 
-Last update on September 20, 2023. pdf version is available [here](https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi-CV.pdf).
+Last update on September 26, 2023. pdf version is available [here](https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf).
 
 ___CONTACT INFORMATION___
 
@@ -116,7 +116,7 @@ ___HONORS AND AWARDS___
 
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Academic Scholarship, Wuhan University</div>
-    <div style="text-align: right;">2022, 2021</div>
+    <div style="text-align: right;">2021, 2022, 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">First Prize, Third Wuhan University College Student Academic Forum</div>

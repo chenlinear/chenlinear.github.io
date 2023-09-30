@@ -4,7 +4,6 @@ title: "XRISM & SLIM"
 date: "2023-09-07"
 tags: 
 - Physics
-math: true
 ---
 
 X-Ray Imaging and Spectroscopy Mission (XRISM) is an X-ray space telescope. On the same rocket there's also Smart Lander for Investigating Moon (SLIM), a moon landing project.

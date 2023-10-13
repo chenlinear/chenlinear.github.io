@@ -9,8 +9,8 @@ tags:
 In [this interview about Metaverse](https://www.youtube.com/watch?v=MVYrJJNdrEg), Lex does not mention safety issue, not even once. I understand how exciting he must be to cross the uncanny valley, but this is highly unprofessional and the interview is approximately a commercial.
 
 I don't think I have to stress how absurd this is:
-- Scaling your head, more in detail. Because they "want to capture your facial expressions".
-- Scaling your house (possibly your family and friends).
+- Scanning your head, more in detail. Because they "want to capture your facial expressions".
+- Scanning your house (possibly your family and friends).
 
 Potentially, anybody can use your avatar to say stuff. And with the help of voice imitation, it will even sound like you. Deepfake still requires the target's pictures or videos for generation, but now you, the target, are giving these information away. I'm not saying the company will do it. _Leakage is all you need_.
 

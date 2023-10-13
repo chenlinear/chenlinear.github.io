@@ -1,4 +1,38 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Fri, 29 Sep 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Safety Issue of Metaverse</title><link>https://ChenLi2049.github.io/posts/20230929-safety-issue-of-metaverse/</link><description>&lt;p>In &lt;a href="https://www.youtube.com/watch?v=MVYrJJNdrEg">this interview about Metaverse&lt;/a>, Lex does not mention safety issue, not even once. I understand how exciting he must be to cross the uncanny valley, but this is highly unprofessional and the interview is approximately a commercial.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chen Li</title><description>Chen Li's personal blog</description><link>https://ChenLi2049.github.io</link><language>en</language><copyright>Copyright 2023, Calvin Tran</copyright><lastBuildDate>Thu, 12 Oct 2023 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="https://ChenLi2049.github.io/atom.xml" rel="self" type="application/atom+xml"/><item><title>Title of the Post</title><link>https://ChenLi2049.github.io/posts/20231012-title-of-the-post/</link><description>&lt;p>some content.&lt;/p>
+&lt;h2 class="tabset" id="demo-tabs">Demo tabs&lt;/h2>
+&lt;h3 class="active" id="first-tab">First tab&lt;/h3>
+&lt;p>Some tab content.&lt;/p>
+&lt;h3 id="second-tab">Second tab&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>x&lt;/th>
+&lt;th>y&lt;/th>
+&lt;th>z&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="third-tab">Third tab&lt;/h3>
+&lt;p>$\LaTeX$&lt;/p>
+&lt;!-- tabset:my-tabs -->
+&lt;p>The previous tabset is supposed to be ended before this comment.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20231012-title-of-the-post/</guid><pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate></item><item><title>Safety Issue of Metaverse</title><link>https://ChenLi2049.github.io/posts/20230929-safety-issue-of-metaverse/</link><description>&lt;p>In &lt;a href="https://www.youtube.com/watch?v=MVYrJJNdrEg">this interview about Metaverse&lt;/a>, Lex does not mention safety issue, not even once. I understand how exciting he must be to cross the uncanny valley, but this is highly unprofessional and the interview is approximately a commercial.&lt;/p>
 &lt;p>I don&amp;rsquo;t think I have to stress how absurd this is:&lt;/p>
 &lt;ul>
 &lt;li>Scaling your head, more in detail. Because they &amp;ldquo;want to capture your facial expressions&amp;rdquo;.&lt;/li>
@@ -29,14 +63,7 @@
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>I love &amp;ldquo;embarrassingly simple&amp;rdquo;. The phrase &amp;ldquo;embarrassingly simple&amp;rdquo; is often used to describe a trend in Machine Learning that, classical heuristic systems is replaced by end-to-end learning systems. Because the world is more complicated than what you can program, that&amp;rsquo;s why we use Machine Learning in the first place. See &lt;a href="https://www.youtube.com/watch?v=rd3R_G6_UfY">Full Self-Driving is HARD! Analyzing Elon Musk re: Tesla Autopilot on Lex Fridman&amp;rsquo;s Podcast - YouTube&lt;/a> where he talked about Tesla 11.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>I love &amp;ldquo;embarrassingly simple&amp;rdquo;. The phrase &amp;ldquo;embarrassingly simple&amp;rdquo; is often used to describe a trend in Machine Learning that, classical heuristic systems are replaced by end-to-end learning systems. Because the world is more complicated than what you can program, that&amp;rsquo;s why we use Machine Learning in the first place. See &lt;a href="https://www.youtube.com/watch?v=rd3R_G6_UfY">Full Self-Driving is HARD! Analyzing Elon Musk re: Tesla Autopilot on Lex Fridman&amp;rsquo;s Podcast - YouTube&lt;/a> where he talked about Tesla 11.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230928-machine-learning-notes-a-hackers-guide-to-language-models/</guid><pubDate>Thu, 28 Sep 2023 00:00:00 +0000</pubDate></item><item><title>Google Podcasts shuts down</title><link>https://ChenLi2049.github.io/posts/20230927-google-podcasts-shuts-down/</link><description>&lt;p>Another gravestone on &lt;a href="https://killedbygoogle.com/">Google Graveyard&lt;/a>.&lt;/p>
-&lt;p>Technically it&amp;rsquo;s not shut down, it&amp;rsquo;s gonna be integrated with YouTube Music. So after YouTube Shorts, which is similar to TikTok, YouTube will start promoting music services now. Instead of using that, I&amp;rsquo;m starting to go through open source podcast apps on GitHub.&lt;/p>
-&lt;p>Since you can also subscribe things on Google Podcasts with RSS, I consider its shut down the splash of Google Reader&amp;rsquo;s death. This sentence from &lt;a href="https://en.wikipedia.org/wiki/Google_Reader">Wikipedia page about Google Reader&lt;/a> is ironic:&lt;/p>
-&lt;blockquote>
-&lt;p>In January 2007 Google added video content from YouTube and Google Video to Reader.&lt;/p>
-&lt;/blockquote>
-&lt;p>Why does every app wants to combine everything in the world? WeiXin did that and it takes about 1 TB of storage in your phone.&lt;/p>
-&lt;p>I really hope &amp;ldquo;Shuts Down&amp;rdquo; will not become a series in my posts. That would be sad.&lt;/p></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230927-google-podcasts-shuts-down/</guid><pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate></item></channel></rss>
+&lt;/div></description><author>Chen Li</author><guid>https://ChenLi2049.github.io/posts/20230928-machine-learning-notes-a-hackers-guide-to-language-models/</guid><pubDate>Thu, 28 Sep 2023 00:00:00 +0000</pubDate></item></channel></rss>

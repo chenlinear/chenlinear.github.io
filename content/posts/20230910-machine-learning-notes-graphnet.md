@@ -7,6 +7,8 @@ tags:
 math: true
 ---
 
+Technically this is only part of the entire blog post. My `.ipynb` are available at GitHub repository [blog-graphnet](https://github.com/ChenLi2049/blog-graphnet), see §3.
+
 ## §1 Graph & Matrix
 
 Graphs can be represented by adjacency matrix, which can be normalized into [Frobenius normal form](https://en.wikipedia.org/wiki/Frobenius_normal_form), see [_Matrices and graphs_ - by Tivadar Danka - The Palindrome](https://thepalindrome.org/p/matrices-and-graphs).

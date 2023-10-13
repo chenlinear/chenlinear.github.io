@@ -5,6 +5,7 @@
 
 body {
     font: 1rem/1.5 -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+    text-align: justify;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -251,7 +252,7 @@ img {
     height: 135px;
     width: 135px;
     position: relative;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 10px;
     float: right;
     border-radius: 25%;
 }

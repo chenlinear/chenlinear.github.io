@@ -1,6 +1,6 @@
 ---
 author: "Chen Li"
-title: "Google Podcasts shuts down"
+title: "Google Podcasts Shuts Down"
 date: "2023-09-27"
 tags: 
 - Programming

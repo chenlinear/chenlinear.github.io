@@ -20,8 +20,6 @@ The first 6 chapters are Astronomy 101 to me. I have read about them in several 
 - I have always known the cover of [_Unknown Pleasures_](https://en.wikipedia.org/wiki/Unknown_Pleasures) by Joy Division is a pulsar, but I didn't know it's [CP1919 (Cambridge Pulsar)](https://en.wikipedia.org/wiki/PSR_B1919%2B21). See the picture below. The fact that this pulsar was discovered in the UK is probably why they chose it as the cover. See, I told you the origin of Rock'n'Roll is not America. :D
 - The person who [coined the term "the Big Bang" on BBC radio](broadcasthttps://en.wikipedia.org/wiki/Fred_Hoyle#Rejection_of_the_Big_Bang) (as a rejection of the Big Bang), Fred Hoyle, is also the person who came up with the idea of [Triple-alpha process](https://en.wikipedia.org/wiki/Triple-alpha_process), which is the formation of carbon in stars. And carbon is what makes life on earth.
 
-![UnknownPleasuresVinyl](https://upload.wikimedia.org/wikipedia/en/5/5a/UnknownPleasuresVinyl.jpg)
-
 ## §2 Dark Matter
 
 Thanks to the effort that the author put to make a linear process out of history, chapter 7 is amazing. It totally worth the effort mentioned in the final chapter. And it's probably the best detective novel ever, since murder is kind of boring compared to all these twists and turns:

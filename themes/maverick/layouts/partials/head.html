@@ -87,5 +87,6 @@
   {{ end }}
 
 {{ if .Params.math }}{{ partial "helpers/katex.html" . }}{{ end }}
+{{ if .Params.tabsets }}{{ partial "helpers/tabsets.html" . }}{{ end }}
 
   </head>

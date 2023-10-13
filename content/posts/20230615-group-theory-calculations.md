@@ -225,7 +225,7 @@ According to orthonormality, the character table is:
 |3|$1$|$1$|$e^{i \frac{4 \pi}{3}}$|$e^{i \frac{2 \pi}{3}}$|
 |4|$3$|$-1$|$0$|$0$|
 
-## §2 Use normal Yang Tableaux to Construct the Irr. Rep. Matrices of S3
+## §2 Yang Tableaux of S3
 
 Drawing the Yang Tableaux with html is so simple and elegant:
 
@@ -240,6 +240,8 @@ Drawing the Yang Tableaux with html is so simple and elegant:
     </tr>
 </table>
 ```
+
+In this section we use normal Yang Tableaux to construct the Irr. Rep. matrices of S3.
 
 1. normal Yang tableaux $\Theta_1$:
 
@@ -308,9 +310,9 @@ The rest is left as an exercise for the reader.
 
 Eventually, $$d^1(\beta)= \begin{pmatrix} \frac{1+\cos{\beta}}{2} & -\frac{\sin{\beta}}{\sqrt{2}} & \frac{1-\cos{\beta}}{2} \\\ \frac{\sin{\beta}}{\sqrt{2}} & \cos{\beta} & -\frac{\sin{\beta}}{\sqrt{2}} \\\ \frac{1-\cos{\beta}}{2} & \frac{\sin{\beta}}{\sqrt{2}} & \frac{1+\cos{\beta}}{2}  \end{pmatrix} \tag{3.2.3}$$
 
-## §4 Decomposing the Direct Product of Irr. Rep. of SU(2) into the Direct Sum of Irr. Rep.
+## §4 Clebsch–Gordan Coefficients
 
-Here's an example of $j_1 = \frac{1}{2}$, $j_2=1$. You can check [Table of Clebsch–Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients) to make sure it's right.
+In this section we decompose the direct product of Irr. Rep. of SU(2) into the direct sum of Irr. Rep. Here's an example of $j_1 = \frac{1}{2}$, $j_2=1$. You can check [Table of Clebsch–Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients) to make sure it's right.
 
 1. $$\ket{\frac{3}{2}, \frac{3}{2}}=\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1} \tag{4.1}$$
 

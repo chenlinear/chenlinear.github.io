@@ -25,7 +25,7 @@ And here's my notes for the first detection paper.
 
 ## §2 Difficulties
 
-## §2.1 Order of Magnitude
+### §2.1 Order of Magnitude
 
 |number of events|the ratio of astrophysical neutrinos and background (atmospheric muons/neutrinos)|dataset|
 |-|-|-|
@@ -33,19 +33,19 @@ And here's my notes for the first detection paper.
 
 The result is $4.48 \sigma$ level of significance on average, for different template see Table 1 of the paper.
 
-## §2.2 Location, Location, Location
+### §2.2 Location, Location, Location
 
 Muons from the Southern Hemisphere (above IceCube can penetrate several kms deep into the ice, while the muons from the Northern Hemisphere (below IceCube) are absorbed during passage through Earth. Thus IceCube is the most sensitive to astrophysical sources in the __Northern sky__. However, the Galactic Center, as well as the bulk of the neutrino emission expected from the Galactic plane, is located in the Southern sky. This problem is solved by choosing cascade events instead of track events.
 
 ## §3 Method
 
-## §3.1 Deep Learning
+### §3.1 Deep Learning
 
 1. CNN: choose the cascade event. __It's reasonable to use convolutional core to distinguish two different types of event__. Which is generally use to detect cats (or a certain object) in a dataset of a lot of different pictures.
 
 2. NN with symmetries (that smoothly approximates a Monte Carlo simulation): refine event properties.
 
-## §3.2 Template
+### §3.2 Template
 
 1. _diffuse_ emission from the entire galaxy.
 - Interactions between cosmic rays (high-energy protons and heavier nuclei) from the Milky Way and galactic gas/dust produce $\pi$. An accelerated hadron will interact with other hadron or $\gamma$-ray:

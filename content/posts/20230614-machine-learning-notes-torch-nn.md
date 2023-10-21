@@ -17,25 +17,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 ```
 
-## nn.Module
-
-Construct a block of layers. It could be the entire model or just a block of the entire model or loss function, etc.
-
-```python
-class MyBlock(nn.Module):
-    def __init__(self):
-        super().__init__()
-        # define every layer
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        # define forward propagation
-        x = nn.ReLU(self.conv1(x))
-        x = nn.ReLU(self.conv2(x))
-        return x
-```
-
 ## nn.Conv2d
 
 ```python
@@ -49,7 +30,7 @@ print(x.shape)
 
 will get:
 
-```Shell
+```Bash
 torch.Size([1, 3, 28, 28])
 torch.Size([1, 12, 26, 26])
 ```
@@ -60,10 +41,6 @@ torch.Size([1, 12, 26, 26])
 x = torch.randn(1, 3, 28, 28)
 print(x.shape)
 
-conv2d = nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3)
-x = conv2d(x)
-print(x.shape)
-
 pool = nn.MaxPool2d(kernel_size=2)
 x = pool(x)
 print(x.shape)
@@ -71,13 +48,14 @@ print(x.shape)
 
 will get:
 
-```Shell
+```Bash
 torch.Size([1, 3, 28, 28])
-torch.Size([1, 3, 26, 26])
-torch.Size([1, 3, 13, 13])
+torch.Size([1, 3, 14, 14])
 ```
 
 ## nn.BatchNorm2d
+
+See Fig.2 of [[1803.08494] _Group Normalization_](https://arxiv.org/abs/1803.08494).
 
 ```python
 batchnorm = nn.BatchNorm2d(3)
@@ -90,7 +68,7 @@ print(x)
 
 will get:
 
-```Shell
+```Bash
 tensor([[[[-2.3440,  0.5965,  1.2750],
           [-0.8684,  1.4049, -1.5865],
           [ 0.0760,  0.3308,  1.4631]],
@@ -128,7 +106,7 @@ print(x.shape)
 
 will get:
 
-```Shell
+```Bash
 torch.Size([128, 12])
 ```
 
@@ -175,8 +153,27 @@ print(output.shape)
 
 will get:
 
-```Shell
+```Bash
 torch.Size([5, 3, 20])
+```
+
+## nn.Module
+
+Construct a block of layers. It could be the entire model or just a block of the entire model or loss function, etc.
+
+```python
+class MyBlock(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # define every layer
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        # define forward propagation
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        return x
 ```
 
 ## nn.Sequential
@@ -199,7 +196,7 @@ print(y.shape)
 
 will get:
 
-```Shell
+```Bash
 torch.Size([1, 64, 22, 22])
 ```
 
@@ -278,7 +275,7 @@ with torch.no_grad():
 
 will get:
 
-```Shell
+```Bash
 Epoch [2/10], Loss: 2.2880
 Epoch [4/10], Loss: 2.2841
 Epoch [6/10], Loss: 2.2805

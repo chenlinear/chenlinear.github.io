@@ -38,7 +38,7 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,d_{model}]$, where $d_{model}$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
+For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,d_{model}/2]$, where $d_{model}/2$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
 
 The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
 

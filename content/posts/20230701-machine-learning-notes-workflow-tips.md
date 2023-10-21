@@ -18,13 +18,13 @@ Most of the time it's necessary to subclass the classes mentioned above, check [
 
 See [_The Three Most Common Errors in PyTorch_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/pytorch_most_common_errors/).
 
-1. __shape__, e.g. [H, W, C] (usually used in `numpy` or `matplotlib.pyplot`) or [C, H, W] (usually used in `torch`) or [batch_size, C, H, W].
+1. __Shape__, e.g. [H, W, C] (usually used in `numpy` or `matplotlib.pyplot`) or [C, H, W] (usually used in `torch`) or [batch_size, C, H, W].
 
 ![](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-pytorch-different-tensor-dimensions.png)
 
-2. __type__
+2. __Device__
 
-3. __device__
+3. __Type__
 
 ## §3 Jupyter Notebook
 

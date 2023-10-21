@@ -4,6 +4,7 @@ title: "Machine Learning Notes: Mojonization"
 date: "2023-09-09"
 tags: 
 - Programming
+tabsets: true
 ---
 
 __mojonization__: _n._ the migration and translation from Python to Mojo, the superset of Python. (Yeah I made up this word, as far as I know. [_Cross Mojonization_](http://darkbluejacket.blogspot.com/2015/09/the-glory-of-cross-mojonization.html) is a totally different thing.)
@@ -50,7 +51,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Shell
+    ```Bash
     3
     ```
 
@@ -71,7 +72,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get (__Note that `a` and `b` has changed__):
-    ```Shell
+    ```Bash
     2
     3
     5
@@ -94,7 +95,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Shell
+    ```Bash
     1
     2
     5
@@ -110,7 +111,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Shell
+    ```Bash
     5
     ```
 
@@ -151,7 +152,7 @@ Always do these declaration at the beginning of code, because:
     main()
     ```
     will get:
-    ```Shell
+    ```Bash
     5
     ```
 
@@ -178,7 +179,7 @@ let mine = MyPair(2, 4)
 mine.dump()
 ```
 will get:
-```Shell
+```Bash
 2 4
 ```
 
@@ -196,14 +197,119 @@ print(ar)
 print(ar.shape)
 ```
 will get:
-```Shell
+```Bash
 [[ 0  1  2  3  4]
  [ 5  6  7  8  9]
  [10 11 12 13 14]]
 (3, 5)
 ```
 
-## §2 Other Documents
+## §2 Tensor
+
+I referred to [_Introduction to Tensors in Mojo🔥_ - YouTube](https://www.youtube.com/watch?v=3OWkXNdkx8E) and [Modular Docs - tensor](https://docs.modular.com/mojo/stdlib/tensor/tensor.html).
+
+```python
+from tensor import Tensor
+from random import rand
+
+var t = rand[DType.float32](3,3)
+
+# or
+# alias type = DType.float32
+# var t = rand[type](3,3)
+```
+
+1. Print:
+
+<div class="tabset"></div>
+
+- `.shape().__str__()`
+    ```python
+    print(t.shape().__str__())
+    ```
+    will get:
+    ```Bash
+    3x3
+    ```
+
+- `.spec().__str__()`
+    ```python
+    print(t.spec().__str__())
+    ```
+    will get:
+    ```Bash
+    3x3xfloat32
+    ```
+
+- `.num_elements()`
+    ```python
+    print(t.num_elements())
+    ```
+    will get:
+    ```Bash
+    9
+    ```
+
+- `tensorprint()` <!--active-->
+    ```python
+    # https://github.com/modularml/mojo/blob/main/examples/blogs-videos/tensorutils/tensorutils.mojo
+    from tensorutils import tensorprint
+    tensorprint(t)
+    ```
+    will get:
+    ```Bash
+      [[0.1315   0.4586   0.2189]
+       [0.6788   0.9346   0.5194]
+       [0.0345   0.5297   0.0076]]
+    Tensor shape: 3x3 , Tensor rank: 2 , DType: float32
+    ```
+
+2. Do vectorized (faster) math:
+
+```python
+# https://docs.modular.com/mojo/stdlib/math/math.html
+from math import round
+# https://docs.modular.com/mojo/stdlib/algorithm/functional.html#vectorize
+from algorithm import vectorize
+# https://docs.modular.com/mojo/stdlib/sys/info.html#simdwidthof
+from sys.info import simdwidthof
+
+alias type = DType.float32
+var t = rand[type](3,3)
+
+alias simd_width: Int = simdwidthof[type]()
+
+fn tensor_math_vectorized(t: Tensor[type])->Tensor[type]:
+    var t_new = Tensor[type](t.shape())
+    @parameter
+    fn vecmath[simd_width: Int](idx: Int)->None:
+        t_new.simd_store[simd_width](idx, round(t.simd_load[simd_width](idx)))
+    vectorize[simd_width,vecmath](t.num_elements())
+    return t_new
+
+tensorprint(t)
+tensorprint(tensor_math_vectorized(t))
+```
+
+will get:
+
+```Bash
+  [[0.7564   0.3653   0.9825]
+   [0.7533   0.0726   0.8847]
+   [0.4364   0.4777   0.2749]]
+Tensor shape: 3x3 , Tensor rank: 2 , DType: float32
+
+  [[1.0   0.0   1.0]
+   [1.0   0.0   1.0]
+   [0.0   0.0   0.0]]
+Tensor shape: 3x3 , Tensor rank: 2 , DType: float32
+```
+
+## §3  Conda & `torch`
+
+[_Cross Platform Mojo App with Conda, PyTorch and Matplotlib_ - YouTube](https://www.youtube.com/watch?v=bmpjT0T4IDY) explains how to install conda and `torch` with mojo.
+
+## §4 Other Documents
 
 [_Mojo programming manual_](https://docs.modular.com/mojo/programming-manual.html) explains why Mojo is designed in this way. I will look it up when facing bugs. I learned C++ years ago and I haven't really learned Rust. I'm not familiar with Lifetime, Pointer, etc.
 

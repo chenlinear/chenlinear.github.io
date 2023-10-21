@@ -14,6 +14,6 @@ Since you can also subscribe things on Google Podcasts with RSS, I consider its 
 
 >In January 2007 Google added video content from YouTube and Google Video to Reader.
 
-Why does every app wants to combine everything in the world? WeiXin did that and it takes about 1 TB of storage in your phone.
+Why does every app want to combine everything in the world? WeiXin did that and it takes about 1 TB of storage in your phone.
 
 I really hope "Shuts Down" will not become a series in my posts. That would be sad.

@@ -14,7 +14,7 @@ The level of detail in this video is amazing. And by "the level of detail", I me
 
 - Links to GitHub repositories, websites, etc. They are often the most useful, because they are sources you will go to __when coding__, or from these sources you can expand to other sources. Thus they are really helpful if you want to actually do the work instead of having a vague understanding.
 
-    When coding, referring to certain links is a habit that may take some time to grow. I used to have the impression that coding is constantly hitting the keyboard, but what really happened to me is that I spend 70% of time searching and reading other people's code (referring to certain links), 20% writing and testing, 10% debugging. And by showing these links, he reduces the time of searching and reading for the viewers.
+    When coding, referring to certain links is a habit that may take some time to grow. I used to have the impression that coding is constantly hitting the keyboard (probably from _Black Books_ S02E03), but what really happened to me is that I spend 70% of time searching and reading other people's code (referring to certain links), 20% writing and testing, 10% debugging. And by showing these links, he reduces the time of searching and reading for the viewers.
 
 In a sense, they are more close to experience than knowledge. I'll try to do the same thing, try to.
 

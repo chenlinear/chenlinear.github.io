@@ -72,11 +72,27 @@ The basic layer of `DynEdge` is [`graphnet.models.components.layers.DynEdgeConv`
 
 #### §3.3.4 `DynEdgeTITO`
 
-[`graphnet.models.gnn.DynEdgeTITO`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/gnn/dynedge_kaggle_tito.py) is from [1st Place Solution | Kaggle](https://www.kaggle.com/competitions/icecube-neutrinos-in-deep-ice/discussion/402976).
+From [1st Place Solution | Kaggle](https://www.kaggle.com/competitions/icecube-neutrinos-in-deep-ice/discussion/402976).
 
-An modification for [`torch_geometric.nn.EdgeConv`](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.EdgeConv.html) is $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i)$$ to $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i , x_j)$$
+The structure of this model is as follows (see `In [6]` of [`3_3_4_DynEdgeTITO.ipynb`](https://github.com/ChenLi2049/blog-graphnet/blob/main/3_3_4_DynEdgeTITO.ipynb)):
+- [`graphnet.models.gnn.DynEdgeTITO`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/gnn/dynedge_kaggle_tito.py)
+    - [`graphnet.models.components.layers.DynTrans`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/components/layers.py#L115)
+        - [`graphnet.models.components.layers.EdgeConvTito`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/components/layers.py#L70)
+        - [`torch.nn.TransformerEncoder`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html)
+            - [`torch.nn.TransformerEncoderLayer`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
+    - `graphnet.models.components.layers.DynTrans`
+        - `graphnet.models.components.layers.EdgeConvTito`
+        - `torch.nn.TransformerEncoder`
+            - `torch.nn.TransformerEncoderLayer`
+    - `graphnet.models.components.layers.DynTrans`
+        - `graphnet.models.components.layers.EdgeConvTito`
+        - `torch.nn.TransformerEncoder`
+            - `torch.nn.TransformerEncoderLayer`
+    - Post-processing (`Sequential: 1-3`)
+    - Global pooling
+    - Read-out (`Sequential: 1-4`)
 
-And this solution also uses custom VMF Loss (not in [`graphnet.models.gnn.DynEdgeTITO`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/gnn/dynedge_kaggle_tito.py) of course): $$\text{VMF}=- \kappa \cos{\theta}+C(\kappa)$$ to $$\text{VMF}= - \theta - \kappa \cos{\theta}+C(\kappa)$$, where $\theta$ is the angle between truth and prediction, $\kappa$ is the length of the 3D prediction.
+One of the layers [`graphnet.models.components.layers.EdgeConvTito`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/components/layers.py#L70) is a modification on [`torch_geometric.nn.EdgeConv`](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.EdgeConv.html): $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i)$$ to $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i , x_j)$$
 
 ### §3.4 `Model` & `StandardModel`
 

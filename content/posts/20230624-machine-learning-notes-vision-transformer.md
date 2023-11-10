@@ -7,9 +7,9 @@ tags:
 math: true
 ---
 
-(There are a lot of pictures in this post so it might take a while to load.)
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/). There are a lot of pictures in this post so it might take a while to load.)
 
-Original paper is [[2010.11929] _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_](https://arxiv.org/abs/2010.11929). Here's some notes from [_08. PyTorch Paper Replicating_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/08_pytorch_paper_replicating/#43-creating-image-patches-with-torchnnconv2d).
+Original paper is [[2010.11929] _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_](https://arxiv.org/abs/2010.11929). Here's some notes from [_08. PyTorch Paper Replicating_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/08_pytorch_paper_replicating/).
 
 The relation between this structure and the equations:
 
@@ -509,3 +509,5 @@ The comparison of CNN and Transformer in [Section 10.6 Save feature extractor Vi
 But transformer is better than CNN in $\mathrm{2}$ ways:
 - Multimodal. Embedding then `torch.cat` is surprisingly useful.
 - No signs of [overfitting](https://en.wikipedia.org/wiki/Overfitting#Machine_learning) yet.
+
+At scale, they tend to have same performance, see [[2310.16764] _ConvNets Match Vision Transformers at Scale_](https://arxiv.org/abs/2310.16764).

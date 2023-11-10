@@ -7,6 +7,8 @@ tags:
 math: true
 ---
 
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
+
 This is my notes from [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762) and [_The Annotated Transformer_](http://nlp.seas.harvard.edu/annotated-transformer/) and [_The Illustrated Transformer_](http://jalammar.github.io/illustrated-transformer/). This is an outline, I'm trying to keep it as simple as possible. You can import these layers and blocks from `torch.nn`, see [_Transformer Layers_ — PyTorch 2.0 documentation](https://pytorch.org/docs/stable/nn.html#transformer-layers). And I will focus more on structure rather than code itself, because building this model on `torch.nn` is much simpler, see [_Language Modeling with nn.Transformer and torchtext_ — PyTorch Tutorials 2.0.1+cu117 documentation](https://pytorch.org/tutorials/beginner/transformer_tutorial.html).
 
 >In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output ... the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution.
@@ -38,7 +40,7 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,d_{model}/2]$, where $d_{model}/2$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
+For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,d_{model}]$, where $d_{model}$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
 
 The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
 

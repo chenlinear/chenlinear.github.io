@@ -6,6 +6,8 @@ tags:
 - Programming
 ---
 
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
+
 Compared with `tensorflow`, `mxnet`, `paddle` or pure `numpy` (just for the fun of it), `torch` is probably the easiest Machine Learning package, and to get it even easier, let's take a look at `fastai`.
 
 By the way, I subscribed GitHub Trending by RSS and the other day I got these two at the same time. Machine Learning in `numpy` is really cool, but the second one is like, why? ... these two target markets do NOT overlap.

@@ -49,7 +49,7 @@ To be more clear, here are some typical (cognitive and social) biases listed by 
 
 Boy oh boy, there's a lot! And I hope by attentional bias, you've learned something. :D
 
-### §2.1 Difference in two measurements
+### §2.1 Difference in Two Measurements
 
 In the book Sabine gives us an example of how two labs constantly give contradictory results when measuring the mass of a particle. 
 

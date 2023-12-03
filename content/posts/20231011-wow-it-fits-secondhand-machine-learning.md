@@ -12,7 +12,7 @@ tabsets: true
 
 ## §1 Intro
 
-This section is about tensor (high-dimensional matrix) and `torch.nn`. For the part about [Conda](https://docs.conda.io/projects/miniconda/en/latest/) in the original sildes, please refer to [_Conda 101_](https://chenli2049.github.io/posts/20230327-conda-101/).
+This section is about tensor (high-dimensional matrix) and `torch.nn`. For the part about [`Conda`](https://docs.conda.io/projects/miniconda/en/latest/) in the original sildes, please refer to [_Conda 101_](https://chenli2049.github.io/posts/20230327-conda-101/).
 
 ### §1.1 Tensor
 
@@ -50,11 +50,11 @@ Commonly used method to change the shape of a tensor:
 - [`unsqueeze()`](https://pytorch.org/docs/stable/generated/torch.unsqueeze.html)
 - [`squeeze()`](https://pytorch.org/docs/stable/generated/torch.squeeze.html)
 
-[`einops`](https://github.com/arogozhnikov/einops) provides a more intuive way to change the shape.
+[`einops`](https://github.com/arogozhnikov/einops) provides a more intuitive way to change the shape.
 
 #### §1.1.2 Device
 
-[torch.device](https://pytorch.org/docs/stable/tensor_attributes.html#torch-device)
+[`torch.device`](https://pytorch.org/docs/stable/tensor_attributes.html#torch-device)
 
 <div class="tabset"></div>
 
@@ -128,7 +128,7 @@ Commonly used method to change the shape of a tensor:
 
 #### §1.1.3 Type
 
-[torch.dtype](https://pytorch.org/docs/stable/tensor_attributes.html#torch-dtype)
+[`torch.dtype`](https://pytorch.org/docs/stable/tensor_attributes.html#torch-dtype)
 
 <div class="tabset"></div>
 
@@ -185,7 +185,7 @@ Commonly used method to change the shape of a tensor:
 
 - `nn.Conv2d`
     
-    [`nn.Conv2d`](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
+    [`nn.Conv2d`](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html). Convolution is a kind of weighted mean.
     
     ```python
     x = torch.randn(1, 3, 28, 28)
@@ -377,7 +377,7 @@ if __name__ == '__main__':
 
 - Cross Entropy Loss
     
-    [F.log_softmax](https://pytorch.org/docs/stable/generated/torch.nn.functional.log_softmax.html), [F.nll_loss](https://pytorch.org/docs/stable/generated/torch.nn.functional.nll_loss.html), [F.cross_entropy](https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html)
+    [`F.log_softmax`](https://pytorch.org/docs/stable/generated/torch.nn.functional.log_softmax.html), [`F.nll_loss`](https://pytorch.org/docs/stable/generated/torch.nn.functional.nll_loss.html), [`F.cross_entropy`](https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html)
     
     ```python
     pred = torch.randn(16, 10)# [batch_size, num_classes]
@@ -738,7 +738,7 @@ class Res(nn.Module):
         return x
 ```
 
-We will see residual connections in Transformers.
+By using residual connections, the model will learn linearity first and non-linearity after. We will see residual connections in Transformers.
 
 In [`torchvision.models.resnet`](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py):
 
@@ -896,7 +896,7 @@ Embedding is ordered higher-dimensional representation vectors.
 
 - `nn.Embedding`
     
-    [nn.Embedding](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html)
+    [`nn.Embedding`](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html)
     
     ```python
     NUM_INDEX = 3
@@ -921,7 +921,7 @@ Embedding is ordered higher-dimensional representation vectors.
 
 - `F.one_hot` then linear
 
-    [F.one_hot](https://pytorch.org/docs/stable/generated/torch.nn.functional.one_hot.html)
+    [`F.one_hot`](https://pytorch.org/docs/stable/generated/torch.nn.functional.one_hot.html)
     
     ```python
     one_hot = F.one_hot(index, num_classes=NUM_INDEX)
@@ -1046,7 +1046,7 @@ We will often see another way to write it:
 
 - Equation
     
-    Feed Forward Network $$\text{FFN}(X)=(\text{ReLU}(0,XW_1+b_1))W_2+b_2$$, where $\text{ReLU}(x)=\max{(0,x)}$. Here we replace [nn.ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) with [nn.GELU](https://pytorch.org/docs/stable/generated/torch.nn.GELU.html).
+    Feed Forward Network $$\text{FFN}(X)=(\text{ReLU}(XW_1+b_1))W_2+b_2$$, where $\text{ReLU}(x)=\max{(0,x)}$. Here we replace [nn.ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) with [nn.GELU](https://pytorch.org/docs/stable/generated/torch.nn.GELU.html).
 
 - `class FFN`
 
@@ -1070,13 +1070,18 @@ We will often see another way to write it:
 
 #### §3.2.2 MultiheadAttention
 
-[nn.MultiheadAttention](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html)
+[`nn.MultiheadAttention`](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html)
 
 <div class="tabset"></div>
 
 - Equation
     
     We define $$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^\top}{\sqrt{d_{k}}})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^0$$, where $\text{head}_i = \text{Attention} (QW^Q_i, KW^K_i, VW^V_i)$, and $h$ is `num_heads` in the code.
+    
+    The advantage of Softmax:
+    - [Matthew's effect](https://en.wikipedia.org/wiki/Matthew_effect)
+    - Non-linearity
+    - Normalization
 
 - `class MultiheadAttention`
     
@@ -1094,7 +1099,7 @@ We will often see another way to write it:
         def forward(self, x):
             batch_size, seq_length, hidden_dim = x.shape
             qkv = self.qkv(x)
-            qkv = qkv.reshape(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
             q, k, v = qkv[0], qkv[1], qkv[2]# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
 
             attn = self.scale * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
@@ -1109,7 +1114,7 @@ We will often see another way to write it:
 
 #### §3.2.3 TransformerEncoderLayer
 
-[nn.TransformerEncoderLayer](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
+[`nn.TransformerEncoderLayer`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
 
 ```python
 class TransformerEncoderLayer(nn.Module):
@@ -1138,7 +1143,7 @@ class TransformerEncoderLayer(nn.Module):
 
 #### §3.2.4 TransformerEncoder
 
-[nn.TransformerEncoder](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html)
+[`nn.TransformerEncoder`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html)
 
 ```python
 class TransformerEncoder(nn.Module):
@@ -1179,7 +1184,7 @@ class TransformerEncoder(nn.Module):
 
 #### §3.4.1 fine-tuning of LLM
 
-The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model Fine-tuning for Text Classification_](https://arxiv.org/abs/1801.06146):
+The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model Fine-tuning for Text Classification_](https://arxiv.org/abs/1801.06146)):
 1. Language Model pre-training.
 2. Instruction tuning.
 3. RLHF (Reinforcement Learning from Human Feedback).
@@ -1392,7 +1397,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
 
 We did not write [`Datasets` & `DataLoaders`](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html), because it's highly variable from tasks to tasks. In general I would suggest:
 1. let your brain (bio-neural networks) understand the dataset intuitively by visualizing lots of examples from the dataset. (See [_A Recipe for Training Neural Networks_](https://karpathy.github.io/2019/04/25/recipe/))
-2. Use [polars](https://github.com/pola-rs/polars), [mojo](https://github.com/modularml/mojo) to load data because it's faster and more memory saving.
+2. Use [`polars`](https://github.com/pola-rs/polars), [`mojo`](https://github.com/modularml/mojo) to load data because it's faster and more memory saving.
 
 [Pytorch to fastai details](https://docs.fast.ai/examples/migrating_pytorch_verbose.html):
 
@@ -1499,6 +1504,8 @@ learn.save("my_model", with_opt=False)
 For different dataset and different goals.
 
 ### §5.1 Load Pretrained ResNet, ViT
+
+| [Which Timm Models Are Best 2023-11-29 | Kaggle](https://www.kaggle.com/code/csaroff/which-timm-models-are-best-2023-11-29/notebook) |
 
 <div class="tabset"></div>
 

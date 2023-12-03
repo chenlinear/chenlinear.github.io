@@ -4,7 +4,7 @@ math: true
 ---
 
 <div style="text-align: center;">
-    Last update on September 26, 2023. pdf version see <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">here</a>.
+    Last update on December 4, 2023. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
 </div>
 
 ___CONTACT INFORMATION___
@@ -34,9 +34,6 @@ ___EDUCATION___
     <div style="text-align: left; padding-left: 50px;">Expected B.S. in Physics, current GPA: 3.82/4.00</div>
     <div style="text-align: right;">Sep 2020 - present</div>
 </div>
-<div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Statistics is an amazing subject that changed my opinion on a lot of things, and I got a 96/100 in Statistics, and 97/100 in Statistical and Thermal Physics. I'm also interested in ODEs (95/100) and Computational Physics (96/100), thus I did a project reproducing X-ray variability of a microquasar by solving ODEs, see below.</div>
-</div>
 
 ___PUBLICATIONS___
 
@@ -55,7 +52,7 @@ ___PROJECTS___
     <div style="text-align: right;">Aug 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Neutrino Events Reconstruction with Transformer. It has the potential to reach state-of-the-art and lines of code drop sharply by about 80%. Available <a href="https://github.com/ChenLi2049/ISeeCube">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Neutrino Events Reconstruction with Transformer. When having relatively same amount of total parameters, it outperforms other Transformer models. <a href="https://github.com/ChenLi2049/ISeeCube">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -63,7 +60,7 @@ ___PROJECTS___
     <div style="text-align: right;">May 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Get familiar with Python syntax and, weirdly, Markdown indentation. Available <a href="https://github.com/ChenLi2049/PEP-8-ZH">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Get familiar with Python syntax and, weirdly, Markdown indentation. <a href="https://github.com/ChenLi2049/PEP-8-ZH">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -71,7 +68,7 @@ ___PROJECTS___
     <div style="text-align: right;">Apr 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Write in Markdown, then present with offline HTML pages. Available <a href="https://github.com/ChenLi2049/DrSlidelove">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Write in Markdown, then present with offline HTML pages. <a href="https://github.com/ChenLi2049/DrSlidelove">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -79,7 +76,7 @@ ___PROJECTS___
     <div style="text-align: right;">Dec 2022</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Use Python to solve non-linear ODEs and visualize the result. Available <a href="https://github.com/ChenLi2049/QPO-non-linear-ODEs">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Use Python to solve stochastic differential equations and visualize the result. <a href="https://github.com/ChenLi2049/QPO-non-linear-ODEs">[code]</a></div>
 </div>
 
 ___TEACHING EXPERIENCE___
@@ -92,7 +89,7 @@ ___TEACHING EXPERIENCE___
     <div style="text-align: right;">Sep 2023 - present</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. Slides are available <a href="https://github.com/ChenLi2049/IntroML-2023FALL">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. <a href="https://github.com/ChenLi2049/IntroML-2023FALL">[slides]</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Adviser: Prof. XianYang Jiang</div>

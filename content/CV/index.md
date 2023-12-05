@@ -4,7 +4,7 @@ math: true
 ---
 
 <div style="text-align: center;">
-    Last update on December 4, 2023. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
+    Last update on December 5, 2023. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
 </div>
 
 ___CONTACT INFORMATION___
@@ -38,7 +38,7 @@ ___EDUCATION___
 ___PUBLICATIONS___
 
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;"><strong>C. Li</strong>, H. Cai, X. Y. Jiang. Refine Neutrino Events Reconstruction with BEiT-3[J]. arXiv preprint <a href="https://arxiv.org/abs/2308.13285">arXiv: 2308.13285</a>, 2023. (preprint)</div>
+    <div style="text-align: justify; padding-left: 50px;"><strong>C. Li</strong>, H. Cai, X. Y. Jiang. Refine Neutrino Events Reconstruction with BEiT-3[J]. arXiv preprint <a href="https://arxiv.org/abs/2308.13285">arXiv: 2308.13285</a>, 2023. (submitted to <i>Review of Scientific Instruments AIP Publishing</i>)</div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">

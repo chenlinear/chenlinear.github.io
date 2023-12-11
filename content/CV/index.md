@@ -31,7 +31,7 @@ ___EDUCATION___
     <div style="text-align: left; padding-left: 50px;"><strong>Wuhan University</strong></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;">Expected B.S. in Physics, current GPA: 3.82/4.00</div>
+    <div style="text-align: left; padding-left: 50px;">Expected B.S. in Physics, current GPA: 3.81/4.00</div>
     <div style="text-align: right;">Sep 2020 - present</div>
 </div>
 

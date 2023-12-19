@@ -1174,6 +1174,10 @@ class TransformerEncoder(nn.Module):
 |Encoder-Only|[BERT](https://arxiv.org/abs/1810.04805)|[ViT](https://arxiv.org/abs/2010.11929)|
 |Decoder-Only|[GPT](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf), [GPT-3](https://arxiv.org/abs/2005.14165), [nanoGPT](https://github.com/karpathy/nanoGPT)||
 
+Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond_](https://arxiv.org/abs/2304.13712):
+
+![Fig1_of_2304.13712](https://pbs.twimg.com/media/GBrF-tHWYAA10wE?format=png)
+
 ### §3.4 Attention is All You Need
 
 [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762)

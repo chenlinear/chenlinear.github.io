@@ -1038,6 +1038,15 @@ class="full-width"
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;p>Fig.1 of &lt;a href="https://arxiv.org/abs/2304.13712">[2304.13712] &lt;em>Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond&lt;/em>&lt;/a>:&lt;/p>
+&lt;p>&lt;img
+src="https://pbs.twimg.com/media/GBrF-tHWYAA10wE?format=png"
+alt="Fig1_of_2304.13712"
+loading="lazy"
+decoding="async"
+class="full-width"
+/>
+&lt;/p>
 &lt;h3 id="34-attention-is-all-you-need">§3.4 Attention is All You Need&lt;/h3>
 &lt;p>&lt;a href="https://arxiv.org/abs/1706.03762">[1706.03762] &lt;em>Attention Is All You Need&lt;/em>&lt;/a>&lt;/p>
 &lt;ul>

@@ -92,6 +92,8 @@ The structure of this model is as follows (see `In [6]` of [`3_3_4_DynEdgeTITO.i
     - Global pooling
     - Read-out (`Sequential: 1-4`)
 
+For `torch.nn.TransformerEncoderLayer`, `d_model=256` and `nhead=8`. `dim_feedforward=2048` by default.
+
 One of the layers [`graphnet.models.components.layers.EdgeConvTito`](https://github.com/graphnet-team/graphnet/blob/main/src/graphnet/models/components/layers.py#L70) is a modification on [`torch_geometric.nn.EdgeConv`](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.EdgeConv.html): $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i)$$ to $$x_i^{\prime} = \sum_{j \in \mathcal{N}(i)} h_{\mathbf{\Theta}}(x_i , x_j - x_i , x_j)$$
 
 ### §3.4 `Model` & `StandardModel`

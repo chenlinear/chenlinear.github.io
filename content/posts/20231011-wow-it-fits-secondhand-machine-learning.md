@@ -1141,6 +1141,8 @@ class TransformerEncoderLayer(nn.Module):
         return x
 ```
 
+Or you can put Layer Norm before Attention, see [[2002.04745] _On Layer Normalization in the Transformer Architecture_](https://arxiv.org/abs/2002.04745).
+
 #### §3.2.4 TransformerEncoder
 
 [`nn.TransformerEncoder`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html)
@@ -1400,7 +1402,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
 ### §4.1 `Dataloaders`
 
 We did not write [`Datasets` & `DataLoaders`](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html), because it's highly variable from tasks to tasks. In general I would suggest:
-1. let your brain (bio-neural networks) understand the dataset intuitively by visualizing lots of examples from the dataset. (See [_A Recipe for Training Neural Networks_](https://karpathy.github.io/2019/04/25/recipe/))
+1. Let your brain (bio-neural networks) understand the dataset intuitively by visualizing lots of examples from the dataset. (See [_A Recipe for Training Neural Networks_](https://karpathy.github.io/2019/04/25/recipe/))
 2. Use [`polars`](https://github.com/pola-rs/polars), [`mojo`](https://github.com/modularml/mojo) to load data because it's faster and more memory saving.
 
 [Pytorch to fastai details](https://docs.fast.ai/examples/migrating_pytorch_verbose.html):

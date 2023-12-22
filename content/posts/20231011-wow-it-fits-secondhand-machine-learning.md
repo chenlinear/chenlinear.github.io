@@ -1108,7 +1108,7 @@ We will often see another way to write it:
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')
-            )
+                )
             attn = attn.softmax(dim=-1)
             attn = self.dropout(attn)
 
@@ -1145,7 +1145,7 @@ We will often see another way to write it:
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')
-            )
+                )
             print(attn)
             print(attn.shape)
             attn = attn.softmax(dim=-1)

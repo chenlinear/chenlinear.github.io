@@ -1090,26 +1090,132 @@ We will often see another way to write it:
         def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0):
             super().__init__()
             self.num_heads = num_heads
-            d_k = hidden_dim // num_heads
-            self.scale = d_k ** -0.5
+            self.d_k = hidden_dim // num_heads
             self.qkv = nn.Linear(hidden_dim, hidden_dim * 3)
             self.dropout = nn.Dropout(dropout)
             self.proj = nn.Linear(hidden_dim, hidden_dim)
-
-        def forward(self, x):
+    
+        def forward(self, x, mask=False):
             batch_size, seq_length, hidden_dim = x.shape
             qkv = self.qkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
-            q, k, v = qkv[0], qkv[1], qkv[2]# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
-
-            attn = self.scale * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
+            # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            q, k, v = qkv[0], qkv[1], qkv[2]
+    
+            # attn shape: [batch_size, num_heads, seq_length, seq_length]
+            attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
+            if mask:
+                attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
+                    torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
+                    float('-inf')
+            )
             attn = attn.softmax(dim=-1)
             attn = self.dropout(attn)
 
             x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
-            x = self.proj(x)
+            x = self.proj(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
+    ```
+
+- testing
+    
+    Add 4 lines of `print()`:
+    
+    ```python
+    class MultiheadAttention(nn.Module):
+        def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0):
+            super().__init__()
+            self.num_heads = num_heads
+            self.d_k = hidden_dim // num_heads
+            self.qkv = nn.Linear(hidden_dim, hidden_dim * 3)
+            self.dropout = nn.Dropout(dropout)
+            self.proj = nn.Linear(hidden_dim, hidden_dim)
+    
+        def forward(self, x, mask=False):
+            batch_size, seq_length, hidden_dim = x.shape
+            qkv = self.qkv(x)
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
+            # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            q, k, v = qkv[0], qkv[1], qkv[2]
+    
+            # attn shape: [batch_size, num_heads, seq_length, seq_length]
+            attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
+            if mask:
+                attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
+                    torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
+                    float('-inf')
+            )
+            print(attn)
+            print(attn.shape)
+            attn = attn.softmax(dim=-1)
+            print(attn)
+            print(attn.shape)
+            attn = self.dropout(attn)
+    
+            x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
+            x = self.proj(x)# [batch_size, seq_length, hidden_dim]
+            x = self.dropout(x)
+            return x
+    ```
+    
+    ```python
+    x = torch.rand(1, 4, 6)#[batch_size, seq_length, hidden_dim]
+    multihead_attention = MultiheadAttention(hidden_dim=6, num_heads=2)
+    
+    print('No mask:')
+    _ = multihead_attention(x)
+    print('Masked:')
+    _ = multihead_attention(x, mask=True)
+    ```
+    
+    will get:
+    
+    ```Bash
+    No mask:
+    tensor([[[[-0.0302, -0.0241, -0.0071, -0.0822],
+              [ 0.0041,  0.0307,  0.0372, -0.0366],
+              [-0.0460, -0.0571,  0.1467,  0.1020],
+              [-0.0685, -0.0811,  0.1513,  0.0700]],
+    
+             [[ 0.0744,  0.0987,  0.2944,  0.3069],
+              [ 0.0538,  0.0855,  0.2632,  0.2898],
+              [-0.0052,  0.0453,  0.1585,  0.2132],
+              [ 0.0034,  0.0774,  0.2627,  0.3394]]]],
+           grad_fn=<UnsafeViewBackward0>)
+    torch.Size([1, 2, 4, 4])# [batch_size, num_heads, seq_length, seq_length]
+    tensor([[[[0.2513, 0.2529, 0.2572, 0.2386],
+              [0.2487, 0.2554, 0.2571, 0.2388],
+              [0.2293, 0.2268, 0.2780, 0.2659],
+              [0.2282, 0.2254, 0.2843, 0.2621]],
+    
+             [[0.2206, 0.2261, 0.2749, 0.2784],
+              [0.2207, 0.2278, 0.2721, 0.2794],
+              [0.2235, 0.2351, 0.2633, 0.2781],
+              [0.2095, 0.2256, 0.2716, 0.2932]]]], grad_fn=<SoftmaxBackward0>)
+    torch.Size([1, 2, 4, 4])
+    Masked:
+    tensor([[[[-0.0302,    -inf,    -inf,    -inf],
+              [ 0.0041,  0.0307,    -inf,    -inf],
+              [-0.0460, -0.0571,  0.1467,    -inf],
+              [-0.0685, -0.0811,  0.1513,  0.0700]],
+    
+             [[ 0.0744,    -inf,    -inf,    -inf],
+              [ 0.0538,  0.0855,    -inf,    -inf],
+              [-0.0052,  0.0453,  0.1585,    -inf],
+              [ 0.0034,  0.0774,  0.2627,  0.3394]]]],
+           grad_fn=<MaskedFillBackward0>)
+    torch.Size([1, 2, 4, 4])
+    tensor([[[[1.0000, 0.0000, 0.0000, 0.0000],
+              [0.4934, 0.5066, 0.0000, 0.0000],
+              [0.3124, 0.3089, 0.3787, 0.0000],
+              [0.2282, 0.2254, 0.2843, 0.2621]],
+    
+             [[1.0000, 0.0000, 0.0000, 0.0000],
+              [0.4921, 0.5079, 0.0000, 0.0000],
+              [0.3096, 0.3257, 0.3647, 0.0000],
+              [0.2095, 0.2256, 0.2716, 0.2932]]]], grad_fn=<SoftmaxBackward0>)
+    torch.Size([1, 2, 4, 4])
     ```
 
 #### §3.2.3 TransformerEncoderLayer

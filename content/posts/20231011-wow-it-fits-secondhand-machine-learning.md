@@ -1160,13 +1160,13 @@ We will often see another way to write it:
     ```
     
     ```python
-    x = torch.rand(1, 4, 6)#[batch_size, seq_length, hidden_dim]
+    dummy = torch.rand(1, 4, 6)#[batch_size, seq_length, hidden_dim]
     multihead_attention = MultiheadAttention(hidden_dim=6, num_heads=2)
     
     print('No mask:')
-    _ = multihead_attention(x)
+    _ = multihead_attention(dummy)
     print('Masked:')
-    _ = multihead_attention(x, mask=True)
+    _ = multihead_attention(dummy, mask=True)
     ```
     
     will get:

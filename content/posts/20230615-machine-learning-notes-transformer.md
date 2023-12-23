@@ -40,19 +40,11 @@ Attention is Encoder-Decoder structure:
 
 ![attention](http://jalammar.github.io/images/t/The_transformer_encoder_decoder_stack.png)
 
-For a sentence with different $pos$ (up to $dim_{base}$, the maximum length of a sentence), and $j \in [0,d_{model}]$, where $d_{model}$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. It is possible to use `nn.Embedding` and get relatively the same result. Also, using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
+For a sentence with different $pos$ (up to $seq_{length}$, the maximum length of a sentence), and $j \in [0,d_{model}]$, where $d_{model}$ is the length of the representation vector (in this case $4$, see the picture below). The Positional Embedding is $$\begin{aligned} PE_{(pos, 2j)} &= \sin(\frac{pos}{ 10000^{2j/{d_{model}}}}) \\\ PE_{(pos, 2j + 1)} &= \cos(\frac{pos}{10000^{2j/{d_{model}}}}) \end{aligned} \tag{6}$$Embedding is __representation__ of discrete variables (in this case words or sub-words) by continuous (at least more continuous) vectors. Using $\sin$ and $\cos$ fits with `Add & Norm` layer where the inputs are normalized to $1$.
 
-The Encoder will put the Embedding and Positional Embedding together to get the input $X$, see picture below:
+The Encoder will add the Embedding and Positional Embedding to get the input $X$, see picture below:
 
 ![input](http://jalammar.github.io/images/t/transformer_positional_encoding_example.png)
-
-$X$ go through Encoder will get intermediate output $C$.
-
-And for Decoder:
-- For Multi-Head Attention, The input of Decoder is $X$ and $C$.
-- For Masked Multi-Head Attention, The input of Decoder is masked $X$ and $C$.
-
-This model will predict the $i^{\text{th}}$ word based on $0^{\text{th}}$ to ${(i-1)}^{\text{th}}$ word.
 
 ## §3 Transformer
 
@@ -62,12 +54,13 @@ The structure of the full Transformer is:
 
 ### §3.1 Add & Norm
 
-- Add is similar to learning residual functions proposed by [ResNet](https://arxiv.org/abs/1512.03385). By introducing "shortcut" or "identity mapping", the transformed input is added together with input by using a $1 \times 1$ convolutional layer.
+- Add is similar to residual connections in [ResNet](https://arxiv.org/abs/1512.03385). By introducing "shortcut" or "identity mapping", the transformed input is added together with input.
 - Norm is normalization layer.
 
 ### §3.2 Feed Forward
 
-- Composed of two Fully Connected Layers.
-- The $1^\text{st}$ layer is ReLU activation function$$\text{ReLU}(x)=\max{(0,x)} \tag{7}$$
-- The $2^\text{nd}$ layer is $$\text{FFN}(X)=(\max{(0,XW_1+b_1)})W_2+b_2 \tag{8}$$
-- The output of Feed Forward will have the same dimension with input $X$.
+- Composed of two Linear Layers and an activation function.
+- The $1^\text{st}$ layer is $$\text{Linear}(X) = XW_1+b_1 \tag{7}$$
+- Then is activation function ReLU$$\text{ReLU}(x)=\max{(0,x)} \tag{8}$$
+- The $2^\text{nd}$ layer is $$\text{Linear}(X) = XW_2+b_2 \tag{9}$$
+- So that we will get $$\text{FFN}(X)=(\max{(0,XW_1+b_1)})W_2+b_2 \tag{10}$$The output of Feed Forward will have the same dimension with input $X$ due to the selection of hyper-parameters.

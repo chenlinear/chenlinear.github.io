@@ -1095,7 +1095,7 @@ We will often see another way to write it:
             self.dropout = nn.Dropout(dropout)
             self.proj = nn.Linear(hidden_dim, hidden_dim)
     
-        def forward(self, x, mask=False):
+        def forward(self, x, mask=None):# `None` is memory-friendly
             batch_size, seq_length, hidden_dim = x.shape
             qkv = self.qkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
@@ -1104,7 +1104,7 @@ We will often see another way to write it:
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
             attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
-            if mask:
+            if mask is not None:
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')
@@ -1132,7 +1132,7 @@ We will often see another way to write it:
             self.dropout = nn.Dropout(dropout)
             self.proj = nn.Linear(hidden_dim, hidden_dim)
     
-        def forward(self, x, mask=False):
+        def forward(self, x, mask=None):# `None` is memory-friendly
             batch_size, seq_length, hidden_dim = x.shape
             qkv = self.qkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
@@ -1141,7 +1141,7 @@ We will often see another way to write it:
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
             attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
-            if mask:
+            if mask is not None:
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')

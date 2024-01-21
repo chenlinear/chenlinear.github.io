@@ -1250,7 +1250,7 @@ We will often see another way to write it:
 
 #### §3.2.2 MultiheadAttention
 
-[`nn.MultiheadAttention`](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html)
+[`nn.MultiheadAttention`](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html), [`F.scaled_dot_product_attention`](https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html)
 
 <div class="tabset"></div>
 
@@ -1267,6 +1267,8 @@ We will often see another way to write it:
     
     ![](20231011-wow-it-fits-secondhand-machine-learningattention.svg)
 
+<!-- v_size=1，而不是使用cls token -->
+
 - `class MultiheadAttention`
     
     ```python
@@ -1276,13 +1278,13 @@ We will often see another way to write it:
             self.num_heads = num_heads
             self.scale = (hidden_dim // num_heads) ** -0.5
     
-            self.wqkv = nn.Linear(hidden_dim, hidden_dim * 3)
-            self.wo = nn.Linear(hidden_dim, hidden_dim)
+            self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3)
+            self.w_o = nn.Linear(hidden_dim, hidden_dim)
             self.dropout = nn.Dropout(dropout)
     
         def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.wqkv(x)
+            qkv = self.w_qkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
             # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
             q, k, v = qkv[0], qkv[1], qkv[2]
@@ -1298,7 +1300,7 @@ We will often see another way to write it:
             attn = self.dropout(attn)
 
             x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
-            x = self.wo(x)# [batch_size, seq_length, hidden_dim]
+            x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
     ```
@@ -1314,13 +1316,13 @@ We will often see another way to write it:
             self.num_heads = num_heads
             self.scale = (hidden_dim // num_heads) ** -0.5
     
-            self.wqkv = nn.Linear(hidden_dim, hidden_dim * 3)
-            self.wo = nn.Linear(hidden_dim, hidden_dim)
+            self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3)
+            self.w_o = nn.Linear(hidden_dim, hidden_dim)
             self.dropout = nn.Dropout(dropout)
     
         def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.wqkv(x)
+            qkv = self.w_qkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
             # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
             q, k, v = qkv[0], qkv[1], qkv[2]
@@ -1340,7 +1342,7 @@ We will often see another way to write it:
             attn = self.dropout(attn)
     
             x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
-            x = self.wo(x)# [batch_size, seq_length, hidden_dim]
+            x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
     ```

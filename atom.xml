@@ -1091,8 +1091,9 @@ class="full-width"
 &lt;li>Normalization&lt;/li>
 &lt;/ul>
 &lt;p>Note in the following figure, only &lt;code>q_size = k_size&lt;/code> is necessary. But in the code, &lt;code>q_size = k_size = v_size = hidden_dim&lt;/code>.&lt;/p>
+&lt;!-- ViT中v_size=1，而不是使用cls token -->
 &lt;p>&lt;img
-src="20231011-wow-it-fits-secondhand-machine-learningattention.svg"
+src="20231011-wow-it-fits-secondhand-machine-learning-attention.svg"
 alt=""
 loading="lazy"
 decoding="async"
@@ -1100,9 +1101,6 @@ class="full-width"
 />
 &lt;/p>
 &lt;/li>
-&lt;/ul>
-&lt;!-- v_size=1，而不是使用cls token -->
-&lt;ul>
 &lt;li>
 &lt;p>&lt;code>class MultiheadAttention&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00a8c8">class&lt;/span> &lt;span style="color:#75af00">MultiheadAttention&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#111">nn&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#111">Module&lt;/span>&lt;span style="color:#111">):&lt;/span>

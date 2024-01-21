@@ -720,7 +720,11 @@ Problem: With deeper layers, the loss goes upwards (see Fig.1 of the paper), but
 |Bottleneck building block: $1 \times 1$ convolution kernel|✔️&✖️|
 |Adopt batch normalization (BN) right after each convolution and before activation|✔️&✖️, ongoing debate|
 
-Basically residual connections are:
+Basically residual is:
+
+![](20231011-wow-it-fits-secondhand-machine-learning-residual-waste.jpg)
+
+Sorry, not that "residual". 🤣
 
 ```python
 class Res(nn.Module):
@@ -740,149 +744,325 @@ class Res(nn.Module):
 
 By using residual connections, the model will learn linearity first and non-linearity after. We will see residual connections in Transformers.
 
-In [`torchvision.models.resnet`](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py):
+<div class="tabset"></div>
 
-```python
-def conv3x3():
+- `torchvision.models.resnet`
+    
+    ```python
+    def conv3x3():
+    
+    def conv1x1():
+    
+    class BasicBlock():
+        def __init__():
+        def forward():
+    
+    class Bottleneck():
+        def __init__():
+        def forward():
+    
+    class ResNet():
+        def __init__():
+        def _make_layer():
+        def _forward_impl():
+        def forward():
+    
+    class ResNet18_Weights():
+    ...
+    
+    def resnet18():
+    ...
+    ```
+    
+    To use it:
+    
+    ```python
+    from torchvision.models.resnet import resnet18
+    
+    model = resnet18()
+    summary(model, input_size=(16, 3, 224, 224))
+    ```
+    
+    or
+    
+    ```python
+    model = torch.hub.load('pytorch/vision:v0.10.0', 'resnet18', pretrained=True)
+    summary(model, input_size=(16, 3, 224, 224))
+    ```
+    
+    will get:
+    
+    ```Bash
+    Downloading: "https://github.com/pytorch/vision/zipball/v0.10.0" to /root/.cache/torch/hub/v0.10.0.zip
+    /usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+      warnings.warn(
+    /usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+      warnings.warn(msg)
+    Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+    100%|██████████| 44.7M/44.7M [00:00<00:00, 114MB/s]
+    ==========================================================================================
+    Layer (type:depth-idx)                   Output Shape              Param #
+    ==========================================================================================
+    ResNet                                   [16, 1000]                --
+    ├─Conv2d: 1-1                            [16, 64, 112, 112]        9,408
+    ├─BatchNorm2d: 1-2                       [16, 64, 112, 112]        128
+    ├─ReLU: 1-3                              [16, 64, 112, 112]        --
+    ├─MaxPool2d: 1-4                         [16, 64, 56, 56]          --
+    ├─Sequential: 1-5                        [16, 64, 56, 56]          --
+    │    └─BasicBlock: 2-1                   [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-1                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-2             [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-3                    [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-4                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-5             [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-6                    [16, 64, 56, 56]          --
+    │    └─BasicBlock: 2-2                   [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-7                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-8             [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-9                    [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-10                 [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-11            [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-12                   [16, 64, 56, 56]          --
+    ├─Sequential: 1-6                        [16, 128, 28, 28]         --
+    │    └─BasicBlock: 2-3                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-13                 [16, 128, 28, 28]         73,728
+    │    │    └─BatchNorm2d: 3-14            [16, 128, 28, 28]         256
+    │    │    └─ReLU: 3-15                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-16                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-17            [16, 128, 28, 28]         256
+    │    │    └─Sequential: 3-18             [16, 128, 28, 28]         8,448
+    │    │    └─ReLU: 3-19                   [16, 128, 28, 28]         --
+    │    └─BasicBlock: 2-4                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-20                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-21            [16, 128, 28, 28]         256
+    │    │    └─ReLU: 3-22                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-23                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-24            [16, 128, 28, 28]         256
+    │    │    └─ReLU: 3-25                   [16, 128, 28, 28]         --
+    ├─Sequential: 1-7                        [16, 256, 14, 14]         --
+    │    └─BasicBlock: 2-5                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-26                 [16, 256, 14, 14]         294,912
+    │    │    └─BatchNorm2d: 3-27            [16, 256, 14, 14]         512
+    │    │    └─ReLU: 3-28                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-29                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-30            [16, 256, 14, 14]         512
+    │    │    └─Sequential: 3-31             [16, 256, 14, 14]         33,280
+    │    │    └─ReLU: 3-32                   [16, 256, 14, 14]         --
+    │    └─BasicBlock: 2-6                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-33                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-34            [16, 256, 14, 14]         512
+    │    │    └─ReLU: 3-35                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-36                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-37            [16, 256, 14, 14]         512
+    │    │    └─ReLU: 3-38                   [16, 256, 14, 14]         --
+    ├─Sequential: 1-8                        [16, 512, 7, 7]           --
+    │    └─BasicBlock: 2-7                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-39                 [16, 512, 7, 7]           1,179,648
+    │    │    └─BatchNorm2d: 3-40            [16, 512, 7, 7]           1,024
+    │    │    └─ReLU: 3-41                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-42                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-43            [16, 512, 7, 7]           1,024
+    │    │    └─Sequential: 3-44             [16, 512, 7, 7]           132,096
+    │    │    └─ReLU: 3-45                   [16, 512, 7, 7]           --
+    │    └─BasicBlock: 2-8                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-46                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-47            [16, 512, 7, 7]           1,024
+    │    │    └─ReLU: 3-48                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-49                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-50            [16, 512, 7, 7]           1,024
+    │    │    └─ReLU: 3-51                   [16, 512, 7, 7]           --
+    ├─AdaptiveAvgPool2d: 1-9                 [16, 512, 1, 1]           --
+    ├─Linear: 1-10                           [16, 1000]                513,000
+    ==========================================================================================
+    Total params: 11,689,512
+    Trainable params: 11,689,512
+    Non-trainable params: 0
+    Total mult-adds (G): 29.03
+    ==========================================================================================
+    Input size (MB): 9.63
+    Forward/backward pass size (MB): 635.96
+    Params size (MB): 46.76
+    Estimated Total Size (MB): 692.35
+    ==========================================================================================
+    ```
 
-def conv1x1():
-
-class BasicBlock():
-    def __init__():
-    def forward():
-
-class Bottleneck():
-    def __init__():
-    def forward():
-
-class ResNet():
-    def __init__():
-    def _make_layer():
-    def _forward_impl():
-    def forward():
-
-class ResNet18_Weights():
-...
-
-def resnet18():
-...
-```
-
-To use it:
-
-```python
-from torchvision.models.resnet import resnet18
-
-model = resnet18()
-summary(model, input_size=(16, 3, 224, 224))
-```
-
-or
-
-```python
-model = torch.hub.load('pytorch/vision:v0.10.0', 'resnet18', pretrained=True)
-summary(model, input_size=(16, 3, 224, 224))
-```
-
-will get:
-
-```Bash
-Downloading: "https://github.com/pytorch/vision/zipball/v0.10.0" to /root/.cache/torch/hub/v0.10.0.zip
-/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)
-Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
-100%|██████████| 44.7M/44.7M [00:00<00:00, 114MB/s]
-==========================================================================================
-Layer (type:depth-idx)                   Output Shape              Param #
-==========================================================================================
-ResNet                                   [16, 1000]                --
-├─Conv2d: 1-1                            [16, 64, 112, 112]        9,408
-├─BatchNorm2d: 1-2                       [16, 64, 112, 112]        128
-├─ReLU: 1-3                              [16, 64, 112, 112]        --
-├─MaxPool2d: 1-4                         [16, 64, 56, 56]          --
-├─Sequential: 1-5                        [16, 64, 56, 56]          --
-│    └─BasicBlock: 2-1                   [16, 64, 56, 56]          --
-│    │    └─Conv2d: 3-1                  [16, 64, 56, 56]          36,864
-│    │    └─BatchNorm2d: 3-2             [16, 64, 56, 56]          128
-│    │    └─ReLU: 3-3                    [16, 64, 56, 56]          --
-│    │    └─Conv2d: 3-4                  [16, 64, 56, 56]          36,864
-│    │    └─BatchNorm2d: 3-5             [16, 64, 56, 56]          128
-│    │    └─ReLU: 3-6                    [16, 64, 56, 56]          --
-│    └─BasicBlock: 2-2                   [16, 64, 56, 56]          --
-│    │    └─Conv2d: 3-7                  [16, 64, 56, 56]          36,864
-│    │    └─BatchNorm2d: 3-8             [16, 64, 56, 56]          128
-│    │    └─ReLU: 3-9                    [16, 64, 56, 56]          --
-│    │    └─Conv2d: 3-10                 [16, 64, 56, 56]          36,864
-│    │    └─BatchNorm2d: 3-11            [16, 64, 56, 56]          128
-│    │    └─ReLU: 3-12                   [16, 64, 56, 56]          --
-├─Sequential: 1-6                        [16, 128, 28, 28]         --
-│    └─BasicBlock: 2-3                   [16, 128, 28, 28]         --
-│    │    └─Conv2d: 3-13                 [16, 128, 28, 28]         73,728
-│    │    └─BatchNorm2d: 3-14            [16, 128, 28, 28]         256
-│    │    └─ReLU: 3-15                   [16, 128, 28, 28]         --
-│    │    └─Conv2d: 3-16                 [16, 128, 28, 28]         147,456
-│    │    └─BatchNorm2d: 3-17            [16, 128, 28, 28]         256
-│    │    └─Sequential: 3-18             [16, 128, 28, 28]         8,448
-│    │    └─ReLU: 3-19                   [16, 128, 28, 28]         --
-│    └─BasicBlock: 2-4                   [16, 128, 28, 28]         --
-│    │    └─Conv2d: 3-20                 [16, 128, 28, 28]         147,456
-│    │    └─BatchNorm2d: 3-21            [16, 128, 28, 28]         256
-│    │    └─ReLU: 3-22                   [16, 128, 28, 28]         --
-│    │    └─Conv2d: 3-23                 [16, 128, 28, 28]         147,456
-│    │    └─BatchNorm2d: 3-24            [16, 128, 28, 28]         256
-│    │    └─ReLU: 3-25                   [16, 128, 28, 28]         --
-├─Sequential: 1-7                        [16, 256, 14, 14]         --
-│    └─BasicBlock: 2-5                   [16, 256, 14, 14]         --
-│    │    └─Conv2d: 3-26                 [16, 256, 14, 14]         294,912
-│    │    └─BatchNorm2d: 3-27            [16, 256, 14, 14]         512
-│    │    └─ReLU: 3-28                   [16, 256, 14, 14]         --
-│    │    └─Conv2d: 3-29                 [16, 256, 14, 14]         589,824
-│    │    └─BatchNorm2d: 3-30            [16, 256, 14, 14]         512
-│    │    └─Sequential: 3-31             [16, 256, 14, 14]         33,280
-│    │    └─ReLU: 3-32                   [16, 256, 14, 14]         --
-│    └─BasicBlock: 2-6                   [16, 256, 14, 14]         --
-│    │    └─Conv2d: 3-33                 [16, 256, 14, 14]         589,824
-│    │    └─BatchNorm2d: 3-34            [16, 256, 14, 14]         512
-│    │    └─ReLU: 3-35                   [16, 256, 14, 14]         --
-│    │    └─Conv2d: 3-36                 [16, 256, 14, 14]         589,824
-│    │    └─BatchNorm2d: 3-37            [16, 256, 14, 14]         512
-│    │    └─ReLU: 3-38                   [16, 256, 14, 14]         --
-├─Sequential: 1-8                        [16, 512, 7, 7]           --
-│    └─BasicBlock: 2-7                   [16, 512, 7, 7]           --
-│    │    └─Conv2d: 3-39                 [16, 512, 7, 7]           1,179,648
-│    │    └─BatchNorm2d: 3-40            [16, 512, 7, 7]           1,024
-│    │    └─ReLU: 3-41                   [16, 512, 7, 7]           --
-│    │    └─Conv2d: 3-42                 [16, 512, 7, 7]           2,359,296
-│    │    └─BatchNorm2d: 3-43            [16, 512, 7, 7]           1,024
-│    │    └─Sequential: 3-44             [16, 512, 7, 7]           132,096
-│    │    └─ReLU: 3-45                   [16, 512, 7, 7]           --
-│    └─BasicBlock: 2-8                   [16, 512, 7, 7]           --
-│    │    └─Conv2d: 3-46                 [16, 512, 7, 7]           2,359,296
-│    │    └─BatchNorm2d: 3-47            [16, 512, 7, 7]           1,024
-│    │    └─ReLU: 3-48                   [16, 512, 7, 7]           --
-│    │    └─Conv2d: 3-49                 [16, 512, 7, 7]           2,359,296
-│    │    └─BatchNorm2d: 3-50            [16, 512, 7, 7]           1,024
-│    │    └─ReLU: 3-51                   [16, 512, 7, 7]           --
-├─AdaptiveAvgPool2d: 1-9                 [16, 512, 1, 1]           --
-├─Linear: 1-10                           [16, 1000]                513,000
-==========================================================================================
-Total params: 11,689,512
-Trainable params: 11,689,512
-Non-trainable params: 0
-Total mult-adds (G): 29.03
-==========================================================================================
-Input size (MB): 9.63
-Forward/backward pass size (MB): 635.96
-Params size (MB): 46.76
-Estimated Total Size (MB): 692.35
-==========================================================================================
-```
+- Homemade `ResNet18`
+    
+    ```python
+    class ResidualBlock(nn.Module):
+        def __init__(self, in_channels, out_channels, stride=1):
+            super().__init__()
+            self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False)
+            self.bn1 = nn.BatchNorm2d(out_channels)
+            self.relu = nn.ReLU()
+            self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
+            self.bn2 = nn.BatchNorm2d(out_channels)
+    
+            self.residual = nn.Identity()
+            if stride != 1 or in_channels != out_channels:
+                self.residual = nn.Sequential(
+                    nn.Conv2d(in_channels, out_channels, stride=stride, kernel_size=1, bias=False),
+                    nn.BatchNorm2d(out_channels)
+                )
+    
+        def forward(self, x):
+            residual = x
+    
+            x = self.conv1(x)
+            x = self.bn1(x)
+            x = self.relu(x)
+            x = self.conv2(x)
+            x = self.bn2(x)
+    
+            x += self.residual(residual)
+            x = self.relu(x)
+            return x
+    ```
+    
+    ```python
+    class ResNet18(nn.Module):
+        def __init__(self, num_classes=1000):
+            super().__init__()
+            self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3, bias=False)
+            self.bn1 = nn.BatchNorm2d(64)
+            self.relu = nn.ReLU()
+            self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
+    
+            self.layer1 = self._make_layer(64,   64,   num_layers=2, stride=1)
+            self.layer2 = self._make_layer(64,   128, num_layers=2, stride=2)
+            self.layer3 = self._make_layer(128, 256, num_layers=2, stride=2)
+            self.layer4 = self._make_layer(256, 512, num_layers=2, stride=2)
+    
+            self.avgpool = nn.AdaptiveAvgPool2d((1,1))
+            self.fc = nn.Linear(512, num_classes)
+    
+        def _make_layer(self, in_channels, out_channels, num_layers, stride=1):
+            layers = []
+            layers.append(ResidualBlock(in_channels, out_channels, stride))
+            for _ in range(1, num_layers):
+                layers.append(ResidualBlock(out_channels, out_channels))
+            return nn.Sequential(*layers)
+    
+        def forward(self, x):
+            x = self.conv1(x)
+            x = self.bn1(x)
+            x = self.relu(x)
+            x = self.maxpool(x)
+    
+            x = self.layer1(x)
+            x = self.layer2(x)
+            x = self.layer3(x)
+            x = self.layer4(x)
+    
+            x = self.avgpool(x)
+            x = x.view(x.size(0), -1)
+            x = self.fc(x)
+            return x
+    ```
+    
+    ```python
+    summary(ResNet18(), input_size = (16, 3, 224, 224))
+    ```
+    
+    will get:
+    
+    ```Bash
+    ==========================================================================================
+    Layer (type:depth-idx)                   Output Shape              Param #
+    ==========================================================================================
+    ResNet18                                 [16, 1000]                --
+    ├─Conv2d: 1-1                            [16, 64, 112, 112]        9,408
+    ├─BatchNorm2d: 1-2                       [16, 64, 112, 112]        128
+    ├─ReLU: 1-3                              [16, 64, 112, 112]        --
+    ├─MaxPool2d: 1-4                         [16, 64, 56, 56]          --
+    ├─Sequential: 1-5                        [16, 64, 56, 56]          --
+    │    └─ResidualBlock: 2-1                [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-1                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-2             [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-3                    [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-4                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-5             [16, 64, 56, 56]          128
+    │    │    └─Identity: 3-6                [16, 64, 56, 56]          --
+    │    │    └─ReLU: 3-7                    [16, 64, 56, 56]          --
+    │    └─ResidualBlock: 2-2                [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-8                  [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-9             [16, 64, 56, 56]          128
+    │    │    └─ReLU: 3-10                   [16, 64, 56, 56]          --
+    │    │    └─Conv2d: 3-11                 [16, 64, 56, 56]          36,864
+    │    │    └─BatchNorm2d: 3-12            [16, 64, 56, 56]          128
+    │    │    └─Identity: 3-13               [16, 64, 56, 56]          --
+    │    │    └─ReLU: 3-14                   [16, 64, 56, 56]          --
+    ├─Sequential: 1-6                        [16, 128, 28, 28]         --
+    │    └─ResidualBlock: 2-3                [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-15                 [16, 128, 28, 28]         73,728
+    │    │    └─BatchNorm2d: 3-16            [16, 128, 28, 28]         256
+    │    │    └─ReLU: 3-17                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-18                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-19            [16, 128, 28, 28]         256
+    │    │    └─Sequential: 3-20             [16, 128, 28, 28]         8,448
+    │    │    └─ReLU: 3-21                   [16, 128, 28, 28]         --
+    │    └─ResidualBlock: 2-4                [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-22                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-23            [16, 128, 28, 28]         256
+    │    │    └─ReLU: 3-24                   [16, 128, 28, 28]         --
+    │    │    └─Conv2d: 3-25                 [16, 128, 28, 28]         147,456
+    │    │    └─BatchNorm2d: 3-26            [16, 128, 28, 28]         256
+    │    │    └─Identity: 3-27               [16, 128, 28, 28]         --
+    │    │    └─ReLU: 3-28                   [16, 128, 28, 28]         --
+    ├─Sequential: 1-7                        [16, 256, 14, 14]         --
+    │    └─ResidualBlock: 2-5                [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-29                 [16, 256, 14, 14]         294,912
+    │    │    └─BatchNorm2d: 3-30            [16, 256, 14, 14]         512
+    │    │    └─ReLU: 3-31                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-32                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-33            [16, 256, 14, 14]         512
+    │    │    └─Sequential: 3-34             [16, 256, 14, 14]         33,280
+    │    │    └─ReLU: 3-35                   [16, 256, 14, 14]         --
+    │    └─ResidualBlock: 2-6                [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-36                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-37            [16, 256, 14, 14]         512
+    │    │    └─ReLU: 3-38                   [16, 256, 14, 14]         --
+    │    │    └─Conv2d: 3-39                 [16, 256, 14, 14]         589,824
+    │    │    └─BatchNorm2d: 3-40            [16, 256, 14, 14]         512
+    │    │    └─Identity: 3-41               [16, 256, 14, 14]         --
+    │    │    └─ReLU: 3-42                   [16, 256, 14, 14]         --
+    ├─Sequential: 1-8                        [16, 512, 7, 7]           --
+    │    └─ResidualBlock: 2-7                [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-43                 [16, 512, 7, 7]           1,179,648
+    │    │    └─BatchNorm2d: 3-44            [16, 512, 7, 7]           1,024
+    │    │    └─ReLU: 3-45                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-46                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-47            [16, 512, 7, 7]           1,024
+    │    │    └─Sequential: 3-48             [16, 512, 7, 7]           132,096
+    │    │    └─ReLU: 3-49                   [16, 512, 7, 7]           --
+    │    └─ResidualBlock: 2-8                [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-50                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-51            [16, 512, 7, 7]           1,024
+    │    │    └─ReLU: 3-52                   [16, 512, 7, 7]           --
+    │    │    └─Conv2d: 3-53                 [16, 512, 7, 7]           2,359,296
+    │    │    └─BatchNorm2d: 3-54            [16, 512, 7, 7]           1,024
+    │    │    └─Identity: 3-55               [16, 512, 7, 7]           --
+    │    │    └─ReLU: 3-56                   [16, 512, 7, 7]           --
+    ├─AdaptiveAvgPool2d: 1-9                 [16, 512, 1, 1]           --
+    ├─Linear: 1-10                           [16, 1000]                513,000
+    ==========================================================================================
+    Total params: 11,689,512
+    Trainable params: 11,689,512
+    Non-trainable params: 0
+    Total mult-adds (G): 29.03
+    ==========================================================================================
+    Input size (MB): 9.63
+    Forward/backward pass size (MB): 635.96
+    Params size (MB): 46.76
+    Estimated Total Size (MB): 692.35
+    ==========================================================================================
+    ```
 
 ## §3 Transformer
 
 Transformer is a general function fitter with residual connections, which is a more general FFN.
+
+<!-- Transformer is about paying attention to residuals and dropouts haha. -->
 
 ### §3.1 Embedding
 
@@ -1076,12 +1256,16 @@ We will often see another way to write it:
 
 - Equation
     
-    We define $$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^\top}{\sqrt{d_{k}}})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^0$$, where $\text{head}_i = \text{Attention} (QW^Q_i, KW^K_i, VW^V_i)$, and $h$ is `num_heads` in the code.
+    Given an input $X$, we will get query $Q$, key $K$, value $V$ by $$\begin{aligned} Q&=XW^Q \\\ K&=XW^K \\\ V&=XW^V\end{aligned}$$Then $$\text{Attention}(Q, K, V) = \frac{1}{\sqrt{d_{k}}}\text{Softmax}(QK^\mathsf{T})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^O$$, where $\text{head}_i = \text{Attention} (XW^Q_i, XW^K_i, XW^V_i)$, and $h$ is `num_heads` in the code.
     
     The advantage of Softmax:
     - [Matthew's effect](https://en.wikipedia.org/wiki/Matthew_effect)
     - Non-linearity
     - Normalization
+    
+    Note in the following figure, only `q_size = k_size` is necessary. But in the code, `q_size = k_size = v_size = hidden_dim`.
+    
+    ![](20231011-wow-it-fits-secondhand-machine-learningattention.svg)
 
 - `class MultiheadAttention`
     
@@ -1090,21 +1274,22 @@ We will often see another way to write it:
         def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0):
             super().__init__()
             self.num_heads = num_heads
-            self.d_k = hidden_dim // num_heads
-            self.qkv = nn.Linear(hidden_dim, hidden_dim * 3)
-            self.dropout = nn.Dropout(dropout)
-            self.proj = nn.Linear(hidden_dim, hidden_dim)
+            self.scale = (hidden_dim // num_heads) ** -0.5
     
-        def forward(self, x, mask=None):# `None` is memory-friendly
+            self.wqkv = nn.Linear(hidden_dim, hidden_dim * 3)
+            self.wo = nn.Linear(hidden_dim, hidden_dim)
+            self.dropout = nn.Dropout(dropout)
+    
+        def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.qkv(x)
+            qkv = self.wqkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
             # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
             q, k, v = qkv[0], qkv[1], qkv[2]
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
-            attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
-            if mask is not None:
+            attn = self.scale * q @ (k.transpose(-2, -1))# `torch.matmul`
+            if is_causal:# masked/causal attention
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')
@@ -1113,7 +1298,7 @@ We will often see another way to write it:
             attn = self.dropout(attn)
 
             x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
-            x = self.proj(x)# [batch_size, seq_length, hidden_dim]
+            x = self.wo(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
     ```
@@ -1127,21 +1312,22 @@ We will often see another way to write it:
         def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0):
             super().__init__()
             self.num_heads = num_heads
-            self.d_k = hidden_dim // num_heads
-            self.qkv = nn.Linear(hidden_dim, hidden_dim * 3)
-            self.dropout = nn.Dropout(dropout)
-            self.proj = nn.Linear(hidden_dim, hidden_dim)
+            self.scale = (hidden_dim // num_heads) ** -0.5
     
-        def forward(self, x, mask=None):# `None` is memory-friendly
+            self.wqkv = nn.Linear(hidden_dim, hidden_dim * 3)
+            self.wo = nn.Linear(hidden_dim, hidden_dim)
+            self.dropout = nn.Dropout(dropout)
+    
+        def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.qkv(x)
+            qkv = self.wqkv(x)
             qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
             # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
             q, k, v = qkv[0], qkv[1], qkv[2]
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
-            attn = (self.d_k ** -0.5) * q.float() @ (k.float().transpose(-2, -1))# `torch.matmul`
-            if mask is not None:
+            attn = self.scale * q @ (k.transpose(-2, -1))# `torch.matmul`
+            if is_causal:# masked/causal attention
                 attn = attn.masked_fill_(# `torch.Tensor.masked_fill_`, add mask by broadcasting
                     torch.triu(torch.ones((seq_length, seq_length), dtype=torch.bool), diagonal=1),
                     float('-inf')
@@ -1154,7 +1340,7 @@ We will often see another way to write it:
             attn = self.dropout(attn)
     
             x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
-            x = self.proj(x)# [batch_size, seq_length, hidden_dim]
+            x = self.wo(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
     ```
@@ -1166,7 +1352,7 @@ We will often see another way to write it:
     print('No mask:')
     _ = multihead_attention(dummy)
     print('Masked:')
-    _ = multihead_attention(dummy, mask=True)
+    _ = multihead_attention(dummy, is_causal=True)
     ```
     
     will get:
@@ -1226,11 +1412,11 @@ We will often see another way to write it:
 class TransformerEncoderLayer(nn.Module):
     def __init__(self, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
-        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout=dropout)
+        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
         self.layer_norm_1 = nn.LayerNorm(hidden_dim)
         self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
         self.layer_norm_2 = nn.LayerNorm(hidden_dim)
-        self.dropout = nn.Dropout(0.0)
+        self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
         residual = x
@@ -1683,7 +1869,7 @@ For different dataset and different goals.
 Each subfigure of the figure below is a _Power Spectrum_:
 
 - The horizontal axis is _Time_ ($\text{s}$).
-- The vertical axis is _Frequency_ ($\text{Hz}$).
+- The vertical axis is _Frequency_ ($\text{Hz}$) of the vibration.
 - The color (from dark to red to white) is _Sound Intensity Level_ ($\text{dB}$):
 
 ![](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*D_yXVrrJD1Y46Z1T0OTOVA.png)

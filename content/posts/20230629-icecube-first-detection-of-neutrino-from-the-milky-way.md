@@ -17,7 +17,7 @@ And here's my notes for the first detection paper.
 
 |track|cascade|
 |-|-|
-|$\mu$ from interaction of cosmic-rays and atmosphere; $\mu$ from interaction of $\nu_{\mu}$ and nuclei|interaction of $\nu_e$ and $\nu_{\tau}$ and nuclei; scattering interactions of all $3$ neutrino flavor|
+|$\mu$ from interaction of cosmic-rays and atmosphere; $\mu$ from interaction of $\nu_{\mu}$ and nuclei (no muon accompanying)|interaction of $\nu_e$ and $\nu_{\tau}$ and nuclei; scattering interactions of all $3$ neutrino flavor|
 |clear path|more spherical in shape|
 |easier to trace back to source|harder to trace back to source|
 |harder to be distinguished from muons produced by cosmic rays in the atmosphere|easier to be distinguished from atmospheric background|

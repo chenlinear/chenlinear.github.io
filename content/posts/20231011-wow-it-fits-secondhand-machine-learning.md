@@ -1265,9 +1265,9 @@ We will often see another way to write it:
     
     Note in the following figure, only `q_size = k_size` is necessary. But in the code, `q_size = k_size = v_size = hidden_dim`.
     
-    ![](20231011-wow-it-fits-secondhand-machine-learningattention.svg)
-
-<!-- v_size=1，而不是使用cls token -->
+    <!-- ViT中v_size=1，而不是使用cls token -->
+    
+    ![](20231011-wow-it-fits-secondhand-machine-learning-attention.svg)
 
 - `class MultiheadAttention`
     

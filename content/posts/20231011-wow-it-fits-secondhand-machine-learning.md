@@ -928,8 +928,8 @@ By using residual connections, the model will learn linearity first and non-line
             self.relu = nn.ReLU()
             self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
     
-            self.layer1 = self._make_layer(64,   64,   num_layers=2, stride=1)
-            self.layer2 = self._make_layer(64,   128, num_layers=2, stride=2)
+            self.layer1 = self._make_layer(64,  64,  num_layers=2, stride=1)
+            self.layer2 = self._make_layer(64,  128, num_layers=2, stride=2)
             self.layer3 = self._make_layer(128, 256, num_layers=2, stride=2)
             self.layer4 = self._make_layer(256, 512, num_layers=2, stride=2)
     
@@ -1129,30 +1129,32 @@ Embedding is ordered higher-dimensional representation vectors.
     
     ```python
     class Embedding(nn.Module):
-        def __init__(self, hidden_dim=768, max_seq_length=5000):
+        def __init__(self, hidden_dim=768, vocab_size=50257):
             super().__init__()
-            self.embedding = nn.Embedding(max_seq_length, hidden_dim)
+            self.embedding = nn.Embedding(vocab_size, hidden_dim)
             self.hidden_dim = hidden_dim
+    
         def forward(self, x):
             return self.embedding(x) * math.sqrt(self.hidden_dim)
     ```
 
 - `class PositionalEncoding`
     
-    The positional encoding $$\begin{aligned} PE_{(pos, 2i)} &= \sin(\frac{pos}{ 10000^{2i/{d_{model}}}}) \\\ PE_{(pos, 2i + 1)} &= \cos(\frac{pos}{10000^{2i/{d_{model}}}}) \end{aligned}$$, where $pos$ is each element in the sequence up to `max_seq_length`, and $d_{model}$ is `hidden_dim`.
+    The positional encoding $$\begin{aligned} PE_{(pos, 2i)} &= \sin(\frac{pos}{ 10000^{2i/{d_{model}}}}) \\\ PE_{(pos, 2i + 1)} &= \cos(\frac{pos}{10000^{2i/{d_{model}}}}) \end{aligned}$$, where $pos$ is each element in the sequence up to `vocab_size`, and $d_{model}$ is `hidden_dim`.
     
     ```python
     class PositionalEncoding(nn.Module):
-        def __init__(self, hidden_dim=768, max_seq_length=5000, dropout=0.0):
+        def __init__(self, hidden_dim=768, vocab_size=50257, dropout=0.0):
             super().__init__()
             self.dropout = nn.Dropout(dropout)
-            pe = torch.zeros(max_seq_length, hidden_dim)
-            position = torch.arange(0, max_seq_length).unsqueeze(1)
+            pe = torch.zeros(vocab_size, hidden_dim)
+            position = torch.arange(0, vocab_size).unsqueeze(1)
             div_term = torch.exp(torch.arange(0, hidden_dim, 2) * -(math.log(10000.0) / hidden_dim))
             pe[:, 0::2] = torch.sin(position * div_term)
             pe[:, 1::2] = torch.cos(position * div_term)
             pe = pe.unsqueeze(0)
             self.pe = pe
+    
         def forward(self, x):
             seq_length = x.shape[1]
             x = x + self.pe[:, :seq_length].requires_grad_(False)
@@ -1162,7 +1164,7 @@ Embedding is ordered higher-dimensional representation vectors.
 - testing
     
     ```python
-    dummy = torch.randint(5000, (1, 196))# [batch_size, seq_length], words as int numbers
+    dummy = torch.randint(50257, (1, 196))# [batch_size, seq_length], words as int numbers
     embeddings = Embedding()
     dummy = embeddings(dummy)
     print(dummy.shape)# [batch_size, seq_length, hidden_dim]
@@ -1229,7 +1231,7 @@ We will often see another way to write it:
     Feed Forward Network $$\text{FFN}(X)=(\text{ReLU}(XW_1+b_1))W_2+b_2$$, where $\text{ReLU}(x)=\max{(0,x)}$. Here we replace [nn.ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) with [nn.GELU](https://pytorch.org/docs/stable/generated/torch.nn.GELU.html).
 
 - `class FFN`
-
+    
     ```python
     class FFN(nn.Module):
         def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0):
@@ -1247,6 +1249,32 @@ We will often see another way to write it:
             x = self.dropout(x)
             return x
     ```
+    
+    ```python
+    class FFN(nn.Sequential):
+        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0):
+        super().__init__()
+        nn.Linear(in_features, hidden_features),
+        nn.GELU(),
+        nn.Dropout(dropout),
+        nn.Linear(hidden_features, out_features),
+        nn.Dropout(dropout)
+    ```
+
+- testing
+    
+    ```python
+    dummy = torch.rand(1, 196, 768)# [batch_size, seq_length, hidden_dim]
+    ffn = FFN()
+    dummy = ffn(dummy)
+    print(dummy.shape)
+    ```
+    
+    will get:
+    
+    ```Bash
+    torch.Size([1, 196, 768])
+    ```
 
 #### §3.2.2 MultiheadAttention
 
@@ -1256,14 +1284,14 @@ We will often see another way to write it:
 
 - Equation
     
-    Given an input $X$, we will get query $Q$, key $K$, value $V$ by $$\begin{aligned} Q&=XW^Q \\\ K&=XW^K \\\ V&=XW^V\end{aligned}$$Then $$\text{Attention}(Q, K, V) = \frac{1}{\sqrt{d_{k}}}\text{Softmax}(QK^\mathsf{T})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^O$$, where $\text{head}_i = \text{Attention} (XW^Q_i, XW^K_i, XW^V_i)$, and $h$ is `num_heads` in the code.
+    Given an input $x$, we will get query $Q$, key $K$, value $V$ by $$\begin{aligned} Q&=xW^Q \\\ K&=xW^K \\\ V&=xW^V\end{aligned}$$Then $$\text{Attention}(Q, K, V) = \frac{1}{\sqrt{d_{k}}}\text{Softmax}(QK^\mathsf{T})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^O$$, where $\text{head}_i = \text{Attention} (xW^Q_i, xW^K_i, xW^V_i)$, and $h$ is `num_heads` in the code.
     
     The advantage of Softmax:
-    - [Matthew's effect](https://en.wikipedia.org/wiki/Matthew_effect)
+    - [Matthew effect](https://en.wikipedia.org/wiki/Matthew_effect)
     - Non-linearity
     - Normalization
     
-    Note in the following figure, only `q_size = k_size` is necessary. But in the code, `q_size = k_size = v_size = hidden_dim`.
+    Note that in the figure below, only `q_size = k_size` is necessary. But in the code, `q_size = k_size = v_size = hidden_dim`.
     
     <!-- ViT中v_size=1，而不是使用cls token -->
     
@@ -1348,7 +1376,7 @@ We will often see another way to write it:
     ```
     
     ```python
-    dummy = torch.rand(1, 4, 6)#[batch_size, seq_length, hidden_dim]
+    dummy = torch.rand(1, 4, 6)# [batch_size, seq_length, hidden_dim]
     multihead_attention = MultiheadAttention(hidden_dim=6, num_heads=2)
     
     print('No mask:')
@@ -1414,28 +1442,28 @@ We will often see another way to write it:
 class TransformerEncoderLayer(nn.Module):
     def __init__(self, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
-        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
         self.layer_norm_1 = nn.LayerNorm(hidden_dim)
-        self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
+        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
         self.layer_norm_2 = nn.LayerNorm(hidden_dim)
+        self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
         residual = x
-        x = self.attention(x)
         x = self.layer_norm_1(x)
+        x = self.attention(x)
         x = self.dropout(x)
         x += residual
 
         residual = x
-        x = self.ffn(x)
         x = self.layer_norm_2(x)
+        x = self.ffn(x)
         x = self.dropout(x)
         x += residual
         return x
 ```
 
-Or you can put Layer Norm before Attention, see [[2002.04745] _On Layer Normalization in the Transformer Architecture_](https://arxiv.org/abs/2002.04745).
+In contrast with the Original Transformer, Layer Norm is put before Attention, see [[2002.04745] _On Layer Normalization in the Transformer Architecture_](https://arxiv.org/abs/2002.04745).
 
 #### §3.2.4 TransformerEncoder
 
@@ -1481,13 +1509,6 @@ Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on Ch
 - A pure Transformer structure instead of RNNs.
 - Use [Softmax](https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html) to let query $Q$ choose different $K^\mathsf{T}$.
 - The encoder provides keys $K$ and value $V$, while the decoder provides query $Q$.
-
-#### §3.4.1 fine-tuning of LLM
-
-The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model Fine-tuning for Text Classification_](https://arxiv.org/abs/1801.06146)):
-1. Language Model pre-training.
-2. Instruction tuning.
-3. RLHF (Reinforcement Learning from Human Feedback).
 
 ### §3.5 Vision Transformer (ViT)
 
@@ -1558,6 +1579,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
             self.pos_embedding = nn.Parameter(torch.empty(1, (image_size // patch_size)**2, hidden_dim).normal_(std=0.02))
             self.class_token = nn.Parameter(torch.empty(1, 1, hidden_dim))
             self.transformer_encoder = TransformerEncoder(num_layers, num_heads, hidden_dim, ffn_dim, dropout)
+            # self.layer_norm = nn.LayerNorm(hidden_dim)
             self.proj = nn.Linear(hidden_dim, num_classes)
 
         def forward(self, x):
@@ -1567,6 +1589,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
             batch_class_token = self.class_token.expand(batch_size, -1, -1)
             x = torch.cat([batch_class_token, x], dim=1)
             x = self.transformer_encoder(x)
+            # x = self.layer_norm(x)
             x = self.proj(x[:, 0, :])
             return x
     ```
@@ -1612,7 +1635,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
     ===============================================================================================
     ```
 
-- `nn.TransformerEncoder` (`torch 2.1.0+cu118`)
+- `nn.TransformerEncoder` (`torch 2.2.0+cu121`)
     
     ```python
     class VisionTransformer_torch(nn.Module):
@@ -1626,6 +1649,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
             self.class_token = nn.Parameter(torch.empty(1, 1, hidden_dim))
             transformer_encoder_layer = nn.TransformerEncoderLayer(d_model=hidden_dim, nhead=num_heads, dim_feedforward=ffn_dim, dropout=dropout, batch_first=True)
             self.transformer_encoder = nn.TransformerEncoder(transformer_encoder_layer, num_layers=num_layers)
+            # self.layer_norm = nn.LayerNorm(hidden_dim)
             self.proj = nn.Linear(hidden_dim, num_classes)
 
         def forward(self, x):
@@ -1635,6 +1659,7 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
             batch_class_token = self.class_token.expand(batch_size, -1, -1)
             x = torch.cat([batch_class_token, x], dim=1)
             x = self.transformer_encoder(x)
+            # x = self.layer_norm(x)
             x = self.proj(x[:, 0, :])
             return x
     ```
@@ -1686,6 +1711,217 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
 - Parallel vision transformers.
 - Fine-tuning attention is all you need.
 - Patch preprocessing with masked self-supervised learning.
+
+### §3.6 Generative Pre-trained Transformer (GPT)
+
+| |Original Transformer, Encoder|Original Transformer, Decoder|ViT (Encoder-Only)|GPT (Decoder-Only)|
+|-|-|-|-|-|
+|self-attention|✔️|The first attention ✔️, the second ✖️|✔️|✔️|
+|mask/causal|✖️|✔️|✖️|✔️|
+
+Note that in the original Transformer, the Decoder has two attention. However in the Decoder of GPT, there is only one attention. And GPTs are called "Decoder-Only" because:
+- By using masks, GPTs are auto-regressive, meaning that the model takes previous $(t-1)^{th}$ words to produce the $t^{th}$ word.
+- Their task is to generate text, similar to the Decoder in the original Transformer.
+
+#### §3.6.1 GPTDecoderLayer
+
+```python
+class GPTDecoderLayer(nn.Module):
+    def __init__(self, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
+        super().__init__()
+        self.layer_norm_1 = nn.LayerNorm(hidden_dim)
+        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
+        self.layer_norm_2 = nn.LayerNorm(hidden_dim)
+        self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, is_causal=True):
+        residual = x
+        x = self.layer_norm_1(x)
+        x = self.attention(x, is_causal)
+        x = self.dropout(x)
+        x += residual
+
+        residual = x
+        x = self.layer_norm_2(x)
+        x = self.ffn(x)
+        x = self.dropout(x)
+        x += residual
+        return x
+```
+
+#### §3.6.2 GPTDecoder
+
+```python
+class GPTDecoder(nn.Module):
+    def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
+        super().__init__()
+        self.gpt_decoder_layers = nn.ModuleList([
+            GPTDecoderLayer(num_heads, hidden_dim, ffn_dim, dropout)
+            for _ in range(num_layers)
+        ])
+
+    def forward(self, x, is_causal=True):
+        for gpt_decoder_layer in self.gpt_decoder_layers:
+            x = gpt_decoder_layer(x, is_causal)
+        return x
+```
+
+#### §3.6.3 GPTLanguageModel
+
+```python
+class GPTLanguageModel(nn.Module):
+    def __init__(
+        self, vocab_size=50257, window_size=1024,
+        num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0
+        ):
+        super().__init__()
+        self.embedding = Embedding(hidden_dim, vocab_size)
+        self.positional_encoding = PositionalEncoding(hidden_dim, vocab_size, dropout)
+        self.gpt_decoder = GPTDecoder(num_layers, num_heads, hidden_dim, ffn_dim, dropout)
+        self.layer_norm = nn.LayerNorm(hidden_dim)
+        self.proj = nn.Linear(hidden_dim, vocab_size)
+
+    def forward(self, index, targets=None):
+        # index, targets shape: [batch_size, seq_length]
+        batch_size, seq_length = index.shape
+        # embedding
+        x = self.embedding(index)# [batch_size, seq_length, hidden_dim]
+        x = self.positional_encoding(x)# [batch_size, seq_length, hidden_dim]
+        # Transformer Decoder
+        x = self.gpt_decoder(x)# [batch_size, seq_length, hidden_dim]
+        # project out
+        x = self.layer_norm(x)# [batch_size, seq_length, hidden_dim]
+        logits = self.proj(x)# [batch_size, seq_length, vocab_size]
+
+        if targets is None:
+            loss = None
+        else:
+            batch_size, seq_length, vocab_size = logits.shape
+            logits = logits.view(batch_size*seq_length, vocab_size)
+            targets = targets.view(batch_size*seq_length)
+            loss = F.cross_entropy(logits, targets)
+
+        return logits, loss
+
+    @torch.no_grad()
+    def generate(self, index, max_new_tokens):
+        # index shape [batch_size, seq_length]
+        for _ in range(max_new_tokens):
+            # crop index to the last window_size tokens
+            index_cond = index[:, -window_size:]
+            # get the predictions
+            logits, loss = self(index_cond)
+            # focus only on the last time step
+            logits = logits[:, -1, :] # [batch_size, vocab_size]
+            # apply softmax to get probabilities
+            probs = F.softmax(logits, dim=-1) # [batch_size, vocab_size]
+            # sample from the distribution
+            index_next = torch.multinomial(probs, num_samples=1) # [batch_size, 1]
+            # append sampled index to the running sequence
+            index = torch.cat((index, index_next), dim=1) # [batch_size, seq_length+1]
+        return index
+```
+
+```python
+gpt_language_model = GPTLanguageModel()
+
+index = torch.randint(50257, (1, 196))# [batch_size, seq_length]
+targets = torch.randint(50257, (1, 196))# [batch_size, seq_length]
+logits, loss = gpt_language_model(index, targets)
+print(logits.shape)# [batch_size*seq_length, vocab_size]
+print(loss)
+```
+
+will get:
+
+```Bash
+torch.Size([196, 50257])
+tensor(10.9951, grad_fn=<NllLossBackward0>)
+```
+
+#### §3.6.4 fine-tuning of LLM
+
+The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model Fine-tuning for Text Classification_](https://arxiv.org/abs/1801.06146)):
+1. Language Model pre-training.
+2. Instruction tuning.
+3. RLHF (Reinforcement Learning from Human Feedback).
+
+### §3.7 Mixture of Experts (MoE)
+
+Mixture of Experts (MoE):
+| [[1701.06538] _Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer_](https://arxiv.org/abs/1701.06538) | [mixture-of-experts (GitHub)](https://github.com/davidmrau/mixture-of-experts/) | [st-moe-pytorch (GitHub)](https://github.com/lucidrains/st-moe-pytorch) | [FastMoE (GitHub)](https://github.com/laekov/fastmoe) |
+
+Mixtral of Experts:
+| [[2401.04088] _Mixtral of Experts_](https://arxiv.org/abs/2401.04088) | [mistral-src (GitHub)](https://github.com/mistralai/mistral-src/) |
+
+![MoE](https://raw.githubusercontent.com/mistralai/mistral-src/main/assets/smoe.png)
+
+FFN in the original Transformer is replaced by expert layer (weighted FFN). Given $n$ expert networks $\lbrace{E_0, E_i, ..., E_{n-1}}\rbrace$, the output of the expert layer is$$\text{MoE}(x) = \sum_{i=0}^{n-1} {G(x)}_{i} \cdot E_i(x)$$where $$G(x) = \text{Softmax}(\text{TopK}(x \cdot W_g))$$By using [`torch.topk`](https://pytorch.org/docs/stable/generated/torch.topk.html), we only uses $K$ Experts, thus this model is also called Sparse Mixture of Experts (SMoE). Another benefit of experts is that we can put different experts on different GPUs, which is the similar approach of AlexNet (It is rumored that GPT4 is using 16 experts with top2 gating. I guess Ilya Sutskever pulled the same trick again).
+
+In _Mixtral of Experts_, $E(x)$ is [SwiGLU FFN](https://arxiv.org/abs/2002.05202): $$\text{FFN}_\text{SwiGLU}(x) = (\text{Swish}_1(xW_1) \otimes xV)W_2$$here we use [`F.silu`](https://pytorch.org/docs/stable/generated/torch.nn.functional.silu.html).
+
+```python
+class FFN_SwiGLU(nn.Module):
+    def __init__(self, hidden_dim=4096, ffn_dim=14336):
+        super().__init__()
+        self.w1 = nn.Linear(hidden_dim, ffn_dim, bias=False)
+        self.v = nn.Linear(hidden_dim, ffn_dim, bias=False)
+        self.w2 = nn.Linear(ffn_dim, hidden_dim, bias=False)
+
+    def forward(self, x):
+        return self.w2(F.silu(self.w1(x)) * self.v(x))
+```
+
+```python
+class MoELayer(nn.Module):
+    def __init__(self, hidden_dim=4096, ffn_dim=14336, num_experts=8, num_experts_per_tok=2):
+        super().__init__()
+        self.experts = nn.ModuleList([
+            FFN_SwiGLU(hidden_dim, ffn_dim)
+            for _ in range(num_experts)
+        ])
+        self.gate = nn.Linear(hidden_dim, num_experts, bias=False)
+        self.num_experts_per_tok = num_experts_per_tok
+
+    def forward(self, inputs):
+        inputs_squashed = inputs.view(-1, inputs.shape[-1])# [batch_size * seq_length, hidden_dim]
+        gate_logits = self.gate(inputs_squashed)# [batch_size * seq_length, num_experts]
+        weights, selected_experts = torch.topk(gate_logits, self.num_experts_per_tok)# both [batch_size * seq_length, num_experts_per_tok]
+        # print(selected_experts)
+        weights = F.softmax(weights, dim=1)
+        # iterate over each expert
+        results = torch.zeros_like(inputs_squashed)
+        for i, expert in enumerate(self.experts):
+            (index, nth_expert) = torch.where(selected_experts == i)# both [num_index], num_index ≤ batch_size * seq_length
+            # print(torch.where(selected_experts == i))
+            results[index] += weights[index, nth_expert, None] * expert(inputs_squashed[index])# [num_index, 1] * [num_index, hidden_dim]
+        results = results.view_as(inputs)
+        return results
+```
+
+```python
+moe_layer = MoELayer(hidden_dim=8, ffn_dim=16)
+
+dummy = torch.rand(1, 3, 8)# [batch_size, seq_length, hidden_dim]
+dummy = moe_layer(dummy)# [batch_size, seq_length, hidden_dim]
+```
+
+will get:
+
+```Bash
+tensor([[7, 3],
+        [7, 0],
+        [7, 0]])
+(tensor([1, 2]), tensor([1, 1]))
+(tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
+(tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
+(tensor([0]), tensor([1]))
+(tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
+(tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
+(tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
+(tensor([0, 1, 2]), tensor([0, 0, 0]))
+```
 
 ## §4 `fastai`
 

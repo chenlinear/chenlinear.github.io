@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Gravity Spy 2.0"
 date: "2023-08-10"
 tags: 
-- Physics
+- physics
 ---
 
 You can classify some patterns on [Gravity Spy](https://www.zooniverse.org/projects/zooniverse/gravity-spy) and it's fun. Their GitHub repo is [gravityspy-plus](https://github.com/haorenzhi/gravityspy-plus/tree/main), and their Wiki is [Gravity Spy 2.0 Wiki](https://gswiki.ischool.syr.edu/). The Kaggle dataset is [Gravity Spy (Gravitational waves)](https://www.kaggle.com/datasets/tentotheminus9/gravity-spy-gravitational-waves). Not to be confused with [G2Net](https://www.kaggle.com/competitions/g2net-gravitational-wave-detection), the format of the data is quite different.

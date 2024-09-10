@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Wow It Fits! — Secondhand Machine Learning"
 date: "2023-10-11"
 tags: 
-- Programming
+- programming
 math: true
 tabsets: true
 ---
@@ -39,16 +39,18 @@ print(dummy.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([1, 3, 32, 32])
 ```
 
 Commonly used method to change the shape of a tensor:
 
-- [`view()`](https://pytorch.org/docs/stable/generated/torch.Tensor.view.html)
-- [`reshape()`](https://pytorch.org/docs/stable/generated/torch.reshape.html)
-- [`unsqueeze()`](https://pytorch.org/docs/stable/generated/torch.unsqueeze.html)
-- [`squeeze()`](https://pytorch.org/docs/stable/generated/torch.squeeze.html)
+- [`.view()`](https://pytorch.org/docs/stable/generated/torch.Tensor.view.html)
+- [`.reshape()`](https://pytorch.org/docs/stable/generated/torch.reshape.html) (`.reshape()` is for non-contiguous tensor, try `.view()` first. `x.reshape()` is equal to `x.contiguous().view()`)
+- [`.unsqueeze()`](https://pytorch.org/docs/stable/generated/torch.unsqueeze.html)
+- [`.squeeze()`](https://pytorch.org/docs/stable/generated/torch.squeeze.html)
+- [`.transpose()`](https://pytorch.org/docs/stable/generated/torch.transpose.html)
+- [`.permute()`](https://pytorch.org/docs/stable/generated/torch.permute.html)
 
 [`einops`](https://github.com/arogozhnikov/einops) provides a more intuitive way to change the shape.
 
@@ -71,7 +73,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     cpu
     cuda:0
     cpu
@@ -122,7 +124,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 10])
     ```
 
@@ -148,7 +150,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     float64
     torch.float64
     cpu
@@ -172,7 +174,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.float32
     cuda:0
     float32
@@ -198,7 +200,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 3, 28, 28])
     torch.Size([1, 12, 26, 26])
     ```
@@ -218,7 +220,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 3, 28, 28])
     torch.Size([1, 3, 14, 14])
     ```
@@ -249,7 +251,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([128, 12])
     ```
 
@@ -298,7 +300,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 3, 20])
     ```
 
@@ -339,7 +341,7 @@ Commonly used method to change the shape of a tensor:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 64, 22, 22])
     ```
 
@@ -388,7 +390,7 @@ if __name__ == '__main__':
     
     will get:
     
-    ```Bash
+    ```bash
     tensor(2.6026)
     tensor(2.6026)# same result
     ```
@@ -412,7 +414,7 @@ if __name__ == '__main__':
     
     will get:
     
-    ```Bash
+    ```bash
     ==========================================================================================
     Layer (type:depth-idx)                   Output Shape              Param #
     ==========================================================================================
@@ -573,13 +575,13 @@ if __name__ == '__main__':
 
 Later we will use `fastai` instead of writing `def train`, `def test`, `def main` from scratch.
 
-```Bash
+```bash
 python main.py
 ```
 
 will get (full log see [02_mnist.log](20231011-wow-it-fits-secondhand-machine-learning-02_mnist.log)):
 
-```Bash
+```bash
 Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
 Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ../data/MNIST/raw/train-images-idx3-ubyte.gz
 100% 9912422/9912422 [00:00<00:00, 96238958.45it/s]
@@ -665,7 +667,7 @@ summary(AlexNet(), input_size=(16, 3, 224, 224))
 
 will get:
 
-```Bash
+```bash
 ==========================================================================================
 Layer (type:depth-idx)                   Output Shape              Param #
 ==========================================================================================
@@ -792,7 +794,7 @@ By using residual connections, the model will learn linearity first and non-line
     
     will get:
     
-    ```Bash
+    ```bash
     Downloading: "https://github.com/pytorch/vision/zipball/v0.10.0" to /root/.cache/torch/hub/v0.10.0.zip
     /usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
       warnings.warn(
@@ -898,12 +900,13 @@ By using residual connections, the model will learn linearity first and non-line
             self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
             self.bn2 = nn.BatchNorm2d(out_channels)
     
-            self.residual = nn.Identity()
             if stride != 1 or in_channels != out_channels:
                 self.residual = nn.Sequential(
                     nn.Conv2d(in_channels, out_channels, stride=stride, kernel_size=1, bias=False),
                     nn.BatchNorm2d(out_channels)
                 )
+            else:
+                self.residual = nn.Identity()
     
         def forward(self, x):
             residual = x
@@ -934,7 +937,7 @@ By using residual connections, the model will learn linearity first and non-line
             self.layer4 = self._make_layer(256, 512, num_layers=2, stride=2)
     
             self.avgpool = nn.AdaptiveAvgPool2d((1,1))
-            self.fc = nn.Linear(512, num_classes)
+            self.fc = nn.Linear(512, num_classes)# fully connected
     
         def _make_layer(self, in_channels, out_channels, num_layers, stride=1):
             layers = []
@@ -966,7 +969,7 @@ By using residual connections, the model will learn linearity first and non-line
     
     will get:
     
-    ```Bash
+    ```bash
     ==========================================================================================
     Layer (type:depth-idx)                   Output Shape              Param #
     ==========================================================================================
@@ -1060,7 +1063,7 @@ By using residual connections, the model will learn linearity first and non-line
 
 ## §3 Transformer
 
-Transformer is a general function fitter with residual connections, which is a more general FFN.
+Transformer is a general function fitter.
 
 <!-- Transformer is about paying attention to residuals and dropouts haha. -->
 
@@ -1070,7 +1073,9 @@ Embedding is ordered higher-dimensional representation vectors.
 
 #### §3.1.1 `nn.Embedding`
 
-[tiktoken](https://github.com/openai/tiktoken)
+Words in `hidden_dim` vector space: $\vec{R} + \vec{L} = \vec{J}$, $\vec{king} - \vec{man} = \vec{queen} - \vec{woman}$.
+
+[`tiktoken`](https://github.com/openai/tiktoken), [Tiktokenizer](https://tiktokenizer.vercel.app/)
 
 <div class="tabset"></div>
 
@@ -1091,7 +1096,7 @@ Embedding is ordered higher-dimensional representation vectors.
     
     will get:
     
-    ```Bash
+    ```bash
     tensor([[ 0.0378,  1.0396, -0.9673,  0.9697],
             [-0.7824,  1.8141,  0.5336, -1.6396],
             [ 0.1903,  0.6592,  1.4589, -0.6018]])
@@ -1114,7 +1119,7 @@ Embedding is ordered higher-dimensional representation vectors.
     
     will get:
     
-    ```Bash
+    ```bash
     tensor([[0, 0, 1],
             [1, 0, 0]])
     tensor([[ 0.1903,  0.6592,  1.4589, -0.6018],
@@ -1175,7 +1180,7 @@ Embedding is ordered higher-dimensional representation vectors.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 196, 768])
     torch.Size([1, 196, 768])
     ```
@@ -1214,7 +1219,7 @@ We will often see another way to write it:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 196, 768])
     ```
 
@@ -1228,7 +1233,7 @@ We will often see another way to write it:
 
 - Equation
     
-    Feed Forward Network $$\text{FFN}(X)=(\text{ReLU}(XW_1+b_1))W_2+b_2$$, where $\text{ReLU}(x)=\max{(0,x)}$. Here we replace [nn.ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) with [nn.GELU](https://pytorch.org/docs/stable/generated/torch.nn.GELU.html).
+    Feed Forward Network works on each `[seq_length, ]` vector individually $$\text{FFN}(x)=(\text{ReLU}(xW_1+b_1))W_2+b_2$$, where $\text{ReLU}(x)=\max{(0,x)}$. Here we replace [`nn.ReLU`](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) with [`nn.GELU`](https://pytorch.org/docs/stable/generated/torch.nn.GELU.html).
 
 - `class FFN`
     
@@ -1253,12 +1258,12 @@ We will often see another way to write it:
     ```python
     class FFN(nn.Sequential):
         def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0):
-        super().__init__()
-        nn.Linear(in_features, hidden_features),
-        nn.GELU(),
-        nn.Dropout(dropout),
-        nn.Linear(hidden_features, out_features),
-        nn.Dropout(dropout)
+            super().__init__()
+            nn.Linear(in_features, hidden_features),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_features, out_features),
+            nn.Dropout(dropout)
     ```
 
 - testing
@@ -1272,19 +1277,19 @@ We will often see another way to write it:
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([1, 196, 768])
     ```
 
 #### §3.2.2 MultiheadAttention
 
-[`nn.MultiheadAttention`](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html), [`F.scaled_dot_product_attention`](https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html)
+[`nn.MultiheadAttention`](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html), [`F.scaled_dot_product_attention`](https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html), [FlexAttention](https://pytorch.org/blog/flexattention/)
 
 <div class="tabset"></div>
 
 - Equation
     
-    Given an input $x$, we will get query $Q$, key $K$, value $V$ by $$\begin{aligned} Q&=xW^Q \\\ K&=xW^K \\\ V&=xW^V\end{aligned}$$Then $$\text{Attention}(Q, K, V) = \frac{1}{\sqrt{d_{k}}}\text{Softmax}(QK^\mathsf{T})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^O$$, where $\text{head}_i = \text{Attention} (xW^Q_i, xW^K_i, xW^V_i)$, and $h$ is `num_heads` in the code.
+    Self-Attention: Given an input $x$, we will get query $Q$, key $K$, value $V$ by $$\begin{aligned} Q&=xW^Q \\\ K&=xW^K \\\ V&=xW^V\end{aligned}$$Then $$\text{Attention}(Q, K, V) = \frac{1}{\sqrt{d_{k}}}\text{Softmax}(QK^\mathsf{T})V$$, where for a vector $\vec{z_i}$, $\text{Softmax}(\vec{z_i}) = \frac{e^{\vec{z_i}}}{\sum_{i=0}^N e^{\vec{z_i}}}$, and $$\text{MultiheadAttention} (Q, K, V) = \text{Concat}(\text{head}_1, \cdots, \text{head}_h) W^O$$, where $\text{head}_i = \text{Attention} (xW^Q_i, xW^K_i, xW^V_i)$, and $h$ is `num_heads` in the code.
     
     The advantage of Softmax:
     - [Matthew effect](https://en.wikipedia.org/wiki/Matthew_effect)
@@ -1312,10 +1317,11 @@ We will often see another way to write it:
     
         def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.w_qkv(x)
-            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
-            # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
-            q, k, v = qkv[0], qkv[1], qkv[2]
+    
+            qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+            qkv = qkv.permute(2, 0, 3, 1, 4)# [3, batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            q, k, v = qkv# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
             attn = self.scale * q @ (k.transpose(-2, -1))# `torch.matmul`
@@ -1326,8 +1332,10 @@ We will often see another way to write it:
                 )
             attn = attn.softmax(dim=-1)
             attn = self.dropout(attn)
-
-            x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
+    
+            x = attn @ v# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            x = x.reshape(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
             x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
@@ -1350,10 +1358,11 @@ We will often see another way to write it:
     
         def forward(self, x, is_causal=False):
             batch_size, seq_length, hidden_dim = x.shape
-            qkv = self.w_qkv(x)
-            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
-            # q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
-            q, k, v = qkv[0], qkv[1], qkv[2]
+    
+            qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+            qkv = qkv.permute(2, 0, 3, 1, 4)# [3, batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            q, k, v = qkv# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
     
             # attn shape: [batch_size, num_heads, seq_length, seq_length]
             attn = self.scale * q @ (k.transpose(-2, -1))# `torch.matmul`
@@ -1369,7 +1378,9 @@ We will often see another way to write it:
             print(attn.shape)
             attn = self.dropout(attn)
     
-            x = (attn @ v).transpose(1, 2).reshape(batch_size, seq_length, hidden_dim)
+            x = attn @ v# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            x = x.reshape(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
             x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
             x = self.dropout(x)
             return x
@@ -1387,7 +1398,7 @@ We will often see another way to write it:
     
     will get:
     
-    ```Bash
+    ```bash
     No mask:
     tensor([[[[-0.0302, -0.0241, -0.0071, -0.0822],
               [ 0.0041,  0.0307,  0.0372, -0.0366],
@@ -1434,24 +1445,65 @@ We will often see another way to write it:
     torch.Size([1, 2, 4, 4])
     ```
 
+Use [`F.scaled_dot_product_attention`](https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html):
+
+```python
+class MultiheadAttention(nn.Module):
+    def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0):
+        super().__init__()
+        self.num_heads = num_heads
+        self.dropout = dropout
+
+        self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3)
+        self.w_o = nn.Linear(hidden_dim, hidden_dim)
+
+    def forward(self, x, is_causal=False):
+        batch_size, seq_length, hidden_dim = x.shape
+
+        qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
+        qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+        qkv = qkv.permute(2, 0, 3, 1, 4)# [3, batch_size, num_heads, seq_length, hidden_dim // num_heads]
+        q, k, v = qkv# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+
+        x = F.scaled_dot_product_attention(q, k, v, dropout_p=self.dropout, is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+        x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+        x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
+        x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
+        return x
+```
+
+```python
+dummy = torch.rand(1, 196, 768)# [batch_size, seq_length, hidden_dim]
+multihead_attention = MultiheadAttention()
+dummy = multihead_attention(dummy)
+print(dummy.shape)
+```
+
+will get:
+
+```bash
+torch.Size([1, 196, 768])
+```
+
 #### §3.2.3 TransformerEncoderLayer
 
 [`nn.TransformerEncoderLayer`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
 
 ```python
 class TransformerEncoderLayer(nn.Module):
-    def __init__(self, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
+    def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
         self.layer_norm_1 = nn.LayerNorm(hidden_dim)
         self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
         self.layer_norm_2 = nn.LayerNorm(hidden_dim)
         self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
         self.dropout = nn.Dropout(dropout)
+        self.attn_scale = 1 / math.sqrt(2 * num_layersr)
 
     def forward(self, x):
         residual = x
         x = self.layer_norm_1(x)
-        x = self.attention(x)
+        x = self.attn_scale * self.attention(x)
         x = self.dropout(x)
         x += residual
 
@@ -1465,6 +1517,47 @@ class TransformerEncoderLayer(nn.Module):
 
 In contrast with the Original Transformer, Layer Norm is put before Attention, see [[2002.04745] _On Layer Normalization in the Transformer Architecture_](https://arxiv.org/abs/2002.04745).
 
+```python
+summary(TransformerEncoderLayer(), input_size=(1, 196, 768))
+```
+
+will get:
+
+```bash
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+TransformerEncoderLayer                  [1, 196, 768]             --
+├─LayerNorm: 1-1                         [1, 196, 768]             1,536
+├─MultiheadAttention: 1-2                [1, 196, 768]             --
+│    └─Linear: 2-1                       [1, 196, 2304]            1,771,776
+│    └─Dropout: 2-2                      [1, 12, 196, 196]         --
+│    └─Linear: 2-3                       [1, 196, 768]             590,592
+│    └─Dropout: 2-4                      [1, 196, 768]             --
+├─Dropout: 1-3                           [1, 196, 768]             --
+├─LayerNorm: 1-4                         [1, 196, 768]             1,536
+├─FFN: 1-5                               [1, 196, 768]             --
+│    └─Linear: 2-5                       [1, 196, 3072]            2,362,368
+│    └─GELU: 2-6                         [1, 196, 3072]            --
+│    └─Dropout: 2-7                      [1, 196, 3072]            --
+│    └─Linear: 2-8                       [1, 196, 768]             2,360,064
+│    └─Dropout: 2-9                      [1, 196, 768]             --
+├─Dropout: 1-6                           [1, 196, 768]             --
+==========================================================================================
+Total params: 7,087,872
+Trainable params: 7,087,872
+Non-trainable params: 0
+Total mult-adds (M): 7.09
+==========================================================================================
+Input size (MB): 0.60
+Forward/backward pass size (MB): 13.25
+Params size (MB): 28.35
+Estimated Total Size (MB): 42.20
+==========================================================================================
+```
+
+Most of the parameters is in `FNN` rather than `MultiheadAttention`. `FFN` takes 66.66%, while `MultiheadAttention` takes 33.33%. This is even more so with MoE, which has several FFNs.
+
 #### §3.2.4 TransformerEncoder
 
 [`nn.TransformerEncoder`](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html)
@@ -1474,7 +1567,7 @@ class TransformerEncoder(nn.Module):
     def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
         self.transformer_encoder_layers = nn.ModuleList([
-            TransformerEncoderLayer(num_heads, hidden_dim, ffn_dim, dropout)
+            TransformerEncoderLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout)
             for _ in range(num_layers)
         ])
 
@@ -1496,19 +1589,24 @@ class TransformerEncoder(nn.Module):
 |:-|:-|:-|
 |Encoder-Decoder|[[1706.03762] _Attention is All You Need_](https://arxiv.org/abs/1706.03762), [T5](https://arxiv.org/abs/1910.10683)|[BEiT](https://arxiv.org/abs/2106.08254)|
 |Encoder-Only|[BERT](https://arxiv.org/abs/1810.04805)|[ViT](https://arxiv.org/abs/2010.11929)|
-|Decoder-Only|[GPT](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf), [GPT-3](https://arxiv.org/abs/2005.14165), [nanoGPT](https://github.com/karpathy/nanoGPT)||
+|Decoder-Only|[GPT](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf), [GPT-3](https://arxiv.org/abs/2005.14165), [nanoGPT](https://github.com/karpathy/nanoGPT), [modded-nanogpt](https://github.com/KellerJordan/modded-nanogpt/)||
 
 Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond_](https://arxiv.org/abs/2304.13712):
 
 ![Fig1_of_2304.13712](https://pbs.twimg.com/media/GBrF-tHWYAA10wE?format=png)
 
-### §3.4 Attention is All You Need
+| |Original Transformer, Encoder|Original Transformer, Decoder|ViT (Encoder-Only)|GPT (Decoder-Only)|
+|-|-|-|-|-|
+|Self-Attention or Cross-Attention|Self-Attention|The first Self-Attention, the second Cross-Attention|Self-Attention|Self-Attention|
+|Mask/Causal|✖️|✔️|✖️|✔️|
+
+### §3.4 Attention is All You Need (the original Transformer)
 
 [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762)
 
 - A pure Transformer structure instead of RNNs.
 - Use [Softmax](https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html) to let query $Q$ choose different $K^\mathsf{T}$.
-- The encoder provides keys $K$ and value $V$, while the decoder provides query $Q$.
+- The encoder provides keys $K$ and value $V$, while the decoder provides query $Q$. (Cross-Attention)
 
 ### §3.5 Vision Transformer (ViT)
 
@@ -1600,7 +1698,7 @@ Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on Ch
     
     will get:
     
-    ```Bash
+    ```bash
     ===============================================================================================
     Layer (type:depth-idx)                        Output Shape              Param #
     ===============================================================================================
@@ -1670,7 +1768,7 @@ Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on Ch
     
     will, surprisingly, get the same total parameters (`86,565,352`), though the sizes (MB) are way smaller:
     
-    ```Bash
+    ```bash
     ===============================================================================================
     Layer (type:depth-idx)                        Output Shape              Param #
     ===============================================================================================
@@ -1714,31 +1812,27 @@ Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on Ch
 
 ### §3.6 Generative Pre-trained Transformer (GPT)
 
-| |Original Transformer, Encoder|Original Transformer, Decoder|ViT (Encoder-Only)|GPT (Decoder-Only)|
-|-|-|-|-|-|
-|self-attention|✔️|The first attention ✔️, the second ✖️|✔️|✔️|
-|mask/causal|✖️|✔️|✖️|✔️|
-
 Note that in the original Transformer, the Decoder has two attention. However in the Decoder of GPT, there is only one attention. And GPTs are called "Decoder-Only" because:
-- By using masks, GPTs are auto-regressive, meaning that the model takes previous $(t-1)^{th}$ words to produce the $t^{th}$ word.
+- By using masks, GPTs are autoregressive, meaning that the model takes previous $(t-1)^{th}$ words to produce the $t^{th}$ word.
 - Their task is to generate text, similar to the Decoder in the original Transformer.
 
 #### §3.6.1 GPTDecoderLayer
 
 ```python
 class GPTDecoderLayer(nn.Module):
-    def __init__(self, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
+    def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
         self.layer_norm_1 = nn.LayerNorm(hidden_dim)
         self.attention = MultiheadAttention(hidden_dim, num_heads, dropout)
         self.layer_norm_2 = nn.LayerNorm(hidden_dim)
         self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout)
         self.dropout = nn.Dropout(dropout)
+        self.attn_scale = 1 / math.sqrt(2 * num_layersr)
 
     def forward(self, x, is_causal=True):
         residual = x
         x = self.layer_norm_1(x)
-        x = self.attention(x, is_causal)
+        x = self.attn_scale * self.attention(x, is_causal)
         x = self.dropout(x)
         x += residual
 
@@ -1757,7 +1851,7 @@ class GPTDecoder(nn.Module):
     def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0):
         super().__init__()
         self.gpt_decoder_layers = nn.ModuleList([
-            GPTDecoderLayer(num_heads, hidden_dim, ffn_dim, dropout)
+            GPTDecoderLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout)
             for _ in range(num_layers)
         ])
 
@@ -1780,7 +1874,8 @@ class GPTLanguageModel(nn.Module):
         self.positional_encoding = PositionalEncoding(hidden_dim, vocab_size, dropout)
         self.gpt_decoder = GPTDecoder(num_layers, num_heads, hidden_dim, ffn_dim, dropout)
         self.layer_norm = nn.LayerNorm(hidden_dim)
-        self.proj = nn.Linear(hidden_dim, vocab_size)
+        self.proj = nn.Linear(hidden_dim, vocab_size, bias=False)
+        self.proj.weight = self.embedding.weight# https://arxiv.org/abs/1608.05859
 
     def forward(self, index, targets=None):
         # index, targets shape: [batch_size, seq_length]
@@ -1835,7 +1930,7 @@ print(loss)
 
 will get:
 
-```Bash
+```bash
 torch.Size([196, 50257])
 tensor(10.9951, grad_fn=<NllLossBackward0>)
 ```
@@ -1847,19 +1942,27 @@ The ULMFiT 3-step approach (see Fig.1 of [[1801.06146] _Universal Language Model
 2. Instruction tuning.
 3. RLHF (Reinforcement Learning from Human Feedback).
 
-### §3.7 Mixture of Experts (MoE)
+### §3.7 Variants
+
+Generally speaking most papers have this kind of naming convention:
+- Original Transformer: [1706.03762](https://arxiv.org/abs/1706.03762)
+- Vanilla Transformer: The original Transformer with ReLU activation and layer normalization [1607.06450](https://arxiv.org/abs/1607.06450) outside of the residual path.
+- Transformer+GELU: A variant of the vanilla Transformer that uses GELU [1606.08415](https://arxiv.org/abs/1606.08415) activations or its approximation.
+- Transformer++: A variant of the vanilla Transformer that uses RMS normalization [1910.07467](https://arxiv.org/abs/1910.07467), Swish activation [1710.05941](https://arxiv.org/abs/1710.05941) and GLU multiplicative branch [1612.08083](https://arxiv.org/abs/1612.08083) in the FFN (SwiGLU) [2002.05202](https://arxiv.org/abs/2002.05202).
+
+### §3.8 Mixture of Experts (MoE)
 
 Mixture of Experts (MoE):
-| [[1701.06538] _Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer_](https://arxiv.org/abs/1701.06538) | [mixture-of-experts (GitHub)](https://github.com/davidmrau/mixture-of-experts/) | [st-moe-pytorch (GitHub)](https://github.com/lucidrains/st-moe-pytorch) | [FastMoE (GitHub)](https://github.com/laekov/fastmoe) |
+| [[1701.06538] _Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer_](https://arxiv.org/abs/1701.06538) | [mixture-of-experts (GitHub)](https://github.com/davidmrau/mixture-of-experts/) | [st-moe-pytorch (GitHub)](https://github.com/lucidrains/st-moe-pytorch) | [FastMoE (GitHub)](https://github.com/laekov/fastmoe) | [_Training MoEs at Scale with PyTorch_](https://pytorch.org/blog/training-moes/) |
 
 Mixtral of Experts:
 | [[2401.04088] _Mixtral of Experts_](https://arxiv.org/abs/2401.04088) | [mistral-src (GitHub)](https://github.com/mistralai/mistral-src/) |
 
 ![MoE](https://raw.githubusercontent.com/mistralai/mistral-src/main/assets/smoe.png)
 
-FFN in the original Transformer is replaced by expert layer (weighted FFN). Given $n$ expert networks $\lbrace{E_0, E_i, ..., E_{n-1}}\rbrace$, the output of the expert layer is$$\text{MoE}(x) = \sum_{i=0}^{n-1} {G(x)}_{i} \cdot E_i(x)$$where $$G(x) = \text{Softmax}(\text{TopK}(x \cdot W_g))$$By using [`torch.topk`](https://pytorch.org/docs/stable/generated/torch.topk.html), we only uses $K$ Experts, thus this model is also called Sparse Mixture of Experts (SMoE). Another benefit of experts is that we can put different experts on different GPUs, which is the similar approach of AlexNet (It is rumored that GPT4 is using 16 experts with top2 gating. I guess Ilya Sutskever pulled the same trick again).
+FFN in the original Transformer is replaced by Mixture of Expert layer (weighted FFNs). Given $n$ experts $\lbrace{E_0, E_i, ..., E_{n-1}}\rbrace$, the output of the MoE is$$\text{MoE}(x) = \sum_{i=0}^{n-1} {G(x)}_{i} \cdot E_i(x)$$where $$G(x) = \text{Softmax}(\text{TopK}(x W_g))$$By using [`torch.topk`](https://pytorch.org/docs/stable/generated/torch.topk.html), we only uses $K$ Experts, thus this model is also called Sparse Mixture of Experts (SMoE). Another benefit of experts is that we can put different experts on different GPUs, which is the similar approach of AlexNet. (It is rumored that GPT4 is using 16 experts with top2 gating. I guess Ilya Sutskever pulled the same trick again.) This usage of $\text{TopK}$ is similar to [Beam Search](https://d2l.ai/chapter_recurrent-modern/beam-search.html) for inferencing.
 
-In _Mixtral of Experts_, $E(x)$ is [SwiGLU FFN](https://arxiv.org/abs/2002.05202): $$\text{FFN}_\text{SwiGLU}(x) = (\text{Swish}_1(xW_1) \otimes xV)W_2$$here we use [`F.silu`](https://pytorch.org/docs/stable/generated/torch.nn.functional.silu.html).
+In _Mixtral of Experts_, $E(x)$ is [SwiGLU FFN](https://arxiv.org/abs/2002.05202): $$\text{FFN}_\text{SwiGLU}(x) = (\text{Swish}_1(xW_1) \odot xV)W_2$$here we use [`F.silu`](https://pytorch.org/docs/stable/generated/torch.nn.functional.silu.html).
 
 ```python
 class FFN_SwiGLU(nn.Module):
@@ -1871,6 +1974,13 @@ class FFN_SwiGLU(nn.Module):
 
     def forward(self, x):
         return self.w2(F.silu(self.w1(x)) * self.v(x))
+
+    # https://github.com/pytorch/torchtitan/blob/main/torchtitan/models/llama/model.py#L250
+    # https://github.com/pytorch/torchtitan/blob/main/torchtitan/models/llama/model.py#L300
+    def init_weights(self, init_std):
+        nn.init.trunc_normal_(self.w1.weight, mean=0.0, std=0.02)
+        nn.init.trunc_normal_(self.v.weight, mean=0.0, std=init_std)
+        nn.init.trunc_normal_(self.w2.weight, mean=0.0, std=init_std)
 ```
 
 ```python
@@ -1909,7 +2019,7 @@ dummy = moe_layer(dummy)# [batch_size, seq_length, hidden_dim]
 
 will get:
 
-```Bash
+```bash
 tensor([[7, 3],
         [7, 0],
         [7, 0]])
@@ -1922,6 +2032,34 @@ tensor([[7, 3],
 (tensor([], dtype=torch.int64), tensor([], dtype=torch.int64))
 (tensor([0, 1, 2]), tensor([0, 0, 0]))
 ```
+
+There is a similar architecture called MoD (Mixture of Depth), where certain Transformer blocks are skipped by some gated mechanism. Below is Fig.1 of [[2404.02258] _Mixture-of-Depths: Dynamically allocating compute in transformer-based language models_](https://arxiv.org/abs/2404.02258):
+
+![MoD](https://arxiv.org/html/2404.02258v1/extracted/5512346/mod.png)
+
+Naturally, [Route is a `nn.Linear`](https://github.com/epfml/llm-baselines/blob/mixture_of_depth/src/models/mod.py). I find [this post](https://huggingface.co/blog/joey00072/mixture-of-depth-is-vibe) explaining the technical difficulty we have with this architecture really well.
+
+[[2407.09298] _Transformer Layers as Painters_](https://arxiv.org/abs/2407.09298) does a lot of experiments on removing or sharing layers in Transformer:
+
+>1.There are three distinct classes of layers (with Middle being the largest). 2. The middle layers have some degree of uniformity (but not redundancy). And 3. Execution order matters more for math and reasoning tasks than semantic tasks.
+
+### §3.9 Scaling Laws, Emergence
+
+| [[2010.14701] _Scaling Laws for Autoregressive Generative Modeling_](https://arxiv.org/abs/2010.14701) | [[2203.15556] _Training Compute-Optimal Large Language Models_](https://arxiv.org/abs/2203.15556) | [[2304.01373] _Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling_](https://arxiv.org/abs/2304.01373) |
+
+Previously in this article it is stated that Transformer is a general function fitter, one of the reasons is that Transformers follow scaling laws with fitting line being almost perfect.
+
+Below is Fig.1 of [[2010.14701] _Scaling Laws for Autoregressive Generative Modeling_](https://arxiv.org/abs/2010.14701). As we can see, the line of power law can be fitted almost perfectly. And every time I look at it I'm amazed, you don't see this kind of smoothness in other NNs. RNN, for example, is really hard to train.
+
+![scaling-law](20231011-wow-it-fits-secondhand-machine-learning-scaling-laws.png)
+
+The effect of scaling law can sometimes be misunderstood as emergence, see [_Emergent abilities and grokking: Fundamental, Mirage, or both?_ – Windows On Theory](https://windowsontheory.org/2023/12/22/emergent-abilities-and-grokking-fundamental-mirage-or-both/). I especially enjoy the "jumping over a 1-meter hurdle" analogue. Metrics of LLMs can be tricky.
+
+### §3.10 Transformers are CNNs, RNNs, GNNs
+
+Another reason that Transformers are general function fitter is that: CNNs assume invariance of space transformation (adjacent pixels are related); RNNs assume the continuity of time series (adjacent words are related); GNNs assume the preservation of graph symmetry (a graph can be rearranged or mapped onto itself while preserving the configuration of its connections); and Transformers do not have these initial bias.
+
+At the end of the day, we are transforming `[batch_size, seq_length, hidden_dim]` to `[batch_size, seq_length, hidden_dim]`. The intermediate steps are not important, or we happen to have found the general function fitter that is good enough for most tasks: Transformer, as I mentioned in the beginning of this chapter. See [_The Bitter Lesson_](http://www.incompleteideas.net/IncIdeas/BitterLesson.html).
 
 ## §4 `fastai`
 
@@ -2035,6 +2173,16 @@ learn.save("my_model_opt", with_opt=True)
 learn.save("my_model", with_opt=False)
 ```
 
+[`Learner.compile`](https://fastxtend.benjaminwarner.dev/callback.compiler.html), [`torch.compile`](https://pytorch.org/docs/master/compile/get-started.html):
+
+```python
+from fastxtend.callback import compiler
+
+Learner(...).compile()
+# or
+Learner(..., cbs=CompilerCallback())
+```
+
 ## §5 Transfer Learning
 
 For different dataset and different goals.
@@ -2138,7 +2286,7 @@ The picture below is Fig.2 of the paper:
 
 Use `fastai` to load pretrained model `ResNet18`, `ResNet26`, `ResNet34`, `ResNet50`, `ConvNext_Nano`, `ConvNext_Tiny`.
 
-### §5.3 Category "Unknown"
+### §5.3 Category "Unknown", Confidence Level
 
 - Choose the size of the model by the size of the dataset, to avoid overfitting.
-- When the output probability of the final MLP layer is not dominated by one category (less than 95% or some threshold), you should be extra careful. Because actually this prediction is not correct.
+- When the output probability of the final MLP layer is not dominated by one category (less than 95% or some threshold), you should be extra careful. Because actually this prediction is not correct. There is an entire research field on predicting the confidence level of a prediction, see [[2103.15718] _von Mises-Fisher Loss: An Exploration of Embedding Geometries for Supervised Learning_](https://arxiv.org/abs/2103.15718), [[2107.03342] _A Survey of Uncertainty in Deep Neural Networks_](https://arxiv.org/abs/2107.03342), [[1706.04599] _On Calibration of Modern Neural Networks_](https://arxiv.org/abs/1706.04599).

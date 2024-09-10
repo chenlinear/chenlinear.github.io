@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Boojums All the Way Through: Communicating Science in a Prosaic Age"
 date: "2023-04-16"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

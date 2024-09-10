@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: RNN, LSTM, GRU, RWKV"
 date: "2023-12-17"
 tags: 
-- Programming
+- programming
 math: true
 tabsets: true
 ---
@@ -67,7 +67,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     x shape: torch.Size([16, 10])
     hn shape: torch.Size([1, 16, 20])
     output shape: torch.Size([1, 16, 20])
@@ -104,7 +104,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([1, 16, 20])
     tensor(True)
@@ -160,7 +160,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([3, 16, 20])
     ```
@@ -179,7 +179,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([3, 16, 20])
     ```
@@ -250,7 +250,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 40])
     torch.Size([6, 16, 20])
     tensor(True)
@@ -273,7 +273,7 @@ Note that in the figure below each square represents the same parameters.
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 40])
     torch.Size([6, 16, 20])
     tensor(True)
@@ -342,7 +342,7 @@ LSTM introduces input gate $i_t$, forget gate $f_t$, cell gate $g_t$ and output 
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([1, 16, 20])
     torch.Size([1, 16, 20])
@@ -364,7 +364,7 @@ LSTM introduces input gate $i_t$, forget gate $f_t$, cell gate $g_t$ and output 
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([1, 16, 20])
     torch.Size([1, 16, 20])
@@ -428,7 +428,7 @@ LSTM introduces input gate $i_t$, forget gate $f_t$, cell gate $g_t$ and output 
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 15])
     torch.Size([1, 16, 15])
     torch.Size([1, 16, 20])
@@ -450,7 +450,7 @@ LSTM introduces input gate $i_t$, forget gate $f_t$, cell gate $g_t$ and output 
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 15])
     torch.Size([1, 16, 15])
     torch.Size([1, 16, 20])
@@ -515,7 +515,7 @@ GRU introduces reset gate $r_t$, update gate $z_t$ and new gate $n_t$, which are
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([1, 16, 20])
     ```
@@ -534,7 +534,7 @@ GRU introduces reset gate $r_t$, update gate $z_t$ and new gate $n_t$, which are
     
     will get:
     
-    ```Bash
+    ```bash
     torch.Size([5, 16, 20])
     torch.Size([1, 16, 20])
     ```
@@ -543,7 +543,7 @@ GRU introduces reset gate $r_t$, update gate $z_t$ and new gate $n_t$, which are
 
 | [[2305.13048] _RWKV: Reinventing RNNs for the Transformer Era_](https://arxiv.org/abs/2305.13048) | [RWKV-LM (GitHub)](https://github.com/BlinkDL/RWKV-LM) | [nanoRWKV (GitHub)](https://github.com/BlinkDL/nanoRWKV) | [rwkv-cpp-accelerated (GitHub)](https://github.com/harrisonvanderbyl/rwkv-cpp-accelerated) |
 
-Receptance Weighted Key Value (RWKV) combines the efficient parallelizable training of transformers with the efficient inference of RNNs. Generally speaking it's composed of several layers of Time Mix module and Channel Mix module. It can be considered as a convolutional network across an entire one-dimensional sequence (because $r_t$, $k_t$, $v_t$, $wkv_t$ does not contain non-linearity thus are weighted sum), which the same thing we will see in SSM.
+Receptance Weighted Key Value (RWKV) combines the efficient parallelizable training of transformers with the efficient inference of RNNs. Generally speaking it's composed of several layers of Time Mix module and Channel Mix module. It can be considered as a convolutional network across an entire one-dimensional sequence (because $r_t$, $k_t$, $v_t$ does not contain non-linearity thus are weighted sum), which is the same thing we will see in SSM.
 
 - The Time Mix module is linear projections ($W$) of linear combinations ($\mu$ and $(1-\mu)$) of the current input $x_t$ and the last input $x_{t-1}$, $wkv_t$ is weighted sum over the entire past sequence:$$\begin{aligned} r_t &= W_r (\mu_r \odot x_t + (1-\mu_r) \odot x_{t-1}) \\\ k_t &= W_k (\mu_k \odot x_t + (1-\mu_k) \odot x_{t-1}) \\\ v_t &= W_v (\mu_v \odot x_t + (1-\mu_v) \odot x_{t-1}) \\\ wkv_t &= \frac{ \sum_{i=1}^{t-1} e^{-(t-1-i)w+k_i} \odot v_i + e^{u+k_t} \odot v_t }{\sum_{i=1}^{t-1} e^{-(t-1-i)w+k_i} + e^{u+k_t}} \\\ o_t &= W_o (\sigma(r_t) \odot wkv_t) \end{aligned}$$
 
@@ -644,13 +644,13 @@ print(text[:100])
 
 will get:
 
-```Bash
+```bash
 All work and no play makes Jack a doll boy. 
 All work and no play makes Jack a doll boy. 
 All work a
 ```
 
-Here's a character-level dictionary, please refer to [`tiktoken`](https://github.com/openai/tiktoken) for a sub-word-level dictionary.
+Here's a character-level tokenizer, please refer to [`tiktoken`](https://github.com/openai/tiktoken) or [`minbpe`](https://github.com/karpathy/minbpe/) (BPE is combining words to get pharses) for a sub-word-level tokenizer.
 
 ```python
 characters = sorted(list(set(text)))
@@ -662,7 +662,7 @@ print(vocab_size)
 
 will get:
 
-```Bash
+```bash
 
 .AJabcdeklmnoprswy
 20
@@ -680,7 +680,7 @@ print(decode([7, 4]))
 
 will get:
 
-```Bash
+```bash
 [7, 4]
 cJ
 ```
@@ -756,7 +756,7 @@ for iter in range(max_iters):
 
 will get:
 
-```Bash
+```bash
 step 0: train loss 3.0177, val loss 3.0082
 step 100: train loss 2.2342, val loss 2.1759
 step 200: train loss 1.5963, val loss 1.5902
@@ -789,7 +789,7 @@ print(decode(model.generate(context, max_new_tokens=500)[0].tolist()))
 
 will get Jack Torrance played by Jack Nicholson:
 
-```Bash
+```bash
 
 All boy. 
 All work and no plakes Jack a doll boy. 
@@ -810,6 +810,6 @@ By the way, I guess the reasons Transformers outperform RNNs are:
 - Transformers don't use `for` loops thus are more parallel-processing-friendly. (There is this new architecture with Transformers that the same single Transformer layer is repeated several times, which is like using Transformer layer as RNN layer.)
 - Transformers can look into the entire sequence equally while RNNs focus more on the current input of the entire sequence.
 
-On the other hand, the advantages of RNN are:
+On the other hand, the advantages of RNNs are:
 - The scaling of memory usage is linear (Transformers are quadratically, please refer to Tab.1 of [[2305.13048] _RWKV: Reinventing RNNs for the Transformer Era_](https://arxiv.org/abs/2305.13048)).
 - The memory usage is constant, because `hn` is passed down.

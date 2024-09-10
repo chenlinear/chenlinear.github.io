@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: Workflow & Tips"
 date: "2023-07-01"
 tags: 
-- Programming
+- programming
 ---
 
 (Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)

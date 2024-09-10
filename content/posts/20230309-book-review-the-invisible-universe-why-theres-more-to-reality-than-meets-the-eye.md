@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: The Invisible Universe: Why There's More to Reality than Meets the Eye"
 date: "2023-03-09"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

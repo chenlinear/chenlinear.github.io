@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: A Hackers' Guide to Language Models"
 date: "2023-09-28"
 tags: 
-- Programming
+- programming
 ---
 
 Jeremy Howard put a video on YouTube about LLMs: [A Hackers' Guide to Language Models - YouTube](https://www.youtube.com/watch?v=jkrNMKz9pWU), and the GitHub link is [lm-hackers](https://github.com/fastai/lm-hackers/tree/main). I would watch it again if I were to do the research on LLMs.

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "New Paper on arXiv & New Repository: ISeeCube"
 date: "2023-08-28"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

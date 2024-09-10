@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Safety Issue of Metaverse"
 date: "2023-09-29"
 tags: 
-- Programming
+- programming
 ---
 
 In [this interview about Metaverse](https://www.youtube.com/watch?v=MVYrJJNdrEg), Lex does not mention safety issue, not even once. I understand how exciting he must be to cross the uncanny valley, but this is highly unprofessional and the interview is approximately a commercial.
@@ -18,5 +18,5 @@ Privacy, copyright and labeling slavery have always been major ethical problems 
 
 I read about this meme somewhere:
 
->- Me: My dad says you steal users' personal information.
+>- Me: My dad says you spy on people.
 >- Mark Zuckerberg: He's not your dad.

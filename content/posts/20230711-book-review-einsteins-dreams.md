@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Einstein's Dreams"
 date: "2023-07-11"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

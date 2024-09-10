@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Existential Physics: A Scientist's Guide to Life's Biggest Questions"
 date: "2023-04-06"
 tags: 
-- Physics
+- physics
 ---
 
 This is a review of [_Existential Physics: A Scientist's Guide to Life's Biggest Questions_](https://www.amazon.com/Existential-Physics-Scientists-Biggest-Questions/dp/1984879456) by [Sabine Hossenfelder](https://sabinehossenfelder.com/).

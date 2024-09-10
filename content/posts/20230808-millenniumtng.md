@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "MillenniumTNG"
 date: "2023-08-08"
 tags: 
-- Physics
+- physics
 ---
 
 This picture (from [LGalaxiesPublicRelease.github.io](https://github.com/LGalaxiesPublicRelease/LGalaxiesPublicRelease.github.io)) is iconic.

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Lost in Math: How Beauty Leads Physics Astray"
 date: "2023-03-04"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

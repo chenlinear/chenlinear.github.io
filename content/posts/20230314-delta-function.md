@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "δ"
 date: "2023-03-14"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

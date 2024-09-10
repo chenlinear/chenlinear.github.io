@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "immersive-translate"
 date: "2023-06-02"
 tags: 
-- Programming
+- programming
 ---
 
 [immersive-translate](https://github.com/immersive-translate/immersive-translate) is a great translating extension, which has a nice format, can open .epub file and translate .epub file directly.

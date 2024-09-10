@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Ludwig Wittgenstein: The Duty of Genius"
 date: "2023-03-12"
 tags: 
-- Physics
+- physics
 ---
 
 His life is just [legendary](https://twitter.com/i/status/1512981441306669057)! His life is so legendary that I won't use the word "legendary" to describe anybody anymore.[^1] His life is like the combination of two journeys, one of which is the struggle of going beyond his family and society and make a living on his own in academia, and yes, since he works in academia he moves around a lot, the other one is the struggle of human mind in the bigger picture.

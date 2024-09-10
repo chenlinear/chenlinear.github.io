@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: torch.nn"
 date: "2023-06-14"
 tags: 
-- Programming
+- programming
 math: true
 ---
 
@@ -32,7 +32,7 @@ print(x.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([1, 3, 28, 28])
 torch.Size([1, 12, 26, 26])
 ```
@@ -50,7 +50,7 @@ print(x.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([1, 3, 28, 28])
 torch.Size([1, 3, 14, 14])
 ```
@@ -70,7 +70,7 @@ print(x)
 
 will get:
 
-```Bash
+```bash
 tensor([[[[-2.3440,  0.5965,  1.2750],
           [-0.8684,  1.4049, -1.5865],
           [ 0.0760,  0.3308,  1.4631]],
@@ -108,7 +108,7 @@ print(x.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([128, 12])
 ```
 
@@ -155,7 +155,7 @@ print(output.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([5, 3, 20])
 ```
 
@@ -198,7 +198,7 @@ print(y.shape)
 
 will get:
 
-```Bash
+```bash
 torch.Size([1, 64, 22, 22])
 ```
 
@@ -277,7 +277,7 @@ with torch.no_grad():
 
 will get:
 
-```Bash
+```bash
 Epoch [2/10], Loss: 2.2880
 Epoch [4/10], Loss: 2.2841
 Epoch [6/10], Loss: 2.2805

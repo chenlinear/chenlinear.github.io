@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Google Podcasts Shuts Down"
 date: "2023-09-27"
 tags: 
-- Programming
+- programming
 ---
 
 Another gravestone on [Google Graveyard](https://killedbygoogle.com/).

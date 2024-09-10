@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "IceCube: First Detection of Neutrinos from the Milky Way"
 date: "2023-06-29"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

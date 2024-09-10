@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "LIGO O4: multi-messenger"
 date: "2023-05-14"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

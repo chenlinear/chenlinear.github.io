@@ -3,11 +3,13 @@ author: "Chen Li"
 title: "Machine Learning Notes: Mojonization"
 date: "2023-09-09"
 tags: 
-- Programming
+- programming
 tabsets: true
 ---
 
 __mojonization__: _n._ the migration and translation from Python to Mojo, the superset of Python. (Yeah I made up this word, as far as I know. [_Cross Mojonization_](http://darkbluejacket.blogspot.com/2015/09/the-glory-of-cross-mojonization.html) is a totally different thing.)
+
+Python is pesdo-code that works, and Mojo is pesdo-code that works high performantly.
 
 This article summarizes this process and is my notes / cheat sheet. Note that Mojo is relatively new and some rules might be changing rapidly, thus this article can be outdated easily. So please always check the [official documents](https://docs.modular.com/).
 
@@ -51,7 +53,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Bash
+    ```bash
     3
     ```
 
@@ -72,7 +74,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get (__Note that `a` and `b` has changed__):
-    ```Bash
+    ```bash
     2
     3
     5
@@ -95,7 +97,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Bash
+    ```bash
     1
     2
     5
@@ -111,7 +113,7 @@ Always do these declaration at the beginning of code, because:
     print(c)
     ```
     will get:
-    ```Bash
+    ```bash
     5
     ```
 
@@ -152,7 +154,7 @@ Always do these declaration at the beginning of code, because:
     main()
     ```
     will get:
-    ```Bash
+    ```bash
     5
     ```
 
@@ -179,7 +181,7 @@ let mine = MyPair(2, 4)
 mine.dump()
 ```
 will get:
-```Bash
+```bash
 2 4
 ```
 
@@ -197,7 +199,7 @@ print(ar)
 print(ar.shape)
 ```
 will get:
-```Bash
+```bash
 [[ 0  1  2  3  4]
  [ 5  6  7  8  9]
  [10 11 12 13 14]]
@@ -228,7 +230,7 @@ var t = rand[DType.float32](3,3)
     print(t.shape().__str__())
     ```
     will get:
-    ```Bash
+    ```bash
     3x3
     ```
 
@@ -237,7 +239,7 @@ var t = rand[DType.float32](3,3)
     print(t.spec().__str__())
     ```
     will get:
-    ```Bash
+    ```bash
     3x3xfloat32
     ```
 
@@ -246,7 +248,7 @@ var t = rand[DType.float32](3,3)
     print(t.num_elements())
     ```
     will get:
-    ```Bash
+    ```bash
     9
     ```
 
@@ -257,7 +259,7 @@ var t = rand[DType.float32](3,3)
     tensorprint(t)
     ```
     will get:
-    ```Bash
+    ```bash
       [[0.1315   0.4586   0.2189]
        [0.6788   0.9346   0.5194]
        [0.0345   0.5297   0.0076]]
@@ -293,7 +295,7 @@ tensorprint(tensor_math_vectorized(t))
 
 will get:
 
-```Bash
+```bash
   [[0.7564   0.3653   0.9825]
    [0.7533   0.0726   0.8847]
    [0.4364   0.4777   0.2749]]

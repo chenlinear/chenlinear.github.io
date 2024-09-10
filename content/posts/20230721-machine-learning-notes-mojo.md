@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: Mojo"
 date: "2023-07-21"
 tags: 
-- Programming
+- programming
 ---
 
 [Mojo🔥](https://docs.modular.com/mojo/) is magic. Check out this interview with the founder of Mojo: [Chris Lattner: Future of Programming and AI | Lex Fridman Podcast #381 - YouTube](https://www.youtube.com/watch?v=pdJQ8iVTwj8). Integrated with python and using multiple CPU/GPU/TPU is unbelievable.

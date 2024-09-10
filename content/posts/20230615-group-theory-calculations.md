@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Group Theory Calculations"
 date: "2023-06-15"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: Vision Transformer (ViT)"
 date: "2023-06-24"
 tags: 
-- Programming
+- programming
 math: true
 ---
 

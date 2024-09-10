@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Contamination of LLM"
 date: "2023-06-13"
 tags: 
-- Programming
+- programming
 math: true
 ---
 

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Book Review: Love and Math: The Heart of Hidden Reality"
 date: "2023-05-01"
 tags: 
-- Physics
+- physics
 ---
 
 This is a review of [_Love and Math: The Heart of Hidden Reality_](https://www.amazon.com/Love-Math-Heart-Hidden-Reality/dp/0465050743) by [Edward Frenkel](https://www.edwardfrenkel.com/).

@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Neutrino Simulations for SN 2023ixf"
 date: "2023-09-14"
 tags: 
-- Physics
+- physics
 ---
 
 Neutrinos emitted from a supernova can be simulated, see [the article on astrobites](https://astrobites.org/2023/09/14/nu-models-to-study-a-new-supernova/) and the paper [[2306.14717] _Low and High Energy Neutrinos from SN 2023ixf in M101_](https://arxiv.org/abs/2306.14717).

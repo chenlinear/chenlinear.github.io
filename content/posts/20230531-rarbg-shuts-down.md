@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "RARBG Shuts Down"
 date: "2023-05-31"
 tags: 
-- Films
+- films
 ---
 
 RARBG shuts down, and here's their announcement:

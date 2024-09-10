@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "NANOGrav: First Detection of Gravitational Wave Background"
 date: "2023-06-29"
 tags: 
-- Physics
+- physics
 math: true
 ---
 

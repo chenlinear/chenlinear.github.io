@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "Machine Learning Notes: Jupyter Notebook 7, Torch 2.0, Mojo Locally"
 date: "2023-09-08"
 tags: 
-- Programming
+- programming
 ---
 
 It's wild all of these are happening so fast!

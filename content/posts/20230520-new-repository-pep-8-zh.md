@@ -3,12 +3,12 @@ author: "Chen Li"
 title: "New Repository: PEP-8-ZH"
 date: "2023-05-20"
 tags: 
-- Programming
+- programming
 ---
 
 I created a repository called [PEP-8-ZH](https://github.com/ChenLi2049/PEP-8-ZH). Basically, I translated [_PEP 8_](https://peps.python.org/pep-0008/) with the help of ChatGPT, and with a little modification myself. The prompt that I use is:
 
-```Bash
+```bash
 将下文翻译为中文
 ```
 

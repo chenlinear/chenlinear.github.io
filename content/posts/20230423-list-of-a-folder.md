@@ -3,7 +3,7 @@ author: "Chen Li"
 title: "List of a Folder"
 date: "2023-04-23"
 tags: 
-- Programming
+- programming
 ---
 
 ## §1 path
@@ -13,14 +13,14 @@ In Windows, to get the list of all the files in a folder:
 1. Create a .txt file.
 2. Open it with notepad. Copy and paste the following commands:
 
-    ```Bash
+    ```bash
     @echo off
     dir %1 /s/b > %~n1.txt
     ```
 
     Or, if you don't want the list of what's in the subdirectory:
 
-    ```Bash
+    ```bash
     @echo off
     dir %1 /b > %~n1.txt
     ```
@@ -32,7 +32,7 @@ In Windows, to get the list of all the files in a folder:
 
 Only the code in step 2. is different:
 
-```Bash
+```bash
 @echo off
 ( for /r %1 %%i in (*) do @echo %%~fi ^(%%~zi bytes^)) > %~n1.txt
 ```

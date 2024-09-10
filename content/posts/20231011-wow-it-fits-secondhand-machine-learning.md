@@ -8,7 +8,7 @@ math: true
 tabsets: true
 ---
 
-(This article is the same content as [IntroML-2023FALL (GitHub)](https://github.com/ChenLi2049/IntroML-2023FALL). There are a lot of pictures so it might take a while to load. This article is actually longer than it looks, because I use [tabsets](https://yihui.org/en/2023/10/section-tabsets/) a lot.)
+(There are a lot of pictures so it might take a while to load. This article is actually longer than it looks, because I use [tabsets](https://yihui.org/en/2023/10/section-tabsets/) a lot.)
 
 ## §1 Intro
 

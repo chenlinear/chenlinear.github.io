@@ -4,6 +4,7 @@ title: "arXiv in HTML"
 date: "2023-12-21"
 tags: 
 - physics
+math: true
 ---
 
 [arXiv now offers papers in HTML format](https://blog.arxiv.org/2023/12/21/accessibility-update-arxiv-now-offers-papers-in-html-format/). So basically [ar5iv](https://chenli2049.github.io/posts/20230318-ar5iv/) is now native and applied to the latest papers.

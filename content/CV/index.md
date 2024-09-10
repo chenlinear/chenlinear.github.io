@@ -84,7 +84,7 @@ ___TEACHING EXPERIENCE___
     <div style="text-align: right;">Sep 2023 - June 2024</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. <a href="https://github.com/ChenLi2049/IntroML-2023FALL">[slides]</a></div>
+    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students.</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Adviser: Dr. Xianyang Jiang</div>

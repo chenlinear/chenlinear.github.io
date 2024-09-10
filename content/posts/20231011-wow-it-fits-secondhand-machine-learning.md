@@ -12,7 +12,7 @@ tabsets: true
 
 ## §1 Intro
 
-This section is about tensor (high-dimensional matrix) and `torch.nn`. For the part about [`Conda`](https://docs.conda.io/projects/miniconda/en/latest/) in the original sildes, please refer to [_Conda 101_](https://chenli2049.github.io/posts/20230327-conda-101/).
+This section is about tensor (high-dimensional matrix) and `torch.nn`.
 
 ### §1.1 Tensor
 
@@ -1600,7 +1600,7 @@ Fig.1 of [[2304.13712] _Harnessing the Power of LLMs in Practice: A Survey on Ch
 |Self-Attention or Cross-Attention|Self-Attention|The first Self-Attention, the second Cross-Attention|Self-Attention|Self-Attention|
 |Mask/Causal|✖️|✔️|✖️|✔️|
 
-### §3.4 Attention is All You Need (the original Transformer)
+### §3.4 Attention is All You Need (the Original Transformer)
 
 [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762)
 

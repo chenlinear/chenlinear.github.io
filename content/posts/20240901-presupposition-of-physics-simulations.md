@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-I haven't done a simulation project, but these are my presuppositions of simulation. Let's see how they would change over time.
+I haven't done a simulation project, but these are my presuppositions of simulation. Let's see how they would change over time (haha pun intended).
 
 ## §1 Simulation in General
 
@@ -39,7 +39,7 @@ def save():
     ...# save as `.parquet`?
 
 for i in range():
-    one_step()
+    one_step()# the next step is determined by the previous step, so GPU is not much useful here
     save()
 ```
 

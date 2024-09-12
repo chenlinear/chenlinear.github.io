@@ -4,7 +4,7 @@ math: true
 ---
 
 <div style="text-align: center;">
-        Last update on September 10, 2024. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
+        Last update on September 12, 2024. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
 </div>
 
 ___CONTACT INFORMATION___
@@ -58,6 +58,14 @@ ___PUBLICATIONS___
 
 ___TALKS___
 
+<div style="display: flex; justify-content: space-between;">
+    <div style="text-align: left; padding-left: 50px;"><strong>Transformer Model for Neutrino Events Reconstruction: ISeeCube</strong> <a href="https://events.icecube.wisc.edu/event/213/contributions/10396/">[slides]</a></div>
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <div style="text-align: left; padding-left: 50px;">IceCube Collaboration Meeting Fall 2024</div>
+    <div style="text-align: right;">Sep 2024</div>
+</div>
+<br>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;"><strong>ISeeCube and Auxiliary</strong> <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/presentations/20240906_ISeeCube_and_Auxiliary.pdf">[slides]</a></div>
 </div>

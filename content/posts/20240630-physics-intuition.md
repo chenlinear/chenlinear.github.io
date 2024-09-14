@@ -8,7 +8,7 @@ tags:
 
 I had an argument with a friend the other day. He's quitting physics and will be teaching high school, which in my opinion is more of less a waste of talent.
 
-## §1 Complexity, or Why Most Physics Work is Mostly  Writing Code
+## §1 Complexity, or Why Most Physics Work is Writing Code
 
 Here is our differences: He thinks most people in the physics business are doing something he does not like, which is writing code. For example, in his CP violation paper, what he mostly did is to get familiar with the code base. In his opinion, people should have physics intuition to come up with different theories and test it in experiments. Most of what we beginners do is the latter part, in other words, writing code. But my point is that physics has changed a lot and can not devolve back into the 20th century. The 21st century is about complexity:
 

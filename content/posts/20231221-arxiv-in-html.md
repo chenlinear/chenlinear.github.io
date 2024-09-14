@@ -17,7 +17,7 @@ Here are several reasons why HTML is better:
 
 - In Markdown, you can directly link the pictures in a paper. For example:
     
-    ```Markdown
+    ```markdown
     ![](https://browse.arxiv.org/html/2308.13285v4/x1.png)
     ```
     

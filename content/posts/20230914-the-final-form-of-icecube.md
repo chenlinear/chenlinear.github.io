@@ -14,7 +14,6 @@ I guess there are two places to implement PMTs:
 - Water launched by rockets, then covered with sheet (to avoid evaporation), which will quickly become ice in space. Or just ice at the beginning.
 - One of the moons of Jupiter or Saturn that contains water. For example, Ganymede.
 
-If possible, I want the distances between PMTs is the same and forms a Primitive  
-Cubic (borrowing the concept from Solid State Physics), so that we can perform 3D convolution.
+If possible, I want the distances between PMTs is the same and forms a Primitive Cubic (borrowing the concept from Solid State Physics), so that we can perform 3D convolution.
 
 "IceCube-GenZ" would be a good name.

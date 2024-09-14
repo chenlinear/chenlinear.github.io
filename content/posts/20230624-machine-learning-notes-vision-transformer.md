@@ -89,7 +89,7 @@ print(f"Patching embedding shape: {patchify(dummy).shape}")# [batch_size, N, P^2
 
 will get:
 
-```prompt
+```bash
 Input image with batch dimension shape: torch.Size([1, 3, 224, 224])
 Patching embedding shape: torch.Size([1, 196, 768])
 ```
@@ -145,7 +145,7 @@ print(f"Patch and position embedding shape: {patch_and_position_embedding.shape}
 
 will get:
 
-```prompt
+```bash
 Image tensor shape: torch.Size([3, 224, 224])
 Input image with batch dimension shape: torch.Size([1, 3, 224, 224])
 Patching embedding shape: torch.Size([1, 196, 768])
@@ -211,7 +211,7 @@ print(f"Output shape MSA block: {patched_image_through_msa_block.shape}")
 
 will get:
 
-```prompt
+```bash
 Input shape of MSA block: torch.Size([1, 197, 768])
 Output shape MSA block: torch.Size([1, 197, 768])
 ```
@@ -276,7 +276,7 @@ print(f"Output shape MLP block: {patched_image_through_mlp_block.shape}")
 
 will get:
 
-```prompt
+```bash
 Input shape of MLP block: torch.Size([1, 197, 768])
 Output shape MLP block: torch.Size([1, 197, 768])
 ```

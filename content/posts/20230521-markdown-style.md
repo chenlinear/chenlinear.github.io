@@ -22,14 +22,14 @@ If you don't know what it is, I recommend you should just play with it and don't
 
 Wrong:
 
-```Markdown
+```markdown
 use blank lines!
 use blank lines!
 ```
 
 Correct:
 
-```Markdown
+```markdown
 use blank lines!
 
 use blank lines!
@@ -39,7 +39,7 @@ See [_Let Your Markdown Breathe! - Remember to insert blank lines between differ
 
 ### §2.2 Only Use `_` for Bold and Italic
 
-```Markdown
+```markdown
 Bold _and_ Italic
 
 Bold __and__ Italic
@@ -49,7 +49,7 @@ Bold ___and___ Italic
 
 ### §2.3 In the Middle of a Sentence, use `*` for Bold and Italic
 
-```Markdown
+```markdown
 Bold*and*Italic
 
 Bold**and**Italic
@@ -63,7 +63,7 @@ But to tell you the truth, I haven't seen **any**one write like this.
 
 As I said, there are a lot of Markdown accent, but `-` is universal. Also, this is in agreement with §2.2, so that you can only use the `-`/`_` key on the keyboard.
 
-```Markdown
+```markdown
 - unordered lists
 ```
 
@@ -71,7 +71,7 @@ As I said, there are a lot of Markdown accent, but `-` is universal. Also, this 
 
 This is a fun coincidence with Python.
 
-```Markdown
+```markdown
 - First paragraph
 
     Still first paragraph
@@ -81,7 +81,7 @@ This is a fun coincidence with Python.
 
 Or:
 
-```Markdown
+```markdown
 1. First paragraph
  
 	Still first paragraph
@@ -91,7 +91,7 @@ Or:
 
 To do list too:
 
-```Markdown
+```markdown
 - [ ] hurry
  
 	- [ ] up,
@@ -103,13 +103,13 @@ To do list too:
 
 Again, four spaces. But in Obsidian, these are shown correct in reading mode, shown werid in editing mode. See [_Code blocks nested in lists render in editor as if at top-level_](https://forum.obsidian.md/t/code-blocks-nested-in-lists-render-in-editor-as-if-at-top-level/870/10).
 
-```Markdown
+```markdown
 - Quote:
 
     >This is the quote.
 ```
 
-````Markdown
+````markdown
 - Code Block:
 
     ```python
@@ -123,7 +123,7 @@ By the way, when you write verbatim text that contains three backticks (ie. code
 
 Different Markdown accent handle equations differently, see [_混乱的 Markdown 世界_](https://yihui.org/cn/2017/08/markdown-flavors/). And for Obsidian:
 
-```Markdown
+```markdown
 1. display equations: $$\begin{aligned} E_0&=mc^2 \\\ E^2&=(mc^2)^2+(pc)^2 \end{aligned} \tag{1}$$where $c = 3 \times 10^8 \space \mathrm{m/s}$
 
 2. or inline equations: $\vec{F} = m \ddot{\vec{x}}$.
@@ -133,7 +133,7 @@ Different Markdown accent handle equations differently, see [_混乱的 Markdown
 
 Use table (compared with inserting html `<>` and all that, this is easier to read):
 
-```Markdown
+```markdown
 |![name](link)|![name](link)|
 |-|-|
 ```
@@ -146,7 +146,7 @@ Most text editors show the picture with modified proper size. But for some text 
 
 [_中英文混排中的空格_](https://yihui.org/cn/2017/04/space)和[_盘古之白_](https://yihui.org/cn/2017/05/pangu/)说在英文单词两边各空一空格。我的建议是在表示代码时也是如此，例如：
 
-```Markdown
+```markdown
 我们可以 `from scipy import interpolate` 来解决这个 interpolation 问题。
 ```
 
@@ -154,7 +154,7 @@ Most text editors show the picture with modified proper size. But for some text 
 
 [_如何在 Markdown 中引用诗词或歌词_](https://yihui.org/cn/2018/07/quote-poem/)的引用方式在 Obsidian 可能不是最好的解决方法，可以直接每行右边没有空格，见 [_Blockquotes with Multiple Paragraphs_](https://www.markdownguide.org/basic-syntax/#blockquotes-with-multiple-paragraphs)：
 
-```Markdown
+```markdown
 >缺月昏昏漏未央，一灯明灭照秋床。
 >病身最觉风露早，归梦不知山水长。
 >坐感岁时歌慷慨，起看天地色凄凉。
@@ -163,7 +163,7 @@ Most text editors show the picture with modified proper size. But for some text 
 
 但是在我的个人网站中应该每行右边两个空格：
 
-```Markdown
+```markdown
 >缺月昏昏漏未央，一灯明灭照秋床。  
 >病身最觉风露早，归梦不知山水长。  
 >坐感岁时歌慷慨，起看天地色凄凉。  

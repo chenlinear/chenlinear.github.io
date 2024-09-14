@@ -53,7 +53,7 @@ Use `\,` for the end of an equation, when followed by ".".
 
 For example: The Energy is given by $$E_0=mc^2 \space . \tag{1}$$
 
-```LaTeX
+```latex
 The Energy is given by \[E_0=mc^2 \, . \tag{1}\]
 ```
 
@@ -63,13 +63,13 @@ The Energy is given by \[E_0=mc^2 \, . \tag{1}\]
 
 Always use `\( \)` for number. For example: There are $24$ elements in total.
 
-```LaTeX
+```latex
 There are \(24\) elements in total.
 ```
 
 And for series number, for example: This is the $n^{\textrm{th}}$ element.
 
-```LaTeX
+```latex
 This is the \(n^{\textrm{th}}\) element.
 ```
 
@@ -80,7 +80,7 @@ This is the \(n^{\textrm{th}}\) element.
 
 For example: $3 \times 10^8 \space \mathrm{m/s}$
 
-```LaTeX
+```latex
 \(3 \times 10^8 \, \mathrm{m/s}\)
 ```
 
@@ -92,7 +92,7 @@ For example: $3 \times 10^8 \space \mathrm{m/s}$
 
 For example: $\int_0^{\pi} f(x) \space \mathrm{d} x = 1$
 
-```LaTex
+```latex
 \(\int_0^{\pi} \! f(x) \, \mathrm{d} x = 1\)
 ```
 
@@ -100,7 +100,7 @@ For example: $\int_0^{\pi} f(x) \space \mathrm{d} x = 1$
 
 For example: $\mathbf{A}^\mathsf{T}$
 
-```LaTeX
+```latex
 \(\mathbf{A}^\mathsf{T}\)
 ```
 
@@ -108,7 +108,7 @@ For example: $\mathbf{A}^\mathsf{T}$
 
 For example: $\lparen \rparen$, $\lbrack \rbrack$, $\lbrace \rbrace$
 
-```LaTeX
+```latex
 \(\lparen \rparen\)
 \(\lbrack \rbrack\)
 \(\lbrace \rbrace\)
@@ -118,7 +118,7 @@ So that the bracket would get a proper length.
 
 And for $\bra{\phi}$, $\ket{\psi}$, $\braket{\phi\vert\psi}$ in Quantum Physics:
 
-```LaTeX
+```latex
 \(\bra{\phi}\)
 \(\ket{\psi}\)
 \(\braket{\phi\vert\psi}\)
@@ -131,13 +131,13 @@ And for $\bra{\phi}$, $\ket{\psi}$, $\braket{\phi\vert\psi}$ in Quantum Physics:
 
 1. "." would be considered as the end of a sentence, but sometimes it's not right, for example: "e.g." and "i.e.". That's when we use `\ ` :
 
-	```LaTeX
+	```latex
     Neutron is composed of quarks, i.e.\ it's not fundamental.
     ```
 
 2. After a capital Letter, the "." would be considered in the middle of a name, for example: "F. Scott Fitzgerald". But sometimes we don't want that, for example: "Then I asked ChatGPT. It's of no use either." That's when we use `\@. ` to tell $\LaTeX$ it is the end of a sentence:
 
-    ```LaTeX
+    ```latex
     Then I asked ChatGPT\@. It's of no use either.
     ```
 
@@ -147,26 +147,26 @@ It is the same for "!" and "?".
 
 Hyphens, for example: 5-year-old
 
-```LaTeX
+```latex
 5-year-old
 ```
 
 En-dashes, for example: See pages 200-201.
 
-```LaTeX
+```latex
 See pages 200--201.
 ```
 
 Em-dashes, for example: Most newspapers — and all that follow AP style — insert a space before and after the em-dash.
 
-```LaTeX
+```latex
 Most newspapers --- and all that follow AP style --- insert a space before and after the em-dash.
 ```
 
 #### §2.2.3 Quotation
 
 ""
-```LaTeX
+```latex
 `` ''
 ```
 
@@ -176,13 +176,13 @@ I understand, but this is just weird.
 
 Use `~` instead of space to avoid a name being broken into two parts to the next line:
 
-```LaTeX
+```latex
 F.~Scott~Fitzgerald is known as a writer.
 ```
 
 It is the same if you don't want to break a phrase. e.g. rank $1$
 
-```LaTeX
+```latex
 rank~\(1\)
 ```
 
@@ -192,8 +192,8 @@ rank~\(1\)
 
 ### §2.4 Code
 
-To quote a package, for example, $\texttt{GraphNeT}$:
+To quote a package, for example, $\texttt{NumPy}$:
 
-```LaTeX
+```latex
 \texttt{NumPy}
 ```

@@ -14,7 +14,7 @@ A graph is a data structure that has the shape $\mathbb{R} ^{N \times P}$, where
 - $N$ is the number of nodes. Note that $N$ might vary in a dataset, but we often use cutting or padding to get a uniform, normalized $N$.
 - $P$ is the number of features. Yes, the concept of "features" is similar to the concept of "channels" in CNNs.
 
-A picture $\mathbb{R}^{H \times W \times C}$ is of height $H$ and width $W$, thus the total number of pixels is $HW$, and each pixel has $C$ channels, commonly $C=1$ (grep channel) or $C=3$ (RGB channels). Now let's transform this picture into a graph $\mathbb{R}^{N \times P}$, where $N=HW$ is the total number of pixels. Thus $P=C+2$, which means the original position information is now encoded into the channels. What's more, graph can represent more than that, thus in a sense, a graph is a generalized picture.
+A picture $\mathbb{R}^{H \times W \times C}$ is of height $H$ and width $W$, thus the total number of pixels is $HW$, and each pixel has $C$ channels, commonly $C=1$ (grey channel) or $C=3$ (RGB channels). Now let's transform this picture into a graph $\mathbb{R}^{N \times P}$, where $N=HW$ is the total number of pixels. Thus $P=C+2$, which means the original position information is now encoded into the channels. What's more, graph can represent more than that, thus in a sense, a graph is a generalized picture.
 
 ### §1.1 Graph & Matrix
 

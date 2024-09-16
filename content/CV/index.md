@@ -4,7 +4,7 @@ math: true
 ---
 
 <div style="text-align: center;">
-        Last update on September 12, 2024. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
+        Last update on September 16, 2024. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
 </div>
 
 ___CONTACT INFORMATION___
@@ -92,7 +92,7 @@ ___TEACHING EXPERIENCE___
     <div style="text-align: right;">Sep 2023 - June 2024</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students.</div>
+    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. The teaching material that I wrote are summarized into these blog posts: <a href="https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/"><i>Wow It Fits! — Secondhand Machine Learning</i></a>, <a href="https://chenli2049.github.io/posts/20231217-machine-learning-notes-rnn-lstm-gru-rwkv/"><i>Machine Learning Notes: RNN, LSTM, GRU, RWKV</i></a>, <a href="https://chenli2049.github.io/posts/20230910-machine-learning-notes-gnn-graphnet/"><i>Machine Learning Notes: GNN, GraphNeT</i></a>, <a href="https://chenli2049.github.io/posts/20231219-machine-learning-notes-maximum-likelihood-cross-entropy/"><i>Machine Learning Notes: Maximum Likelihood, Cross Entropy</i></a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Adviser: Dr. Xianyang Jiang</div>

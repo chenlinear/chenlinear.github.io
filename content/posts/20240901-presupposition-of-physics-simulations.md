@@ -1,9 +1,9 @@
 ---
-author: "Chen Li"
-title: "Presuppositions of Physics Simulations"
-date: "2024-09-01"
-tags: 
-- physics
+author: Chen Li
+title: Presuppositions of Physics Simulations
+date: 2024-09-01
+tags:
+  - physics
 math: true
 ---
 
@@ -11,9 +11,14 @@ I haven't done a simulation project, but these are my presuppositions of simulat
 
 ## §1 Simulation in General
 
-We divide space into several grids, but we also have Adaptive Mesh Refinement, see [[2312.05438] _Adaptive mesh refinement in binary black holes simulations_](https://arxiv.org/abs/2312.05438)
+We divide space into several grids, but we also have Adaptive Mesh Refinement, see [[2312.05438] _Adaptive mesh refinement in binary black holes simulations_](https://arxiv.org/abs/2312.05438). Also, there are [Adaptive step size](https://en.wikipedia.org/wiki/Adaptive_step_size).
 
 Butterfly Effect: [[2401.13381]_Spontaneous stochasticity amplifies even thermal noise to the largest scales of turbulence in a few eddy turnover times_](https://arxiv.org/abs/2401.13881)
+
+There are 3 kinds of simulation:
+1. radiative processes, spectrum.
+2. dark matter halos, n-body/test particle, gravity.
+3. source population, luminosity distribution, redshift. neutrino in the universe.
 
 ## §2 Language
 
@@ -22,6 +27,8 @@ Butterfly Effect: [[2401.13381]_Spontaneous stochasticity amplifies even thermal
 ## §3 Memory Usage
 
 In particle n-body simulation, because of the shape of the tensor `[num_particles, num_properties]` (`num_properties` refers to $x$, $y$, $z$, $v_x$, $v_y$, $v_z$, spin, etc) does not change, the memory usage is almost const.
+
+Also, if we encode time in this tensor, we should put it in the first dimension such that `[time_steps, num_particles, num_properties]`. Because now if we want to take a picture from the video, we just do `x[time_step]`. In terms of semetic, this feels natural. In terms of meaning, this shows that, time is just a set of tensors.
 
 <!-- Can we use `torch.nn.Linear` to do the simulation? -->
 

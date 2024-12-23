@@ -1,9 +1,9 @@
 ---
-author: "Chen Li"
+author: Chen Li
 title: "Machine Learning Notes: GNN, GraphNeT"
-date: "2023-09-10"
-tags: 
-- programming
+date: 2023-09-10
+tags:
+  - programming
 math: true
 tabsets: true
 ---

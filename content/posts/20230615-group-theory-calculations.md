@@ -292,49 +292,59 @@ According to [Hook length formula](https://en.wikipedia.org/wiki/Hook_length_for
 We have$$\begin{aligned} s_3 &= e+(12) \\\ a_3 &= e-(13) \\\ e_3 &= e+(12)-(13)-(12)(13) \\\ &=e+(12)-(13)-(321) \end{aligned} \tag{2.10}$$
 Define $$\ket{\nu_1} = \ket{e}+\ket{(12)}-\ket{(13)}-\ket{(321)} \tag{2.11}$$Thus$$\begin{aligned} e\ket{\nu_1}&=\ket{\nu_1} \\\ (12)\ket{\nu_1}&=\ket{(12)}+\ket{e}-\ket{(321)}-\ket{(13)}&=\ket{\nu_1}\\\ (23)\ket{\nu_1}&=\ket{(23)}+\ket{(321)}-\ket{(123)}-\ket{(12)}&=\ket{\nu_2}\\\ (13)\ket{\nu_1}&=\ket{(13)}+\ket{(123)}-\ket{e}-\ket{(23)}&=-\ket{\nu_1}-\ket{\nu_2}\\\ (123)\ket{\nu_1}&=\ket{(123)}+\ket{(13)}-\ket{(23)}-\ket{e}&=-\ket{\nu_1}-\ket{\nu_2}\\\ (321)\ket{\nu_1}&=\ket{(321)}+\ket{(23)}-\ket{(12)}-\ket{(123)}&=\ket{\nu_2}\\\ e\ket{\nu_2}&=\ket{\nu_2}\\\ (12)\ket{\nu_2}&=\ket{(123)}+\ket{(13)}-\ket{(23)}-\ket{e}&=-\ket{\nu_1}-\ket{\nu_2}\\\ (23)\ket{\nu_2}&=\ket{e}+\ket{(12)}-\ket{(13)}-\ket{(321)}&=\ket{\nu_1}\\\ (13)\ket{\nu_2}&=\ket{(321)}+\ket{(23)}-\ket{(12)}-\ket{(123)}&=\ket{\nu_2}\\\ (123)\ket{\nu_2}&=\ket{(12)}+\ket{e}-\ket{(321)}-\ket{(13)}&=\ket{\nu_1}\\\ (321)\ket{\nu_2}&=\ket{(13)}+\ket{(123)}-\ket{e}-\ket{(23)}&=-\ket{\nu_1}-\ket{\nu_2} \end{aligned} \tag{2.12}$$So $$\begin{aligned} D(e) &= \begin{pmatrix} 1 & 0 \\\ 0 & 1 \end{pmatrix} \\\ D(12) &= \begin{pmatrix} 1 & -1 \\\ 0 & -1 \end{pmatrix}, D(23) = \begin{pmatrix} 0 & 1 \\\ 1 & 0 \end{pmatrix}, D(13) = \begin{pmatrix} -1 & 0 \\\ -1 & 1 \end{pmatrix} \\\ D(123) &= \begin{pmatrix} -1 & 1 \\\ -1 & 0 \end{pmatrix}, D(321) = \begin{pmatrix} 0 & -1 \\\ 1 & -1 \end{pmatrix} \\\ \end{aligned} \tag{2.13}$$
 
-## §3 Irr. Rep. of SO(3) Lie Algebra
+## §3 Matrix Multiplication & Identity Matrix
 
-### §3.1 j=1/2
+Let's say we multiply two matrices $A$ and $B$ to get matrix $C$: $$C=AB \tag{3.1}$$, then (note that the superscript is for row, and the subscript is for column) $$\begin{pmatrix} C^1_1 & C^1_2 \\\ C^2_1 & C^2_2 \end{pmatrix} = \begin{pmatrix} A^1_1 & A^1_2 \\\ A^2_1 & A^2_2 \end{pmatrix} \begin{pmatrix} B^1_1 & B^1_2 \\\ B^2_1 & B^2_2 \end{pmatrix} \tag{3.2}$$
+, then $$C^1_1 = A^1_1 B^1_2 + A^1_2 B^2_2 \tag{3.3}$$
+, which can be generalized to matrices with any shape $C^i_j = (AB)^i_j = \sum_\alpha A^i_\alpha B^\alpha_j$ or, in Einstein notation: $$C^i_j = (AB)^i_j = A^i_\alpha B^\alpha_j \tag{3.4}$$
+
+For identity matrix $\mathbb{I}$: $$\mathbb{I}^i_j = \delta^i_j \tag{3.5}$$
+
+So when we multiply two matrices $A$ and $B$ to get an identity matrix $\mathbb{I}$: $$AB = \mathbb{I} \tag{3.6}$$, it means that: $$(AB)^i_j = A^i_\alpha B^\alpha_j = \delta^i_j \tag{3.7}$$, and in U(n) groups we have $$U^{\dagger} U = \mathbb{I} \tag{3.8}$$
+
+## §4 Irr. Rep. of SO(3) Lie Algebra
+
+### §4.1 j=1/2
 
 When $j = \frac{1}{2}$, $\frac{3}{2}$, $\frac{5}{2}$, …, it's a double-valued representation. Let's take $j=\frac{1}{2}$ for example.
 
-Define $$\ket{\frac{1}{2},\frac{1}{2}}=\begin{pmatrix} 1 \\\ 0 \end{pmatrix}, \ket{\frac{1}{2},-\frac{1}{2}}=\begin{pmatrix} 0 \\\ 1 \end{pmatrix} \tag{3.1.1}$$According to $$\begin{aligned} J_3 \ket{j,m} &= m \ket{j,m} \\\ J_{\pm} \ket{j,m} &= \sqrt{j(j+1)-m(m \pm 1)} \ket{j,m \pm 1}\end{aligned} \tag{3.1.2}$$we have $$J_3=\begin{pmatrix} \frac{1}{2} & 0 \\\ 0 & -\frac{1}{2} \end{pmatrix}, J_+=\begin{pmatrix} 0 & 1 \\\ 0 & 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 & 0 \\\ 1 & 0 \end{pmatrix} \tag{3.1.3}$$According to $$J_{\pm}=J_1 \pm i J_2 \tag{3.1.4}$$we have $$J_1=\begin{pmatrix} 0 & \frac{1}{2} \\\ \frac{1}{2} & 0 \end{pmatrix}, J_2=\begin{pmatrix} 0 & -\frac{i}{2} \\\ \frac{i}{2} & 0 \end{pmatrix}, J_3=\begin{pmatrix} \frac{1}{2} & 0 \\\ 0 & -\frac{1}{2} \end{pmatrix} \tag{3.1.5}$$According to $$J_k=\frac{\sigma_k}{2}, k=1,2,3 \tag{3.1.6}$$we have $$\sigma_1=\begin{pmatrix} 0 & 1 \\\ 1 & 0 \end{pmatrix}, \sigma_2=\begin{pmatrix} 0 & -i \\\ i & 0 \end{pmatrix}, \sigma_3=\begin{pmatrix} 1 & 0 \\\ 0 & 1 \end{pmatrix} \tag{3.1.7}$$So $$\begin{aligned} d^{\frac{1}{2}}(\beta) &=e^{-i \beta J_2} \\\ &= e^{-\frac{i \beta \sigma_2}{2}} \\\ &=E+(-\frac{i \beta}{2})\sigma_2+\frac{1}{2!}(-\frac{i \beta}{2})^{2}\sigma_2^2+\frac{1}{3!}(-\frac{i \beta}{2})^{3}\sigma_2^3+ \cdots \\\ &=E\cos{\frac{\beta}{2}}-i \sigma_2 \sin{\frac{\beta}{2}} \\\ &= \begin{pmatrix} \cos{\frac{\beta}{2}} & -\sin{\frac{\beta}{2}} \\\ \sin{\frac{\beta}{2}} & \cos{\frac{\beta}{2}} \end{pmatrix}\end{aligned} \tag{3.1.8}$$So $$D^{\frac{1}{2}}(\alpha, \beta, \gamma)=\begin{pmatrix} e^{-\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} & -e^{-\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{\frac{i\gamma}{2}} \\\ e^{\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} & e^{\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{\frac{i\gamma}{2}}\end{pmatrix} \tag{3.1.9}$$So $$\begin{aligned} D[R_n(2n \pi)] &= D[R] e^{in \pi \sigma_2} D[R]^{-1} \\\ &= D[R] (-E)^n D[R]^{-1} \\\ &=(-1)^n E \end{aligned} \tag{3.1.10}$$Thus it's a double-valued representation.
+Define $$\ket{\frac{1}{2},\frac{1}{2}}=\begin{pmatrix} 1 \\\ 0 \end{pmatrix}, \ket{\frac{1}{2},-\frac{1}{2}}=\begin{pmatrix} 0 \\\ 1 \end{pmatrix} \tag{4.1.1}$$According to $$\begin{aligned} J_3 \ket{j,m} &= m \ket{j,m} \\\ J_{\pm} \ket{j,m} &= \sqrt{j(j+1)-m(m \pm 1)} \ket{j,m \pm 1}\end{aligned} \tag{4.1.2}$$we have $$J_3=\begin{pmatrix} \frac{1}{2} & 0 \\\ 0 & -\frac{1}{2} \end{pmatrix}, J_+=\begin{pmatrix} 0 & 1 \\\ 0 & 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 & 0 \\\ 1 & 0 \end{pmatrix} \tag{4.1.3}$$According to $$J_{\pm}=J_1 \pm i J_2 \tag{4.1.4}$$we have $$J_1=\begin{pmatrix} 0 & \frac{1}{2} \\\ \frac{1}{2} & 0 \end{pmatrix}, J_2=\begin{pmatrix} 0 & -\frac{i}{2} \\\ \frac{i}{2} & 0 \end{pmatrix}, J_3=\begin{pmatrix} \frac{1}{2} & 0 \\\ 0 & -\frac{1}{2} \end{pmatrix} \tag{4.1.5}$$According to $$J_k=\frac{\sigma_k}{2}, k=1,2,3 \tag{4.1.6}$$we have $$\sigma_1=\begin{pmatrix} 0 & 1 \\\ 1 & 0 \end{pmatrix}, \sigma_2=\begin{pmatrix} 0 & -i \\\ i & 0 \end{pmatrix}, \sigma_3=\begin{pmatrix} 1 & 0 \\\ 0 & 1 \end{pmatrix} \tag{4.1.7}$$So $$\begin{aligned} d^{\frac{1}{2}}(\beta) &=e^{-i \beta J_2} \\\ &= e^{-\frac{i \beta \sigma_2}{2}} \\\ &=E+(-\frac{i \beta}{2})\sigma_2+\frac{1}{2!}(-\frac{i \beta}{2})^{2}\sigma_2^2+\frac{1}{3!}(-\frac{i \beta}{2})^{3}\sigma_2^3+ \cdots \\\ &=E\cos{\frac{\beta}{2}}-i \sigma_2 \sin{\frac{\beta}{2}} \\\ &= \begin{pmatrix} \cos{\frac{\beta}{2}} & -\sin{\frac{\beta}{2}} \\\ \sin{\frac{\beta}{2}} & \cos{\frac{\beta}{2}} \end{pmatrix}\end{aligned} \tag{4.1.8}$$So $$D^{\frac{1}{2}}(\alpha, \beta, \gamma)=\begin{pmatrix} e^{-\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} & -e^{-\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{\frac{i\gamma}{2}} \\\ e^{\frac{i\alpha}{2}}\sin{\frac{\beta}{2}}e^{-\frac{i\gamma}{2}} & e^{\frac{i\alpha}{2}}\cos{\frac{\beta}{2}}e^{\frac{i\gamma}{2}}\end{pmatrix} \tag{4.1.9}$$So $$\begin{aligned} D[R_n(2n \pi)] &= D[R] e^{in \pi \sigma_2} D[R]^{-1} \\\ &= D[R] (-E)^n D[R]^{-1} \\\ &=(-1)^n E \end{aligned} \tag{4.1.10}$$Thus it's a double-valued representation.
 
-### §3.2 j=1
+### §4.2 j=1
 
 When $j = 0$, $1$, $2$, …, it's a irreducible representation. Let's take $j=1$ for example.
 
-$$J_3=\begin{pmatrix} 1 & 0 & 0 \\\ 0 & 0 & 0 \\\ 0 & 0 & -1 \end{pmatrix}, J_+=\begin{pmatrix} 0 & \sqrt{2} & 0 \\\ 0 & 0 & \sqrt{2} \\\ 0 & 0 & 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 & 0 & 0 \\\ \sqrt{2} & 0 & 0 \\\ 0 & \sqrt{2} & 0 \end{pmatrix} \tag{3.2.1}$$And$$e^{-i \beta J_2} = e^{\beta K} =E+\sin{\beta} K+(1-\cos{\beta})K^2 \tag{3.2.2}$$
+$$J_3=\begin{pmatrix} 1 & 0 & 0 \\\ 0 & 0 & 0 \\\ 0 & 0 & -1 \end{pmatrix}, J_+=\begin{pmatrix} 0 & \sqrt{2} & 0 \\\ 0 & 0 & \sqrt{2} \\\ 0 & 0 & 0 \end{pmatrix}, J_-=\begin{pmatrix} 0 & 0 & 0 \\\ \sqrt{2} & 0 & 0 \\\ 0 & \sqrt{2} & 0 \end{pmatrix} \tag{4.2.1}$$And$$e^{-i \beta J_2} = e^{\beta K} =E+\sin{\beta} K+(1-\cos{\beta})K^2 \tag{4.2.2}$$
 
 The rest is left as an exercise for the reader.
 
-Eventually, $$d^1(\beta)= \begin{pmatrix} \frac{1+\cos{\beta}}{2} & -\frac{\sin{\beta}}{\sqrt{2}} & \frac{1-\cos{\beta}}{2} \\\ \frac{\sin{\beta}}{\sqrt{2}} & \cos{\beta} & -\frac{\sin{\beta}}{\sqrt{2}} \\\ \frac{1-\cos{\beta}}{2} & \frac{\sin{\beta}}{\sqrt{2}} & \frac{1+\cos{\beta}}{2}  \end{pmatrix} \tag{3.2.3}$$
+Eventually, $$d^1(\beta)= \begin{pmatrix} \frac{1+\cos{\beta}}{2} & -\frac{\sin{\beta}}{\sqrt{2}} & \frac{1-\cos{\beta}}{2} \\\ \frac{\sin{\beta}}{\sqrt{2}} & \cos{\beta} & -\frac{\sin{\beta}}{\sqrt{2}} \\\ \frac{1-\cos{\beta}}{2} & \frac{\sin{\beta}}{\sqrt{2}} & \frac{1+\cos{\beta}}{2}  \end{pmatrix} \tag{4.2.3}$$
 
-## §4 Clebsch–Gordan Coefficients
+## §5 Clebsch–Gordan Coefficients
 
 In this section we decompose the direct product of Irr. Rep. of SU(2) into the direct sum of Irr. Rep. Here's an example of $j_1 = \frac{1}{2}$, $j_2=1$. You can check [Table of Clebsch–Gordan coefficients](https://en.wikipedia.org/wiki/Table_of_Clebsch%E2%80%93Gordan_coefficients) to make sure it's right.
 
-1. $$\ket{\frac{3}{2}, \frac{3}{2}}=\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1} \tag{4.1}$$
+1. $$\ket{\frac{3}{2}, \frac{3}{2}}=\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1} \tag{5.1}$$
 
-2. $$J_-\ket{\frac{3}{2}, \frac{3}{2}}=\sqrt{\frac{3}{2}(\frac{3}{2}+1)-\frac{3}{2}(\frac{3}{2}-1)}\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{3}\ket{\frac{3}{2}, \frac{1}{2}} \tag{4.2}$$
-    $$\begin{aligned}J_-(\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1})&=(J_-\ket{\frac{1}{2}, \frac{1}{2}})\otimes\ket{1, 1}+\ket{\frac{1}{2}, \frac{1}{2}} \otimes J_-(\ket{1, 1}) \\\ &=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{2}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \end{aligned} \tag{4.3}$$
-    So $$\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{4.4}$$
+2. $$J_-\ket{\frac{3}{2}, \frac{3}{2}}=\sqrt{\frac{3}{2}(\frac{3}{2}+1)-\frac{3}{2}(\frac{3}{2}-1)}\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{3}\ket{\frac{3}{2}, \frac{1}{2}} \tag{5.2}$$
+    $$\begin{aligned}J_-(\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 1})&=(J_-\ket{\frac{1}{2}, \frac{1}{2}})\otimes\ket{1, 1}+\ket{\frac{1}{2}, \frac{1}{2}} \otimes J_-(\ket{1, 1}) \\\ &=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{2}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \end{aligned} \tag{5.3}$$
+    So $$\ket{\frac{3}{2}, \frac{1}{2}}=\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}+\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{5.4}$$
 
-3. Similarly, $$\ket{\frac{3}{2}, -\frac{1}{2}}=\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}+\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{4.5}$$
+3. Similarly, $$\ket{\frac{3}{2}, -\frac{1}{2}}=\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}+\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{5.5}$$
 
-4. Similarly, $$\ket{\frac{3}{2}, -\frac{3}{2}}=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, -1} \tag{4.6}$$
+4. Similarly, $$\ket{\frac{3}{2}, -\frac{3}{2}}=\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, -1} \tag{5.6}$$
 
-5. Because $\ket{\frac{3}{2}, \frac{1}{2}}$ and $\ket{\frac{1}{2}, \frac{1}{2}}$ are orthogonal, and by normalization, we have $$\ket{\frac{1}{2}, \frac{1}{2}} = \sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}-\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{4.7}$$
+5. Because $\ket{\frac{3}{2}, \frac{1}{2}}$ and $\ket{\frac{1}{2}, \frac{1}{2}}$ are orthogonal, and by normalization, we have $$\ket{\frac{1}{2}, \frac{1}{2}} = \sqrt{\frac{2}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 1}-\sqrt{\frac{1}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, 0} \tag{5.7}$$
 
-6. Similarly, $$\ket{\frac{1}{2}, -\frac{1}{2}} = \sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}-\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{4.8}$$
+6. Similarly, $$\ket{\frac{1}{2}, -\frac{1}{2}} = \sqrt{\frac{1}{3}}\ket{\frac{1}{2}, -\frac{1}{2}} \otimes \ket{1, 0}-\sqrt{\frac{2}{3}}\ket{\frac{1}{2}, \frac{1}{2}} \otimes \ket{1, -1} \tag{5.8}$$
 
 Thus complete the Clebsch–Gordan coefficients for $j_1 = \frac{1}{2}$, $j_2=1$.
 
-## §5 Box-Weight Diagram of SU(3) Irr. Rep.
+## §6 Box-Weight Diagram of SU(3) Irr. Rep.
 
-### §5.1 Box-Weight Diagram
+### §6.1 Box-Weight Diagram
 
-We have $$\begin{cases} \vec{\alpha^1} = (\frac{1}{2},\frac{\sqrt{3}}{2}) \\\ \vec{\alpha^2} = (\frac{1}{2},-\frac{\sqrt{3}}{2}) \end{cases} \tag{5.1.1}$$and according to the definition of Cartan matrix $$A_{ij} = \frac{2 \vec{\alpha^i} \cdot \vec{\alpha^j}}{|\vec{\alpha^j}|^2} \tag{5.1.2}$$we have:$$A = \begin{pmatrix} 2 & -1 \\\ -1 & 2 \end{pmatrix} \tag{5.1.3}$$
+We have $$\begin{cases} \vec{\alpha^1} = (\frac{1}{2},\frac{\sqrt{3}}{2}) \\\ \vec{\alpha^2} = (\frac{1}{2},-\frac{\sqrt{3}}{2}) \end{cases} \tag{6.1.1}$$and according to the definition of Cartan matrix $$A_{ij} = \frac{2 \vec{\alpha^i} \cdot \vec{\alpha^j}}{|\vec{\alpha^j}|^2} \tag{6.1.2}$$we have:$$A = \begin{pmatrix} 2 & -1 \\\ -1 & 2 \end{pmatrix} \tag{6.1.3}$$
 
 When drawing the box-weight diagram, there are some rules to follow:
 
@@ -352,11 +362,11 @@ For example, when the highest weight is $3$ and $0$, or $\boxed{3 \space 0}$, th
 
 ![20230615-group-theory-calculations-highest-weight-3-and-0](20230615-group-theory-calculations-highest-weight-3-and-0.jpg)
 
-### §5.2 All Possible Roots
+### §6.2 All Possible Roots
 
-According to $$\frac{2 \vec{\alpha^j} \cdot \vec{\mu^k}}{|\vec{\alpha^j}|^2}=\delta_{jk} \tag{5.2.1}$$we have $$\begin{cases} \vec{\mu^1}=(\frac{1}{2}, \frac{\sqrt{3}}{6}) \\\ \vec{\mu^2}=(\frac{1}{2}, -\frac{\sqrt{3}}{6}) \end{cases} \tag{5.2.2}$$
+According to $$\frac{2 \vec{\alpha^j} \cdot \vec{\mu^k}}{|\vec{\alpha^j}|^2}=\delta_{jk} \tag{6.2.1}$$we have $$\begin{cases} \vec{\mu^1}=(\frac{1}{2}, \frac{\sqrt{3}}{6}) \\\ \vec{\mu^2}=(\frac{1}{2}, -\frac{\sqrt{3}}{6}) \end{cases} \tag{6.2.2}$$
 
-Starting from $3 \vec{\mu^1}$, from box-weight diagram, we have $$\begin{aligned} &3 \vec{\mu^1}-\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-2\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-2\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-2\vec{\alpha^1}-2\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}-\vec{\alpha^2}, \\\ & 3 \vec{\mu^1}-3\vec{\alpha^1}-2\vec{\alpha^2}, \\\ &3 \vec{\mu^1}-3\vec{\alpha^1}-3\vec{\alpha^2} \end{aligned} \tag{5.2.3}$$ 
+Starting from $3 \vec{\mu^1}$, from box-weight diagram, we have $$\begin{aligned} &3 \vec{\mu^1}-\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-2\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-2\vec{\alpha^1}-\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}, \\\ &3 \vec{\mu^1}-2\vec{\alpha^1}-2\vec{\alpha^2}, 3 \vec{\mu^1}-3\vec{\alpha^1}-\vec{\alpha^2}, \\\ & 3 \vec{\mu^1}-3\vec{\alpha^1}-2\vec{\alpha^2}, \\\ &3 \vec{\mu^1}-3\vec{\alpha^1}-3\vec{\alpha^2} \end{aligned} \tag{6.2.3}$$ 
 (Or you can do it more easily by using the fact that the figure below is symmetric with respect to $H_2$ axis.)
 
 Drawing on the $H_1 - H_2$ plane, we have:

@@ -1,10 +1,8 @@
 ---
-author: "Calvin Tran"
-title: "Install Hugo on Mac OS"
-date: "2022-07-04"
-tags: 
-- hugo
-- sample
+author: Calvin Tran
+title: Install Hugo on Mac OS
+date: 2022-07-04
+tags: []
 ---
 
 Vivamus posuere arcu interdum felis venenatis congue. Etiam dapibus condimentum lorem id dignissim. Morbi pulvinar erat quis arcu ornare faucibus. Nulla commodo est id ante porttitor gravida. Sed elementum ante eget turpis consectetur, vitae rutrum ligula eleifend. Fusce iaculis placerat sem, non condimentum odio hendrerit ac. Sed vestibulum neque pellentesque, dapibus tortor et, scelerisque quam. Aenean imperdiet eros quis vestibulum ullamcorper. Integer vestibulum mattis elit, non congue lacus porttitor condimentum. Donec dapibus eleifend nibh, eget tempus justo pulvinar ut. Vivamus eu risus sed orci blandit varius luctus et ex. Mauris tempor dapibus aliquam.

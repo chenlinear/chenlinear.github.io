@@ -1243,8 +1243,8 @@ We will often see another way to write it:
             super().__init__()
             self.linear1 = nn.Linear(in_features, hidden_features)
             self.act = nn.GELU()
-            self.linear2 = nn.Linear(hidden_features, out_features)
             self.dropout = nn.Dropout(dropout)
+            self.linear2 = nn.Linear(hidden_features, out_features)
     
         def forward(self, x):
             x = self.linear1(x)
@@ -1252,16 +1252,6 @@ We will often see another way to write it:
             x = self.dropout(x)
             x = self.linear2(x)
             return x
-    ```
-    
-    ```python
-    class FFN(nn.Sequential):
-        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0):
-            super().__init__()
-            nn.Linear(in_features, hidden_features),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_features, out_features)
     ```
 
 - testing
@@ -1463,7 +1453,7 @@ class MultiheadAttention(nn.Module):
         qkv = qkv.permute(2, 0, 3, 1, 4)# [3, batch_size, num_heads, seq_length, hidden_dim // num_heads]
         q, k, v = qkv# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
 
-        x = F.scaled_dot_product_attention(q, k, v, dropout_p=self.dropout, is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+        x = F.scaled_dot_product_attention(q, k, v, dropout_p=(self.dropout if self.training else 0.0), is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
         x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
         x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
         x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
@@ -1950,126 +1940,244 @@ Generally speaking most papers have this kind of naming convention:
 
 Below is an implementation of Transformer++:
 
-```python
-def precompute_freqs_cis(dim, end, rope_theta=10000.0):
-    freqs = 1.0 / (rope_theta ** (torch.arange(0, dim, 2)[: (dim // 2)].float() / dim))
-    t = torch.arange(end, device=freqs.device, dtype=torch.float32)
-    freqs = torch.outer(t, freqs)
-    freqs_cis = torch.polar(torch.ones_like(freqs), freqs)# complex64
-    return freqs_cis
+<div class="tabset"></div>
 
-def reshape_for_broadcast(freqs_cis, x):
-    ndim = x.ndim
-    assert 0 <= 1 < ndim
-    assert freqs_cis.shape == (x.shape[1], x.shape[-1])
-    shape = [d if i == 1 or i == ndim - 1 else 1 for i, d in enumerate(x.shape)]
-    return freqs_cis.view(*shape)
+- `PyTorch`
+    
+    ```python
+    def precompute_freqs_cis(dim, end, rope_theta=10000.0):
+        freqs = 1.0 / (rope_theta ** (torch.arange(0, dim, 2)[: (dim // 2)].float() / dim))
+        t = torch.arange(end, device=freqs.device, dtype=torch.float32)
+        freqs = torch.outer(t, freqs)
+        freqs_cis = torch.polar(torch.ones_like(freqs), freqs)# complex64
+        return freqs_cis
+    
+    def reshape_for_broadcast(freqs_cis, x):
+        ndim = x.ndim
+        assert 0 <= 1 < ndim
+        assert freqs_cis.shape == (x.shape[1], x.shape[-1])
+        shape = [d if i == 1 or i == ndim - 1 else 1 for i, d in enumerate(x.shape)]
+        return freqs_cis.view(*shape)
+    
+    def apply_rotary_emb(q, k, freqs_cis):
+        q_ = torch.view_as_complex(q.float().reshape(*q.shape[:-1], -1, 2))
+        k_ = torch.view_as_complex(k.float().reshape(*k.shape[:-1], -1, 2))
+        freqs_cis = reshape_for_broadcast(freqs_cis, q_)
+        q_out = torch.view_as_real(q_ * freqs_cis).flatten(3)
+        k_out = torch.view_as_real(k_ * freqs_cis).flatten(3)
+        return q_out.type_as(q), k_out.type_as(k)
+    
+    class GeGLU(nn.Module):
+        def forward(self, x):
+            assert x.shape[-1] % 2 == 0
+            a, b = x.chunk(2, dim=-1)
+            return a * F.gelu(b)
+    
+    class FFN(nn.Module):
+        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
+            super().__init__()
+            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
+            self.act = GeGLU()
+            self.dropout = nn.Dropout(dropout)
+            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
+    
+        def forward(self, x):
+            return self.linear2(self.dropout(self.act(self.linear1(x))))
+    
+    class MultiheadAttention(nn.Module):
+        def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0, bias=False):
+            super().__init__()
+            self.num_heads = num_heads
+            self.dropout = dropout
+    
+            self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3, bias=bias)
+            self.w_o = nn.Linear(hidden_dim, hidden_dim, bias=bias)
+    
+        def forward(self, x, freqs_cis, is_causal=False):
+            batch_size, seq_length, hidden_dim = x.shape
+    
+            qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+            qkv = qkv.permute(2, 0, 1, 3, 4)# [3, batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            q, k, v = qkv# q, k, v shape: [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            q, k = apply_rotary_emb(q, k, freqs_cis)
+            q, k, v = q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2)# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+    
+            x = F.scaled_dot_product_attention(q, k, v, dropout_p=(self.dropout if self.training else 0.0), is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
+            x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
+            return x
+    
+    class TransformerLayer(nn.Module):
+        def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False):
+            super().__init__()
+            self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
+            self.attention = MultiheadAttention(hidden_dim, num_heads, dropout, bias)
+            self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
+            self.dropout = nn.Dropout(dropout)
+            self.attn_scale = 1 / math.sqrt(2 * num_layers)
+    
+        def forward(self, x, freqs_cis, is_causal=False):
+            residual = x
+            x = self.rms_norm(x)
+            x = self.attn_scale * self.attention(x, freqs_cis, is_causal)
+            x = self.dropout(x)
+            x += residual
+    
+            residual = x
+            x = self.rms_norm(x)
+            x = self.ffn(x)
+            x = self.dropout(x)
+            x += residual
+            return x
+    
+    class Transformer(nn.Module):
+        def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False, max_seq_length=196, rope_theta=10000.0):
+            super().__init__()
+            self.freqs_cis = precompute_freqs_cis(hidden_dim // num_heads, max_seq_length * 2, rope_theta)
+    
+            self.transformer_layers = nn.ModuleList()
+            for _ in range(num_layers-1):
+                self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias))
+            self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias=True))
+    
+            # self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
+    
+        def forward(self, x, is_causal=False):
+            _, seq_length, _ = x.shape
+            self.freqs_cis = self.freqs_cis.to(x.device)
+            freqs_cis = self.freqs_cis[:seq_length]
+    
+            for transformer_layer in self.transformer_layers:
+                x = transformer_layer(x, freqs_cis, is_causal)
+    
+            # x = self.rms_norm(x)
+            return x
+    
+    dummy = torch.rand(1, 196, 768).to('cuda')# [batch_size, seq_length, hidden_dim]
+    transformer = Transformer().to('cuda')
+    # transformer = torch.compile(transformer)
+    dummy = transformer(dummy)
+    print(dummy.shape)
+    ```
+    
+    will get:
+    
+    ```bash
+    torch.Size([1, 196, 768])
+    ```
 
-def apply_rotary_emb(q, k, freqs_cis):
-    q_ = torch.view_as_complex(q.float().reshape(*q.shape[:-1], -1, 2))
-    k_ = torch.view_as_complex(k.float().reshape(*k.shape[:-1], -1, 2))
-    freqs_cis = reshape_for_broadcast(freqs_cis, q_)
-    q_out = torch.view_as_real(q_ * freqs_cis).flatten(3)
-    k_out = torch.view_as_real(k_ * freqs_cis).flatten(3)
-    return q_out.type_as(q), k_out.type_as(k)
-
-class GeGLU(nn.Module):
-    def forward(self, x):
-        # assert x.shape[-1] % 2 == 0
-        a, b = x.chunk(2, dim=-1)
-        return a * F.gelu(b)
-
-class FFN(nn.Sequential):
-    def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
-        super().__init__()
-        nn.Linear(in_features, hidden_features, bias=bias),
-        GeGLU(),
-        nn.Dropout(dropout),
-        nn.Linear(hidden_features, out_features, bias=bias)
-
-class MultiheadAttention(nn.Module):
-    def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0, bias=False):
-        super().__init__()
-        self.num_heads = num_heads
-        self.dropout = dropout
-
-        self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3, bias=bias)
-        self.w_o = nn.Linear(hidden_dim, hidden_dim, bias=bias)
-
-    def forward(self, x, freqs_cis, is_causal=False):
-        batch_size, seq_length, hidden_dim = x.shape
-
-        qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
-        qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
-        qkv = qkv.permute(2, 0, 1, 3, 4)# [3, batch_size, seq_length, num_heads, hidden_dim // num_heads]
-        q, k, v = qkv# q, k, v shape: [batch_size, seq_length, num_heads, hidden_dim // num_heads]
-        q, k = apply_rotary_emb(q, k, freqs_cis)
-        q, k, v = q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2)# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
-
-        x = F.scaled_dot_product_attention(q, k, v, dropout_p=self.dropout, is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
-        x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
-        x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
-        x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
-        return x
-
-class TransformerLayer(nn.Module):
-    def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False):
-        super().__init__()
-        self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
-        self.attention = MultiheadAttention(hidden_dim, num_heads, dropout, bias)
-        self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
-        self.dropout = nn.Dropout(dropout)
-        self.attn_scale = 1 / math.sqrt(2 * num_layers)
-
-    def forward(self, x, freqs_cis, is_causal=False):
-        residual = x
-        x = self.rms_norm(x)
-        x = self.attn_scale * self.attention(x, freqs_cis, is_causal)
-        x = self.dropout(x)
-        x += residual
-
-        residual = x
-        x = self.rms_norm(x)
-        x = self.ffn(x)
-        x = self.dropout(x)
-        x += residual
-        return x
-
-class Transformer(nn.Module):
-    def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False, max_seq_length=196, rope_theta=10000.0):
-        super().__init__()
-        self.freqs_cis = precompute_freqs_cis(hidden_dim // num_heads, max_seq_length * 2, rope_theta)
-
-        self.transformer_layers = nn.ModuleList()
-        for _ in range(num_layers-1):
-            self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias))
-        self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias=True))
-
-        # self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
-
-    def forward(self, x, is_causal=False):
-        _, seq_length, _ = x.shape
-        self.freqs_cis = self.freqs_cis.to(x.device)
-        freqs_cis = self.freqs_cis[:seq_length]
-
-        for transformer_layer in self.transformer_layers:
-            x = transformer_layer(x, freqs_cis, is_causal)
-
-        # x = self.rms_norm(x)
-        return x
-
-dummy = torch.rand(1, 196, 768).to('cuda')# [batch_size, seq_length, hidden_dim]
-transformer = Transformer().to('cuda')
-# transformer = torch.compile(transformer)
-dummy = transformer(dummy)
-print(dummy.shape)
-```
-
-will get:
-
-```bash
-torch.Size([1, 196, 768])
-```
+- `FlashAttention`
+    
+    Or, after installing:
+    
+    ```bash
+    pip install triton
+    pip install flash-attn --no-build-isolation
+    ```
+    
+    We can use [`flash_attn.layers.rotary.RotaryEmbedding`](https://github.com/Dao-AILab/flash-attention/blob/main/flash_attn/layers/rotary.py#L341):
+    
+    ```python
+    from flash_attn.layers.rotary import RotaryEmbedding
+    
+    class GeGLU(nn.Module):
+        def forward(self, x):
+            assert x.shape[-1] % 2 == 0
+            a, b = x.chunk(2, dim=-1)
+            return a * F.gelu(b)
+    
+    class FFN(nn.Module):
+        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
+            super().__init__()
+            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
+            self.act = GeGLU()
+            self.dropout = nn.Dropout(dropout)
+            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
+    
+        def forward(self, x):
+            return self.linear2(self.dropout(self.act(self.linear1(x))))
+    
+    class MultiheadAttention(nn.Module):
+        def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0, bias=False):
+            super().__init__()
+            self.num_heads = num_heads
+            self.dropout = dropout
+    
+            self.w_qkv = nn.Linear(hidden_dim, hidden_dim * 3, bias=bias)
+            self.w_o = nn.Linear(hidden_dim, hidden_dim, bias=bias)
+    
+            self.rotary_embedding = RotaryEmbedding(hidden_dim // num_heads)
+    
+        def forward(self, x, is_causal=False):
+            batch_size, seq_length, hidden_dim = x.shape
+    
+            qkv = self.w_qkv(x)# [batch_size, seq_length, hidden_dim * 3]
+            qkv = qkv.view(batch_size, seq_length, 3, self.num_heads, -1)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+            qkv = self.rotary_embedding(qkv)# [batch_size, seq_length, 3, num_heads, hidden_dim // num_heads]
+            qkv = qkv.permute(2, 0, 3, 1, 4)# [3, batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            q, k, v = qkv# q, k, v shape: [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+    
+            x = F.scaled_dot_product_attention(q, k, v, dropout_p=(self.dropout if self.training else 0.0), is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
+            x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
+            x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
+            return x
+    
+    class TransformerLayer(nn.Module):
+        def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False):
+            super().__init__()
+            self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
+            self.attention = MultiheadAttention(hidden_dim, num_heads, dropout, bias)
+            self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
+            self.dropout = nn.Dropout(dropout)
+            self.attn_scale = 1 / math.sqrt(2 * num_layers)
+    
+        def forward(self, x, is_causal=False):
+            residual = x
+            x = self.rms_norm(x)
+            x = self.attn_scale * self.attention(x, is_causal)
+            x = self.dropout(x)
+            x += residual
+    
+            residual = x
+            x = self.rms_norm(x)
+            x = self.ffn(x)
+            x = self.dropout(x)
+            x += residual
+            return x
+    
+    class Transformer(nn.Module):
+        def __init__(self, num_layers=12, num_heads=12, hidden_dim=768, ffn_dim=3072, dropout=0.0, bias=False):
+            super().__init__()
+    
+            self.transformer_layers = nn.ModuleList()
+            for _ in range(num_layers-1):
+                self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias))
+            self.transformer_layers.append(TransformerLayer(num_layers, num_heads, hidden_dim, ffn_dim, dropout, bias=True))
+    
+            # self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
+    
+        def forward(self, x, is_causal=False):
+            for transformer_layer in self.transformer_layers:
+                x = transformer_layer(x, is_causal)
+    
+            # x = self.rms_norm(x)
+            return x
+    
+    dummy = torch.rand(1, 196, 768).to('cuda')# [batch_size, seq_length, hidden_dim]
+    transformer = Transformer().to('cuda')
+    transformer = torch.compile(transformer)
+    dummy = transformer(dummy)
+    print(dummy.shape)
+    ```
+    
+    will get:
+    
+    ```bash
+    torch.Size([1, 196, 768])
+    ```
 
 ### §3.8 Mixture of Experts (MoE)
 

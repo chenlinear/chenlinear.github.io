@@ -1967,22 +1967,20 @@ Below is an implementation of Transformer++:
         k_out = torch.view_as_real(k_ * freqs_cis).flatten(3)
         return q_out.type_as(q), k_out.type_as(k)
     
-    class GeGLU(nn.Module):
-        def forward(self, x):
+    class GeGLU_FFN(nn.Module):
+        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
+            super().__init__()
+            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
+            self.dropout = nn.Dropout(dropout)
+            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
+    
+        def geglu(self, x):
             assert x.shape[-1] % 2 == 0
             a, b = x.chunk(2, dim=-1)
             return a * F.gelu(b)
     
-    class FFN(nn.Module):
-        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
-            super().__init__()
-            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
-            self.act = GeGLU()
-            self.dropout = nn.Dropout(dropout)
-            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
-    
         def forward(self, x):
-            return self.linear2(self.dropout(self.act(self.linear1(x))))
+            return self.linear2(self.dropout(self.geglu(self.linear1(x))))
     
     class MultiheadAttention(nn.Module):
         def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0, bias=False):
@@ -2014,7 +2012,7 @@ Below is an implementation of Transformer++:
             super().__init__()
             self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
             self.attention = MultiheadAttention(hidden_dim, num_heads, dropout, bias)
-            self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
+            self.ffn = GeGLU_FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
             self.dropout = nn.Dropout(dropout)
             self.attn_scale = 1 / math.sqrt(2 * num_layers)
     
@@ -2082,22 +2080,20 @@ Below is an implementation of Transformer++:
     ```python
     from flash_attn.layers.rotary import RotaryEmbedding
     
-    class GeGLU(nn.Module):
-        def forward(self, x):
+    class GeGLU_FFN(nn.Module):
+        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
+            super().__init__()
+            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
+            self.dropout = nn.Dropout(dropout)
+            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
+    
+        def geglu(self, x):
             assert x.shape[-1] % 2 == 0
             a, b = x.chunk(2, dim=-1)
             return a * F.gelu(b)
     
-    class FFN(nn.Module):
-        def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
-            super().__init__()
-            self.linear1 = nn.Linear(in_features, hidden_features * 2, bias=bias)
-            self.act = GeGLU()
-            self.dropout = nn.Dropout(dropout)
-            self.linear2 = nn.Linear(hidden_features, out_features, bias=bias)
-    
         def forward(self, x):
-            return self.linear2(self.dropout(self.act(self.linear1(x))))
+            return self.linear2(self.dropout(self.geglu(self.linear1(x))))
     
     class MultiheadAttention(nn.Module):
         def __init__(self, hidden_dim=768, num_heads=12, dropout=0.0, bias=False):
@@ -2130,7 +2126,7 @@ Below is an implementation of Transformer++:
             super().__init__()
             self.rms_norm = nn.RMSNorm(hidden_dim, eps=1e-5)
             self.attention = MultiheadAttention(hidden_dim, num_heads, dropout, bias)
-            self.ffn = FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
+            self.ffn = GeGLU_FFN(hidden_dim, ffn_dim, hidden_dim, dropout, bias)
             self.dropout = nn.Dropout(dropout)
             self.attn_scale = 1 / math.sqrt(2 * num_layers)
     

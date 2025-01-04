@@ -1,58 +1,287 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Physics on Chen Li</title>
-    <link>https://ChenLi2049.github.io/tags/physics/</link>
-    <description>Recent content in Physics on Chen Li</description>
+    <title>physics on Chen Li</title>
+    <link>https://chenlinear.github.io/tags/physics/</link>
+    <description>Recent content in physics on Chen Li</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ChenLi2049.github.io/tags/physics/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://chenlinear.github.io/tags/physics/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Presuppositions of Physics Simulations</title>
+      <link>https://chenlinear.github.io/posts/20240901-presupposition-of-physics-simulations/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20240901-presupposition-of-physics-simulations/</guid>
+      <description>I haven&amp;rsquo;t done a simulation project, but these are my presuppositions of simulation. Let&amp;rsquo;s see how they would change over time (haha pun intended).
+§1 Simulation in General We divide space into several grids, but we also have Adaptive Mesh Refinement, see [2312.05438] Adaptive mesh refinement in binary black holes simulations. Also, there are Adaptive step size.
+Butterfly Effect: [2401.13381]Spontaneous stochasticity amplifies even thermal noise to the largest scales of turbulence in a few eddy turnover times</description>
+    </item>
+    
+    <item>
+      <title>1.58</title>
+      <link>https://chenlinear.github.io/posts/20240710-1-58/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20240710-1-58/</guid>
+      <description>Sabine mentioned today that the &amp;ldquo;dimension&amp;rdquo; of fractal is $log{(\frac{3}{2})} \approx 1.58$, which reminds me about this LLM quantization method called BitNet with ternary {-1, 0, 1} parameter thus 1.58 bit. I would assume the only connection here is just the number.</description>
+    </item>
+    
+    <item>
+      <title>Physics Intuition</title>
+      <link>https://chenlinear.github.io/posts/20240630-physics-intuition/</link>
+      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20240630-physics-intuition/</guid>
+      <description>I had an argument with a friend the other day. He&amp;rsquo;s quitting physics and will be teaching high school, which in my opinion is more of less a waste of talent.
+§1 Complexity, or Why Most Physics Work is Writing Code Here is our differences: He thinks most people in the physics business are doing something he does not like, which is writing code. For example, in his CP violation paper, what he mostly did is to get familiar with the code base.</description>
+    </item>
+    
+    <item>
+      <title>Trains</title>
+      <link>https://chenlinear.github.io/posts/20240613-trains/</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20240613-trains/</guid>
+      <description>Trains are dragons from The Legend of Zelda: Breath of the Wild:
+They are huge. They appear and disappear. They are fast and slow at the same time. </description>
+    </item>
+    
+    <item>
+      <title>Room Temperature Superconductor, Again</title>
+      <link>https://chenlinear.github.io/posts/20240102-room-temperature-superconductor-again/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20240102-room-temperature-superconductor-again/</guid>
+      <description>[2401.00999] Possible Meissner effect near room temperature in copper-substituted lead apatite
+I envy the &amp;ldquo;00999&amp;rdquo; number by the way.</description>
+    </item>
+    
+    <item>
+      <title>arXiv in HTML</title>
+      <link>https://chenlinear.github.io/posts/20231221-arxiv-in-html/</link>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20231221-arxiv-in-html/</guid>
+      <description>arXiv now offers papers in HTML format. So basically ar5iv is now native and applied to the latest papers.
+HTML: Better &amp;amp; Worse Here are several reasons why HTML is better:
+You can just save the link, instead of downloading pdf.
+In Markdown, you can directly link the pictures in a paper. For example:
+![](https://browse.arxiv.org/html/2308.13285v4/x1.png) You can use immersive-translate.
+Here are several reasons why HTML is worse:
+Dependency errors with $\LaTeX$.</description>
+    </item>
+    
+    <item>
+      <title>JWST: K2-18 b</title>
+      <link>https://chenlinear.github.io/posts/20230921-jwst-k2-18-b/</link>
+      <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230921-jwst-k2-18-b/</guid>
+      <description>Webb Discovers Methane, Carbon Dioxide in Atmosphere of K2-18 b | NASA and many other news say K2-18 b is promising for life. What I like about these news is that they tell the readers what &amp;ldquo;Spectrum&amp;rdquo; is, which is a kind of science popularization. And the spectra of K2-18 b shows there exists Methane and Carbon Dioxide in its atmosphere. Thus life is promising.
+On the contrary, the Mexico alien is a shocking picture, which turned out be a cake.</description>
+    </item>
+    
+    <item>
+      <title>Neutrino Simulations for SN 2023ixf</title>
+      <link>https://chenlinear.github.io/posts/20230914-neutrino-simulations-for-sn-2023ixf/</link>
+      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230914-neutrino-simulations-for-sn-2023ixf/</guid>
+      <description>Neutrinos emitted from a supernova can be simulated, see the article on astrobites and the paper [2306.14717] Low and High Energy Neutrinos from SN 2023ixf in M101.
+About multi-messenger (for more information, see [2307.14559] TXS 0506+056 with Updated IceCube Data):
+event SN 1987A TXS 0506+056 category type II supernova blazer year 1987 2017 energy of cosmic neutrino low (~10 MeV) high (~100 TeV) the first confirmed multi-messenger source the first successful multi-messenger campaign involving follow-up observations by telescope worldwide This simulation followed the hypothesis &amp;ldquo;core-collapse supernovae (CC-SNe)&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>The Final Form of IceCube</title>
+      <link>https://chenlinear.github.io/posts/20230914-the-final-form-of-icecube/</link>
+      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230914-the-final-form-of-icecube/</guid>
+      <description>So I had a dream last night. If infinite money and energy is provided and pollution will not be created, the final form of IceCube is in space, so that atmospheric neutrinos and geoneutrinos can be neglected.
+I guess there are two places to implement PMTs:
+Water launched by rockets, then covered with sheet (to avoid evaporation), which will quickly become ice in space. Or just ice at the beginning. One of the moons of Jupiter or Saturn that contains water.</description>
+    </item>
+    
+    <item>
+      <title>XRISM &amp; SLIM</title>
+      <link>https://chenlinear.github.io/posts/20230907-xrism-slim/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230907-xrism-slim/</guid>
+      <description>X-Ray Imaging and Spectroscopy Mission (XRISM) is an X-ray space telescope. On the same rocket there&amp;rsquo;s also Smart Lander for Investigating Moon (SLIM), a moon landing project.
+XRISM&amp;rsquo;s predecessor Hitomi was launched on February 17 2016 and contact was lost on March 26 2016, due to malfunction of the attitude control system. (I always tell people to control their attitude btw.) After which, a lot changed. For example, this article explained the team management of XRISM, which is like an analogue of government system.</description>
+    </item>
+    
+    <item>
+      <title>New Paper on arXiv &amp; New Repository: ISeeCube</title>
+      <link>https://chenlinear.github.io/posts/20230828-new-paper-on-arxiv-new-repository-iseecube/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230828-new-paper-on-arxiv-new-repository-iseecube/</guid>
+      <description>The arXiv link is 2308.13285v1 and the Repository is ISeeCube. Here&amp;rsquo;s what I learned and what to do next.
+What I Learned Test the code by print() everything. Input and output are the most important thing. Test these while reading the code. Read official package documentation for examples. ChatGPT is good at analyzing error report and giving examples, but not so much at writing code, especially when there&amp;rsquo;s already a lot of code.</description>
+    </item>
+    
+    <item>
+      <title>Gravity Spy 2.0</title>
+      <link>https://chenlinear.github.io/posts/20230810-gravity-spy-2.0/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230810-gravity-spy-2.0/</guid>
+      <description>You can classify some patterns on Gravity Spy and it&amp;rsquo;s fun. Their GitHub repo is gravityspy-plus, and their Wiki is Gravity Spy 2.0 Wiki. The Kaggle dataset is Gravity Spy (Gravitational waves). Not to be confused with G2Net, the format of the data is quite different.
+I took a look of those patterns and I got the idea that we can use Transfer Learning from ordinary Machine Learning models for Computer Vision, because the format is RGB image and it&amp;rsquo;s a classic classification job.</description>
+    </item>
+    
+    <item>
+      <title>MillenniumTNG</title>
+      <link>https://chenlinear.github.io/posts/20230808-millenniumtng/</link>
+      <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230808-millenniumtng/</guid>
+      <description>This picture (from LGalaxiesPublicRelease.github.io) is iconic.
+MillenniumTNG is cosmological magnetohydrodynamical simulations of galaxy formation, which is the upgrade of IllustrisTNG combined with Millennium.
+In Sec. 3.3 of [2304.12338] The MillenniumTNG Project: The impact of baryons and massive neutrinos on high-resolution weak gravitational lensing convergence maps, the simulation of massive neutrino is explained. This is the first time that neutrino is introduced to the simulation.</description>
+    </item>
+    
+    <item>
+      <title>LK99</title>
+      <link>https://chenlinear.github.io/posts/20230731-lk99/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230731-lk99/</guid>
+      <description>LK99 is supposed to be room-temperature, ambient-pressure superconductor.
+To me, the big leap from room-temperature, super-high pressure superconductor to room-temperature, ambient-pressure superconductor is not plausible. Maybe I&amp;rsquo;m being conservative, but according to my understanding that&amp;rsquo;s not how these kind of things work.
+This overview table is really helpful in tracking replications: Claims of Room Temperature and Ambient Pressure Superconductor | Page 13 | SpaceBattles.
+On social media, this is really popular, because this is something everybody can understand.</description>
+    </item>
+    
+    <item>
+      <title>JWST: Cosmic Question Mark</title>
+      <link>https://chenlinear.github.io/posts/20230728-jwst-cosmic-question-mark/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230728-jwst-cosmic-question-mark/</guid>
+      <description>So there&amp;rsquo;s a question mark in the deep sky, see James Webb Space Telescope Feed Post (jwstfeed.com).
+Humans are pattern-finding CNNs. And sometimes it&amp;rsquo;s funny.
+Similar to the face on Mars, see Cydonia, the magic and the hype would go away with higher resolution. But higher resolution provides a different kind of magic, see JWTS Uranus.</description>
+    </item>
+    
+    <item>
+      <title>Book Review: Einstein&#39;s Dreams</title>
+      <link>https://chenlinear.github.io/posts/20230711-book-review-einsteins-dreams/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230711-book-review-einsteins-dreams/</guid>
+      <description>This is a review of Einstein&amp;rsquo;s Dreams by Alan Lightman.
+In my opinion, science progresses a little bit at a time. This video is an inspiration to me, and I also referred to The Mystery of the Einstein–Poincaré Connection, Albert Einstein | In the Dark, and Wikipedia on Relativity priority dispute and History of special relativity. The clue is: it&amp;rsquo;s called Lorentz transformation.
+1881, J. J. Thomson. Charged particles are harder to move.</description>
+    </item>
+    
+    <item>
+      <title>Euclid</title>
+      <link>https://chenlinear.github.io/posts/20230701-euclid/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230701-euclid/</guid>
+      <description>See ESA - Euclid. Some of the stories are really exciting.
+In general, this is a telescope observing visible light (530-920 nm) and near-infrared (920-2020 nm). And yes, the near-infrared is observed with CCD.
+Goal: light $\rightarrow$ gravitational lensing $\rightarrow$ dark matter distribution.
+By the way, you can only launch 600 of these everyday.
+ESA - Euclid&amp;rsquo;s first images: the dazzling edge of darkness shows a wide Field of View (FoV), compared with JWST.</description>
+    </item>
+    
+    <item>
+      <title>IceCube: First Detection of Neutrinos from the Milky Way</title>
+      <link>https://chenlinear.github.io/posts/20230629-icecube-first-detection-of-neutrino-from-the-milky-way/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230629-icecube-first-detection-of-neutrino-from-the-milky-way/</guid>
+      <description>There&amp;rsquo;s a GW background and there are neutrinos emitted from the milky way! What a great day!
+Summary of links: their twitter with wonderful pictures, news on astrobites, news on IceCube&amp;rsquo;s official website, news conference on YouTube, the paper and data release. And later this paper about extended sources is published: [2307.07576] Search for Extended Sources of Neutrino Emission in the Galactic Plane with IceCube.
+And here&amp;rsquo;s my notes for the first detection paper.</description>
+    </item>
+    
+    <item>
+      <title>NANOGrav: First Detection of Gravitational Wave Background</title>
+      <link>https://chenlinear.github.io/posts/20230629-nanograv-first-detection-of-gravitational-wave-background/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230629-nanograv-first-detection-of-gravitational-wave-background/</guid>
+      <description>Are high frequency Gravitational Waves (GWs) drowned by noise?
+Links: astrobites is always the first website I&amp;rsquo;ll go to get a general idea of what happened. These two YouTube videos are interesting: Gravitational Waves | Cosmic Symphony, NANOGrav - 15 Years of Gravitational Wave Research. Here&amp;rsquo;s some recommended review articles: [1901.06785] Probing supermassive black hole mergers and stalling with pulsar timing arrays, [2211.05148] Seeing the gravitational wave universe. Well, NANOGrav released a lot of papers on the same day: 2306.</description>
+    </item>
+    
+    <item>
+      <title>Group Theory Calculations</title>
+      <link>https://chenlinear.github.io/posts/20230615-group-theory-calculations/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230615-group-theory-calculations/</guid>
+      <description>In this article I will summarize some simple examples as a quick introduction to Group Theory.
+§1 Finite Group If you wanna know about the full finite group, see Classification of finite simple groups. The FULL list is one of the greatest human achievements.
+I think the best way to learn finite group is to start from various examples.
+Here&amp;rsquo;s some general rules:
+Some rules to calculate permutations: $(12)=(21)$, $(123)=(231)=(312)$ $(12)(23)=(123)$ $(12)^{-1}=(21)=(12)$, $(123)^{-1}=(321)$, $((12)(34))^{-1}=(43)(21)$, $((123)(45))^{-1}=(54)(321)$.</description>
+    </item>
+    
+    <item>
+      <title>Bon Iver</title>
+      <link>https://chenlinear.github.io/posts/20230612-bon-iver/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenlinear.github.io/posts/20230612-bon-iver/</guid>
+      <description>In this article, I want to explain why Bon Iver&amp;rsquo;s first album For Emma, Forever Ago is great in the perspective of physics. They&amp;rsquo;re not necessarily true but I just think this is fun.
+He uses different voice when saying. It&amp;rsquo;s nothing like the way he talks or how he used to sing. You can say that his voice opened a new vision for us. Can you imagine seeing infrared with your own eyes for the first time?</description>
+    </item>
+    
     <item>
       <title>LIGO O4: multi-messenger</title>
-      <link>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</link>
+      <link>https://chenlinear.github.io/posts/20230514-ligo-o4-multi-messenger/</link>
       <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230514-ligo-o4-multi-messenger/</guid>
+      <guid>https://chenlinear.github.io/posts/20230514-ligo-o4-multi-messenger/</guid>
       <description>LIGO is back on track with Observing Run 4 (O4)1. And I got this idea:
 Active Galactic Nucleus (AGN) is considered as a Gravitational Wave (GW) candidate that can be detected by LIGO-Virgo-Kagra2. And IceCube recently proposed a method to combine neutrino detection with radio detection in the observation of AGN3. So maybe these three messengers (GW, neutrino, radio) can work together to observe AGN. And maybe we should write a program that can synchronize these observations.</description>
     </item>
     
     <item>
       <title>Book Review: Love and Math: The Heart of Hidden Reality</title>
-      <link>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</link>
+      <link>https://chenlinear.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</link>
       <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid>
+      <guid>https://chenlinear.github.io/posts/20230501-book-review-love-and-math-the-heart-of-hidden-reality/</guid>
       <description>This is a review of Love and Math: The Heart of Hidden Reality by Edward Frenkel.
-This book is about love, or Langlands program, or the generality of group theory, or beauty. Most of the content feels like text book to me, such as Discrete Groups, Group Representation, etc.
+This book is about love, or Langlands program1, or the generality of group theory, or beauty. Most of the content feels like text book to me, such as Discrete Groups, Group Representation, etc.
 Unlike physics, it&amp;rsquo;s much harder to write math popularization. I can quickly get what he is talking about because I&amp;rsquo;m learning Group Theory this semester.</description>
     </item>
     
     <item>
       <title>Starship</title>
-      <link>https://ChenLi2049.github.io/posts/20230420-starship/</link>
+      <link>https://chenlinear.github.io/posts/20230420-starship/</link>
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230420-starship/</guid>
-      <description>Well, I&amp;rsquo;m not in defense of Elon, and I know he&amp;rsquo;s done plenty of controversial things. But the truth is, the mission did not &amp;ldquo;fail&amp;rdquo;. It&amp;rsquo;s kind of like this rocket is meant to explode. Usually, there are several steps for this trip. This time, few engines were out, thus the first and second stages failed to separate. This is only the second or third step in the entire trip. The data collected in this mission, especially when we make the rocket intentionally took those few tumbles, will be used for future tests.</description>
+      <guid>https://chenlinear.github.io/posts/20230420-starship/</guid>
+      <description>Well, I&amp;rsquo;m not in defense of Elon, and I&amp;rsquo;m well aware he&amp;rsquo;s getting more weird. But the truth is, the mission did not &amp;ldquo;fail&amp;rdquo;. It&amp;rsquo;s kind of like this rocket is meant to explode. Usually, there are several steps for this trip. This time, few engines were out, thus the first and second stages failed to separate. This is only the second or third step in the entire trip. The data collected in this mission, especially when we make the rocket intentionally took those few tumbles, will be used for future tests.</description>
     </item>
     
     <item>
       <title>Book Review: Boojums All the Way Through: Communicating Science in a Prosaic Age</title>
-      <link>https://ChenLi2049.github.io/posts/20230416-book-review-boojums-all-the-way-through/</link>
+      <link>https://chenlinear.github.io/posts/20230416-book-review-boojums-all-the-way-through/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230416-book-review-boojums-all-the-way-through/</guid>
+      <guid>https://chenlinear.github.io/posts/20230416-book-review-boojums-all-the-way-through/</guid>
       <description>This is a review of Boojums All the Way Through: Communicating Science in a Prosaic Age by N. David Mermin. His most famous quote is &amp;ldquo;Shut up and calculate!&amp;rdquo; for anyone who is confused about Quantum Mechanics, which the same attitude I have when I&amp;rsquo;m trying different neural networks.
 I find it funny that the 2nd article Commencement address feels like a personal attack to my How much energy does it take to hurt your feelings?</description>
     </item>
     
     <item>
       <title>Book Review: Existential Physics: A Scientist&#39;s Guide to Life&#39;s Biggest Questions</title>
-      <link>https://ChenLi2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</link>
+      <link>https://chenlinear.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</link>
       <pubDate>Thu, 06 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</guid>
+      <guid>https://chenlinear.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/</guid>
       <description>This is a review of Existential Physics: A Scientist&amp;rsquo;s Guide to Life&amp;rsquo;s Biggest Questions by Sabine Hossenfelder.
 First of all, Jean-Paul Sartre and Existentialism did not show up in the book. Just so you know.
 To be honest, I&amp;rsquo;m not quite interested in the topics she covered in the book. Well, I mean I am interested but not right away. These problems belong to the &amp;ldquo;important but not hurry&amp;rdquo; problems. What she talked about in the book, pseudoscience, is like what Jostein Gaarder talked about in the final chapters of Sophie&amp;rsquo;s World, which is about pseudo-philosophy.</description>
@@ -60,69 +289,69 @@ To be honest, I&amp;rsquo;m not quite interested in the topics she covered in th
     
     <item>
       <title>Statistics 101</title>
-      <link>https://ChenLi2049.github.io/posts/20230404-statistics-101/</link>
+      <link>https://chenlinear.github.io/posts/20230404-statistics-101/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230404-statistics-101/</guid>
+      <guid>https://chenlinear.github.io/posts/20230404-statistics-101/</guid>
       <description>Before do the math, here&amp;rsquo;s things you should consider to avoid bias:
 The magnitude of axis. $\log$? 2 quantities use separate axises? Dramatic? Duration of time. &amp;ldquo;Every Olympic is the best Olympic in the last 3 years.&amp;rdquo; Demography. Age, wealth, gender, race, etc. Does it cover all the target demography? From what media or institution. Different media have different biases themselves. (Although this statement is also a kind of bias.) For a more detailed research, see Machine-Learning media bias.</description>
     </item>
     
     <item>
       <title>ar5iv</title>
-      <link>https://ChenLi2049.github.io/posts/20230318-ar5iv/</link>
+      <link>https://chenlinear.github.io/posts/20230318-ar5iv/</link>
       <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230318-ar5iv/</guid>
+      <guid>https://chenlinear.github.io/posts/20230318-ar5iv/</guid>
       <description>Reading papers on ar5iv or arXiv Vanity, or reading in the HTML format to be precise, is so convenient. I enjoy the flexibility and copying equations the most.
 This reminds me of an article: Ideas on A Really Fast Statistics Journal. If we use Markdown instead of a pdf file as the format in papers, ar5iv wouldn&amp;rsquo;t even have to exist, and things would be much easier for me. But this might be the best solution we have, because safety over speed I suppose.</description>
     </item>
     
     <item>
       <title>How Much Energy Does It Take to Hurt Your Feelings?</title>
-      <link>https://ChenLi2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</link>
+      <link>https://chenlinear.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</guid>
+      <guid>https://chenlinear.github.io/posts/20230314-how-much-energy-does-it-take-to-hurt-your-feelings/</guid>
       <description>This article is about the work we do to get our feelings hurt1, the dimension of which is $[M^1 L^2 T^{-2}]$. And by &amp;ldquo;we&amp;rdquo; and &amp;ldquo;our&amp;rdquo;, I mean humanity, or the internet to be exact. This article is not about how our feelings get hurt at work, the dimension of which is $[Salary]$.
 It&amp;rsquo;s (probably not) natural to write down the following equations: $$W_{FH}=N w_{FH}=N p_{FH} t_{FH} \tag{1}$$, where $N$ is the number of people we consider, $w_{FH}$ is the energy the brain takes to get a certain feeling, in this case, anger.</description>
     </item>
     
     <item>
       <title>δ</title>
-      <link>https://ChenLi2049.github.io/posts/20230314-delta-function/</link>
+      <link>https://chenlinear.github.io/posts/20230314-delta-function/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230314-delta-function/</guid>
+      <guid>https://chenlinear.github.io/posts/20230314-delta-function/</guid>
       <description>It hit me that $\delta(x)$ and $\delta_{ij}$ are the same thing, they both mean &amp;ldquo;peak&amp;rdquo;, and $x=i-j$ or $x=\vert i-j \vert$. That&amp;rsquo;s why they use the same symbol $\delta$.
 $\delta(x)$:$\delta_{ij}= \begin{cases} 1 &amp;amp;\mathrm{if } i=j \\ 0 &amp;amp;\mathrm{if } i \not = j \end{cases}$</description>
     </item>
     
     <item>
       <title>Book Review: Ludwig Wittgenstein: The Duty of Genius</title>
-      <link>https://ChenLi2049.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</link>
+      <link>https://chenlinear.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</link>
       <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</guid>
+      <guid>https://chenlinear.github.io/posts/20230312-book-review-ludwig-wittgenstein-the-duty-of-genius/</guid>
       <description>His life is just legendary! His life is so legendary that I won&amp;rsquo;t use the word &amp;ldquo;legendary&amp;rdquo; to describe anybody anymore.1 His life is like the combination of two journeys, one of which is the struggle of going beyond his family and society and make a living on his own in academia, and yes, since he works in academia he moves around a lot, the other one is the struggle of human mind in the bigger picture.</description>
     </item>
     
     <item>
       <title>Book Review: The Invisible Universe: Why There&#39;s More to Reality than Meets the Eye</title>
-      <link>https://ChenLi2049.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</link>
+      <link>https://chenlinear.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</guid>
+      <guid>https://chenlinear.github.io/posts/20230309-book-review-the-invisible-universe-why-theres-more-to-reality-than-meets-the-eye/</guid>
       <description>This is a review of The Invisible Universe: Why There&amp;rsquo;s More to Reality than Meets the Eye by Matt Bothwell.
 §1 Astronomy 101 The first 6 chapters are Astronomy 101 to me. I have read about them in several textbooks, but when these clues forming a linear process, it&amp;rsquo;s something else. (I will come back to this &amp;ldquo;linear process&amp;rdquo; later in §2.) Here&amp;rsquo;s something interesting to me in these chapters.</description>
     </item>
     
     <item>
       <title>Book Review: Lost in Math: How Beauty Leads Physics Astray</title>
-      <link>https://ChenLi2049.github.io/posts/20230304-book-review-lost-in-math/</link>
+      <link>https://chenlinear.github.io/posts/20230304-book-review-lost-in-math/</link>
       <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ChenLi2049.github.io/posts/20230304-book-review-lost-in-math/</guid>
+      <guid>https://chenlinear.github.io/posts/20230304-book-review-lost-in-math/</guid>
       <description>This is a review of Lost in Math: How Beauty Leads Physics Astray by Sabine Hossenfelder.
 Before I start, I just want to say that I am no expert in Particle Physics or any Physics really, thus I can&amp;rsquo;t tell whether what she said is true or not, but what I can tell is that as I gradually learn more about the science community (or &amp;ldquo;academia&amp;rdquo;), I notice a trend that is similar to what she said in the book, which is that many of us are stuck here due to &amp;ldquo;beauty&amp;rdquo;.</description>
     </item>

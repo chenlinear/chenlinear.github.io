@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - https://chenlinear.github.io">
+    <title>Machine Learning Notes: Maximum Likelihood, Cross Entropy | Chen Li</title>
+    <meta name="description" content="Chen Li&#39;s personal blog">
+    <meta property="og:title" content="Machine Learning Notes: Maximum Likelihood, Cross Entropy" />
+<meta property="og:description" content="Maximum Likelihood Estimation: We have a model with parameters $\theta$ and a collection of data examples $X$, the probability of all the examples is the product of each probability:$$L(\theta)=\prod_{i=1}^{n} P_i(\theta; X_i) \tag{1}$$Then we choose the best parameters $\theta$ to maximize $L$.
+§1 Examples §1.1 Coin Flip Consider flipping an unfair coin: In 10 flips $X$, there are 7 heads and 3 tails. Say the probability of head for a single flip is $\theta$, then the probability that this 10 flips happen in this way is $$L(\theta)=\theta^7 (1-\theta)^3 \tag{2}$$." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenlinear.github.io/posts/20231219-machine-learning-notes-maximum-likelihood-cross-entropy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-19T00:00:00+00:00" />
+
+    <meta itemprop="name" content="Machine Learning Notes: Maximum Likelihood, Cross Entropy">
+<meta itemprop="description" content="Maximum Likelihood Estimation: We have a model with parameters $\theta$ and a collection of data examples $X$, the probability of all the examples is the product of each probability:$$L(\theta)=\prod_{i=1}^{n} P_i(\theta; X_i) \tag{1}$$Then we choose the best parameters $\theta$ to maximize $L$.
+§1 Examples §1.1 Coin Flip Consider flipping an unfair coin: In 10 flips $X$, there are 7 heads and 3 tails. Say the probability of head for a single flip is $\theta$, then the probability that this 10 flips happen in this way is $$L(\theta)=\theta^7 (1-\theta)^3 \tag{2}$$."><meta itemprop="datePublished" content="2023-12-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-12-19T00:00:00+00:00" />
+<meta itemprop="wordCount" content="566">
+<meta itemprop="keywords" content="programming," />
+    
+    <link rel="canonical" href="https://chenlinear.github.io/posts/20231219-machine-learning-notes-maximum-likelihood-cross-entropy/">
+    <link rel="icon" href="https://chenlinear.github.io/assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="Chen Li" href="https://chenlinear.github.io/atom.xml" />
+    <link rel="alternate" type="application/json" title="Chen Li" href="https://chenlinear.github.io/feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 '-apple-system',BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;text-align:justify;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:rbg(169,169,169,1);color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}h1,h2,h3,h4,h5{font-size:20px;font-weight:600;text-align:center}strong,b{font-size:inherit;font-weight:600}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a:hover,a.heading-link{text-decoration:none}a,a:visited{color:#008b8b}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none}ul{list-style-type:circle}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:90ch;margin:0 auto}header{line-height:1;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:135px;width:135px;position:relative;margin:0 0 0 15px;float:right;border-radius:25%} table{border-collapse:collapse}table th,table td{border:1px solid #bebebe;padding:0 5px}.toc{margin:0 auto;width:100%;padding:0;margin-bottom:10px;background-color:#f9f9f9}</style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Machine Learning Notes: Maximum Likelihood, Cross Entropy",
+      "headline": "Machine Learning Notes: Maximum Likelihood, Cross Entropy",
+      "alternativeHeadline": "",
+      "description": "Maximum Likelihood Estimation: We have a model with parameters $\\theta$ and a collection of data examples $X$, the probability of all the examples is the product of each probability:$$L(\\theta)=\\prod_{i=1}^{n} P_i(\\theta; X_i) \\tag{1}$$Then we choose the best parameters $\\theta$ to maximize $L$.\n§1 Examples §1.1 Coin Flip Consider flipping an unfair coin: In 10 flips $X$, there are 7 heads and 3 tails. Say the probability of head for a single flip is $\\theta$, then the probability that this 10 flips happen in this way is $$L(\\theta)=\\theta^7 (1-\\theta)^3 \\tag{2}$$.",
+      "inLanguage": "en-us",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https:\/\/chenlinear.github.io\/posts\/20231219-machine-learning-notes-maximum-likelihood-cross-entropy\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "copyrightHolder" : "Chen Li",
+      "copyrightYear" : "2023",
+      "dateCreated": "2023-12-19T00:00:00.00Z",
+      "datePublished": "2023-12-19T00:00:00.00Z",
+      "dateModified": "2023-12-19T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "Chen Li",
+          "url": "https://chenlinear.github.io",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/chenlinear.github.io\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "https://chenlinear.github.io/assets/favicon.ico",
+      "url" : "https:\/\/chenlinear.github.io\/posts\/20231219-machine-learning-notes-maximum-likelihood-cross-entropy\/",
+      "wordCount" : "566",
+      "genre" : [ "programming" ],
+      "keywords" : [ "programming" ]
+  }
+  </script>
+  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="/">
+    <b>Chen Li</b>
+    <span class="text-stone-500 animate-blink"></span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/cv/"><span>CV</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Machine Learning Notes: Maximum Likelihood, Cross Entropy</h2>
+      
+      <div class="toc">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-examples">§1 Examples</a>
+      <ul>
+        <li><a href="#11-coin-flip">§1.1 Coin Flip</a></li>
+        <li><a href="#12-line-fitting">§1.2 Line Fitting</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-negative-log-likelihood">§2 Negative Log-Likelihood</a></li>
+    <li><a href="#3-cross-entropy">§3 Cross Entropy</a></li>
+  </ul>
+</nav>
+      </div>
+      
+      <p><em>Maximum Likelihood Estimation</em>: We have a model with parameters $\theta$ and a collection of data examples $X$, the probability of all the examples is the product of each probability:$$L(\theta)=\prod_{i=1}^{n} P_i(\theta; X_i) \tag{1}$$Then we choose the best parameters $\theta$ to maximize $L$.</p>
+<h2 id="1-examples">§1 Examples</h2>
+<h3 id="11-coin-flip">§1.1 Coin Flip</h3>
+<p>Consider flipping an unfair coin: In 10 flips $X$, there are 7 heads and 3 tails. Say the probability of head for a single flip is $\theta$, then the probability that this 10 flips happen in this way is $$L(\theta)=\theta^7 (1-\theta)^3 \tag{2}$$. By doing differentials or drawing this function we can see that, when $\theta=0.7$ this function has the biggest value $0.0022235661$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">numpy</span> <span style="color:#00a8c8">as</span> <span style="color:#111">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#00a8c8">as</span> <span style="color:#111">plt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">def</span> <span style="color:#75af00">likelihood_coin_flip</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">):</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a8c8">return</span> <span style="color:#111">x</span><span style="color:#f92672">**</span><span style="color:#ae81ff">7</span> <span style="color:#f92672">*</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#111">x</span><span style="color:#111">)</span><span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">np</span><span style="color:#f92672">.</span><span style="color:#111">arange</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.01</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">likelihood_coin_flip</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">y</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">scatter</span><span style="color:#111">([</span><span style="color:#ae81ff">0.7</span><span style="color:#111">],</span> <span style="color:#111">[</span><span style="color:#111">likelihood_coin_flip</span><span style="color:#111">(</span><span style="color:#ae81ff">0.7</span><span style="color:#111">)])</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;x&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
+</span></span></code></pre></div><p>will get:</p>
+<p><img
+  src="20231219-machine-learning-notes-maximum-likelihood-cross-entropy-coin-flip.png"
+  alt="coin-flip"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="12-line-fitting">§1.2 Line Fitting</h3>
+<p>For each data point on $\vec{y}=a\vec{x}+b$ we can write $$y_i=ax_i+b+\epsilon_i \tag{3}$$, where $\epsilon_i$ is the error for each data point. We assume error $\epsilon_i$ follows normal distribution with mean value $\mu=0$ and variance $\sigma$:$$P(\epsilon_i)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{\epsilon_i^2}{2\sigma^2}} \tag{4}$$. Put Eq.3 in Eq.4 we will get:$$P(\epsilon_i)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(y_i-ax_i-b)^2}{2\sigma^2}} \tag{5}$$ So likelihood is $$\begin{aligned} L(a, b)&amp;=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(y_i-ax_i-b)^2}{2\sigma^2}} \\ &amp;=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{\sum_{i=1}^N (y_i-(ax_i+b))^2}{2\sigma^2}} \end{aligned} \tag{6}$$</p>
+<p>To maximize likelihood is equivalent to minimize <em>Mean Squared Error</em> (<a href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html"><code>nn.MSELoss</code></a>) $$\text{MSE}(a,b)=\sum_{i=1}^N (y_i-(ax_i+b))^2 \tag{7}$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">numpy</span> <span style="color:#00a8c8">as</span> <span style="color:#111">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#00a8c8">as</span> <span style="color:#111">plt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">scipy.optimize</span> <span style="color:#f92672">import</span> <span style="color:#111">minimize</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">np</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span><span style="color:#111">])</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">np</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span><span style="color:#111">,</span> <span style="color:#ae81ff">8</span><span style="color:#111">,</span> <span style="color:#ae81ff">9</span><span style="color:#111">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">def</span> <span style="color:#75af00">loss_function</span><span style="color:#111">(</span><span style="color:#111">params</span><span style="color:#111">):</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#f92672">=</span> <span style="color:#111">params</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#111">y_fit</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">*</span> <span style="color:#111">x</span> <span style="color:#f92672">+</span> <span style="color:#111">b</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#111">loss</span> <span style="color:#f92672">=</span> <span style="color:#111">np</span><span style="color:#f92672">.</span><span style="color:#111">sum</span><span style="color:#111">((</span><span style="color:#111">y</span> <span style="color:#f92672">-</span> <span style="color:#111">y_fit</span><span style="color:#111">)</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a8c8">return</span> <span style="color:#111">loss</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">minimize</span><span style="color:#111">(</span><span style="color:#111">fun</span><span style="color:#f92672">=</span><span style="color:#111">loss_function</span><span style="color:#111">,</span> <span style="color:#111">x0</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">(</span><span style="color:#111">a_fit</span><span style="color:#111">,</span> <span style="color:#111">b_fit</span><span style="color:#111">)</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">loss</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">title</span><span style="color:#111">(</span><span style="color:#d88200">f</span><span style="color:#d88200">&#39;loss=</span><span style="color:#d88200">{</span><span style="color:#111">loss</span><span style="color:#d88200">:</span><span style="color:#d88200">.2f</span><span style="color:#d88200">}</span><span style="color:#d88200">&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">scatter</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#111">label</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;data points&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">a_fit</span> <span style="color:#f92672">*</span> <span style="color:#111">x</span> <span style="color:#f92672">+</span> <span style="color:#111">b_fit</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">,</span> <span style="color:#111">label</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;fitted line: &#39;</span><span style="color:#f92672">+</span><span style="color:#d88200">f</span><span style="color:#d88200">&#39;y = </span><span style="color:#d88200">{</span><span style="color:#111">a_fit</span><span style="color:#d88200">:</span><span style="color:#d88200">.2f</span><span style="color:#d88200">}</span><span style="color:#d88200">x + </span><span style="color:#d88200">{</span><span style="color:#111">b_fit</span><span style="color:#d88200">:</span><span style="color:#d88200">.2f</span><span style="color:#d88200">}</span><span style="color:#d88200">&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;x&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">legend</span><span style="color:#111">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
+</span></span></code></pre></div><p>will get:</p>
+<p><img
+  src="20231219-machine-learning-notes-maximum-likelihood-cross-entropy-line-fitting.png"
+  alt="line-fitting"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h2 id="2-negative-log-likelihood">§2 Negative Log-Likelihood</h2>
+<p><em>Negative Log-Likelihood</em> is defined as$$\text{NLL}(\theta) = - \log{L(\theta)} \tag{8}$$</p>
+<ul>
+<li>The purpose of $\log$ is to fit the likelihood into <code>float32</code>, while maximizing the likelihood is the same thing as maximizing the log-likelihood ($f(x)=\log x$ is an increasing function of $x$).</li>
+<li>Minimizing loss is more common in Machine Learning, while minimizing the loss is the same thing as maximizing the negative log-likelihood.</li>
+</ul>
+<h2 id="3-cross-entropy">§3 Cross Entropy</h2>
+<p>Consider a binary classification: There are $n$ data examples. $1$ and $0$ are the positive and negative class label $y_i$. $p_i$ is the probability that the $i$ example is predicted to be positive. For each data example, if the true label is positive, the probability of correct prediction is $p_i$, or $p_i^{y_i}$; if the true label is negative, the probability of correct prediction is $(1-p_i)$, or $(1-p_i)^{1-y_i}$. We can summarize the probability of correct prediction as $p_i^{y_i} (1-p_i)^{1-y_i}$. Thus, similar to Eq.2 for coin flip, we can write likelihood as $$L(\theta)=\prod_{i=1}^{n} p_i^{y_i} (1-p_i)^{1-y_i} \tag{9}$$. Put Eq.9 in Eq.8 we will get negative log-likelihood for binary classification: $$\begin{aligned} \text{NLL}(\theta) &amp;=-\log{\prod_{i=1}^{n} p_i^{y_i} (1-p_i)^{1-y_i}} \\ &amp;= - \sum_{i=1}^n (y_i \log p_i + (1 - y_i) \log (1 - p_i)) \end{aligned} \tag{10}$$, which is also called <em>Cross Entropy</em> for binary classification, or <a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html"><em>Binary Cross Entropy</em></a>.</p>
+<p><em>Cross Entropy</em> for multi-class classification is generalization of binary cross entropy: $$\text{CE}(y,p) = -\sum_{i=1}^n y_i \log{p_i} \tag{11}$$, where $y_i=1$ for positive class and $y_i=0$ for other negative classes, and $p_i$ is the predicted distribution.</p>
+<p>The reason <a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss"><code>nn.CrossEntropyLoss</code></a> put the probability firstly in <a href="https://pytorch.org/docs/stable/generated/torch.nn.LogSoftmax.html#torch.nn.LogSoftmax"><code>nn.LogSoftmax</code></a> is to normalize the probability so that every probability is positive and the sum of probability is $1$.</p>
+
+      
+      <div class="post-date">
+        <span class="g time">December 19, 2023 </span> &#8729;
+         
+         <a href="https://chenlinear.github.io/tags/programming/">programming</a>
+      </div>
+      
+    </section>
+    
+    <div id="comments">
+      <script src="https://utteranc.es/client.js"
+    repo=chenlinear/chenlinear.github.io
+    issue-term="pathname"
+    theme=github-light
+    crossorigin="anonymous"
+    async>
+</script>
+
+    </div>
+    
+  </div>
+</main>
+</body>
+</html>

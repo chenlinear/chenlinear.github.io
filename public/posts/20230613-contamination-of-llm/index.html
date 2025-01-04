@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - https://chenlinear.github.io">
+    <title>Contamination of LLM | Chen Li</title>
+    <meta name="description" content="Chen Li&#39;s personal blog">
+    <meta property="og:title" content="Contamination of LLM" />
+<meta property="og:description" content="This is the dark side of the Force.
+In one of my previous posts, I talked about Ted Chiang&rsquo;s idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
+Training LLM with LLM-produced material will produce terrible results.1 This is $\text{Ted Chiang&rsquo;s idea}^n$.
+And the contamination can be divided into two parts in general:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenlinear.github.io/posts/20230613-contamination-of-llm/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-13T00:00:00+00:00" />
+
+    <meta itemprop="name" content="Contamination of LLM">
+<meta itemprop="description" content="This is the dark side of the Force.
+In one of my previous posts, I talked about Ted Chiang&rsquo;s idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.
+Training LLM with LLM-produced material will produce terrible results.1 This is $\text{Ted Chiang&rsquo;s idea}^n$.
+And the contamination can be divided into two parts in general:"><meta itemprop="datePublished" content="2023-06-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-06-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="269">
+<meta itemprop="keywords" content="programming," />
+    
+    <link rel="canonical" href="https://chenlinear.github.io/posts/20230613-contamination-of-llm/">
+    <link rel="icon" href="https://chenlinear.github.io/assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="Chen Li" href="https://chenlinear.github.io/atom.xml" />
+    <link rel="alternate" type="application/json" title="Chen Li" href="https://chenlinear.github.io/feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 '-apple-system',BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;text-align:justify;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:rbg(169,169,169,1);color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}h1,h2,h3,h4,h5{font-size:20px;font-weight:600;text-align:center}strong,b{font-size:inherit;font-weight:600}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a:hover,a.heading-link{text-decoration:none}a,a:visited{color:#008b8b}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none}ul{list-style-type:circle}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:90ch;margin:0 auto}header{line-height:1;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:135px;width:135px;position:relative;margin:0 0 0 15px;float:right;border-radius:25%} table{border-collapse:collapse}table th,table td{border:1px solid #bebebe;padding:0 5px}.toc{margin:0 auto;width:100%;padding:0;margin-bottom:10px;background-color:#f9f9f9}</style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Contamination of LLM",
+      "headline": "Contamination of LLM",
+      "alternativeHeadline": "",
+      "description": "This is the dark side of the Force.\nIn one of my previous posts, I talked about Ted Chiang\u0026rsquo;s idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.\nTraining LLM with LLM-produced material will produce terrible results.1 This is $\\text{Ted Chiang\u0026rsquo;s idea}^n$.\nAnd the contamination can be divided into two parts in general:",
+      "inLanguage": "en-us",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https:\/\/chenlinear.github.io\/posts\/20230613-contamination-of-llm\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Chen Li"
+      },
+      "copyrightHolder" : "Chen Li",
+      "copyrightYear" : "2023",
+      "dateCreated": "2023-06-13T00:00:00.00Z",
+      "datePublished": "2023-06-13T00:00:00.00Z",
+      "dateModified": "2023-06-13T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "Chen Li",
+          "url": "https://chenlinear.github.io",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/chenlinear.github.io\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "https://chenlinear.github.io/assets/favicon.ico",
+      "url" : "https:\/\/chenlinear.github.io\/posts\/20230613-contamination-of-llm\/",
+      "wordCount" : "269",
+      "genre" : [ "programming" ],
+      "keywords" : [ "programming" ]
+  }
+  </script>
+  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.6/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="/">
+    <b>Chen Li</b>
+    <span class="text-stone-500 animate-blink"></span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/cv/"><span>CV</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Contamination of LLM</h2>
+      
+      <div class="toc">
+          <nav id="TableOfContents"></nav>
+      </div>
+      
+      <p>This is the dark side of <em>the Force</em>.</p>
+<p>In <a href="https://chenlinear.github.io/posts/20230321-robin/">one of my previous posts</a>, I talked about Ted Chiang&rsquo;s idea on LLMs. At that time his idea only seems plausible, but now that more papers are published, I want to talk about how LLMs are contaminating the source material.</p>
+<ol>
+<li>
+<p>Training LLM with LLM-produced material will produce terrible results.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> This is $\text{Ted Chiang&rsquo;s idea}^n$.</p>
+</li>
+<li>
+<p>And the contamination can be divided into two parts in general:</p>
+<ol>
+<li>
+<p>Unintentional:</p>
+<ol>
+<li>Code. This is what I&rsquo;m most worried about.</li>
+<li>Will modify an article with ChatGPT make it worse?</li>
+</ol>
+</li>
+<li>
+<p>Intentional:</p>
+<ol>
+<li>Automated YouTube, TikTok videos, with the help of ChatGPT, music-generator, mid-journey, ppt-generator, etc.</li>
+<li>Automated Reddit or other discussion board robots, including posts and replies.</li>
+<li>Automated Twitter robots, though I would say blue check is still definitely not a good idea.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>We are taking some measures, but they are probably not enough:</p>
+<ol>
+<li>
+<p>The co-founder of Wikipedia, Jimmy Wales, recently talked about regulation for the use of ChatGPT in Wikipedia in <a href="https://www.youtube.com/watch?v=diJp4zoQPqo">this podcast episode with Lex Fridman</a>. I really like the part where he said that you, the person, should always be the last barrier.</p>
+<p>Yes, for Wikipedia, you should do the fact check, and for code, you should run it on your computer. (The latter one is what Stack Overflow has been debating about I think.)</p>
+</li>
+<li>
+<p>Try not to use ChatGPT to write articles. I personally would not use ChatGPT to write my posts. Modifying academic papers with ChatGPT is ok I guess, but if you write academic papers by ChatGPT, <a href="https://english.elpais.com/science-tech/2023-04-02/one-of-the-worlds-most-cited-scientists-rafael-luque-suspended-without-pay-for-13-years.html">there will be consequences</a>.</p>
+</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>See <a href="https://arxiv.org/abs/2305.17493"><em>The Curse of Recursion: Training on Generated Data Makes Models Forget</em></a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      
+      <div class="post-date">
+        <span class="g time">June 13, 2023 </span> &#8729;
+         
+         <a href="https://chenlinear.github.io/tags/programming/">programming</a>
+      </div>
+      
+    </section>
+    
+    <div id="comments">
+      <script src="https://utteranc.es/client.js"
+    repo=chenlinear/chenlinear.github.io
+    issue-term="pathname"
+    theme=github-light
+    crossorigin="anonymous"
+    async>
+</script>
+
+    </div>
+    
+  </div>
+</main>
+</body>
+</html>

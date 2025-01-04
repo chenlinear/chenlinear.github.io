@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenlinear.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
 
 This is a quick introduction to torch or how to build a neural network without writing the source code. For the purpose of each layer, see [torch.nn](https://pytorch.org/docs/stable/nn.html) and [_Dive into Deep Learning_](https://d2l.ai/). Basically, after CNN, parts of the picture is highlighted and the number of channels (RGB $\rightarrow$ many more) can be different (see [CNN Explainer](https://poloclub.github.io/cnn-explainer/)).
 

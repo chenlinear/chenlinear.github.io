@@ -4,7 +4,7 @@ math: true
 ---
 
 <div style="text-align: center;">
-        Last update on September 16, 2024. <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/ChenLi_CV.pdf">[pdf]</a>
+        Last update on September 16, 2024. <a href="https://github.com/chenlinear/chenlinear/blob/main/ChenLi_CV.pdf">[pdf]</a>
 </div>
 
 ___CONTACT INFORMATION___
@@ -13,10 +13,10 @@ ___CONTACT INFORMATION___
     <div style="text-align: left; padding-left: 50px;">Email: <a href="mailto:chenli@icecube.wisc.edu">chenli@icecube.wisc.edu</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;">GitHub: <a href="https://github.com/ChenLi2049">https://github.com/ChenLi2049</a></div>
+    <div style="text-align: left; padding-left: 50px;">GitHub: <a href="https://github.com/chenlinear">https://github.com/chenlinear</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;">Personal Website: <a href="https://chenli2049.github.io">https://chenli2049.github.io</a></div>
+    <div style="text-align: left; padding-left: 50px;">Personal Website: <a href="https://chenlinear.github.io">https://chenlinear.github.io</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">ORCID: <a href="https://orcid.org/0009-0000-4848-5113">https://orcid.org/0009-0000-4848-5113</a></div>
@@ -67,7 +67,7 @@ ___TALKS___
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;"><strong>ISeeCube and Auxiliary</strong> <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/presentations/20240906_ISeeCube_and_Auxiliary.pdf">[slides]</a></div>
+    <div style="text-align: left; padding-left: 50px;"><strong>ISeeCube and Auxiliary</strong> <a href="https://github.com/chenlinear/chenlinear/blob/main/presentations/20240906_ISeeCube_and_Auxiliary.pdf">[slides]</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">University of Wisconsin-Madison</div>
@@ -75,7 +75,7 @@ ___TALKS___
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: left; padding-left: 50px;"><strong>ISeeCube and Auxiliary</strong> <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/presentations/20240719_ISeeCube_and_Auxiliary.pdf">[slides]</a></div>
+    <div style="text-align: left; padding-left: 50px;"><strong>ISeeCube and Auxiliary</strong> <a href="https://github.com/chenlinear/chenlinear/blob/main/presentations/20240719_ISeeCube_and_Auxiliary.pdf">[slides]</a></div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Tsung-Dao Lee Institute</div>
@@ -92,7 +92,7 @@ ___TEACHING EXPERIENCE___
     <div style="text-align: right;">Sep 2023 - June 2024</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. The teaching material that I wrote are summarized into these blog posts: <a href="https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/"><i>Wow It Fits! — Secondhand Machine Learning</i></a>, <a href="https://chenli2049.github.io/posts/20231217-machine-learning-notes-rnn-lstm-gru-rwkv/"><i>Machine Learning Notes: RNN, LSTM, GRU, RWKV</i></a>, <a href="https://chenli2049.github.io/posts/20230910-machine-learning-notes-gnn-graphnet/"><i>Machine Learning Notes: GNN, GraphNeT</i></a>, <a href="https://chenli2049.github.io/posts/20231219-machine-learning-notes-maximum-likelihood-cross-entropy/"><i>Machine Learning Notes: Maximum Likelihood, Cross Entropy</i></a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Introductory Machine Learning. I mainly teach how to write Machine Learning code in practice and answer questions from students. The teaching material that I wrote are summarized into these blog posts: <a href="https://chenlinear.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/"><i>Wow It Fits! — Secondhand Machine Learning</i></a>, <a href="https://chenlinear.github.io/posts/20231217-machine-learning-notes-rnn-lstm-gru-rwkv/"><i>Machine Learning Notes: RNN, LSTM, GRU, RWKV</i></a>, <a href="https://chenlinear.github.io/posts/20230910-machine-learning-notes-gnn-graphnet/"><i>Machine Learning Notes: GNN, GraphNeT</i></a>, <a href="https://chenlinear.github.io/posts/20231219-machine-learning-notes-maximum-likelihood-cross-entropy/"><i>Machine Learning Notes: Maximum Likelihood, Cross Entropy</i></a>.</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Adviser: Dr. Xianyang Jiang</div>
@@ -119,7 +119,7 @@ ___WORKING EXPERIENCE___
     <div style="text-align: right;">Aug 2022</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Introductory Astronomy. I mainly organize class affairs, communicate with the teacher and write preview notes before lectures. Presentation from our group can be found <a href="https://github.com/ChenLi2049/ChenLi2049/blob/main/presentations/20220815_G1Presentation_XRISM.pptx">here</a>.</div>
+    <div style="text-align: justify; padding-left: 50px;">Introductory Astronomy. I mainly organize class affairs, communicate with the teacher and write preview notes before lectures. Presentation from our group can be found <a href="https://github.com/chenlinear/chenlinear/blob/main/presentations/20220815_G1Presentation_XRISM.pptx">here</a>.</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left; padding-left: 50px;">Adviser: Dr. Matthew Bothwell</div>
@@ -132,7 +132,7 @@ ___PROJECTS___
     <div style="text-align: right;">Aug 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Neutrino Events Reconstruction with Transformer. When having relatively same amount of total parameters, it outperforms other Transformer models. <a href="https://github.com/ChenLi2049/ISeeCube">[code]</a></div>
+    <div style="text-align: justify; padding-left: 50px;">Neutrino Events Reconstruction with Transformer. When having relatively same amount of total parameters, it outperforms other Transformer models. <a href="https://github.com/chenlinear/ISeeCube">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -140,7 +140,7 @@ ___PROJECTS___
     <div style="text-align: right;">May 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Get familiar with Python syntax and, weirdly, Markdown indentation. <a href="https://github.com/ChenLi2049/PEP-8-ZH">[code]</a></div>
+    <div style="text-align: justify; padding-left: 50px;">Get familiar with Python syntax and, weirdly, Markdown indentation. <a href="https://github.com/chenlinear/PEP-8-ZH">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -148,7 +148,7 @@ ___PROJECTS___
     <div style="text-align: right;">Apr 2023</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Write in Markdown, then present with offline HTML pages. <a href="https://github.com/ChenLi2049/DrSlidelove">[code]</a></div>
+    <div style="text-align: justify; padding-left: 50px;">Write in Markdown, then present with offline HTML pages. <a href="https://github.com/chenlinear/DrSlidelove">[code]</a></div>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
@@ -156,7 +156,7 @@ ___PROJECTS___
     <div style="text-align: right;">Dec 2022</div>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <div style="text-align: justify; padding-left: 50px;">Use Python to solve stochastic differential equations and visualize the result. <a href="https://github.com/ChenLi2049/QPO-non-linear-ODEs">[code]</a></div>
+    <div style="text-align: justify; padding-left: 50px;">Use Python to solve stochastic differential equations and visualize the result. <a href="https://github.com/chenlinear/QPO-non-linear-ODEs">[code]</a></div>
 </div>
 
 ___HONORS AND AWARDS___

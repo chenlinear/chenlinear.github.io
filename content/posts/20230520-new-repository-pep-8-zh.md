@@ -6,7 +6,7 @@ tags:
 - programming
 ---
 
-I created a repository called [PEP-8-ZH](https://github.com/ChenLi2049/PEP-8-ZH). Basically, I translated [_PEP 8_](https://peps.python.org/pep-0008/) with the help of ChatGPT, and with a little modification myself. The prompt that I use is:
+I created a repository called [PEP-8-ZH](https://github.com/chenlinear/PEP-8-ZH). Basically, I translated [_PEP 8_](https://peps.python.org/pep-0008/) with the help of ChatGPT, and with a little modification myself. The prompt that I use is:
 
 ```bash
 将下文翻译为中文

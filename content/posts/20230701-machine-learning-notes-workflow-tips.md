@@ -6,7 +6,7 @@ tags:
 - programming
 ---
 
-(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenlinear.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
 
 Here are my notes from [Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/). For cheatsheet, see [_PyTorch Cheatsheet_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/pytorch_cheatsheet/) or [_Create a training/testing loop_](https://www.learnpytorch.io/pytorch_cheatsheet/#create-a-trainingtesting-loop) or [_PyTorch documentation_](https://pytorch.org/docs/stable/index.html).
 

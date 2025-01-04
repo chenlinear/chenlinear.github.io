@@ -6,7 +6,7 @@ tags:
 - programming
 ---
 
-Update 20230617: I'm so sorry that there's already a [Slidy](https://www.w3.org/Talks/Tools/Slidy2/). When I used that name for this repository, there's no such a repository named Slidy and I thought it would be ok. To avoid any confusion, the name is changed from Slidy to [DrSlidelove](https://github.com/ChenLi2049/DrSlidelove). Again, my apologies.
+Update 20230617: I'm so sorry that there's already a [Slidy](https://www.w3.org/Talks/Tools/Slidy2/). When I used that name for this repository, there's no such a repository named Slidy and I thought it would be ok. To avoid any confusion, the name is changed from Slidy to [DrSlidelove](https://github.com/chenlinear/DrSlidelove). Again, my apologies.
 
 ---
 

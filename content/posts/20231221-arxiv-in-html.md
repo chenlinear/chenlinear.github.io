@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-[arXiv now offers papers in HTML format](https://blog.arxiv.org/2023/12/21/accessibility-update-arxiv-now-offers-papers-in-html-format/). So basically [ar5iv](https://chenli2049.github.io/posts/20230318-ar5iv/) is now native and applied to the latest papers.
+[arXiv now offers papers in HTML format](https://blog.arxiv.org/2023/12/21/accessibility-update-arxiv-now-offers-papers-in-html-format/). So basically [ar5iv](https://chenlinear.github.io/posts/20230318-ar5iv/) is now native and applied to the latest papers.
 
 ## HTML: Better & Worse
 
@@ -23,7 +23,7 @@ Here are several reasons why HTML is better:
     
     ![](https://browse.arxiv.org/html/2308.13285v4/x1.png)
 
-- You can use [`immersive-translate`](https://chenli2049.github.io/posts/20230602-immersive-translate/).
+- You can use [`immersive-translate`](https://chenlinear.github.io/posts/20230602-immersive-translate/).
 
 Here are several reasons why HTML is worse:
 

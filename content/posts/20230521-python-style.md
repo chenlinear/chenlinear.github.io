@@ -162,5 +162,5 @@ from scipy import constants
 from myproject.backend.hgwells import time_machine
 ```
 
-[^1]: 我和 ChatGPT 合著的中文版见 [PEP-8-ZH](https://github.com/ChenLi2049/PEP-8-ZH).
+[^1]: 我和 ChatGPT 合著的中文版见 [PEP-8-ZH](https://github.com/chenlinear/PEP-8-ZH).
 [^2]: 中文版见 [_Google 开源项目风格指南_](https://zh-google-styleguide.readthedocs.io/en/latest/).

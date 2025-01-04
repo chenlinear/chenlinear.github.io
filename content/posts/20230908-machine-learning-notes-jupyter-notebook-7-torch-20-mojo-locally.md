@@ -9,7 +9,7 @@ tags:
 It's wild all of these are happening so fast!
 
 On my local computer:
-- I updated Jupyter Notebook to v7.0.3, and my post [_Conda 101_](https://chenli2049.github.io/posts/20230327-conda-101/) is updated.
+- I updated Jupyter Notebook to v7.0.3, and my post [_Conda 101_](https://chenlinear.github.io/posts/20230327-conda-101/) is updated.
 
 On the server:
 - CUDA version is now `11.7` and reaches the minimum requirement of `torch 2.0`.

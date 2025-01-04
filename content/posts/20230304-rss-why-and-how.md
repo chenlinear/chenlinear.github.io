@@ -22,7 +22,7 @@ My requirements:
 
 The free service of [Feedly](https://feedly.com/) is fine with me, you can
 
-- add RSS link. For example, https://chenli2049.github.io/atom.xml
+- add RSS link. For example, https://chenlinear.github.io/atom.xml
 - search for the people you want to follow.
 
 For what's not there (say social media account), try [RSSHub](https://docs.rsshub.app/). But I have to say that you need to open your own server to get it work smoothly, because some of the URLs they provided do not work all the time. I want to cut down social media anyway, so this might be a good thing.

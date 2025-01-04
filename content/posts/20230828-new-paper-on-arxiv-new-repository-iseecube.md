@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-The arXiv link is [2308.13285v1](https://arxiv.org/abs/2308.13285v1) and the Repository is [ISeeCube](https://github.com/ChenLi2049/ISeeCube). Here's what I learned and what to do next.
+The arXiv link is [2308.13285v1](https://arxiv.org/abs/2308.13285v1) and the Repository is [ISeeCube](https://github.com/chenlinear/ISeeCube). Here's what I learned and what to do next.
 
 ## What I Learned
 

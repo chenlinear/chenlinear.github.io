@@ -2079,6 +2079,7 @@ Below is an implementation of Transformer++:
     
     ```python
     from flash_attn.layers.rotary import RotaryEmbedding
+    # from flash_attn import flash_attn_qkvpacked_func
     
     class GeGLU_FFN(nn.Module):
         def __init__(self, in_features=768, hidden_features=3072, out_features=768, dropout=0.0, bias=False):
@@ -2117,6 +2118,7 @@ Below is an implementation of Transformer++:
     
             x = F.scaled_dot_product_attention(q, k, v, dropout_p=(self.dropout if self.training else 0.0), is_causal=is_causal)# [batch_size, num_heads, seq_length, hidden_dim // num_heads]
             x = x.transpose(1, 2)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
+            # x = flash_attn_qkvpacked_func(qkv, dropout_p=(self.dropout if self.training else 0.0), softmax_scale=None, causal=False, window_size=(-1, -1), alibi_slopes=None, deterministic=False)# [batch_size, seq_length, num_heads, hidden_dim // num_heads]
             x = x.view(batch_size, seq_length, hidden_dim)# [batch_size, seq_length, hidden_dim]
             x = self.w_o(x)# [batch_size, seq_length, hidden_dim]
             return x

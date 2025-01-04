@@ -80,4 +80,4 @@ Reading this book feels like saying an official goodbye to my childhood and gett
 
 [^1]: Fermi paradox?
 [^2]: It would be even more beautiful written as $(J_k)_{lm} = - i \varepsilon _{klm}$.
-[^3]: In her next book _Existential Physics: A Scientist's Guide to Life's Biggest Questions_, she claimed that it's not emergence, it's  ["the math is too difficult"](https://chenli2049.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).
+[^3]: In her next book _Existential Physics: A Scientist's Guide to Life's Biggest Questions_, she claimed that it's not emergence, it's  ["the math is too difficult"](https://chenlinear.github.io/posts/20230406-book-review-existential-physics-a-scientists-guide-to-lifes-biggest-questions/).

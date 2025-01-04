@@ -19,4 +19,4 @@ LIGO observes Gravitational Wave (GW) with the wavelength of $30 \text{Hz} - 7 \
 
 It could be a window to the early universe, earlier than Cosmic Microwave Background. Because the current SMBH theory does not explain it very well. The higher frequency region of Figure 1. (a) of [2306.16213] looks like system error.
 
-Detecting GW with radio telescope through the observation of Pulsars Timing Array (PTA) is like how pregnant women start to see other pregnant women everywhere — Different people see different aspects of the whole picture: GW people see GW, radio telescope people see radio telescope. (This is called [attentional bias](https://chenli2049.github.io/posts/20230304-book-review-lost-in-math/) by the way.)
+Detecting GW with radio telescope through the observation of Pulsars Timing Array (PTA) is like how pregnant women start to see other pregnant women everywhere — Different people see different aspects of the whole picture: GW people see GW, radio telescope people see radio telescope. (This is called [attentional bias](https://chenlinear.github.io/posts/20230304-book-review-lost-in-math/) by the way.)

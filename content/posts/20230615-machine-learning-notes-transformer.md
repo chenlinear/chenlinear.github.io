@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenlinear.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/).)
 
 This is my notes from [[1706.03762] _Attention Is All You Need_](https://arxiv.org/abs/1706.03762) and [_The Annotated Transformer_](http://nlp.seas.harvard.edu/annotated-transformer/) and [_The Illustrated Transformer_](http://jalammar.github.io/illustrated-transformer/). This is an outline, I'm trying to keep it as simple as possible. You can import these layers and blocks from `torch.nn`, see [_Transformer Layers_](https://pytorch.org/docs/stable/nn.html#transformer-layers). And I will focus more on structure rather than code itself, because building this model on `torch.nn` is much simpler, see [_Language Modeling with nn.Transformer and torchtext_](https://pytorch.org/tutorials/beginner/transformer_tutorial.html).
 

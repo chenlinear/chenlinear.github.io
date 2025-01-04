@@ -7,7 +7,7 @@ tags:
 math: true
 ---
 
-(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenli2049.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/). There are a lot of pictures in this post so it might take a while to load.)
+(Please refer to [_Wow It Fits! — Secondhand Machine Learning_](https://chenlinear.github.io/posts/20231011-wow-it-fits-secondhand-machine-learning/). There are a lot of pictures in this post so it might take a while to load.)
 
 Original paper is [[2010.11929] _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_](https://arxiv.org/abs/2010.11929). Here's some notes from [_08. PyTorch Paper Replicating_ - Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/08_pytorch_paper_replicating/).
 

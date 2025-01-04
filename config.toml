@@ -1,4 +1,4 @@
-baseURL = 'https://ChenLi2049.github.io'
+baseURL = 'https://chenlinear.github.io'
 languageCode = 'en-us'
 title = 'Chen Li'
 paginate = 3
@@ -13,7 +13,7 @@ theme = 'maverick'
   author = 'Chen Li'
 
   [params.comments]
-    githubRepo = 'ChenLi2049/ChenLi2049.github.io'
+    githubRepo = 'chenlinear/chenlinear.github.io'
     theme = 'github-light'
 
 

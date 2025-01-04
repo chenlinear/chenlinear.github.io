@@ -1,14 +1,14 @@
 {
   "version": "https://jsonfeed.org/version/1",
   "title": "Chen Li",
-  "home_page_url": "https://ChenLi2049.github.io",
-  "feed_url": "https://ChenLi2049.github.iofeed.json",
+  "home_page_url": "https://chenlinear.github.io",
+  "feed_url": "https://chenlinear.github.io/feed.json",
   "description": "Chen Li's personal blog",
-  "favicon": "https://ChenLi2049.github.io/assets/favicon.ico",
+  "favicon": "https://chenlinear.github.io/assets/favicon.ico",
   "expired": false,
   "author": {
     "name": "Chen Li",
-    "url": "https://ChenLi2049.github.io"
+    "url": "https://chenlinear.github.io"
   },
   "items": [
     
